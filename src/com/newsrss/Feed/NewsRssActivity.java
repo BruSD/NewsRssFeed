@@ -2,8 +2,9 @@ package com.newsrss.Feed;
 
 import android.app.Activity;
 import android.os.Bundle;
+import com.actionbarsherlock.app.SherlockActivity;
 
-public class NewsRssActivity extends Activity {
+public class NewsRssActivity extends SherlockActivity {
     /**
      * Called when the activity is first created.
      */
