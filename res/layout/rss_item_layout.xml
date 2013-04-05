@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+
+
+    <LinearLayout android:id="@+id/mini_layout"
+                  android:layout_width="match_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:background="#fffff0">
+        <ImageButton
+                android:id="@+id/fav_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fav_icon"
+                />
+        <ImageButton
+                android:id="@+id/share_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/share_ico"
+                />
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/mini_func_lay"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:background="#ffffffff">
+
+        <ImageButton
+                android:id="@+id/mini_slide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mini_slide"
+
+                />
+        <ImageView
+                android:id="@+id/rss_img_news_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher"
+                />
+
+
+
+        <LinearLayout
+
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:orientation="vertical"
+                >
+
+            <TextView
+                    android:id="@+id/rss_news_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+            <TextView
+                    android:id="@+id/rss_news_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>
