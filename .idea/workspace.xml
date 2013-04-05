@@ -23,23 +23,13 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/PodcastDetailView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.iml" afterPath="$PROJECT_DIR$/NewsFeed.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="Add podcast detail activity">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/res/values/strings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365118075217" ignored="false" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365169277296" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365170095633" ignored="false" />
     <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365188103794" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365121829915" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365169792754" ignored="false" />
@@ -194,6 +184,7 @@
         <option value="$PROJECT_DIR$/res/menu/main.xml" />
         <option value="$PROJECT_DIR$/res/layout/rss_item_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -546,7 +537,11 @@
       <created>1365123685958</created>
       <updated>1365123685958</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add podcast detail activity">
+      <created>1365170087313</created>
+      <updated>1365170087313</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -641,7 +636,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="No  SherlockActionBar Mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add podcast detail activity" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -658,6 +653,7 @@
     <MESSAGE value="Base" />
     <MESSAGE value="Add SherlockActionBar" />
     <MESSAGE value="No  SherlockActionBar Mode" />
+    <MESSAGE value="Add podcast detail activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
