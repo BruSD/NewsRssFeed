@@ -125,4 +125,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
+
+
 }
