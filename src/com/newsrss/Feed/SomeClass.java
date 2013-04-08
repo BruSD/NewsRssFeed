@@ -8,4 +8,10 @@ package com.newsrss.Feed;
  * To change this template use File | Settings | File Templates.
  */
 public class SomeClass {
+
+    private String name = "SomeClass";
+
+    public String getName() {
+        return  this.name;
+    }
 }
