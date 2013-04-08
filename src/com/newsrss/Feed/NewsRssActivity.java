@@ -3,10 +3,13 @@ package com.newsrss.Feed;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.Animation;
@@ -14,16 +17,25 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 
 public class NewsRssActivity extends SherlockActivity implements Animation.AnimationListener{
     /**
      * Called when the activity is first created.
      */
+    boolean cellStatusPosition = false;
+
+    int animationID;
+    View slideLayar1;
+    MyCAdapter adapter;
     View menu;
     View app;
     boolean menuOut = false;
     AnimParams animParams = new AnimParams();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +49,24 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         ListView listView = (ListView) app.findViewById(R.id.rssListView);
         app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
 
+
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        ArrayList<NewsItem> list = new ArrayList<NewsItem>();
+
+        list.add(new NewsItem("@drawable/ic_launcher", " Этот день is only good news!Today is only good news!Today is only good news!Today is only good news!", " day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only  news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+
+        adapter = new MyCAdapter(
+                this, list, R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        rssListView.setAdapter(adapter);
     }
     void layoutApp(boolean menuOut) {
         System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
@@ -48,11 +78,17 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     public void onAnimationEnd(Animation arg0) {
         // TODO Auto-generated method stub
         System.out.println("onAnimationEnd");
-        menuOut = !menuOut;
-        if (!menuOut) {
-            menu.setVisibility(View.INVISIBLE);
+        switch (animationID){
+            case (1):  {
+                menuOut = !menuOut;
+                if (!menuOut) {
+                    menu.setVisibility(View.INVISIBLE);
+                }
+                layoutApp(menuOut);
+            }
+            break;
+
         }
-        layoutApp(menuOut);
 
 
     }
@@ -104,7 +140,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 anim = new TranslateAnimation(0, -left, 0, 0);
                 animParams.init(0, 0, w, h);
             }
-
+            animationID =1;
             anim.setDuration(500);
 
             anim.setAnimationListener(me);
@@ -122,9 +158,80 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             // anim.setFillAfter(true);
 
             app.startAnimation(anim);
+
         }
     }
 
+    class MyCAdapter extends SimpleAdapter {
+        int resurs;
+        Context cxt;
+        private Context context;
+        List<? extends Map<String, ?>> DataList;
+        String[] fromL;
+        int[] toL;
 
 
+        public MyCAdapter(Context context, List<? extends Map<String, ?>> data,
+                          int _resource, String[] from, int[] to){
+            super(context, data, _resource, from, to);
+            this.resurs = _resource;
+            this.context = context;
+            this.DataList = data;
+            this.fromL = from;
+            this.toL = to;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent){
+            View v = convertView;
+            System.out.println("Btn 1");
+
+            if (v == null) {
+
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = inflater.inflate(R.layout.rss_item_layout, null);
+            }
+
+            final View  slideLayar= v.findViewById(R.id.mini_func_lay);
+            v.findViewById(R.id.mini_slide).setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+
+                    System.out.println("Btn 123"+" "+ v.getId());
+                    //TODO Auto-generated method stub
+                    NewsRssActivity me1 = NewsRssActivity.this;
+                    Context context1 = me1;
+                    Animation anim1;
+                    if (cellStatusPosition == false){
+                        anim1 = new TranslateAnimation(0, 50, 0, 0);
+                        cellStatusPosition = true;
+                    }else {
+                        anim1 = new TranslateAnimation(50, 0, 0, 0);
+                        cellStatusPosition = false;
+                    }
+
+
+
+                    animationID = 2;
+                    anim1.setDuration(800);
+                    anim1.setAnimationListener(me1);
+                    anim1.setFillAfter(true);
+                    slideLayar.startAnimation(anim1);
+
+
+
+                }
+            });
+
+
+
+
+            return v;
+
+
+        }
+
+
+
+}
 }
