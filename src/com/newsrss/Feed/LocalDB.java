@@ -84,7 +84,7 @@ public class LocalDB {
 	    values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
 	    values.put(SQLLiteHelper.COLUMN_PubDate, dateStr);
 	    values.put(SQLLiteHelper.COLUMN_Description, art.getDescription());
-	    values.put(SQLLiteHelper.COLUMN_NewsType, art.getNewsType().index());
+	    values.put(SQLLiteHelper.COLUMN_NewsType, art.getNewsType().getIndex());
 	    long added = LocalDatabase.insert(SQLLiteHelper.DATABASE_NAME, null,
 	        values);
 		if (added==-1)
