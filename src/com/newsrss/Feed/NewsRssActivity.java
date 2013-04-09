@@ -67,7 +67,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
 
         adapter = new MyCAdapter(
-                this, /*createArticleList()*/list, R.layout.rss_item_layout,
+                this, createArticleList() /*list*/, R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_news_title, R.id.rss_news_date});
         rssListView.setAdapter(adapter);
