@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ASB.iml" filepath="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ASB.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewsFeed.iml" filepath="$PROJECT_DIR$/NewsFeed.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/library.iml" filepath="$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/library.iml" filepath="$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/library1.iml" filepath="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/library1.iml" />
     </modules>
   </component>
 </project>
