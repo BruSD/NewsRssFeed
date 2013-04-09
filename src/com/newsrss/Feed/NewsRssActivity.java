@@ -9,10 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
+import android.widget.*;
 import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.Animation;
@@ -34,7 +31,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     int animationID;
     View slideLayar1;
-    MyCAdapter adapter;
+
     View menu;
     View app;
     boolean menuOut = false;
@@ -50,7 +47,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         menu = findViewById(R.id.menu);
         app = findViewById(R.id.app);
 
-        ListView listView = (ListView) app.findViewById(R.id.rssListView);
+
         app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
 
 
@@ -68,11 +65,28 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
 
-        adapter = new MyCAdapter(
-                this, createArticleList() /*list*/, R.layout.rss_item_layout,
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                createArticleList(),
+                R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_news_title, R.id.rss_news_date});
         rssListView.setAdapter(adapter);
+
+        rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+
+    }
+
+    class  LaunchDetalActiviti implements AdapterView.OnItemClickListener{
+
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            //To change body of implemented methods use File | Settings | File Templates.
+
+            System.out.println("item click" + position);
+
+        }
     }
 
 
@@ -270,13 +284,25 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         private Context context;
         private ListView mListView;
+        private List<? extends Map<String, ?>>   data;
+        private int resurs;
+        private  String[] from;
+        private int[] to;
 
 
-        public MyCAdapter(Context context, List<? extends Map<String, ?>> data,
-                          int _resource, String[] from, int[] to){
+        public MyCAdapter(Context context,
+                          List<? extends Map<String, ?>> data,
+                          int _resource,
+                          String[] from,
+                          int[] to){
             super(context, data, _resource, from, to);
 
-            this.context = context;
+            MyCAdapter.this.context = context;
+            MyCAdapter.this.data = data;
+            MyCAdapter.this.resurs = _resource;
+            MyCAdapter.this.from = from;
+            MyCAdapter.this.to = to;
+
         }
         protected class RowViewHolder {
             public TextView mTitle;
@@ -297,7 +323,11 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             final View  slideLayar= v.findViewById(R.id.mini_func_lay);
             RowViewHolder holder  = new RowViewHolder();
             holder.mImageView = (ImageView)v.findViewById(R.id.rss_img_news_pass);
+            holder.mTitle = (TextView)v.findViewById(R.id.rss_news_title);
+            holder.mDate = (TextView)v.findViewById(R.id.rss_news_date);
+
             //Взаимодействие с элементами Списка Картинка Татйтл и Дата
+
             holder.mImageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -306,7 +336,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 }
             });
             v.setTag(holder);
-
+            /*
             v.findViewById(R.id.mini_slide).setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -336,7 +366,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
                 }
-            });
+            }); */
 
 
 
