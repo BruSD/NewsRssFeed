@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.Animation;
@@ -109,6 +111,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         //Now that we've set the app.layout property we can clear the animation, flicker avoided :)
         app.clearAnimation();
     }
+
     public void onAnimationEnd(Animation arg0) {
         // TODO Auto-generated method stub
         System.out.println("onAnimationEnd");
@@ -126,6 +129,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
     }
+
     public void onAnimationRepeat(Animation animation) {
 
         // TODO Auto-generated method stub
@@ -137,6 +141,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         System.out.println("onAnimationRepeat");
 
     }
+
     static class AnimParams{
         int left, right, top, bottom;
         void init (int left, int top, int right, int bottom){
@@ -215,12 +220,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
 
-    /*
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }   */
+
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -265,23 +265,23 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
+
     class MyCAdapter extends SimpleAdapter {
-        int resurs;
-        Context cxt;
+
         private Context context;
-        List<? extends Map<String, ?>> DataList;
-        String[] fromL;
-        int[] toL;
+        private ListView mListView;
 
 
         public MyCAdapter(Context context, List<? extends Map<String, ?>> data,
                           int _resource, String[] from, int[] to){
             super(context, data, _resource, from, to);
-            this.resurs = _resource;
+
             this.context = context;
-            this.DataList = data;
-            this.fromL = from;
-            this.toL = to;
+        }
+        protected class RowViewHolder {
+            public TextView mTitle;
+            public TextView mDate;
+            public ImageView mImageView;
         }
 
         public View getView(int position, View convertView, ViewGroup parent){
@@ -295,6 +295,18 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             }
 
             final View  slideLayar= v.findViewById(R.id.mini_func_lay);
+            RowViewHolder holder  = new RowViewHolder();
+            holder.mImageView = (ImageView)v.findViewById(R.id.rss_img_news_pass);
+            //Взаимодействие с элементами Списка Картинка Татйтл и Дата
+            holder.mImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //To change body of implemented methods use File | Settings | File Templates.
+                    System.out.println("Btn на картинку ");
+                }
+            });
+            v.setTag(holder);
+
             v.findViewById(R.id.mini_slide).setOnClickListener(new View.OnClickListener() {
 
                 @Override
