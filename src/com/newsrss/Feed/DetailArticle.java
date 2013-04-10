@@ -14,7 +14,9 @@ import android.widget.TextView;
  * Time: 10:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsArticl extends Activity {
+public class DetailArticle extends Activity {
+
+    Article currentArticle = null;
 
     public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -23,9 +25,10 @@ public class DetailsArticl extends Activity {
 
         TextView testTextView = (TextView)findViewById(R.id.test_text);
         Intent startDetailArticl = getIntent();
-        long positionArt = startDetailArticl.getLongExtra("position", -1);
-        testTextView.setText("Ищи элемент по этому ID:"+ " "+ positionArt);
+        int positionArt = startDetailArticl.getIntExtra("position", -1);
 
+        currentArticle = DataStorage.getArticleList().get(positionArt);
+        testTextView.setText("Ищи элемент по этому ID:"+ " "+currentArticle.getTitle());
 
     }
 }

@@ -3,19 +3,11 @@ package com.newsrss.Feed;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.*;
-import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.app.SherlockActivity;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 
 import java.util.ArrayList;
@@ -72,14 +64,13 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
             switch (idArticlList)  {
                 case 1:
-
-                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticl.class);
-                    startDetailArticl.putExtra("position", id);
+                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailArticle.class);
+                    startDetailArticl.putExtra("position", position);
                     startActivity(startDetailArticl);
                     break;
                 case 2:
-                    Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
-                    startDetailPodcast.putExtra("position", id);
+                    Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailPodcast.class );
+                    startDetailPodcast.putExtra("position", position);
                     startActivity(startDetailPodcast);
                     break;
             }
@@ -93,27 +84,16 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
-        try
-        {
-            AsyncTask<XMLNewsType, Void, ArrayList<Article>> articleParser = new ArticleParser().execute(XMLNewsType.AuditNAccounting,
-                    XMLNewsType.Business,
-                    XMLNewsType.Governance,
-                    XMLNewsType.Insolvency,
-                    XMLNewsType.Practice,
-                    XMLNewsType.Tax);
-            ArrayList<Article> articleList = articleParser.get();
+        ArrayList<Article> articleList = DataStorage.getArticleList();
 
-            for (Article article : articleList)
-            {
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("rssnewstitle", article.getTitle());
-                map.put("rssnewsdate", article.getPubDate());
-                items.add(map);
-            }
+        for (Article article : articleList)
+        {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("rssnewstitle", article.getTitle());
+            map.put("rssnewsdate", article.getPubDate());
+            items.add(map);
         }
-        catch(Exception e) {
-            e.printStackTrace();
-        }
+
 
         return items;
     }
@@ -121,19 +101,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     private List<Map<String, ?>> createPodcastList()   {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
-        try {
-            AsyncTask<Void, Void, ArrayList<Podcast>> podcastParser = new PodcastParser().execute();
-            ArrayList<Podcast> podcastList = podcastParser.get();
+        DataStorage.updatePodcastList();
+        ArrayList<Podcast> podcastList = DataStorage.getPodcastList();
 
-            for(Podcast podcast : podcastList) {
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("rssnewstitle", podcast.getTitle());
-                map.put("rssnewsdate", podcast.getPubDate());
-                items.add(map);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
+        for(Podcast podcast : podcastList) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("rssnewstitle", podcast.getTitle());
+            map.put("rssnewsdate", podcast.getPubDate());
+            items.add(map);
         }
 
         return  items;
@@ -191,7 +166,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     public void ShowAriclList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
-        // TODO: Generete Articl List
+        DataStorage.updateArticleList();
         SimpleAdapter adapter = new SimpleAdapter(
                 this,
                 createArticleList(),
@@ -204,9 +179,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     public void ShowPodcastList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
-
-        // TODO: Create podcsat parser
-
         SimpleAdapter adapter = new SimpleAdapter(
                 this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
