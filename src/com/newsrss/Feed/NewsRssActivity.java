@@ -277,11 +277,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
-    class CustomViewBinder implements SimpleAdapter.ViewBinder
-    {
+    class CustomViewBinder implements SimpleAdapter.ViewBinder {
         @Override
-        public boolean setViewValue(View view, Object data,String textRepresentation)
-        {
+        public boolean setViewValue(View view, Object data,String textRepresentation) {
             if((view instanceof ImageView) & (data instanceof Drawable))
             {
                 ImageView iv = (ImageView) view;
