@@ -3,6 +3,7 @@ package com.newsrss.Feed;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -80,6 +81,20 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
+    public void ShowAriclList() {
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
+        DataStorage.updateArticleList();
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                createArticleList(),
+                R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate", "rssnewsimage"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date, R.id.rss_img_news_pass});
+        adapter.setViewBinder(new CustomViewBinder());
+        idArticlList = 1;
+        rssListView.setAdapter(adapter);
+    }
 
     private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
@@ -91,11 +106,23 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("rssnewstitle", article.getTitle());
             map.put("rssnewsdate", article.getPubDate());
+            map.put("rssnewsimage", article.getNewsImage());
             items.add(map);
         }
 
 
         return items;
+    }
+
+    public void ShowPodcastList(){
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        SimpleAdapter adapter = new SimpleAdapter(
+                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+        idArticlList = 2;
+        rssListView.setAdapter(adapter);
+
     }
 
     private List<Map<String, ?>> createPodcastList()   {
@@ -161,31 +188,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             this.bottom = bottom;
 
         }
-    }
-
-    public void ShowAriclList() {
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
-
-        DataStorage.updateArticleList();
-        SimpleAdapter adapter = new SimpleAdapter(
-                this,
-                createArticleList(),
-                R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idArticlList = 1;
-        rssListView.setAdapter(adapter);
-    }
-
-    public void ShowPodcastList(){
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
-        SimpleAdapter adapter = new SimpleAdapter(
-                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
-        idArticlList = 2;
-        rssListView.setAdapter(adapter);
-
     }
 
     class ShowPodcastOnclickListener implements View.OnClickListener{
@@ -273,6 +275,23 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             app.startAnimation(anim);
 
         }
+    }
+
+    class CustomViewBinder implements SimpleAdapter.ViewBinder
+    {
+        @Override
+        public boolean setViewValue(View view, Object data,String textRepresentation)
+        {
+            if((view instanceof ImageView) & (data instanceof Drawable))
+            {
+                ImageView iv = (ImageView) view;
+                Drawable image = (Drawable) data;
+                iv.setImageDrawable(image);
+                return true;
+            }
+            return false;
+        }
+
     }
 
     /*

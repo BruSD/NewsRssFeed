@@ -2,9 +2,12 @@ package com.newsrss.Feed;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.widget.ImageView;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Attr;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -16,6 +19,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.AttributedCharacterIterator;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -111,6 +115,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             Element _linkE = (Element) entry.getElementsByTagName("link").item(0);
                             Element _descriptionE = (Element) entry.getElementsByTagName("description").item(0);
                             Element _pubDateE = (Element) entry.getElementsByTagName("a10:updated").item(0);
+                            Element _imageLinkE = (Element) entry.getElementsByTagName("enclosure").item(0);
 
                             String _guid = _guidE.getFirstChild().getNodeValue();
                             String _title = _titleE.getFirstChild().getNodeValue();
@@ -126,10 +131,15 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             catch(ParseException e)
                             { _pubDate = new Date(); }
 
+                            Attr attribute = _imageLinkE.getAttributeNode("url");
+                            InputStream inputStream = (InputStream) new URL(attribute.getValue()).getContent();
+                            Drawable image = Drawable.createFromStream(inputStream, "src name");
+
                             //create Article and add it to the ArrayList
-                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType);
+                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType, image);
 
                             articleList.add(article);
+
                         } // end of item array
                 }
                 else {

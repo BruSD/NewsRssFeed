@@ -53,6 +53,6 @@ public class Job implements Comparable<Job> {
 
     @Override
     public int compareTo(Job another) {
-        return another.pubDate.compareTo(this.pubDate);
+        return another.getPubDate().compareTo(this.pubDate);
     }
 }

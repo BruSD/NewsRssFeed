@@ -59,7 +59,8 @@ public class LocalDB {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			art = new Article(cursor.getString(0), cursor.getString(1), url, date, cursor.getString(4), type);
+			art = new Article(cursor.getString(0), cursor.getString(1), url, date, cursor.getString(4), type, null);
+            // TODO: !!!
 			
 			
 	    return art;

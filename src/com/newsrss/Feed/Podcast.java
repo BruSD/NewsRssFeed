@@ -53,6 +53,6 @@ public class Podcast implements Comparable<Podcast> {
 
     @Override
     public int compareTo(Podcast another) {
-        return another.pubDate.compareTo(this.pubDate);
+        return another.getPubDate().compareTo(this.pubDate);
     }
 }

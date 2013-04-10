@@ -1,5 +1,7 @@
 package com.newsrss.Feed;
 
+import android.graphics.drawable.Drawable;
+
 import java.net.URL;
 import java.util.Date;
 
@@ -18,14 +20,16 @@ public class Article implements Comparable<Article> {
     private Date pubDate;
     private String desciption;
     private XMLNewsType newsType;
+    private Drawable newsImage;
 
-    public Article(String guid, String title, URL link, Date pubDate, String description, XMLNewsType newsType) {
+    public Article(String guid, String title, URL link, Date pubDate, String description, XMLNewsType newsType, Drawable image) {
         this.guid = guid;
         this.title = title;
         this.link = link;
         this.pubDate = pubDate;
         this.desciption = description;
         this.newsType = newsType;
+        this.newsImage = image;
     }
 
     public String getGuid() {
@@ -52,6 +56,10 @@ public class Article implements Comparable<Article> {
         return this.newsType;
     }
 
+    public Drawable getNewsImage() {
+        return this.newsImage;
+    }
+
     @Override
     public String toString() {
         return String.format("% , % ", this.title, this.link);
@@ -59,6 +67,6 @@ public class Article implements Comparable<Article> {
 
     @Override
     public int compareTo(Article another) {
-        return another.pubDate.compareTo(this.pubDate);
+        return another.getPubDate().compareTo(this.pubDate);
     }
 }
