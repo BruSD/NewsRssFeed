@@ -90,19 +90,18 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     }
 
 
-    private List<Map<String, ?>> createArticleList()
-    {
+    private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
         try
         {
-            AsyncTask<XMLNewsType, Void, ArrayList<Article>> parser = new ArticleParser().execute(XMLNewsType.AuditNAccounting,
+            AsyncTask<XMLNewsType, Void, ArrayList<Article>> articleParser = new ArticleParser().execute(XMLNewsType.AuditNAccounting,
                     XMLNewsType.Business,
                     XMLNewsType.Governance,
                     XMLNewsType.Insolvency,
                     XMLNewsType.Practice,
                     XMLNewsType.Tax);
-            ArrayList<Article> articleList = parser.get();
+            ArrayList<Article> articleList = articleParser.get();
 
             for (Article article : articleList)
             {
@@ -118,6 +117,28 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         return items;
     }
+
+    private List<Map<String, ?>> createPodcastList()   {
+        List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
+
+        try {
+            AsyncTask<Void, Void, ArrayList<Podcast>> podcastParser = new PodcastParser().execute();
+            ArrayList<Podcast> podcastList = podcastParser.get();
+
+            for(Podcast podcast : podcastList) {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("rssnewstitle", podcast.getTitle());
+                map.put("rssnewsdate", podcast.getPubDate());
+                items.add(map);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return  items;
+    }
+
     void layoutApp(boolean menuOut) {
         System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
                 + animParams.bottom + "]");
@@ -167,7 +188,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
-
     public void ShowPodcastList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
         ArrayList<NewsItem> list = new ArrayList<NewsItem>();
@@ -180,9 +200,10 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
         list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
+        // TODO: Create podcsat parser
 
         SimpleAdapter adapter = new SimpleAdapter(
-                this, /*createArticleList()*/list, R.layout.podcast_item_layout,
+                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
         rssListView.setAdapter(adapter);
@@ -231,10 +252,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
-
-
-
-
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -279,7 +296,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
-
+    /*
     class MyCAdapter extends SimpleAdapter {
 
         private Context context;
@@ -366,7 +383,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
                 }
-            }); */
+            });
 
 
 
@@ -378,5 +395,5 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
 
-}
+}        */
 }

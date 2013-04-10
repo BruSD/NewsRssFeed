@@ -69,7 +69,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                 }
             }
             catch (MalformedURLException ex) {
-                // !!!
+                //  This can't be!!!
                 return  articleList;
             }
 
@@ -85,7 +85,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                     DocumentBuilder db;
                     try { db = dbf.newDocumentBuilder();
                     } catch (ParserConfigurationException ex) {
-                        // !!!
+                        //  This can't be!!!
                         return articleList;
                     }
 
@@ -94,7 +94,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                     try {
                     document = db.parse(stream);
                     } catch (SAXException ex) {
-                        // !!!
+                        //  This can't be!!!
                         return  articleList;
                     }
                     Element element = document.getDocumentElement();
@@ -139,7 +139,6 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
             }
             catch (IOException ex){
                 // Bad Connection
-                //Context context = NewsRssActivity.class.get;
                 // TODO: ConnectionExcepion?
             }
 
