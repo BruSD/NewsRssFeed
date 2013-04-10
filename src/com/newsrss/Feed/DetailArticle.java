@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.app.Activity;
+import android.webkit.WebView;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 
 /**
@@ -23,12 +27,20 @@ public class DetailArticle extends Activity {
     setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     setContentView(R.layout.details_articl);
 
-        TextView testTextView = (TextView)findViewById(R.id.test_text);
+        TextView articleTitleV = (TextView)findViewById(R.id.article_title);
+        TextView articleDateV =(TextView)findViewById(R.id.article_date);
+        WebView  articleDiscriptionV = (WebView)findViewById(R.id.article_discription);
+
         Intent startDetailArticl = getIntent();
         int positionArt = startDetailArticl.getIntExtra("position", -1);
-
         currentArticle = DataStorage.getArticleList().get(positionArt);
-        testTextView.setText("Ищи элемент по этому ID:"+ " "+currentArticle.getTitle());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy", Locale.ENGLISH);
+        String datetimeString = sdf.format(currentArticle.getPubDate());
+
+        articleTitleV.setText(currentArticle.getTitle());
+        articleDateV.setText(datetimeString);
+        articleDiscriptionV.loadData("<html><body>"+currentArticle.getDescription()+"</body></html>", "text/html", "UTF-8");
 
     }
 }
