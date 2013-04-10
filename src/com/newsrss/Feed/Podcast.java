@@ -10,7 +10,7 @@ import java.util.Date;
  * Time: 20:53
  * To change this template use File | Settings | File Templates.
  */
-public class Podcast {
+public class Podcast implements Comparable<Podcast> {
 
     private String guid;
     private String title;
@@ -49,5 +49,10 @@ public class Podcast {
     @Override
     public String toString() {
         return String.format("% , % ", this.title, this.mp3Link);
+    }
+
+    @Override
+    public int compareTo(Podcast another) {
+        return another.pubDate.compareTo(this.pubDate);
     }
 }

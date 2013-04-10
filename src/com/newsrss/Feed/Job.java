@@ -6,26 +6,24 @@ import java.util.Date;
 /**
  * Created with IntelliJ IDEA.
  * User: MediumMG
- * Date: 08.04.13
- * Time: 14:26
+ * Date: 10.04.13
+ * Time: 11:29
  * To change this template use File | Settings | File Templates.
  */
-public class Article implements Comparable<Article> {
+public class Job implements Comparable<Job> {
 
     private String guid;
     private String title;
     private URL link;
     private Date pubDate;
     private String desciption;
-    private XMLNewsType newsType;
 
-    public Article(String guid, String title, URL link, Date pubDate, String description, XMLNewsType newsType) {
+    public Job(String guid, String title, URL link, Date pubDate, String description) {
         this.guid = guid;
         this.title = title;
         this.link = link;
         this.pubDate = pubDate;
         this.desciption = description;
-        this.newsType = newsType;
     }
 
     public String getGuid() {
@@ -48,17 +46,13 @@ public class Article implements Comparable<Article> {
         return this.desciption;
     }
 
-    public XMLNewsType getNewsType() {
-        return this.newsType;
-    }
-
     @Override
     public String toString() {
         return String.format("% , % ", this.title, this.link);
     }
 
     @Override
-    public int compareTo(Article another) {
+    public int compareTo(Job another) {
         return another.pubDate.compareTo(this.pubDate);
     }
 }
