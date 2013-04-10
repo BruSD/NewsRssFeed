@@ -1,8 +1,10 @@
 package com.newsrss.Feed;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.app.Activity;
+import android.widget.TextView;
 
 
 /**
@@ -18,5 +20,12 @@ public class DetailsArticl extends Activity {
     super.onCreate(savedInstanceState);
     setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     setContentView(R.layout.details_articl);
+
+        TextView testTextView = (TextView)findViewById(R.id.test_text);
+        Intent startDetailArticl = getIntent();
+        long positionArt = startDetailArticl.getLongExtra("position", -1);
+        testTextView.setText("Ищи элемент по этому ID:"+ " "+ positionArt);
+
+
     }
 }

@@ -6,6 +6,7 @@
               android:layout_height="match_parent">
 
     <TextView
+            android:id="@+id/test_text"
             android:text="Это Детальные Статьи"
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"

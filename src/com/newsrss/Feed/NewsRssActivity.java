@@ -68,16 +68,20 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //To change body of implemented methods use File | Settings | File Templates.
             //TODO: Detale Activity Launcher
-            System.out.println("item click" + position);
+            System.out.println("item click" + id);
 
             switch (idArticlList)  {
                 case 1:
+
                     Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticl.class);
+                    startDetailArticl.putExtra("position", id);
                     startActivity(startDetailArticl);
                     break;
                 case 2:
                     Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
+                    startDetailPodcast.putExtra("position", id);
                     startActivity(startDetailPodcast);
+                    break;
             }
 
 
