@@ -8,7 +8,8 @@
     <LinearLayout
             android:orientation="horizontal"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent"
+            android:background="#780033">
 
         <ImageButton
                 android:id="@+id/back_button"
@@ -28,11 +29,39 @@
                 />
 
     </LinearLayout>
+
     <TextView
-            android:id="@+id/test_text"
-            android:text="Это Детальные Статьи"
-            android:layout_height="fill_parent"
+            android:id="@+id/article_title"
+
+            android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             />
 
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+
+            <TextView
+                    android:id="@+id/article_date"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    />
+            <ImageButton
+                    android:id="@+id/share_button"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/share_ico"
+            />
+            <ImageButton
+                    android:id="@+id/fav_button"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/fav_icon"/>
+    </LinearLayout>
+
+    <WebView
+            android:id="@+id/article_discription"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"/>
 </LinearLayout>
