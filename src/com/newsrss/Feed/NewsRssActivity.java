@@ -1,6 +1,7 @@
 package com.newsrss.Feed;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     View app;
     boolean menuOut = false;
     AnimParams animParams = new AnimParams();
+    int idArticlList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,27 +54,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
         menu.findViewById(R.id.show_podcast).setOnClickListener(new ShowPodcastOnclickListener());
-
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
-        ArrayList<NewsItem> list = new ArrayList<NewsItem>();
 
-        list.add(new NewsItem("@drawable/ic_launcher", " Этот день is only good news!Today is only good news!Today is only good news!Today is only good news!", " day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only  news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-
-        SimpleAdapter adapter = new SimpleAdapter(
-                this,
-                createArticleList(),
-                R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        rssListView.setAdapter(adapter);
-
+        ShowAriclList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
     }
@@ -83,8 +67,20 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //To change body of implemented methods use File | Settings | File Templates.
-
+            //TODO: Detale Activity Launcher
             System.out.println("item click" + position);
+
+            switch (idArticlList)  {
+                case 1:
+                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticl.class);
+                    startActivity(startDetailArticl);
+                    break;
+                case 2:
+                    Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
+                    startActivity(startDetailPodcast);
+            }
+
+
 
         }
     }
@@ -188,24 +184,30 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
+    public void ShowAriclList() {
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
+        // TODO: Generete Articl List
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                createArticleList(),
+                R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        idArticlList = 1;
+        rssListView.setAdapter(adapter);
+    }
+
     public void ShowPodcastList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
-        ArrayList<NewsItem> list = new ArrayList<NewsItem>();
 
-        list.add(new NewsItem("@drawable/ic_launcher", " 123", " 1!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "123", "1!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only  news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
-        list.add(new NewsItem("@drawable/ic_launcher", "Today is only good news!Today is only good news!Today is only good news!Today is only good news!", "Today is good day!"));
         // TODO: Create podcsat parser
 
         SimpleAdapter adapter = new SimpleAdapter(
                 this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+        idArticlList = 2;
         rssListView.setAdapter(adapter);
 
     }
@@ -238,7 +240,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
             //Tell the animation to stay as it ended (we are going to set the app.layout first than remove this property)
             anim.setFillAfter(true);
-            ShowPodcastList();
+
 
             // Only use fillEnabled and fillAfter if we don't call layout ourselves.
             // We need to do the layout ourselves and not use fillEnabled and fillAfter because when the anim is finished
@@ -249,6 +251,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             // anim.setFillAfter(true);
 
             app.startAnimation(anim);
+            ShowPodcastList();
         }
     }
 
