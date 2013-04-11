@@ -3,18 +3,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent" android:background="#efeeea">
     <LinearLayout
             android:orientation="horizontal"
             android:layout_height="wrap_content"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent" android:background="#820046">
 
         <ImageButton
                 android:id="@+id/back_button"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/back_button"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                />
+                android:padding="0dp" android:focusableInTouchMode="false" android:adjustViewBounds="false"
+                android:baselineAlignBottom="false" android:clickable="false" android:cropToPadding="false"
+                android:focusable="false" android:background="#820046"/>
         <ImageView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -27,61 +29,73 @@
                 />
 
     </LinearLayout>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/PodcastTitleText" android:layout_gravity="left|center_vertical" android:textStyle="bold"
-            android:textSize="16dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
-            />
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/PodcastDateText" android:layout_gravity="left|center_vertical" android:textStyle="italic"
-            android:textSize="13dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"/>
-    <WebView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/PodcastDescription" android:layout_gravity="left|center_vertical" android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp" android:layout_marginTop="14dp"/>
-    <RelativeLayout
+    <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
-            android:layout_marginTop="14dp" android:layout_marginBottom="14dp">
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastSeek10Button"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"/>
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastPlay_pauseButton"
-                android:layout_centerHorizontal="true" android:layout_alignTop="@+id/PodcastSeek10Button"
-                />
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastSeek30Button"
-                android:layout_alignParentRight="true" android:layout_alignTop="@+id/PodcastSeek10Button"
-                />
-        <SeekBar
-                android:layout_width="390dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastSeekbar"
-                android:layout_alignParentLeft="true" android:layout_below="@+id/PodcastSeek10Button"
-                android:layout_alignRight="@+id/PodcastSeek30Button"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastPlayedTime" android:layout_alignLeft="@+id/PodcastSeek10Button"
-                android:layout_below="@+id/PodcastSeekbar" android:text="00:00"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/PodcastAllTime" android:layout_alignRight="@+id/PodcastSeek30Button"
-                android:layout_below="@+id/PodcastSeekbar" android:text="00:00"/>
-    </RelativeLayout>
+            android:layout_height="fill_parent"
+            android:id="@+id/scrollView">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/PodcastTitleText" android:layout_gravity="left|center_vertical" android:textStyle="bold"
+                    android:textSize="16dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+                    android:textColor="#010101" android:background="#efeeea"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/PodcastDateText" android:layout_gravity="left|center_vertical" android:textStyle="italic"
+                    android:textSize="13dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+                    android:textColor="#010101"/>
+            <WebView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/PodcastDescription" android:layout_gravity="left|center_vertical" android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp" android:layout_marginTop="14dp" android:background="#edece8"/>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+                    android:layout_marginTop="14dp" android:layout_marginBottom="14dp" android:background="#d4d4d4">
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastSeek10Button"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="0dp" android:layout_margin="10dp"/>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastPlay_pauseButton"
+                        android:layout_centerHorizontal="true" android:layout_alignTop="@+id/PodcastSeek10Button"
+                        android:padding="0dp"/>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastSeek30Button"
+                        android:layout_alignParentRight="true" android:layout_alignTop="@+id/PodcastSeek10Button"
+                        android:padding="0dp" android:layout_marginRight="10dp"/>
+                <SeekBar
+                        android:layout_width="390dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastSeekbar"
+                        android:layout_alignParentLeft="true" android:layout_below="@+id/PodcastSeek10Button"
+                        android:layout_alignRight="@+id/PodcastSeek30Button"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastPlayedTime" android:layout_alignLeft="@+id/PodcastSeek10Button"
+                        android:layout_below="@+id/PodcastSeekbar" android:text="00:00"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PodcastAllTime" android:layout_alignRight="@+id/PodcastSeek30Button"
+                        android:layout_below="@+id/PodcastSeekbar" android:text="00:00"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
