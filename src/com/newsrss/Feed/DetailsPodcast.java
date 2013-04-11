@@ -25,7 +25,7 @@ import java.util.Date;
  * Time: 10:32 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailPodcast extends Activity {
+public class DetailsPodcast extends Activity {
 
     Podcast currentPodcast = null;
     MediaPlayer cast_player;

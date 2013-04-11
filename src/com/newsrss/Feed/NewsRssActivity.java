@@ -3,19 +3,13 @@ package com.newsrss.Feed;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Menu;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.*;
-import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.app.SherlockActivity;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 
 import java.util.ArrayList;
@@ -73,13 +67,13 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             switch (idArticlList)  {
                 case 1:
 
-                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticl.class);
-                    startDetailArticl.putExtra("position", id);
+                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
+                    startDetailArticl.putExtra("position", position);
                     startActivity(startDetailArticl);
                     break;
                 case 2:
                     Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
-                    startDetailPodcast.putExtra("position", id);
+                    startDetailPodcast.putExtra("position", position);
                     startActivity(startDetailPodcast);
                     break;
             }
@@ -400,4 +394,19 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
 
 }        */
+
+    class CustomViewBinder implements SimpleAdapter.ViewBinder {
+        @Override
+        public boolean setViewValue(View view, Object data,String textRepresentation) {
+            if((view instanceof ImageView) & (data instanceof Drawable))
+            {
+                ImageView iv = (ImageView) view;
+                Drawable image = (Drawable) data;
+                iv.setImageDrawable(image);
+                return true;
+            }
+            return false;
+        }
+
+    }
 }
