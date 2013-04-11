@@ -89,13 +89,8 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         try
         {
-            AsyncTask<XMLNewsType, Void, ArrayList<Article>> articleParser = new ArticleParser().execute(XMLNewsType.AuditNAccounting,
-                    XMLNewsType.Business,
-                    XMLNewsType.Governance,
-                    XMLNewsType.Insolvency,
-                    XMLNewsType.Practice,
-                    XMLNewsType.Tax);
-            ArrayList<Article> articleList = articleParser.get();
+            DataStorage.updateArticleList();
+            ArrayList<Article> articleList = DataStorage.getArticleList();
 
             for (Article article : articleList)
             {
@@ -116,8 +111,8 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
         try {
-            AsyncTask<Void, Void, ArrayList<Podcast>> podcastParser = new PodcastParser().execute();
-            ArrayList<Podcast> podcastList = podcastParser.get();
+            DataStorage.updatePodcastList();
+            ArrayList<Podcast> podcastList = DataStorage.getPodcastList();
 
             for(Podcast podcast : podcastList) {
                 Map<String, Object> map = new HashMap<String, Object>();

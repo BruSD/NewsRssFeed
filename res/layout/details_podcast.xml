@@ -59,12 +59,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/PodcastPlay_pauseButton"
-                android:layout_centerHorizontal="true" android:layout_alignTop="@+id/PodcastSeek10Button"/>
+                android:layout_centerHorizontal="true" android:layout_alignTop="@+id/PodcastSeek10Button"
+                />
         <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/PodcastSeek30Button"
-                android:layout_alignParentRight="true" android:layout_alignTop="@+id/PodcastSeek10Button"/>
+                android:layout_alignParentRight="true" android:layout_alignTop="@+id/PodcastSeek10Button"
+                />
         <SeekBar
                 android:layout_width="390dp"
                 android:layout_height="wrap_content"
