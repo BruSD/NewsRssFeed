@@ -13,9 +13,7 @@ import android.widget.TextView;
  * Time: 10:32 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailPodcast extends Activity {
-
-    Podcast currentPodcast = null;
+public class DetailsPodcast extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +22,7 @@ public class DetailPodcast extends Activity {
 
         TextView testTextView = (TextView)findViewById(R.id.test_text);
         Intent startDetailArticl = getIntent();
-        int position = startDetailArticl.getIntExtra("position", -1);
-        testTextView.setText("Ищи Подкаст с таким ID:"+ " "+ position);
-        currentPodcast = DataStorage.getPodcastList().get(position);
-
+        long positionArt = startDetailArticl.getLongExtra("position", -1);
+        testTextView.setText("Ищи Подкаст с таким ID:"+ " "+ positionArt);
     }
 }

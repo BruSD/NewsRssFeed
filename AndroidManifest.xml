@@ -20,9 +20,9 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.newsrss.Feed.DetailArticle"
-                android:label="@string/activiti_title"/>
-        <activity android:name="com.newsrss.Feed.DetailPodcast"
+        <activity android:name="com.newsrss.Feed.DetailsArticl"
+                android:label="Детальный обзор статьи"/>
+        <activity android:name="com.newsrss.Feed.DetailsPodcast"
                   android:label="Детальный обзор статьи"/>
     </application>
 </manifest>

@@ -33,7 +33,7 @@ public class DataStorage {
             }
         }
         */
-        return articleList;//result;
+        return result;
     }
 
     public static ArrayList<Podcast> getPodcastList() {

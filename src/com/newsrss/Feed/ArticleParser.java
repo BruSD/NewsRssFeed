@@ -131,12 +131,13 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             catch(ParseException e)
                             { _pubDate = new Date(); }
 
+                            /*
                             Attr attribute = _imageLinkE.getAttributeNode("url");
                             InputStream inputStream = (InputStream) new URL(attribute.getValue()).getContent();
                             Drawable image = Drawable.createFromStream(inputStream, "src name");
-
+                             */
                             //create Article and add it to the ArrayList
-                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType, image);
+                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType, null);
 
                             articleList.add(article);
 
