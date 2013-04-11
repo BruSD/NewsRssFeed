@@ -117,16 +117,16 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             Element _pubDateE = (Element) entry.getElementsByTagName("a10:updated").item(0);
                             Element _imageLinkE = (Element) entry.getElementsByTagName("enclosure").item(0);
 
-                            String _guid = _guidE.getFirstChild().getNodeValue();
-                            String _title = _titleE.getFirstChild().getNodeValue();
-                            URL _link = new URL(_linkE.getFirstChild().getNodeValue());
-                            String _description = _descriptionE.getFirstChild().getNodeValue();
+                            String _guid = _guidE.getTextContent();//getFirstChild().getNodeValue();
+                            String _title = _titleE.getTextContent();//getFirstChild().getNodeValue();
+                            URL _link = new URL(_linkE.getTextContent());//getFirstChild().getNodeValue());
+                            String _description = _descriptionE.getTextContent();//getFirstChild().getNodeValue();
 
                             Date _pubDate = null;
                             try
                             {
                                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
-                                _pubDate = format.parse(_pubDateE.getFirstChild().getNodeValue());
+                                _pubDate = format.parse(_pubDateE.getTextContent());//getFirstChild().getNodeValue());
                             }
                             catch(ParseException e)
                             { _pubDate = new Date(); }

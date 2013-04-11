@@ -60,6 +60,7 @@ public class DataStorage {
         catch (InterruptedException e) {}
 
         // TODO: add only new article (unique for guid and newsType)
+        articleList.clear();
         articleList.addAll(tempList);
 
         Collections.sort(articleList);
@@ -76,6 +77,7 @@ public class DataStorage {
         catch (InterruptedException e) {}
 
         // TODO: add only new podcast (unique for guid)
+        podcastList.clear();
         podcastList.addAll(tempList);
 
         Collections.sort(podcastList);
@@ -92,6 +94,7 @@ public class DataStorage {
         catch (InterruptedException e) {}
 
         // TODO: add only new podcast (unique for guid)
+        jobList.clear();
        jobList.addAll(tempList);
 
         Collections.sort(jobList);

@@ -82,15 +82,15 @@ public class PodcastParser extends AsyncTask<Void, Void, ArrayList<Podcast>> {
                         Element _descriptionE = (Element) entry.getElementsByTagName("description").item(0);
                         Element _pubDateE = (Element) entry.getElementsByTagName("pubDate").item(0);
 
-                        String _guid = _guidE.getFirstChild().getNodeValue();
-                        String _title = _titleE.getFirstChild().getNodeValue();
-                        URL _link = new URL(_linkE.getFirstChild().getNodeValue());
-                        String _description = _descriptionE.getFirstChild().getNodeValue();
+                        String _guid = _guidE.getTextContent();//getFirstChild().getNodeValue();
+                        String _title = _titleE.getTextContent();//getFirstChild().getNodeValue();
+                        URL _link = new URL(_linkE.getTextContent());//getFirstChild().getNodeValue());
+                        String _description = _descriptionE.getTextContent();//getFirstChild().getNodeValue();
 
                         Date _pubDate;
                         try {
                             SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss 'UT'", Locale.ENGLISH);
-                            _pubDate = format.parse(_pubDateE.getFirstChild().getNodeValue());
+                            _pubDate = format.parse(_pubDateE.getTextContent());//getFirstChild().getNodeValue());
                         }
                         catch (ParseException e) {
                             _pubDate = new Date();
