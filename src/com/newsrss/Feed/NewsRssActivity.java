@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -50,7 +49,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         menu.findViewById(R.id.show_podcast).setOnClickListener(new ShowPodcastOnclickListener());
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
-        ShowAriclList();
+        ShowAricleList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
     }
@@ -61,7 +60,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //To change body of implemented methods use File | Settings | File Templates.
-            //TODO: Detale Activity Launcher
+
             System.out.println("item click" + id);
 
             switch (idArticlList)  {
@@ -82,7 +81,19 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         }
     }
+    public void ShowAricleList() {
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
+        DataStorage.updateArticleList();
+        SimpleAdapter adapter = new SimpleAdapter(
+                this,
+                createArticleList(),
+                R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        idArticlList = 1;
+        rssListView.setAdapter(adapter);
+    }
 
     private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
@@ -107,6 +118,17 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         return items;
     }
 
+    public void ShowPodcastList(){
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        SimpleAdapter adapter = new SimpleAdapter(
+                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+        idArticlList = 2;
+        rssListView.setAdapter(adapter);
+
+    }
+
     private List<Map<String, ?>> createPodcastList()   {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
@@ -128,32 +150,49 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         return  items;
     }
 
+    //Тут Описаны клики по всем разделам Сайд Бара.
+    public void StartSearchActivity(final View view){
+          //TODO: Утановите вызов Активити для поиска
 
+        Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
-    public void ShowAriclList() {
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+    public void ShowArticleListFromSideBar (final View view){
+        //TODO: Утановите вызов Активити для поиска
 
-        DataStorage.updateArticleList();
-        SimpleAdapter adapter = new SimpleAdapter(
-                this,
-                createArticleList(),
-                R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idArticlList = 1;
-        rssListView.setAdapter(adapter);
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
+        toast.show();
+
+        BackAnimationToSideBar();
+        ShowAricleList();
+
     }
 
 
-    public void ShowPodcastList(){
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
-        SimpleAdapter adapter = new SimpleAdapter(
-                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
-        idArticlList = 2;
-        rssListView.setAdapter(adapter);
 
+
+    public void BackAnimationToSideBar(){
+        NewsRssActivity me = NewsRssActivity.this;
+        Context context = me;
+        Animation anim;
+
+        int w = app.getMeasuredWidth();
+        int h = app.getMeasuredHeight();
+        int left = (int) (app.getMeasuredWidth() * 0.8);
+
+
+
+        // anim = AnimationUtils.loadAnimation(context, R.anim.push_left_in_80);
+        anim = new TranslateAnimation(left, 0, 0, 0);
+        animParams.init(0, 0, w, h);
+
+
+        animationID =1;
+        anim.setDuration(500);
+        anim.setAnimationListener(me);
+        anim.setFillAfter(true);
+        app.startAnimation(anim);
     }
 
     class ShowPodcastOnclickListener implements View.OnClickListener{
@@ -195,7 +234,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     }
 
     public void onAnimationEnd(Animation arg0) {
-        // TODO Auto-generated method stub
+
         System.out.println("onAnimationEnd");
         switch (animationID){
             case (1):  {
@@ -214,12 +253,12 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     public void onAnimationRepeat(Animation animation) {
 
-        // TODO Auto-generated method stub
+
 
     }
 
     public void onAnimationStart(Animation animation) {
-        // TODO Auto-generated method stub
+
         System.out.println("onAnimationRepeat");
 
     }
@@ -234,6 +273,8 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         }
     }
+
+    // Основная Анимация для Сайд Бара Туда и обратно.
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -342,7 +383,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 public void onClick(View v) {
 
                     System.out.println("Btn 123"+" "+ v.getId());
-                    //TODO Auto-generated method stub
+
                     NewsRssActivity me1 = NewsRssActivity.this;
                     Context context1 = me1;
                     Animation anim1;

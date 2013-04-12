@@ -1,13 +1,44 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="fill_parent"
-             android:layout_height="fill_parent">
+             android:layout_height="fill_parent"
+             >
 
     <LinearLayout android:id="@+id/menu"
                   android:layout_width="match_parent"
                   android:layout_height="fill_parent"
                   android:orientation="vertical"
-                  android:background="#fffff0">
+                  >
+
+        <LinearLayout
+                android:id="@+id/search_layout"
+                style="@style/SideBarLayoutDarck"
+                android:onClick="StartSearchActivity"
+                >
+                <ImageView
+                        android:src="@drawable/search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                <ImageView
+                    android:src="@drawable/magnifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+                android:id="@+id/article_show"
+                android:onClick="ShowArticleListFromSideBar"
+                style="@style/SideBarLayoutSoft"
+                >
+            <ImageView
+                style="@style/StandartToView"
+                android:src="@drawable/new_icon"/>
+            <TextView
+                    style="@style/StandartToView"
+                    android:text="News"/>
+
+        </LinearLayout>
+
         <Button
                 android:id="@+id/show_podcast"
                 android:layout_width="match_parent"
@@ -15,51 +46,11 @@
                 android:gravity="left"
                 android:textSize="26sp"
                 android:text="Podcast" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Menu" />
+
     </LinearLayout>
 
-    <LinearLayout
+
+   <LinearLayout
             android:id="@+id/app"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
@@ -69,7 +60,8 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg">
+            android:background="@drawable/soft_bg_side_bar">
+
 
         <ImageButton
                 android:id="@+id/BtnSlide"
@@ -99,5 +91,6 @@
                 android:background="@drawable/bg_w"/>
 
     </LinearLayout>
+
 </FrameLayout>
 

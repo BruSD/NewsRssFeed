@@ -39,6 +39,7 @@ public class DetailsArticle extends Activity {
         titleArticle = (TextView)findViewById(R.id.article_title);
         dateArticle = (TextView)findViewById(R.id.article_date);
         descriptionArticle = (WebView)findViewById(R.id.article_description);
+        descriptionArticle.setBackgroundResource(R.drawable.bg_w);
 
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
@@ -47,7 +48,7 @@ public class DetailsArticle extends Activity {
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
         currentArticle = DataStorage.getArticleList().get(positionArt);
-        //TODO: Задать проверку на последнюю статью!
+
         if ( positionArt+1 != DataStorage.getArticleList().size()) {
         nextArticle = DataStorage.getArticleList().get(positionArt + 1);
         }
