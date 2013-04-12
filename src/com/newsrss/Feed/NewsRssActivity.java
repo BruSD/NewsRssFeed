@@ -49,6 +49,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         menu.findViewById(R.id.show_podcast).setOnClickListener(new ShowPodcastOnclickListener());
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
+        DataStorage.updateArticleList();
         ShowAricleList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
@@ -84,7 +85,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     public void ShowAricleList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
-        DataStorage.updateArticleList();
+
         SimpleAdapter adapter = new SimpleAdapter(
                 this,
                 createArticleList(),
@@ -100,7 +101,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         try
         {
-            DataStorage.updateArticleList();
+
             ArrayList<Article> articleList = DataStorage.getArticleList();
 
             for (Article article : articleList)
@@ -120,6 +121,11 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     public void ShowPodcastList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
+        if(DataStorage.getPodcastList().size() == 0 ){
+            DataStorage.updatePodcastList();
+        }
+
         SimpleAdapter adapter = new SimpleAdapter(
                 this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
@@ -133,7 +139,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
 
         try {
-            DataStorage.updatePodcastList();
             ArrayList<Podcast> podcastList = DataStorage.getPodcastList();
 
             for(Podcast podcast : podcastList) {

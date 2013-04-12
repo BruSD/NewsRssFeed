@@ -32,7 +32,8 @@
                 >
             <ImageView
                 style="@style/StandartToView"
-                android:src="@drawable/new_icon"/>
+                android:src="@drawable/new_icon"
+                    />
             <TextView
                     style="@style/StandartToView"
                     android:text="News"/>
@@ -60,6 +61,7 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+
             android:background="@drawable/soft_bg_side_bar">
 
 
