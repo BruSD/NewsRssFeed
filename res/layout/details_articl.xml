@@ -46,6 +46,8 @@
             android:id="@+id/article_title"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
+            android:textSize="24dp"
+
             />
     <LinearLayout
 
@@ -88,13 +90,16 @@
             android:onClick="ShowNextArticle">
         <ImageView
                 android:id="@+id/next_a_img"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/ic_launcher"/>
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/default_news_icon"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
                 >
             <TextView
                     android:id="@+id/next_a_title"

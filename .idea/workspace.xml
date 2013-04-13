@@ -27,12 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/details_articl.xml" afterPath="$PROJECT_DIR$/res/layout/details_articl.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844453448" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844882522" ignored="false" />
     <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844624329" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365775632013" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365593401089" ignored="false" />
@@ -41,7 +41,7 @@
     <file path="/a.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365775717377" ignored="false" />
     <file path="/podcast_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365774945015" ignored="false" />
     <file path="/rss_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365691031061" ignored="false" />
-    <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365690301923" ignored="false" />
+    <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365845217253" ignored="false" />
     <file path="/DetailsArticl.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365671112347" ignored="false" />
     <file path="/details_podcast.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365580617026" ignored="false" />
     <file path="/DetailsPodcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365580727007" ignored="false" />
@@ -124,45 +124,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsRssActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="44" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.8127786">
-              <folding>
-                <element signature="method#ShowPodcastList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#StartSearchActivity#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToAudit#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToPractice#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#FilterToTax#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowToFavorites#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowSavedSearch#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowPodcastsList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowJobsList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowContact#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#ShowSettings#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#BackAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#layoutApp#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationEnd#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationRepeat#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationStart#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details_articl.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="details_articl.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
           <provider editor-type-id="android-designer">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="43" selection-start="2798" selection-end="2798" vertical-scroll-proportion="-6.12">
+            <state line="48" column="34" selection-start="1718" selection-end="1718" vertical-scroll-proportion="0.4622793">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rss_item_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="44" selection-start="383" selection-end="616" vertical-scroll-proportion="-4.76">
               <folding />
             </state>
           </provider>
@@ -205,11 +185,11 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/rss_item_layout.xml" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
       </list>
     </option>
   </component>
@@ -662,7 +642,11 @@
       <created>1365844458717</created>
       <updated>1365844458717</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Costume date format for Article and Podcast ListView">
+      <created>1365844888876</created>
+      <updated>1365844888876</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -691,7 +675,7 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21724524" sideWeight="0.56356835" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23003952" sideWeight="0.7827548" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23003952" sideWeight="0.7827548" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39865622" sideWeight="0.49597424" order="3" side_tool="false" content_ui="tabs" />
@@ -704,7 +688,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17048146" sideWeight="0.7827548" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17075099" sideWeight="0.7827548" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23404256" sideWeight="0.99922603" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19068934" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -754,7 +738,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set set the background image to WebView" />
+    <option name="LAST_COMMIT_MESSAGE" value="Costume date format for Article and Podcast ListView" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -782,6 +766,7 @@
     <MESSAGE value="Design News and Podcasts ListView" />
     <MESSAGE value="Basic design to side bar and OnClick event to all side bar element" />
     <MESSAGE value="Set set the background image to WebView" />
+    <MESSAGE value="Costume date format for Article and Podcast ListView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -812,16 +797,6 @@
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="1260" selection-end="1260" vertical-scroll-proportion="0.70414203">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="26" selection-start="688" selection-end="688" vertical-scroll-proportion="0.4888179">
           <folding />
         </state>
       </provider>
@@ -890,26 +865,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="43" selection-start="2798" selection-end="2798" vertical-scroll-proportion="-6.12">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="64" selection-start="1989" selection-end="2044" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="44" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.8127786">
+        <state line="153" column="40" selection-start="5003" selection-end="5003" vertical-scroll-proportion="1.0148588">
           <folding>
             <element signature="method#ShowPodcastList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#StartSearchActivity#0;class#NewsRssActivity#0" expanded="false" />
@@ -934,6 +892,33 @@
             <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="64" selection-start="1989" selection-end="2044" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="44" selection-start="383" selection-end="616" vertical-scroll-proportion="-4.76">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="34" selection-start="1718" selection-end="1718" vertical-scroll-proportion="0.4622793">
+          <folding />
         </state>
       </provider>
     </entry>
