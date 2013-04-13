@@ -25,7 +25,18 @@
                     android:layout_height="wrap_content"/>
 
         </LinearLayout>
+    <ScrollView
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
         <LinearLayout
+
+
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical">>
+
+            <LinearLayout
                 android:id="@+id/article_show"
                 android:onClick="ShowArticleListFromSideBar"
                 style="@style/SideBarLayoutSoft"
@@ -36,19 +47,200 @@
                     />
             <TextView
                     style="@style/StandartToView"
-                    android:text="News"/>
+                    android:text="@string/news_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/filter_audit"
+                android:onClick="FilterToAudit"
+                style="@style/SideBarLayoutDarck"
+                >
+            <ImageView
+                    android:id="@+id/audit_check_img_view"
+                    style="@style/StandartToView"
+                    android:src="@drawable/check"
+                    />
+            <TextView
+                    style="@style/StandartToView"
+                    android:text="@string/audit_string"/>
 
         </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/filter_business"
+                android:onClick="FilterToBusiness"
+                style="@style/SideBarLayoutDarck"
+                >
+            <ImageView
+                    android:id="@+id/business_check_img_view"
+                    style="@style/StandartToView"
+                    android:src="@drawable/check"
+                    />
+            <TextView
+                    style="@style/StandartToView"
+                    android:text="@string/business_string"/>
 
-        <Button
-                android:id="@+id/show_podcast"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textSize="26sp"
-                android:text="Podcast" />
+        </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/filter_governance"
+                android:onClick="FilterToGovernance"
+                style="@style/SideBarLayoutDarck"
+                >
+            <ImageView
+                    android:id="@+id/governance_check_img_view"
+                    style="@style/StandartToView"
+                    android:src="@drawable/check"
+                    />
+            <TextView
+                    style="@style/StandartToView"
+                    android:text="@string/governance_string"/>
+
+        </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/filter_insolvency"
+                    android:onClick="FilterToInsolvency"
+                    style="@style/SideBarLayoutDarck"
+                    >
+                <ImageView
+                        android:id="@+id/insolvency_check_img_view"
+                        style="@style/StandartToView"
+                        android:src="@drawable/check"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/insolvency_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/filter_practice"
+                    android:onClick="FilterToPractice"
+                    style="@style/SideBarLayoutDarck"
+                    >
+                <ImageView
+                        android:id="@+id/practice_check_img_view"
+                        style="@style/StandartToView"
+                        android:src="@drawable/check"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/practice_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/filter_tax"
+                    android:onClick="FilterToTax"
+                    style="@style/SideBarLayoutDarck"
+                    >
+                <ImageView
+                        android:id="@+id/tax_check_img_view"
+                        style="@style/StandartToView"
+                        android:src="@drawable/check"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/tax_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/filter_favorites"
+                    android:onClick="ShowToFavorites"
+                    style="@style/SideBarLayoutDarck"
+                    >
+                <ImageView
+                        android:id="@+id/favorites_check_img_view"
+                        style="@style/StandartToView"
+                        android:src="@drawable/favorites"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/favorites_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/saved_searches_tree"
+                    android:onClick="ShowSavedSearch"
+                    style="@style/SideBarLayoutDarck"
+                    >
+                <ImageView
+                        android:id="@+id/saved_searches_img_view"
+                        style="@style/StandartToView"
+                        android:src="@drawable/saved_searches"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/saved_searches_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/podcasts_show"
+                    android:onClick="ShowPodcastsList"
+                    style="@style/SideBarLayoutSoft"
+                    >
+                <ImageView
+                        style="@style/StandartToView"
+                        android:src="@drawable/podcasts_icon"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/podcasts_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/jobs_show"
+                    android:onClick="ShowJobsList"
+                    style="@style/SideBarLayoutSoft"
+                    >
+                <ImageView
+                        style="@style/StandartToView"
+                        android:src="@drawable/jobs_icon"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/jobs_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/contact_show"
+                    android:onClick="ShowContact"
+                    style="@style/SideBarLayoutSoft"
+                    >
+                <ImageView
+                        style="@style/StandartToView"
+                        android:src="@drawable/contact_icon"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/contact_string"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/settings_show"
+                    android:onClick="ShowSettings"
+                    style="@style/SideBarLayoutSoft"
+                    >
+                <ImageView
+                        style="@style/StandartToView"
+                        android:src="@drawable/settings_icon"
+                        />
+                <TextView
+                        style="@style/StandartToView"
+                        android:text="@string/settings_string"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
     </LinearLayout>
 
 

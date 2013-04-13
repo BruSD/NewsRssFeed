@@ -2,4 +2,19 @@
 <resources>
     <string name="app_name">NewsFeed</string>
     <string name="head_app">Chartered Accountants Ireland</string>
+
+    <string name="news_string">News</string>
+    <string name="audit_string">Audit &amp; Accounting</string>
+    <string name="business_string">Business</string>
+    <string name="governance_string">Governance</string>
+    <string name="insolvency_string">Insolvency</string>
+    <string name="practice_string">Practice</string>
+    <string name="tax_string">Tax</string>
+    <string name="favorites_string">Favorites</string>
+    <string name="saved_searches_string">Saved Searches</string>
+    <string name="podcasts_string">Podcasts</string>
+    <string name="jobs_string">Jobs</string>
+    <string name="contact_string">Contact</string>
+    <string name="settings_string">Settings</string>
+
 </resources>

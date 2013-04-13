@@ -46,7 +46,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
 
 
-        menu.findViewById(R.id.show_podcast).setOnClickListener(new ShowPodcastOnclickListener());
+
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
         DataStorage.updateArticleList();
@@ -174,6 +174,109 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     }
 
+    public void FilterToAudit(final View view){
+        //TODO: Утановите вызов фильтера для Аудита
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void FilterToBusiness(final View view){
+        //TODO: Утановите вызов фильтера для Бизнеса
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void FilterToGovernance(final View view){
+        //TODO: Утановите вызов фильтера для Правительства
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void FilterToInsolvency(final View view){
+        //TODO: Утановите вызов фильтера для Insolvency
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void FilterToPractice(final View view){
+        //TODO: Утановите вызов фильтера для Practice
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void FilterToTax(final View view){
+        //TODO: Утановите вызов фильтера для Tax
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void ShowToFavorites(final View view){
+        //TODO: Утановите вызов Favorites
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void ShowSavedSearch(final View view){
+        //TODO: Утановите вызов ShowSavedSearch
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать ShowSavedSearch",Toast.LENGTH_SHORT);
+        toast.show();
+
+
+    }
+
+    public void ShowPodcastsList (final View view){
+        //TODO: Утановите вызов Подкасты
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
+        toast.show();
+
+        BackAnimationToSideBar();
+        ShowPodcastList();
+
+    }
+
+    public void ShowJobsList (final View view){
+        //TODO: Утановите вызов Jobs
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void ShowContact (final View view){
+        //TODO: Утановите вызов Contact
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Contact",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void ShowSettings (final View view){
+        //TODO: Утановите вызов ShowSettings
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все ShowSettings",Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
 
 
@@ -200,36 +303,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         app.startAnimation(anim);
     }
 
-    class ShowPodcastOnclickListener implements View.OnClickListener{
 
-        @Override
-        public void onClick(View v) {
-            //To change body of implemented methods use File | Settings | File Templates.
-
-            NewsRssActivity me = NewsRssActivity.this;
-            Context context = me;
-            Animation anim;
-
-            int w = app.getMeasuredWidth();
-            int h = app.getMeasuredHeight();
-            int left = (int) (app.getMeasuredWidth() * 0.8);
-
-
-
-                // anim = AnimationUtils.loadAnimation(context, R.anim.push_left_in_80);
-                anim = new TranslateAnimation(left, 0, 0, 0);
-                animParams.init(0, 0, w, h);
-
-
-            animationID =1;
-            anim.setDuration(500);
-            anim.setAnimationListener(me);
-            anim.setFillAfter(true);
-            app.startAnimation(anim);
-
-            ShowPodcastList();
-        }
-    }
     void layoutApp(boolean menuOut) {
         System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
                 + animParams.bottom + "]");
