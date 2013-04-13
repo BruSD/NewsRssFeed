@@ -41,6 +41,8 @@ public class DetailsArticle extends Activity {
         descriptionArticle = (WebView)findViewById(R.id.article_description);
         descriptionArticle.setBackgroundResource(R.drawable.bg_w);
 
+        descriptionArticle.setBackgroundColor(0);
+
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
 
