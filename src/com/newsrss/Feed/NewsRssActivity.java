@@ -11,6 +11,7 @@ import android.widget.*;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.TranslateAnimation;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -98,17 +99,18 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
-
+        String dateArticleV;
         try
         {
-
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
             ArrayList<Article> articleList = DataStorage.getArticleList();
 
             for (Article article : articleList)
             {
+                dateArticleV = sdf.format(article.getPubDate());
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", article.getTitle());
-                map.put("rssnewsdate", article.getPubDate());
+                map.put("rssnewsdate", dateArticleV);
                 items.add(map);
             }
         }
@@ -137,14 +139,16 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     private List<Map<String, ?>> createPodcastList()   {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
-
+        String dateArticleV;
         try {
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
             ArrayList<Podcast> podcastList = DataStorage.getPodcastList();
 
             for(Podcast podcast : podcastList) {
+                dateArticleV = sdf.format(podcast.getPubDate());
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", podcast.getTitle());
-                map.put("rssnewsdate", podcast.getPubDate());
+                map.put("rssnewsdate", dateArticleV);
                 items.add(map);
             }
         }

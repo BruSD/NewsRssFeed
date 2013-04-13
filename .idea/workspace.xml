@@ -27,13 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844135862" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365842856824" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844453448" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844624329" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365775632013" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365593401089" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
@@ -115,11 +115,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DetailsArticle.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DetailsArticle.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="47" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.5185735">
+            <state line="62" column="64" selection-start="1989" selection-end="2044" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsRssActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="151" column="44" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.8127786">
+              <folding>
+                <element signature="method#ShowPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#StartSearchActivity#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#FilterToTax#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowToFavorites#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowSavedSearch#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowPodcastsList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowJobsList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowContact#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#ShowSettings#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#BackAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#layoutApp#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#onAnimationEnd#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#onAnimationRepeat#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#onAnimationStart#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,9 +207,9 @@
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
       </list>
     </option>
   </component>
@@ -626,7 +658,11 @@
       <created>1365844147681</created>
       <updated>1365844147681</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Set set the background image to WebView">
+      <created>1365844458717</created>
+      <updated>1365844458717</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -655,7 +691,7 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21724524" sideWeight="0.56356835" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23003952" sideWeight="0.5744681" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23003952" sideWeight="0.7827548" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39865622" sideWeight="0.49597424" order="3" side_tool="false" content_ui="tabs" />
@@ -718,7 +754,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic design to side bar and OnClick event to all side bar element" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set set the background image to WebView" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -745,6 +781,7 @@
     <MESSAGE value="Load Lists only one time." />
     <MESSAGE value="Design News and Podcasts ListView" />
     <MESSAGE value="Basic design to side bar and OnClick event to all side bar element" />
+    <MESSAGE value="Set set the background image to WebView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -836,15 +873,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="276" column="87" selection-start="8254" selection-end="8254" vertical-scroll-proportion="0.59342915">
-          <folding>
-            <element signature="method#BackAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="64" selection-start="493" selection-end="493" vertical-scroll-proportion="0.36796537">
@@ -874,8 +902,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="47" selection-start="1319" selection-end="1319" vertical-scroll-proportion="0.5185735">
+        <state line="62" column="64" selection-start="1989" selection-end="2044" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="44" selection-start="4979" selection-end="4979" vertical-scroll-proportion="0.8127786">
+          <folding>
+            <element signature="method#ShowPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#StartSearchActivity#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#FilterToTax#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowToFavorites#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowSavedSearch#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowPodcastsList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowJobsList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowContact#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#ShowSettings#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#BackAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#layoutApp#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#onAnimationEnd#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#onAnimationRepeat#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#onAnimationStart#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
