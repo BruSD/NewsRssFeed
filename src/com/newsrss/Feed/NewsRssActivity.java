@@ -19,9 +19,7 @@ import java.util.Map;
 
 
 public class NewsRssActivity extends SherlockActivity implements Animation.AnimationListener{
-    /**
-     * Called when the activity is first created.
-     */
+
     boolean cellStatusPosition = false;
 
     int animationID;
@@ -84,6 +82,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
+    // Methods for reload ListView
     public void ShowAricleList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -160,104 +159,152 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         return  items;
     }
 
-    //Тут Описаны клики по всем разделам Сайд Бара.
-    public void StartSearchActivity(final View view){
+    // SideBar Elements Click
+    public void startSearchActivityFromSideBar(final View view){
           //TODO: Утановите вызов Активити для поиска
 
         Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void ShowArticleListFromSideBar (final View view){
+    public void showArticleListFromSideBar(final View view){
         //TODO: Утановите вызов Активити для поиска
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
 
-        BackAnimationToSideBar();
+        backAnimationToSideBar();
         ShowAricleList();
 
     }
 
-    public void FilterToAudit(final View view){
+    public void filterToAudit(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.AuditNAccounting)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void FilterToBusiness(final View view){
+    public void filterToBusiness(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.Business)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void FilterToGovernance(final View view){
+    public void filterToGovernance(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.Governance)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void FilterToInsolvency(final View view){
+    public void filterToInsolvency(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.Insolvency)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void FilterToPractice(final View view){
+    public void filterToPractice(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.Practice)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void FilterToTax(final View view){
+    public void filterToTax(final View view){
+        if (idArticlList != 1)
+            return;
+
+        Drawable image = null;
         if (DataStorage.changeFilterStatus(XMLNewsType.Tax)) {
             // category on
+            image = getResources().getDrawable(R.drawable.check);
         }
         else {
             //category off
+            image = getResources().getDrawable(R.drawable.un_check);
         }
-        ShowAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //imageView.setImageDrawable(image);
+        //ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void ShowToFavorites(final View view){
+    public void showToFavoritesFromSideBar(final View view){
         //TODO: Утановите вызов Favorites
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
@@ -266,50 +313,49 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
     }
 
-    public void ShowSavedSearch(final View view){
-        //TODO: Утановите вызов ShowSavedSearch
+    public void showSavedSearchFromSideBar(final View view){
+        //TODO: Установите вызов showSavedSearchFromSideBar
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать ShowSavedSearch",Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
         toast.show();
 
 
     }
 
-    public void ShowPodcastsList (final View view){
+    public void showPodcastsListFromSideBar(final View view){
         //TODO: Утановите вызов Подкасты
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
 
-        BackAnimationToSideBar();
+        backAnimationToSideBar();
         ShowPodcastList();
 
     }
 
-    public void ShowJobsList (final View view){
+    public void showJobsListFromSideBar(final View view){
         //TODO: Утановите вызов Jobs
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void ShowContact (final View view){
+    public void showContactFromSideBar(final View view){
         //TODO: Утановите вызов Contact
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Contact",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    public void ShowSettings (final View view){
-        //TODO: Утановите вызов ShowSettings
+    public void showSettingsFromSideBar(final View view){
+        //TODO: Утановите вызов SettingsFromSideBar
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все ShowSettings",Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Settings",Toast.LENGTH_SHORT);
         toast.show();
     }
 
-
-
-    public void BackAnimationToSideBar(){
+    // Animation block
+    public void backAnimationToSideBar(){
         NewsRssActivity me = NewsRssActivity.this;
         Context context = me;
         Animation anim;
@@ -332,7 +378,6 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         app.startAnimation(anim);
     }
 
-
     void layoutApp(boolean menuOut) {
         System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
                 + animParams.bottom + "]");
@@ -351,8 +396,8 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                     menu.setVisibility(View.INVISIBLE);
                 }
                 layoutApp(menuOut);
+                break;
             }
-            break;
 
         }
 
@@ -382,7 +427,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
     }
 
-    // Основная Анимация для Сайд Бара Туда и обратно.
+    // Main animation for SideBar
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -405,7 +450,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 anim = new TranslateAnimation(0, -left, 0, 0);
                 animParams.init(0, 0, w, h);
             }
-            animationID =1;
+            animationID = 1;
             anim.setDuration(500);
 
             anim.setAnimationListener(me);

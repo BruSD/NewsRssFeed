@@ -13,7 +13,7 @@
         <LinearLayout
                 android:id="@+id/search_layout"
                 style="@style/SideBarLayoutDarck"
-                android:onClick="StartSearchActivity"
+                android:onClick="startSearchActivityFromSideBar"
                 >
                 <ImageView
                         android:src="@drawable/search"
@@ -38,7 +38,7 @@
 
             <LinearLayout
                 android:id="@+id/article_show"
-                android:onClick="ShowArticleListFromSideBar"
+                android:onClick="showArticleListFromSideBar"
                 style="@style/SideBarLayoutSoft"
                 >
             <ImageView
@@ -53,7 +53,7 @@
 
             <LinearLayout
                 android:id="@+id/filter_audit"
-                android:onClick="FilterToAudit"
+                android:onClick="filterToAudit"
                 style="@style/SideBarLayoutDarck"
                 >
             <ImageView
@@ -69,7 +69,7 @@
 
             <LinearLayout
                 android:id="@+id/filter_business"
-                android:onClick="FilterToBusiness"
+                android:onClick="filterToBusiness"
                 style="@style/SideBarLayoutDarck"
                 >
             <ImageView
@@ -85,7 +85,7 @@
 
             <LinearLayout
                 android:id="@+id/filter_governance"
-                android:onClick="FilterToGovernance"
+                android:onClick="filterToGovernance"
                 style="@style/SideBarLayoutDarck"
                 >
             <ImageView
@@ -101,7 +101,7 @@
 
             <LinearLayout
                     android:id="@+id/filter_insolvency"
-                    android:onClick="FilterToInsolvency"
+                    android:onClick="filterToInsolvency"
                     style="@style/SideBarLayoutDarck"
                     >
                 <ImageView
@@ -117,7 +117,7 @@
 
             <LinearLayout
                     android:id="@+id/filter_practice"
-                    android:onClick="FilterToPractice"
+                    android:onClick="filterToPractice"
                     style="@style/SideBarLayoutDarck"
                     >
                 <ImageView
@@ -133,7 +133,7 @@
 
             <LinearLayout
                     android:id="@+id/filter_tax"
-                    android:onClick="FilterToTax"
+                    android:onClick="filterToTax"
                     style="@style/SideBarLayoutDarck"
                     >
                 <ImageView
@@ -149,7 +149,7 @@
 
             <LinearLayout
                     android:id="@+id/filter_favorites"
-                    android:onClick="ShowToFavorites"
+                    android:onClick="showToFavoritesFromSideBar"
                     style="@style/SideBarLayoutDarck"
                     >
                 <ImageView
@@ -165,7 +165,7 @@
 
             <LinearLayout
                     android:id="@+id/saved_searches_tree"
-                    android:onClick="ShowSavedSearch"
+                    android:onClick="showSavedSearchFromSideBar"
                     style="@style/SideBarLayoutDarck"
                     >
                 <ImageView
@@ -181,7 +181,7 @@
 
             <LinearLayout
                     android:id="@+id/podcasts_show"
-                    android:onClick="ShowPodcastsList"
+                    android:onClick="showPodcastsListFromSideBar"
                     style="@style/SideBarLayoutSoft"
                     >
                 <ImageView
@@ -196,7 +196,7 @@
 
             <LinearLayout
                     android:id="@+id/jobs_show"
-                    android:onClick="ShowJobsList"
+                    android:onClick="showJobsListFromSideBar"
                     style="@style/SideBarLayoutSoft"
                     >
                 <ImageView
@@ -211,7 +211,7 @@
 
             <LinearLayout
                     android:id="@+id/contact_show"
-                    android:onClick="ShowContact"
+                    android:onClick="showContactFromSideBar"
                     style="@style/SideBarLayoutSoft"
                     >
                 <ImageView
@@ -226,7 +226,7 @@
 
             <LinearLayout
                     android:id="@+id/settings_show"
-                    android:onClick="ShowSettings"
+                    android:onClick="showSettingsFromSideBar"
                     style="@style/SideBarLayoutSoft"
                     >
                 <ImageView
