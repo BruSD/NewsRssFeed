@@ -14,7 +14,13 @@ import java.util.concurrent.ExecutionException;
  */
 public class DataStorage {
 
-    private static HashSet<XMLNewsType> filters = new HashSet<XMLNewsType>();
+    //private static HashSet<XMLNewsType> filters = new HashSet<XMLNewsType>();
+    private static HashSet<XMLNewsType> filters = new HashSet<XMLNewsType>(Arrays.asList(XMLNewsType.AuditNAccounting,
+                                                                                        XMLNewsType.Business,
+                                                                                        XMLNewsType.Governance,
+                                                                                        XMLNewsType.Insolvency,
+                                                                                        XMLNewsType.Practice,
+                                                                                        XMLNewsType.Tax));
     private static ArrayList<Article> articleList = new ArrayList<Article>();
     private static ArrayList<Podcast> podcastList = new ArrayList<Podcast>();
     private static ArrayList<Job> jobList = new ArrayList<Job>();
@@ -23,7 +29,6 @@ public class DataStorage {
         ArrayList<Article> result = new ArrayList<Article>();
         HashSet<String> guidSet = new HashSet<String>();
 
-        /*
         for (Article article: articleList) {
             if (filters.contains(article.getNewsType())) {
                 if (!guidSet.contains(article.getGuid())) {
@@ -32,9 +37,9 @@ public class DataStorage {
                 }
             }
         }
-        */
-        //return result;
-        return  articleList;
+
+        return result;
+        //return  articleList;
     }
 
     public static ArrayList<Podcast> getPodcastList() {
@@ -43,6 +48,18 @@ public class DataStorage {
 
     public static ArrayList<Job> getJobList() {
         return jobList;
+    }
+
+    public static boolean changeFilterStatus(XMLNewsType newsType) {
+        if (filters.contains(newsType)) {
+            filters.remove(newsType);
+            return false;
+        }
+        else {
+            filters.add(newsType);
+            return true;
+        }
+
     }
 
     public static void updateArticleList () {
@@ -72,7 +89,7 @@ public class DataStorage {
 
         try {
             AsyncTask<Void, Void, ArrayList<Podcast>> podcastParser = new PodcastParser().execute();
-             tempList = podcastParser.get();
+            tempList = podcastParser.get();
         }
         catch (ExecutionException e) {}
         catch (InterruptedException e) {}

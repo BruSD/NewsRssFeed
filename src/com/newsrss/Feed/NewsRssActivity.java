@@ -83,6 +83,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         }
     }
+
     public void ShowAricleList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -179,57 +180,81 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     }
 
     public void FilterToAudit(final View view){
-        //TODO: Утановите вызов фильтера для Аудита
+        if (DataStorage.changeFilterStatus(XMLNewsType.AuditNAccounting)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void FilterToBusiness(final View view){
-        //TODO: Утановите вызов фильтера для Бизнеса
+        if (DataStorage.changeFilterStatus(XMLNewsType.Business)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void FilterToGovernance(final View view){
-        //TODO: Утановите вызов фильтера для Правительства
+        if (DataStorage.changeFilterStatus(XMLNewsType.Governance)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void FilterToInsolvency(final View view){
-        //TODO: Утановите вызов фильтера для Insolvency
+        if (DataStorage.changeFilterStatus(XMLNewsType.Insolvency)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void FilterToPractice(final View view){
-        //TODO: Утановите вызов фильтера для Practice
+        if (DataStorage.changeFilterStatus(XMLNewsType.Practice)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void FilterToTax(final View view){
-        //TODO: Утановите вызов фильтера для Tax
+        if (DataStorage.changeFilterStatus(XMLNewsType.Tax)) {
+            // category on
+        }
+        else {
+            //category off
+        }
+        ShowAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void ShowToFavorites(final View view){
