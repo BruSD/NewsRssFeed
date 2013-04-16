@@ -3,6 +3,7 @@ package com.newsrss.Feed;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -63,6 +64,8 @@ public class DetailsPodcast extends Activity {
         play_pauseButton.setImageResource(R.drawable.play_button);
         seek10Button.setImageResource(R.drawable.seek_button2);
         seek30Button.setImageResource(R.drawable.seek_button1);
+        podcastDecription.setBackgroundColor(Color.parseColor("#EFEEEA"));
+        podcastDecription.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         myUri=currentPodcast.getMP3Link().toString();
         TitleText.setText(currentPodcast.getTitle());
         String date_str = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(currentPodcast.getPubDate());
