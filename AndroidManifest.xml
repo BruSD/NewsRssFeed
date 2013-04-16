@@ -24,7 +24,7 @@
                 android:label="@string/head_app"/>
         <activity android:name="com.newsrss.Feed.DetailsPodcast"
                   android:label="@string/head_app"/>
-        <activity android:name="com.newsrss.Feed.DetailsJobs"
+        <activity android:name="DetailsJobs"
                   android:label="@string/head_app"/>
     </application>
 </manifest>

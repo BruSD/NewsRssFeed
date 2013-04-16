@@ -76,7 +76,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                     startActivity(startDetailPodcast);
                     break;
                 case 3:
-                    Intent startDetailJobs = new Intent(NewsRssActivity.this,DetailsPodcast.class );
+                    Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
                     startDetailJobs.putExtra("position", position);
                     startActivity(startDetailJobs);
                     break;
@@ -232,12 +232,13 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        //ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
         //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
+
     }
 
     public void filterToBusiness(final View view){
@@ -631,4 +632,5 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
 
     }
+
 }
