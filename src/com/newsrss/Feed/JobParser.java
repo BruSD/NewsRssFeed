@@ -36,7 +36,7 @@ public class JobParser extends AsyncTask<Void, Void, ArrayList<Job>> {
         // Get url of News type
         URL xmlUrl;
         try {
-            xmlUrl = new URL("http://www.accountancyireland.ie/en/RSS-Feeds/Accountancy-Ireland-Podcast");
+            xmlUrl = new URL("http://www.charteredaccountants.ie/en/Members/Your-Institute/Careers-and-Recruitment-Service/Vacancy-Listing/?output=rss");
         }
         catch (MalformedURLException ex) {
             //  This can't be!!!

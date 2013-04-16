@@ -29,7 +29,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     View app;
     boolean menuOut = false;
     AnimParams animParams = new AnimParams();
-    int idArticlList;
+    int idLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
         DataStorage.updateArticleList();
-        ShowAricleList();
+        showAricleList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
     }
@@ -63,7 +63,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
             System.out.println("item click" + id);
 
-            switch (idArticlList)  {
+            switch (idLayout)  {
                 case 1:
 
                     Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
@@ -75,6 +75,11 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                     startDetailPodcast.putExtra("position", position);
                     startActivity(startDetailPodcast);
                     break;
+                case 3:
+                    Intent startDetailJobs = new Intent(NewsRssActivity.this,DetailsPodcast.class );
+                    startDetailJobs.putExtra("position", position);
+                    startActivity(startDetailJobs);
+                    break;
             }
 
 
@@ -83,7 +88,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     }
 
     // Methods for reload ListView
-    public void ShowAricleList() {
+    public void showAricleList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
 
@@ -93,7 +98,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idArticlList = 1;
+        idLayout = 1;
         rssListView.setAdapter(adapter);
     }
 
@@ -121,7 +126,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         return items;
     }
 
-    public void ShowPodcastList(){
+    public void showPodcastList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
         if(DataStorage.getPodcastList().size() == 0 ){
@@ -132,7 +137,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
-        idArticlList = 2;
+        idLayout = 2;
         rssListView.setAdapter(adapter);
 
     }
@@ -148,6 +153,42 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 dateArticleV = sdf.format(podcast.getPubDate());
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", podcast.getTitle());
+                map.put("rssnewsdate", dateArticleV);
+                items.add(map);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return  items;
+    }
+    public void showJobstList(){
+        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
+        if(DataStorage.getJobList().size() == 0 ){
+            DataStorage.updateJobList();
+        }
+
+        SimpleAdapter adapter = new SimpleAdapter(
+                this, createJobsList()/*list*/, R.layout.podcast_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+        idLayout = 3;
+        rssListView.setAdapter(adapter);
+
+    }
+    private List<Map<String, ?>> createJobsList()   {
+        List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
+        String dateArticleV;
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+            ArrayList<Job> jobsList = DataStorage.getJobList();
+
+            for(Job job : jobsList) {
+                dateArticleV = sdf.format(job.getPubDate());
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("rssnewstitle", job.getTitle());
                 map.put("rssnewsdate", dateArticleV);
                 items.add(map);
             }
@@ -174,12 +215,12 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         toast.show();
 
         backAnimationToSideBar();
-        ShowAricleList();
+        showAricleList();
 
     }
 
     public void filterToAudit(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -193,14 +234,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void filterToBusiness(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -214,14 +255,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void filterToGovernance(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -235,14 +276,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void filterToInsolvency(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -256,14 +297,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void filterToPractice(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -277,14 +318,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
         toast.show();
     }
 
     public void filterToTax(final View view){
-        if (idArticlList != 1)
+        if (idLayout != 1)
             return;
 
         Drawable image = null;
@@ -298,7 +339,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         //imageView.setImageDrawable(image);
-        //ShowAricleList();
+        //showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         toast.show();
@@ -329,7 +370,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         toast.show();
 
         backAnimationToSideBar();
-        ShowPodcastList();
+        showPodcastList();
 
     }
 
@@ -338,6 +379,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
+
+        backAnimationToSideBar();
+        showJobstList();
     }
 
     public void showContactFromSideBar(final View view){
