@@ -1,7 +1,13 @@
 package com.newsrss.Feed;
 
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
@@ -14,7 +20,7 @@ import java.util.concurrent.ExecutionException;
  */
 public class DataStorage {
 
-    //private static HashSet<XMLNewsType> filters = new HashSet<XMLNewsType>();
+    private static Map<String, Drawable> drawableMap = new HashMap<String, Drawable>();
     private static HashSet<XMLNewsType> filters = new HashSet<XMLNewsType>(Arrays.asList(XMLNewsType.AuditNAccounting,
                                                                                         XMLNewsType.Business,
                                                                                         XMLNewsType.Governance,
@@ -117,4 +123,43 @@ public class DataStorage {
 
         Collections.sort(jobList);
     }
+
+    public static Drawable fetchDrawable(String imageURLString) {
+        if  (drawableMap.containsKey(imageURLString)) {
+            //System.out.println("EXIST : "+imageURLString);
+            return  drawableMap.get(imageURLString);
+        }
+
+        Drawable image = null;
+        try {
+            URL imageURL = new URL(imageURLString);
+            HttpURLConnection connection = (HttpURLConnection) imageURL.openConnection();
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = connection.getInputStream();
+                image = Drawable.createFromStream(inputStream, "src");
+            }
+            else {
+                image = null;
+            }
+        }
+        catch (MalformedURLException e) {
+            image = null;
+        }
+        catch (IOException e) {
+            image = null;
+        }
+
+        if (image == null) {
+            //System.out.println("BAD : "+imageURLString);
+            //image = Drawable.createFromPath("res\\drawable-mdpi\\default_news_icon.png");
+            // TODO: set default image from resourse
+        }
+        else {
+            //System.out.println("GOOD : "+imageURLString);
+        }
+        drawableMap.put(imageURLString, image);
+
+        return image;
+    }
+
 }

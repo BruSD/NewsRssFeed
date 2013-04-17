@@ -41,6 +41,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
 
         for (int j = 0; j < newsTypes.length; j++) {
             XMLNewsType xmlNewsType = newsTypes[j];
+            System.out.println("!!! "+xmlNewsType.toString());
 
             // Get url of News type
             URL xmlUrl = null;
@@ -132,12 +133,14 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             { _pubDate = new Date(); }
 
                             /*
-                            Attr attribute = _imageLinkE.getAttributeNode("url");
+                            Attr attribute = ;
                             InputStream inputStream = (InputStream) new URL(attribute.getValue()).getContent();
                             Drawable image = Drawable.createFromStream(inputStream, "src name");
                              */
+                            Drawable image = DataStorage.fetchDrawable(_imageLinkE.getAttributeNode("url").getValue());
+
                             //create Article and add it to the ArrayList
-                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType, null);
+                            Article article = new Article(_guid, _title, _link, _pubDate, _description, xmlNewsType, image);
 
                             articleList.add(article);
 

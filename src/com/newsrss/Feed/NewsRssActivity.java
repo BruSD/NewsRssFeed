@@ -96,15 +96,15 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
                 this,
                 createArticleList(),
                 R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+                new String[] { "rssnewstitle", "rssnewsdate", "rssnewsimage"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date, R.id.rss_img_news_pass});
         idLayout = 1;
+        adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
     }
 
     private List<Map<String, ?>> createArticleList() {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
-        String dateArticleV;
         try
         {
             SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
@@ -112,10 +112,17 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
             for (Article article : articleList)
             {
-                dateArticleV = sdf.format(article.getPubDate());
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", article.getTitle());
-                map.put("rssnewsdate", dateArticleV);
+                map.put("rssnewsdate", sdf.format(article.getPubDate()));
+                if (article.getNewsImage() == null) {
+                    //System.out.println("NULL");
+                    map.put("rssnewsimage", getResources().getDrawable(R.drawable.default_news_icon));
+                }
+                else {
+                    //System.out.println("NOT NULL");
+                    map.put("rssnewsimage", article.getNewsImage());
+                }
                 items.add(map);
             }
         }
@@ -134,7 +141,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         }
 
         SimpleAdapter adapter = new SimpleAdapter(
-                this, createPodcastList()/*list*/, R.layout.podcast_item_layout,
+                this, createPodcastList(), R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
         idLayout = 2;
@@ -163,6 +170,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
 
         return  items;
     }
+
     public void showJobstList(){
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -178,6 +186,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         rssListView.setAdapter(adapter);
 
     }
+
     private List<Map<String, ?>> createJobsList()   {
         List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
         String dateArticleV;
