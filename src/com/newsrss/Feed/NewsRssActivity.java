@@ -395,8 +395,8 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     public void showSettingsFromSideBar(final View view){
         //TODO: Утановите вызов SettingsFromSideBar
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Settings",Toast.LENGTH_SHORT);
-        toast.show();
+        Intent startDetailSetting = new Intent(NewsRssActivity.this, DetailsSettings.class);
+        startActivity(startDetailSetting);
     }
 
     // Animation block

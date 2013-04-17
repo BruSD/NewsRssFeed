@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="#EEEEEA">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:id="@+id/imageView15" android:adjustViewBounds="true"
+                android:src="@drawable/settings_menu_bar" android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" android:scaleType="fitXY"/>
+        <ImageButton
+                android:layout_width="38dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:src="@drawable/side_bar_btn1" android:padding="0dp" android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="8dp" android:layout_marginRight="12dp"
+                android:layout_centerVertical="true"/>
+        <ImageView
+                android:layout_width="23dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView6" android:layout_toRightOf="@+id/imageButton" android:src="@drawable/logo1"
+                android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"
+                android:layout_marginRight="3dp"/>
+        <TextView android:id="@+id/article_head" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="@string/head_app"
+                  android:layout_gravity="center_vertical" android:textColor="#ffffff"
+                  android:layout_toRightOf="@+id/imageView6" android:layout_centerVertical="true"
+                  android:textSize="16dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:adjustViewBounds="true" android:scaleType="fitXY" android:src="@drawable/settings_plate"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:id="@+id/textView" android:textStyle="bold"
+                android:textColor="#ffffff" android:textSize="18dp"
+                android:layout_centerVertical="true" android:layout_marginLeft="12dp"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+                android:layout_marginTop="22dp">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView1" android:adjustViewBounds="true" android:scaleType="fitXY"
+                    android:src="@drawable/settings_plates_for_button"/>
+            <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView4" android:adjustViewBounds="true"
+                    android:src="@drawable/settings_legal"
+                    android:layout_alignParentStart="false"
+                    android:layout_centerVertical="true" android:layout_marginLeft="12dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Legal"
+                    android:id="@+id/textView1"
+                    android:textColor="#ffffff" android:textSize="18dp" android:layout_toRightOf="@+id/imageView4"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
+            <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView7" android:adjustViewBounds="true"
+                    android:src="@drawable/settings_arrow"
+                    android:layout_marginRight="12dp"
+                    android:layout_centerVertical="true" android:layout_alignRight="@+id/imageView1"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+                android:layout_marginTop="18dp">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:id="@+id/imageView2" android:adjustViewBounds="true" android:scaleType="fitXY"
+                       android:src="@drawable/settings_plates_for_button"/>
+            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView8"
+                       android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
+                       android:layout_alignRight="@+id/imageView2"
+                       android:layout_centerVertical="true"
+                       android:layout_marginRight="12dp"/>
+            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView10"
+                       android:adjustViewBounds="true" android:src="@drawable/settings_star"
+                       android:layout_alignParentStart="false" android:layout_centerVertical="true"
+                       android:layout_marginLeft="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rate this App"
+                      android:id="@+id/textView2" android:textColor="#ffffff" android:textSize="18dp"
+                      android:layout_toRightOf="@+id/imageView10" android:layout_marginLeft="15dp"
+                      android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+                android:layout_marginTop="18dp">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:id="@+id/imageView3" android:adjustViewBounds="true" android:scaleType="fitXY"
+                       android:src="@drawable/settings_plates_for_button"/>
+            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView9"
+                       android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
+                       android:layout_alignRight="@+id/imageView3" android:layout_centerVertical="true"
+                       android:layout_marginRight="12dp"/>
+            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView5"
+                       android:adjustViewBounds="true" android:src="@drawable/settings_contacts"
+                       android:layout_alignParentStart="false" android:layout_centerVertical="true"
+                       android:layout_marginLeft="12dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send Us Feedback"
+                      android:id="@+id/textView3" android:textColor="#ffffff" android:textSize="18dp"
+                      android:layout_toRightOf="@+id/imageView5" android:layout_marginLeft="15dp"
+                      android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="22dp"
+            >
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView14" android:src="@drawable/settings_gray_plate"
+                android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect With Us"
+                android:id="@+id/textView4" android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+                android:textColor="#7D003A" android:textSize="18dp"/>
+        <ImageView
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView11" android:layout_below="@+id/textView4" android:src="@drawable/tvitter"
+                android:layout_marginLeft="12dp" android:adjustViewBounds="true" android:scaleType="fitXY"/>
+        <ImageView
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView12" android:layout_below="@+id/textView4"
+                android:layout_toRightOf="@+id/imageView11" android:adjustViewBounds="true" android:scaleType="fitXY"
+                android:src="@drawable/linkedin" android:layout_marginLeft="15dp"/>
+        <ImageView
+                android:layout_width="89dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView13" android:layout_below="@+id/textView4"
+                android:layout_toRightOf="@+id/imageView12" android:scaleType="fitXY" android:layout_marginLeft="15dp"
+                android:adjustViewBounds="true" android:src="@drawable/facebook" android:layout_marginTop="-1dp"/>
+    </RelativeLayout>
+</LinearLayout>
