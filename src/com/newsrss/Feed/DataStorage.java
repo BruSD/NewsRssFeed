@@ -151,8 +151,9 @@ public class DataStorage {
 
         if (image == null) {
             //System.out.println("BAD : "+imageURLString);
-            //image = Drawable.createFromPath("res\\drawable-mdpi\\default_news_icon.png");
+
             // TODO: set default image from resourse
+            // like this image = Drawable.createFromPath("res\\drawable-mdpi\\default_news_icon.png");
         }
         else {
             //System.out.println("GOOD : "+imageURLString);
