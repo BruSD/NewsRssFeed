@@ -31,7 +31,7 @@
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366204486850" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366204715755" ignored="false" />
     <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366191564381" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366096704958" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365593401089" ignored="false" />
@@ -124,16 +124,7 @@
       <file leaf-file-name="DataStorage.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DataStorage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="58" selection-start="5257" selection-end="5257" vertical-scroll-proportion="0.66775244">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/ArticleParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="36" selection-start="3232" selection-end="3232" vertical-scroll-proportion="36.04">
+            <state line="146" column="92" selection-start="5099" selection-end="5099" vertical-scroll-proportion="0.32963988">
               <folding />
             </state>
           </provider>
@@ -142,37 +133,17 @@
       <file leaf-file-name="NewsRssActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="373" column="20" selection-start="12493" selection-end="12493" vertical-scroll-proportion="-7.48">
-              <folding>
-                <element signature="method#onItemClick#0;class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showPodcastsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showJobsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showContactFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#showSettingsFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#backAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#layoutApp#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationEnd#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationRepeat#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="method#onAnimationStart#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
-                <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
-              </folding>
+            <state line="373" column="20" selection-start="12493" selection-end="12493" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/ArticleParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="36" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -264,8 +235,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -318,6 +287,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,11 +308,11 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -353,6 +324,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Android Application.NewsFeed">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -362,10 +339,22 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -390,24 +379,6 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <method />
-    </configuration>
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -422,35 +393,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -478,6 +420,35 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -669,7 +640,11 @@
       <created>1366204494477</created>
       <updated>1366204494477</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="images for Articles (after pull)">
+      <created>1366204540976</created>
+      <updated>1366204540976</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -696,21 +671,20 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36797273" sideWeight="0.8181818" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27597955" sideWeight="0.8181818" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38185892" sideWeight="0.49597424" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36797273" sideWeight="0.18181819" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27597955" sideWeight="0.18181819" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52519596" sideWeight="0.48684916" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32027256" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42930153" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33370662" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2530303" sideWeight="0.63202727" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2530303" sideWeight="0.7240204" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35264054" sideWeight="0.99922603" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1905016" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -720,6 +694,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2723824" sideWeight="0.6541738" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32027256" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -836,29 +811,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="93" selection-start="184" selection-end="184" vertical-scroll-proportion="0.02866779">
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="93" selection-start="184" selection-end="184" vertical-scroll-proportion="0.02866779" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="59" column="52" selection-start="0" selection-end="4184" vertical-scroll-proportion="1.7145299" />
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="41" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0" />
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="41" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
@@ -883,11 +856,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="50" selection-start="349" selection-end="366" vertical-scroll-proportion="0.49675325" />
-      </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="50" selection-start="349" selection-end="366" vertical-scroll-proportion="0.49675325" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -897,52 +870,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="373" column="20" selection-start="12493" selection-end="12493" vertical-scroll-proportion="-7.48">
-          <folding>
-            <element signature="method#onItemClick#0;class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showPodcastsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showJobsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showContactFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#showSettingsFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#backAnimationToSideBar#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#layoutApp#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#onAnimationEnd#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#onAnimationRepeat#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="method#onAnimationStart#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="class#AnimParams#0;class#NewsRssActivity#0" expanded="false" />
-            <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/ArticleParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="36" selection-start="3232" selection-end="3232" vertical-scroll-proportion="36.04">
+        <state line="76" column="36" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DataStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="58" selection-start="5257" selection-end="5257" vertical-scroll-proportion="0.66775244">
+        <state line="146" column="92" selection-start="5099" selection-end="5099" vertical-scroll-proportion="0.32963988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="373" column="20" selection-start="12493" selection-end="12493" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
