@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.widget.*;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.TranslateAnimation;
+import com.slidingmenu.lib.SlidingMenu;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -18,17 +19,17 @@ import java.util.List;
 import java.util.Map;
 
 
-public class NewsRssActivity extends SherlockActivity implements Animation.AnimationListener{
+public class NewsRssActivity extends SherlockActivity {
 
     boolean cellStatusPosition = false;
 
     int animationID;
-    View slideLayar1;
+
 
     View menu;
     View app;
     boolean menuOut = false;
-    AnimParams animParams = new AnimParams();
+
     int idLayout;
 
     @Override
@@ -38,11 +39,11 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         setContentView(R.layout.main);
 
 
-        menu = findViewById(R.id.menu);
+
         app = findViewById(R.id.app);
 
 
-        app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        //app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
 
 
 
@@ -52,6 +53,14 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         showAricleList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
+        SlidingMenu menu = new SlidingMenu(this);
+        int w = app.getMeasuredWidth();
+        int left =(int) (w*0.2);
+        menu.setMode(SlidingMenu.LEFT);
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        menu.setBehindOffset(70);
+        menu.setMenu(R.layout.menu);
     }
 
     class  LaunchDetalActiviti implements AdapterView.OnItemClickListener{
@@ -218,12 +227,12 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
     }
 
     public void showArticleListFromSideBar(final View view){
-        //TODO: Утановите вызов Активити для поиска
+        //TODO: Утановите вызов Новости
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
 
-        backAnimationToSideBar();
+
         showAricleList();
 
     }
@@ -241,9 +250,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        //ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
@@ -263,9 +272,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.business_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
         toast.show();
@@ -284,9 +293,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.governance_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
         toast.show();
@@ -305,9 +314,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.insolvency_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
         toast.show();
@@ -326,9 +335,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.practice_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
         toast.show();
@@ -347,9 +356,9 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
             //category off
             image = getResources().getDrawable(R.drawable.un_check);
         }
-        ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
-        //imageView.setImageDrawable(image);
-        //showAricleList();
+        ImageView imageView = (ImageView) findViewById(R.id.tax_check_img_view);
+        imageView.setImageDrawable(image);
+        showAricleList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         toast.show();
@@ -379,7 +388,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
 
-        backAnimationToSideBar();
+
         showPodcastList();
 
     }
@@ -390,7 +399,7 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
 
-        backAnimationToSideBar();
+
         showJobstList();
     }
 
@@ -408,120 +417,10 @@ public class NewsRssActivity extends SherlockActivity implements Animation.Anima
         startActivity(startDetailSetting);
     }
 
-    // Animation block
-    public void backAnimationToSideBar(){
-        NewsRssActivity me = NewsRssActivity.this;
-        Context context = me;
-        Animation anim;
-
-        int w = app.getMeasuredWidth();
-        int h = app.getMeasuredHeight();
-        int left = (int) (app.getMeasuredWidth() * 0.8);
-
-
-
-        // anim = AnimationUtils.loadAnimation(context, R.anim.push_left_in_80);
-        anim = new TranslateAnimation(left, 0, 0, 0);
-        animParams.init(0, 0, w, h);
-
-
-        animationID =1;
-        anim.setDuration(500);
-        anim.setAnimationListener(me);
-        anim.setFillAfter(true);
-        app.startAnimation(anim);
-    }
-
-    void layoutApp(boolean menuOut) {
-        System.out.println("layout [" + animParams.left + "," + animParams.top + "," + animParams.right + ","
-                + animParams.bottom + "]");
-        app.layout(animParams.left, animParams.top, animParams.right, animParams.bottom);
-        //Now that we've set the app.layout property we can clear the animation, flicker avoided :)
-        app.clearAnimation();
-    }
-
-    public void onAnimationEnd(Animation arg0) {
-
-        System.out.println("onAnimationEnd");
-        switch (animationID){
-            case (1):  {
-                menuOut = !menuOut;
-                if (!menuOut) {
-                    menu.setVisibility(View.INVISIBLE);
-                }
-                layoutApp(menuOut);
-                break;
-            }
-
-        }
-
-
-    }
-
-    public void onAnimationRepeat(Animation animation) {
-
-
-
-    }
-
-    public void onAnimationStart(Animation animation) {
-
-        System.out.println("onAnimationRepeat");
-
-    }
-
-    static class AnimParams{
-        int left, right, top, bottom;
-        void init (int left, int top, int right, int bottom){
-            this.left = left;
-            this.top = top;
-            this.right = right;
-            this.bottom = bottom;
-
-        }
-    }
-
-    // Main animation for SideBar
+       // Main animation for SideBar
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-
-            NewsRssActivity me = NewsRssActivity.this;
-            Context context = me;
-            Animation anim;
-
-            int w = app.getMeasuredWidth();
-            int h = app.getMeasuredHeight();
-            int left = (int) (app.getMeasuredWidth() * 0.8);
-
-            if (!menuOut) {
-                // anim = AnimationUtils.loadAnimation(context, R.anim.push_right_out_80);
-                anim = new TranslateAnimation(0, left, 0, 0);
-                menu.setVisibility(View.VISIBLE);
-                animParams.init(left, 0, left + w, h);
-            } else {
-                // anim = AnimationUtils.loadAnimation(context, R.anim.push_left_in_80);
-                anim = new TranslateAnimation(0, -left, 0, 0);
-                animParams.init(0, 0, w, h);
-            }
-            animationID = 1;
-            anim.setDuration(500);
-
-            anim.setAnimationListener(me);
-
-            //Tell the animation to stay as it ended (we are going to set the app.layout first than remove this property)
-            anim.setFillAfter(true);
-
-
-            // Only use fillEnabled and fillAfter if we don't call layout ourselves.
-            // We need to do the layout ourselves and not use fillEnabled and fillAfter because when the anim is finished
-            // although the View appears to have moved, it is actually just a drawing effect and the View hasn't moved.
-            // Therefore clicking on the screen where the button appears does not work, but clicking where the View *was* does
-            // work.
-            // anim.setFillEnabled(true);
-            // anim.setFillAfter(true);
-
-            app.startAnimation(anim);
 
         }
     }

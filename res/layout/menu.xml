@@ -1,0 +1,244 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+        >
+
+    <LinearLayout android:id="@+id/menu"
+                  android:layout_width="match_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+            >
+
+        <LinearLayout
+                android:id="@+id/search_layout"
+                style="@style/SideBarLayoutDarck"
+                android:onClick="startSearchActivityFromSideBar"
+                >
+            <ImageView
+                    android:src="@drawable/search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <ImageView
+                    android:src="@drawable/magnifi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <ScrollView
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+            <LinearLayout
+
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:scrollbars="vertical">>
+
+                <LinearLayout
+                        android:id="@+id/article_show"
+                        android:onClick="showArticleListFromSideBar"
+                        style="@style/SideBarLayoutSoft"
+                        >
+                    <ImageView
+                            style="@style/StandartToView"
+                            android:src="@drawable/new_icon"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/news_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_audit"
+                        android:onClick="filterToAudit"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/audit_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/audit_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_business"
+                        android:onClick="filterToBusiness"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/business_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/business_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_governance"
+                        android:onClick="filterToGovernance"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/governance_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/governance_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_insolvency"
+                        android:onClick="filterToInsolvency"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/insolvency_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/insolvency_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_practice"
+                        android:onClick="filterToPractice"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/practice_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/practice_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_tax"
+                        android:onClick="filterToTax"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/tax_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/check"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/tax_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/filter_favorites"
+                        android:onClick="showToFavoritesFromSideBar"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/favorites_check_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/favorites"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/favorites_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/saved_searches_tree"
+                        android:onClick="showSavedSearchFromSideBar"
+                        style="@style/SideBarLayoutDarck"
+                        >
+                    <ImageView
+                            android:id="@+id/saved_searches_img_view"
+                            style="@style/StandartToView"
+                            android:src="@drawable/saved_searches"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/saved_searches_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/podcasts_show"
+                        android:onClick="showPodcastsListFromSideBar"
+                        style="@style/SideBarLayoutSoft"
+                        >
+                    <ImageView
+                            style="@style/StandartToView"
+                            android:src="@drawable/podcasts_icon"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/podcasts_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/jobs_show"
+                        android:onClick="showJobsListFromSideBar"
+                        style="@style/SideBarLayoutSoft"
+                        >
+                    <ImageView
+                            style="@style/StandartToView"
+                            android:src="@drawable/jobs_icon"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/jobs_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/contact_show"
+                        android:onClick="showContactFromSideBar"
+                        style="@style/SideBarLayoutSoft"
+                        >
+                    <ImageView
+                            style="@style/StandartToView"
+                            android:src="@drawable/contact_icon"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/contact_string"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/settings_show"
+                        android:onClick="showSettingsFromSideBar"
+                        style="@style/SideBarLayoutSoft"
+                        >
+                    <ImageView
+                            style="@style/StandartToView"
+                            android:src="@drawable/settings_icon"
+                            />
+                    <TextView
+                            style="@style/StandartToView"
+                            android:text="@string/settings_string"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    </FrameLayout>
