@@ -41,140 +41,114 @@ public class LocalDB {
 	}
 	
 	private static Article articleToComment(Cursor cursor) {
-	    Article art = null;
-	    URL url = null;
-		XMLNewsType type = null;
-		Date date = null;
+	    Article result_art = null;
+	    URL art_url = null;
+		XMLNewsType art_type = null;
+		Date art_date = null;
 			try {
-				url = new URL(cursor.getString(2));
+                art_url = new URL(cursor.getString(2));
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			type=XMLNewsType.fromInt(cursor.getInt(5));
+            art_type=XMLNewsType.fromInt(cursor.getInt(5));
 			try {
 				String str = cursor.getString(3);
-				date = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").parse(cursor.getString(3));
+                art_date = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").parse(cursor.getString(3));
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			art = new Article(cursor.getString(0), cursor.getString(1), url, date, cursor.getString(4), type, null);
-            // TODO: !!!
+			result_art = new Article(cursor.getString(0), cursor.getString(1), art_url, art_date, cursor.getString(4), art_type, null);
 			
-			
-	    return art;
+	    return result_art;
 	  }
 	
-	static public boolean deleteArticle (int guid)
-	{	
-	    int deleted = LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
+	static public void deleteArticle (int guid){
+	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
 	        + " = " + guid, null);
-		if (deleted!=0)
-		return true;
-		else return false;
 	}
 	
-	static public boolean AddArticle (Article art)
-	{	
-    	 String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
-		ContentValues values = new ContentValues();
-		 int id = Integer.parseInt(art.getGuid());
-		values.put(SQLLiteHelper.COLUMN_guID, id);
-	    values.put(SQLLiteHelper.COLUMN_Title, art.getTitle());
-	    values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
-	    values.put(SQLLiteHelper.COLUMN_PubDate, dateStr);
-	    values.put(SQLLiteHelper.COLUMN_Description, art.getDescription());
-	    values.put(SQLLiteHelper.COLUMN_NewsType, art.getNewsType().getIndex());
+	static public void addArticle (Article art){
+    	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
+		ContentValues article_values = new ContentValues();
+		int id = Integer.parseInt(art.getGuid());
+        article_values.put(SQLLiteHelper.COLUMN_guID, id);
+        article_values.put(SQLLiteHelper.COLUMN_Title, art.getTitle());
+        article_values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
+        article_values.put(SQLLiteHelper.COLUMN_PubDate, dateStr);
+        article_values.put(SQLLiteHelper.COLUMN_Description, art.getDescription());
+        article_values.put(SQLLiteHelper.COLUMN_NewsType, art.getNewsType().getIndex());
 	    long added = LocalDatabase.insert(SQLLiteHelper.DATABASE_NAME, null,
-	        values);
-		if (added==-1)
-		return false;
-		else return true;
+                article_values);
 	}
 
-    static public List<Article> GetAllArticles ()
-	{	
-	    List<Article> AllArticles = new ArrayList<Article>();
-
+    static public List<Article> getAllArticles () {
+	    List<Article> allArticles = new ArrayList<Article>();
 	    Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
 	        allColumns, null, null, null, null, null);
 
 	    cursor.moveToFirst();
 	    while (!cursor.isAfterLast()) {
 	      Article art = articleToComment(cursor);
-	      AllArticles.add(art);
+	      allArticles.add(art);
 	      cursor.moveToNext();
 	    }
 	    // Make sure to close the cursor
 	    cursor.close();
-	    return AllArticles;
+	    return allArticles;
 	}
 
-    static public void AddSearch(String search)
-    {
-        Date curDate = new Date(System.currentTimeMillis());
-        String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(curDate);
-        ContentValues values = new ContentValues();
-        values.put(SQLLiteHelperSearch.COLUMN_Search, search);
-        values.put(SQLLiteHelperSearch.COLUMN_SearchDate, dateStr);
-        long added = LocalDatabaseSearches.insert(SQLLiteHelperSearch.DATABASE_NAME, null,
-                values);
+    static public void addSearch(String search){
+        Date currentDate = new Date(System.currentTimeMillis());
+        String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(currentDate);
+        ContentValues seatch_values = new ContentValues();
+        seatch_values.put(SQLLiteHelperSearch.COLUMN_Search, search);
+        seatch_values.put(SQLLiteHelperSearch.COLUMN_SearchDate, dateStr);
+        LocalDatabaseSearches.insert(SQLLiteHelperSearch.DATABASE_NAME, null,
+                seatch_values);
     }
 
-    static public void deleteSearch (int id)
-    {
+    static public void deleteSearch (int id){
        LocalDatabaseSearches.delete(SQLLiteHelperSearch.DATABASE_NAME, SQLLiteHelperSearch.COLUMN_ID
                 + " = " + id, null);
     }
 
-   static public List<Searches> Get10Searches()
-    {
-        List<Searches> AllSearches = new ArrayList<Searches>();
-
-        int i = 0;
+   static public List<Searches> get10Searches() {
+        List<Searches> allSearches = new ArrayList<Searches>();
         Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
                 allColumnsSearches, null, null, null, null, null);
-
         cursor.moveToLast();
         while (!cursor.isBeforeFirst()) {
-            Searches search = SearchToComment(cursor);
-                AllSearches.add(search);
+            Searches search = searchToComment(cursor);
+            allSearches.add(search);
             cursor.moveToPrevious();
         }
         // Make sure to close the cursor
         cursor.close();
-          Collections.sort(AllSearches, sortByDate);
-          i=AllSearches.size();
-        List<Searches> AllSearchesTemp = new ArrayList<Searches>();
-          while ((i>AllSearches.size()-10)&&(i>0))
-          {
-              AllSearchesTemp.add(AllSearches.get(i-1));
-              i--;
+        int searchCount = 0;
+        Collections.sort(allSearches);
+        searchCount=allSearches.size();
+        List<Searches> last10Searches = new ArrayList<Searches>();
+          while ((searchCount>allSearches.size()-10)&&(searchCount>0)) {
+              last10Searches.add(allSearches.get(searchCount-1));
+              searchCount--;
           }
 
-            return AllSearchesTemp ;
+            return last10Searches ;
         }
 
-        static Comparator<Searches> sortByDate = new Comparator<Searches>() {
 
-            public int compare(Searches s1, Searches s2) {
-                return s1.GetDate().compareTo(s2.GetDate());
-            }
-        };
-
-    private static Searches SearchToComment(Cursor cursor) {
+    private static Searches searchToComment(Cursor cursor) {
         Searches search = null;
-        Date date = null;
+        Date search_date = null;
         try {
-            date = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").parse(cursor.getString(2));
+            search_date = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").parse(cursor.getString(2));
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        search = new Searches(cursor.getInt(0), cursor.getString(1), date);
-
-
+        search = new Searches(cursor.getInt(0), cursor.getString(1), search_date);
         return search;
     }
 

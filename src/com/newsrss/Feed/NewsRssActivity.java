@@ -406,8 +406,8 @@ public class NewsRssActivity extends SherlockActivity {
     public void showContactFromSideBar(final View view){
         //TODO: Утановите вызов Contact
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Contact",Toast.LENGTH_SHORT);
-        toast.show();
+        Intent startContactsActivity = new Intent(NewsRssActivity.this, Contacts.class);
+        startActivity(startContactsActivity);
     }
 
     public void showSettingsFromSideBar(final View view){

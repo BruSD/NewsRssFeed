@@ -32,9 +32,9 @@ public class DetailsPodcast extends Activity {
     Podcast currentPodcast = null;
     MediaPlayer cast_player;
     boolean first_play,play,seeking,end_of_play;
-    String myUri;
+    String podcastUri;
     Object mutex = new Object();
-    TextView TitleText,DateText;
+    TextView titleText,dateText;
     TextView playedTime,allTime;
     ImageButton seek10Button,seek30Button,play_pauseButton;
     SeekBar castSeekbar;
@@ -46,8 +46,8 @@ public class DetailsPodcast extends Activity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.details_podcast);
 
-        TitleText = (TextView)findViewById(R.id.PodcastTitleText);
-        DateText = (TextView)findViewById(R.id.PodcastDateText);
+        titleText = (TextView)findViewById(R.id.PodcastTitleText);
+        dateText = (TextView)findViewById(R.id.PodcastDateText);
         playedTime = (TextView)findViewById(R.id.PodcastPlayedTime);
         allTime = (TextView)findViewById(R.id.PodcastAllTime);
         WebView podcastDecription = (WebView) findViewById(R.id.PodcastDescription);
@@ -66,10 +66,10 @@ public class DetailsPodcast extends Activity {
         seek30Button.setImageResource(R.drawable.seek_button1);
         podcastDecription.setBackgroundColor(Color.parseColor("#EFEEEA"));
         podcastDecription.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        myUri=currentPodcast.getMP3Link().toString();
-        TitleText.setText(currentPodcast.getTitle());
+        podcastUri=currentPodcast.getMP3Link().toString();
+        titleText.setText(currentPodcast.getTitle());
         String date_str = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(currentPodcast.getPubDate());
-        DateText.setText(date_str);
+        dateText.setText(date_str);
         podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html", "UTF-8");
         castSeekbar.setEnabled(false);
 
@@ -142,13 +142,13 @@ public class DetailsPodcast extends Activity {
                 {
                     cast_player.reset();
                     try {
-                        cast_player.setDataSource(myUri);
+                        cast_player.setDataSource(podcastUri);
                     } catch (IOException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
 
 
-                    if(PlaySound())
+                    if(playSound())
                     {
                         first_play=false;
                         timeThread.start();
@@ -159,8 +159,8 @@ public class DetailsPodcast extends Activity {
                         castSeekbar.setEnabled(true);}
                     return;
                 }
-                if (!play) PlaySound();
-                else PauseSound();
+                if (!play) playSound();
+                else pauseSound();
             }
         };
 
@@ -203,22 +203,12 @@ public class DetailsPodcast extends Activity {
 
             @Override
             public void onPrepared(MediaPlayer arg0) {
-                Toast toast = Toast.makeText(getApplicationContext(),"Мож бавити",Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getApplicationContext(),"Start playing",Toast.LENGTH_SHORT);
                 toast.show();
 
             }
         };
 
-        TextView.OnClickListener ocCall = new TextView.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:0977572892"));
-                startActivity(callIntent);
-            }
-        };
 
 
         play_pauseButton.setOnClickListener(ocPlay_pause);
@@ -247,7 +237,7 @@ public class DetailsPodcast extends Activity {
         return time_str;
     }
 
-    Thread playCast = new Thread(
+  /*  Thread playCast = new Thread(
             new Runnable(){
 
                 @Override
@@ -262,7 +252,7 @@ public class DetailsPodcast extends Activity {
 
             });
 
-
+       */
 
     Thread timeThread = new Thread(
             new Runnable() {
@@ -307,7 +297,7 @@ public class DetailsPodcast extends Activity {
     );
 
 
-    protected void PauseSound() {
+    protected void pauseSound() {
         if (cast_player.isPlaying())
         {
             cast_player.pause();
@@ -317,7 +307,7 @@ public class DetailsPodcast extends Activity {
     }
 
 
-    protected boolean PlaySound() {
+    protected boolean playSound() {
         try {
             cast_player.prepare();
         } catch (IllegalStateException e) {

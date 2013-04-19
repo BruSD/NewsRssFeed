@@ -18,8 +18,8 @@
     <orderEntry type="jdk" jdkName="Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="gen" level="project" />
-    <orderEntry type="module" module-name="SM" exported="" />
     <orderEntry type="module" module-name="ABS" exported="" />
+    <orderEntry type="module" module-name="SM" exported="" />
   </component>
 </module>
 

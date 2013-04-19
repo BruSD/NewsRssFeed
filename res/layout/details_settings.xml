@@ -61,7 +61,7 @@
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView1" android:adjustViewBounds="true" android:scaleType="fitXY"
+                    android:id="@+id/legal_imageView" android:adjustViewBounds="true" android:scaleType="fitXY"
                     android:src="@drawable/settings_plates_for_button"/>
             <ImageView
                     android:layout_width="22dp"
@@ -84,18 +84,18 @@
                     android:id="@+id/imageView7" android:adjustViewBounds="true"
                     android:src="@drawable/settings_arrow"
                     android:layout_marginRight="12dp"
-                    android:layout_centerVertical="true" android:layout_alignRight="@+id/imageView1"/>
+                    android:layout_centerVertical="true" android:layout_alignRight="@+id/legal_imageView"/>
         </RelativeLayout>
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
                 android:layout_marginTop="18dp">
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                       android:id="@+id/imageView2" android:adjustViewBounds="true" android:scaleType="fitXY"
+                       android:id="@+id/rate_imageView" android:adjustViewBounds="true" android:scaleType="fitXY"
                        android:src="@drawable/settings_plates_for_button"/>
             <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView8"
                        android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
-                       android:layout_alignRight="@+id/imageView2"
+                       android:layout_alignRight="@+id/rate_imageView"
                        android:layout_centerVertical="true"
                        android:layout_marginRight="12dp"/>
             <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView10"
@@ -112,11 +112,11 @@
                 android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
                 android:layout_marginTop="18dp">
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                       android:id="@+id/imageView3" android:adjustViewBounds="true" android:scaleType="fitXY"
+                       android:id="@+id/feedback_imageView" android:adjustViewBounds="true" android:scaleType="fitXY"
                        android:src="@drawable/settings_plates_for_button"/>
             <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView9"
                        android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
-                       android:layout_alignRight="@+id/imageView3" android:layout_centerVertical="true"
+                       android:layout_alignRight="@+id/feedback_imageView" android:layout_centerVertical="true"
                        android:layout_marginRight="12dp"/>
             <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView5"
                        android:adjustViewBounds="true" android:src="@drawable/settings_contacts"
@@ -134,9 +134,11 @@
             >
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="85dp"
                 android:id="@+id/imageView14" android:src="@drawable/settings_gray_plate"
-                android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"/>
+                android:adjustViewBounds="true"
+                android:layout_alignParentEnd="false" android:layout_centerVertical="true"
+                android:scaleType="fitXY"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,19 +149,30 @@
         <ImageView
                 android:layout_width="93dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView11" android:layout_below="@+id/textView4" android:src="@drawable/tvitter"
+                android:id="@+id/twitter_imageView" android:layout_below="@+id/textView4" android:src="@drawable/tvitter"
                 android:layout_marginLeft="12dp" android:adjustViewBounds="true" android:scaleType="fitXY"/>
         <ImageView
                 android:layout_width="84dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView12" android:layout_below="@+id/textView4"
-                android:layout_toRightOf="@+id/imageView11" android:adjustViewBounds="true" android:scaleType="fitXY"
-                android:src="@drawable/linkedin" android:layout_marginLeft="15dp"/>
+                android:id="@+id/linkedln_imageView" android:layout_below="@+id/textView4"
+                android:adjustViewBounds="true" android:scaleType="fitXY"
+                android:src="@drawable/linkedin"
+                android:layout_alignParentBottom="false" android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="false"
+                android:layout_toRightOf="@+id/twitter_imageView" android:layout_marginLeft="14.5dp"/>
         <ImageView
                 android:layout_width="89dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView13" android:layout_below="@+id/textView4"
-                android:layout_toRightOf="@+id/imageView12" android:scaleType="fitXY" android:layout_marginLeft="15dp"
-                android:adjustViewBounds="true" android:src="@drawable/facebook" android:layout_marginTop="-1dp"/>
+                android:id="@+id/facebook_imageView" android:layout_below="@+id/textView4"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true" android:src="@drawable/facebook" android:layout_marginTop="-1dp"
+                android:layout_alignParentLeft="false" android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp"/>
     </RelativeLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App By Lightbox.ie"
+            android:id="@+id/textView5" android:layout_gravity="right|center_vertical" android:textColor="#CFCECA"
+            android:textStyle="italic" android:layout_marginRight="12dp" android:layout_marginTop="22dp"/>
 </LinearLayout>

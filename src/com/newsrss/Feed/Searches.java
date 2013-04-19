@@ -9,7 +9,7 @@ import java.util.Date;
  * Time: 17:48
  * To change this template use File | Settings | File Templates.
  */
-public class Searches {
+public class Searches implements Comparable<Searches> {
 
     private int id;
     private String search;
@@ -22,18 +22,23 @@ public class Searches {
         searchDate = _searchDate;
     }
 
-    public int GetId ()
+    public int getId ()
     {
         return this.id;
     }
 
-    public String GetSearch ()
+    public String getSearch ()
     {
         return this.search;
     }
 
-    public Date GetDate ()
+    public Date getDate ()
     {
         return this.searchDate;
+    }
+
+    @Override
+    public int compareTo(Searches anotherSearches) {
+       return  anotherSearches.searchDate.compareTo(this.searchDate);
     }
 }

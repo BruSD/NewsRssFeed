@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:background="#EEEEEA">
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/relativeLayout">
+        <ImageView android:layout_width="match_parent" android:layout_height="44dp" android:id="@+id/imageView15"
+                   android:adjustViewBounds="true" android:src="@drawable/settings_menu_bar"
+                   android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+                   android:scaleType="fitXY"/>
+        <ImageButton android:layout_width="38dp" android:layout_height="wrap_content" android:id="@+id/imageButton"
+                     android:src="@drawable/side_bar_btn1" android:padding="0dp" android:adjustViewBounds="true"
+                     android:scaleType="fitXY" android:layout_marginLeft="8dp" android:layout_marginRight="12dp"
+                     android:layout_centerVertical="true"/>
+        <ImageView android:layout_width="23dp" android:layout_height="wrap_content" android:id="@+id/imageView6"
+                   android:layout_toRightOf="@+id/imageButton" android:src="@drawable/logo1"
+                   android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"
+                   android:layout_marginRight="3dp"/>
+        <TextView android:id="@+id/article_head" android:layout_width="wrap_content"
+                  android:layout_height="wrap_content" android:text="@string/head_app"
+                  android:layout_gravity="center_vertical" android:textColor="#ffffff"
+                  android:layout_toRightOf="@+id/imageView6" android:layout_centerVertical="true"
+                  android:textSize="16dp"/>
+    </RelativeLayout>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView" android:background="#611B40">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:background="#EEEEEA">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_gravity="left" android:background="#611B40">
+                <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/imageView" android:src="@drawable/contact_top_icon" android:adjustViewBounds="true"
+                        android:layout_alignParentRight="true" android:layout_marginRight="53dp"
+                        android:layout_marginTop="12dp" android:layout_centerVertical="true"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacts"
+                        android:id="@+id/textView" android:textColor="#ffffff" android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp" android:textStyle="bold" android:textSize="18dp"/>
+            </RelativeLayout>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/contacts_text_getin" android:layout_marginLeft="12dp" android:layout_marginTop="36dp"
+                        android:layout_marginBottom="30dp" android:singleLine="false" android:text="Text"/>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:layout_marginLeft="12dp" android:layout_marginRight="12dp">
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="160dp"
+                            android:id="@+id/imageView1" android:src="@drawable/contacts_grey_plate"
+                            android:adjustViewBounds="true" android:scaleType="fitXY"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ireland"
+                            android:id="@+id/textView2" android:layout_alignLeft="@+id/imageView1"
+                            android:layout_alignTop="@+id/imageView1" android:layout_marginLeft="12dp"
+                            android:layout_marginTop="10dp" android:textStyle="bold"/>
+                    <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:layout_alignRight="@+id/imageView1"
+                            android:layout_alignTop="@+id/imageView1" android:layout_marginRight="12dp"
+                            android:layout_marginTop="5dp">
+                        <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView2" android:src="@drawable/contacts_button_map" android:scaleType="fitXY"
+                                android:adjustViewBounds="true"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Map"
+                                android:id="@+id/textView1" android:textColor="#ffffff" android:layout_centerInParent="true"
+                                android:textSize="12dp"/>
+                    </RelativeLayout>
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView3" android:layout_below="@+id/textView2" android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" android:layout_marginTop="6dp"
+                            android:src="@drawable/contacts_separate_line" android:adjustViewBounds="false"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Chartered Accountants House,"
+                            android:id="@+id/textView3"
+                            android:layout_alignLeft="@+id/textView2" android:layout_below="@+id/imageView3"
+                            android:layout_marginTop="10dp" android:textSize="13dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="47 Pearse St,"
+                            android:id="@+id/textView4" android:layout_alignLeft="@+id/textView2"
+                            android:layout_below="@+id/textView3" android:textSize="13dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dublin 2,"
+                            android:id="@+id/textView5"
+                            android:layout_alignLeft="@+id/textView2" android:layout_below="@+id/textView4"
+                            android:textSize="13dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ireland"
+                            android:id="@+id/textView6" android:layout_alignLeft="@+id/textView2"
+                            android:layout_below="@+id/textView5" android:textSize="13dp"/>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:id="@+id/RelativeL1" android:layout_toRightOf="@+id/contacts_text_tel_ir"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginTop="-2dp" android:layout_alignTop="@+id/contacts_text_tel_ir">
+                        <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/contacts_callIR" android:adjustViewBounds="true"
+                                android:src="@drawable/contacts_button_call" android:scaleType="fitXY"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Call"
+                                  android:id="@+id/textView7" android:textColor="#ffffff"
+                                  android:textSize="12dp" android:layout_centerHorizontal="true"
+                                  android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New Text"
+                            android:id="@+id/contacts_text_tel_ir"
+                            android:layout_alignLeft="@+id/textView2" android:layout_below="@+id/textView6"
+                            android:layout_marginTop="9dp"/>
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginLeft="12dp" android:layout_marginRight="12dp"
+                                android:id="@+id/relativeLayout3" android:layout_marginTop="30dp">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="180dp" android:id="@+id/imageView5"
+                               android:src="@drawable/contacts_grey_plate" android:adjustViewBounds="false"
+                               android:scaleType="fitXY"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Northern Ireland"
+                              android:id="@+id/textView8" android:layout_alignLeft="@+id/imageView5"
+                              android:layout_alignTop="@+id/imageView5" android:layout_marginLeft="12dp"
+                              android:layout_marginTop="10dp" android:textStyle="bold"/>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:layout_alignRight="@+id/imageView5" android:layout_alignTop="@+id/imageView5"
+                                    android:layout_marginRight="12dp" android:layout_marginTop="5dp">
+                        <ImageView android:layout_width="45dp" android:layout_height="wrap_content" android:id="@+id/imageView7"
+                                   android:src="@drawable/contacts_button_map" android:scaleType="fitXY"
+                                   android:adjustViewBounds="true"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Map"
+                                  android:id="@+id/textView9" android:textColor="#ffffff" android:layout_centerInParent="true"
+                                  android:textSize="12dp"/>
+                    </RelativeLayout>
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/imageView8"
+                               android:layout_below="@+id/textView8" android:layout_marginLeft="10dp"
+                               android:layout_marginRight="10dp" android:layout_marginTop="6dp"
+                               android:src="@drawable/contacts_separate_line" android:adjustViewBounds="false"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="Chartered Accountants House," android:id="@+id/textView10"
+                              android:layout_alignLeft="@+id/textView8" android:layout_below="@+id/imageView8"
+                              android:layout_marginTop="10dp" android:textSize="13dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="32-38 Linenhall Street,"
+                              android:id="@+id/textView11" android:layout_alignLeft="@+id/textView8"
+                              android:layout_below="@+id/textView10" android:textSize="13dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Belfast,"
+                              android:id="@+id/textView12" android:layout_alignLeft="@+id/textView8"
+                              android:layout_below="@+id/textView11" android:textSize="13dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Country Antrim BT2 8BG,"
+                              android:id="@+id/textView13" android:layout_alignLeft="@+id/textView8"
+                              android:layout_below="@+id/textView12" android:textSize="13dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="New Text"
+                              android:id="@+id/contacts_text_telNI" android:layout_alignLeft="@+id/textView8"
+                              android:layout_below="@+id/textView16" android:layout_marginTop="9dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Northen Ireland"
+                            android:id="@+id/textView16" android:layout_alignLeft="@+id/textView8"
+                            android:layout_below="@+id/textView13"/>
+                    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:id="@+id/RelativeL1" android:layout_toRightOf="@+id/contacts_text_telNI"
+                                    android:layout_alignTop="@+id/contacts_text_telNI" android:layout_marginLeft="12dp"
+                                    android:layout_marginTop="-2dp" android:focusableInTouchMode="false">
+                        <ImageView android:layout_width="42dp" android:layout_height="wrap_content" android:id="@+id/contacts_callNI"
+                                   android:src="@drawable/contacts_button_call" android:scaleType="fitXY"
+                                   android:adjustViewBounds="true" android:layout_alignParentLeft="true"
+                                   android:layout_alignParentTop="true"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Call"
+                                  android:id="@+id/textView15" android:textColor="#ffffff" android:textSize="12dp"
+                                  android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp" android:id="@+id/relativeLayout1"
+                                android:layout_marginBottom="30dp">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="85dp"
+                               android:id="@+id/imageView14" android:src="@drawable/settings_gray_plate"
+                               android:adjustViewBounds="true" android:layout_alignParentEnd="false"
+                               android:layout_centerVertical="true" android:scaleType="fitXY"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="Connect With Us" android:id="@+id/textView14"
+                              android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+                              android:layout_marginLeft="12dp" android:layout_marginTop="12dp"
+                              android:layout_marginBottom="12dp" android:textColor="#7D003A" android:textSize="18dp"/>
+                    <ImageView android:layout_width="93dp" android:layout_height="wrap_content"
+                               android:id="@+id/twitter_imageView" android:layout_below="@+id/textView14"
+                               android:src="@drawable/tvitter" android:layout_marginLeft="12dp"
+                               android:adjustViewBounds="true" android:scaleType="fitXY"/>
+                    <ImageView android:layout_width="84dp" android:layout_height="wrap_content"
+                               android:id="@+id/linkedln_imageView" android:layout_below="@+id/textView14"
+                               android:adjustViewBounds="true" android:scaleType="fitXY"
+                               android:src="@drawable/linkedin" android:layout_alignParentBottom="false"
+                               android:layout_alignParentLeft="false" android:layout_alignParentRight="false"
+                               android:layout_toRightOf="@+id/twitter_imageView" android:layout_marginLeft="14.5dp"/>
+                    <ImageView android:layout_width="89dp" android:layout_height="wrap_content"
+                               android:id="@+id/facebook_imageView" android:layout_below="@+id/textView14"
+                               android:scaleType="fitXY" android:adjustViewBounds="true"
+                               android:src="@drawable/facebook" android:layout_marginTop="-1dp"
+                               android:layout_alignParentLeft="false" android:layout_alignParentRight="true"
+                               android:layout_marginRight="12dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

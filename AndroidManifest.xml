@@ -8,6 +8,7 @@
             android:maxSdkVersion="17"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
             android:label="@string/app_name"
             android:icon="@drawable/default_news_icon"
@@ -27,5 +28,8 @@
         <activity android:name=".DetailsJobs"
                   android:label="@string/head_app"/>
         <activity android:name=".DetailsSettings"/>
+        <activity android:name="com.newsrss.Feed.Legal"
+                  android:label="@string/head_app"/>
+        <activity android:name=".Contacts"/>
     </application>
 </manifest>
