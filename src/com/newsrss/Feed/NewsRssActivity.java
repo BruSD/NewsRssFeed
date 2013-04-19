@@ -31,6 +31,7 @@ public class NewsRssActivity extends SherlockActivity {
     boolean menuOut = false;
 
     int idLayout;
+    SlidingMenu slidingMenu;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,14 +54,14 @@ public class NewsRssActivity extends SherlockActivity {
         showAricleList();
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
-        SlidingMenu menu = new SlidingMenu(this);
+        slidingMenu = new SlidingMenu(this);
         int w = app.getMeasuredWidth();
-        int left =(int) (w*0.2);
-        menu.setMode(SlidingMenu.LEFT);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setBehindOffset(70);
-        menu.setMenu(R.layout.menu);
+        int left = (int) (w*0.2);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setBehindOffset(70);
+        slidingMenu.setMenu(R.layout.menu);
     }
 
     class  LaunchDetalActiviti implements AdapterView.OnItemClickListener{
@@ -406,15 +407,19 @@ public class NewsRssActivity extends SherlockActivity {
     public void showContactFromSideBar(final View view){
         //TODO: Утановите вызов Contact
 
-        Intent startContactsActivity = new Intent(NewsRssActivity.this, Contacts.class);
-        startActivity(startContactsActivity);
+        slidingMenu.setContent(R.layout.contacts);
+        idLayout = 4;
+        //Intent startContactsActivity = new Intent(NewsRssActivity.this, Contacts.class);
+        //startActivity(startContactsActivity);
     }
 
     public void showSettingsFromSideBar(final View view){
         //TODO: Утановите вызов SettingsFromSideBar
 
-        Intent startDetailSetting = new Intent(NewsRssActivity.this, DetailsSettings.class);
-        startActivity(startDetailSetting);
+        slidingMenu.setContent(R.layout.details_settings);
+        idLayout = 5;
+        //Intent startDetailSetting = new Intent(NewsRssActivity.this, DetailsSettings.class);
+        //startActivity(startDetailSetting);
     }
 
        // Main animation for SideBar
@@ -424,107 +429,6 @@ public class NewsRssActivity extends SherlockActivity {
 
         }
     }
-
-    /*
-    class MyCAdapter extends SimpleAdapter {
-
-        private Context context;
-        private ListView mListView;
-        private List<? extends Map<String, ?>>   data;
-        private int resurs;
-        private  String[] from;
-        private int[] to;
-
-
-        public MyCAdapter(Context context,
-                          List<? extends Map<String, ?>> data,
-                          int _resource,
-                          String[] from,
-                          int[] to){
-            super(context, data, _resource, from, to);
-
-            MyCAdapter.this.context = context;
-            MyCAdapter.this.data = data;
-            MyCAdapter.this.resurs = _resource;
-            MyCAdapter.this.from = from;
-            MyCAdapter.this.to = to;
-
-        }
-        protected class RowViewHolder {
-            public TextView mTitle;
-            public TextView mDate;
-            public ImageView mImageView;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent){
-            View v = convertView;
-            System.out.println("Btn 1");
-
-            if (v == null) {
-
-                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = inflater.inflate(R.layout.rss_item_layout, null);
-            }
-
-            final View  slideLayar= v.findViewById(R.id.mini_func_lay);
-            RowViewHolder holder  = new RowViewHolder();
-            holder.mImageView = (ImageView)v.findViewById(R.id.rss_img_news_pass);
-            holder.mTitle = (TextView)v.findViewById(R.id.rss_news_title);
-            holder.mDate = (TextView)v.findViewById(R.id.rss_news_date);
-
-            //Взаимодействие с элементами Списка Картинка Татйтл и Дата
-
-            holder.mImageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //To change body of implemented methods use File | Settings | File Templates.
-                    System.out.println("Btn на картинку ");
-                }
-            });
-            v.setTag(holder);
-            /*
-            v.findViewById(R.id.mini_slide).setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-
-                    System.out.println("Btn 123"+" "+ v.getId());
-
-                    NewsRssActivity me1 = NewsRssActivity.this;
-                    Context context1 = me1;
-                    Animation anim1;
-                    if (cellStatusPosition == false){
-                        anim1 = new TranslateAnimation(0, 50, 0, 0);
-                        cellStatusPosition = true;
-                    }else {
-                        anim1 = new TranslateAnimation(50, 0, 0, 0);
-                        cellStatusPosition = false;
-                    }
-
-
-
-                    animationID = 2;
-                    anim1.setDuration(800);
-                    anim1.setAnimationListener(me1);
-                    anim1.setFillAfter(true);
-                    slideLayar.startAnimation(anim1);
-
-
-
-                }
-            });
-
-
-
-
-            return v;
-
-
-        }
-
-
-
-}        */
 
     class CustomViewBinder implements SimpleAdapter.ViewBinder {
         @Override
