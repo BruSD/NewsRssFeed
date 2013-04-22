@@ -23,7 +23,7 @@
 
         <ImageButton
                 android:id="@+id/BtnSlide"
-                style="@style/BackButtonStyle"
+                style="@style/SidebarButtonStyle"
 
 
                 />

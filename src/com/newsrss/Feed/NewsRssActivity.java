@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -21,15 +22,14 @@ import java.util.Map;
 
 public class NewsRssActivity extends SherlockActivity {
 
-    boolean cellStatusPosition = false;
-
-    int animationID;
-
-
-    View menu;
-    View app;
-    boolean menuOut = false;
-
+    // idLayout:
+    // 1 - Articles
+    // 2 - Podcasts
+    // 3 - Jobs
+    // 4 - Favorites
+    // 5 - Search
+    // 6 - Contacts
+    // 7 - Settings
     int idLayout;
     SlidingMenu slidingMenu;
 
@@ -39,7 +39,7 @@ public class NewsRssActivity extends SherlockActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.main);
 
-        app = findViewById(R.id.app);
+        View app = findViewById(R.id.app);
 
         app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
         //ImageButton imgB = (ImageButton)findViewById(R.id.BtnSlide);
@@ -52,7 +52,6 @@ public class NewsRssActivity extends SherlockActivity {
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
         slidingMenu = new SlidingMenu(this);
-
 
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
@@ -76,6 +75,7 @@ public class NewsRssActivity extends SherlockActivity {
                     Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
                     startDetailArticl.putExtra("position", position);
                     startActivity(startDetailArticl);
+
                     break;
                 case 2:
                     Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
@@ -223,15 +223,21 @@ public class NewsRssActivity extends SherlockActivity {
     }
 
     public void showArticleListFromSideBar(final View view){
-        //TODO: Утановите вызов Новости
-
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
 
-
-        showAricleList();
-        slidingMenu.showContent();
-
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+            slidingMenu.setContent(R.layout.main);
+            showAricleList();
+            ListView rssListView = (ListView) findViewById(R.id.rssListView);
+            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+            View app = findViewById(R.id.app);
+            app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        }
+        else {
+            showAricleList();
+            slidingMenu.showContent();
+        }
     }
 
     public void filterToAudit(final View view){
@@ -378,10 +384,18 @@ public class NewsRssActivity extends SherlockActivity {
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
 
-
-        showPodcastList();
-        slidingMenu.showContent();
-
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+            slidingMenu.setContent(R.layout.main);
+            showPodcastList();
+            ListView rssListView = (ListView) findViewById(R.id.rssListView);
+            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+            View app = findViewById(R.id.app);
+            app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        }
+        else {
+            showPodcastList();
+            slidingMenu.showContent();
+        }
 
     }
 
@@ -389,23 +403,60 @@ public class NewsRssActivity extends SherlockActivity {
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
 
-        showJobstList();
-        slidingMenu.showContent();
-
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+            slidingMenu.setContent(R.layout.main);
+            showJobstList();
+            ListView rssListView = (ListView) findViewById(R.id.rssListView);
+            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+            View app = findViewById(R.id.app);
+            app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        }
+        else {
+            showJobstList();
+            slidingMenu.showContent();
+        }
     }
 
     public void showContactFromSideBar(final View view){
         slidingMenu.setContent(R.layout.contacts);
         idLayout = 6;
 
+        View sidebarButton  = findViewById(R.id.contactSidebarButton);
+        sidebarButton.setOnClickListener(new ClickListener());
+
+        ImageView cal_btnIR = (ImageView) findViewById(R.id.contacts_callIR);
+        ImageView cal_btnNI= (ImageView) findViewById(R.id.contacts_callNI);
+
+        ImageView.OnClickListener ocCall=new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:0035316377200"));
+                startActivity(callIntent);
+            }
+        };
+
+        ImageView.OnClickListener ocCallNI=new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:0044289043584"));
+                startActivity(callIntent);
+            }
+        };
+
+        cal_btnIR.setOnClickListener(ocCall);
+        cal_btnNI.setOnClickListener(ocCallNI);
     }
 
     public void showSettingsFromSideBar(final View view){
         slidingMenu.setContent(R.layout.details_settings);
         idLayout = 7;
+        View sidebarButton  = findViewById(R.id.settingSidebarButton);
+        sidebarButton.setOnClickListener(new ClickListener());
     }
 
-       // Main animation for SideBar
+    // Main animation for SideBar
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
@@ -417,6 +468,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
     }
 
+    //
     class CustomViewBinder implements SimpleAdapter.ViewBinder {
         @Override
         public boolean setViewValue(View view, Object data,String textRepresentation) {
@@ -434,11 +486,3 @@ public class NewsRssActivity extends SherlockActivity {
 
 }
 
-// idLayout:
-// 1 - Articles
-// 2 - Podcasts
-// 3 - Jobs
-// 4 - Favorites
-// 5 - Search
-// 6 - Contacts
-// 7 - Settings

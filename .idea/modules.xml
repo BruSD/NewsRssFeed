@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/ABS.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/ABS.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewsFeed.iml" filepath="$PROJECT_DIR$/NewsFeed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Instal/SlidingMenu-master/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Instal/SlidingMenu-master/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/library.iml" filepath="$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/library.iml" />
