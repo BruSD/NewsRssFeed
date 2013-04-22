@@ -454,6 +454,35 @@ public class NewsRssActivity extends SherlockActivity {
         idLayout = 7;
         View sidebarButton  = findViewById(R.id.settingSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
+        ImageView legalView = (ImageView)findViewById(R.id.legal_imageView);
+        ImageView rateView = (ImageView)findViewById(R.id.rate_imageView);
+        ImageView feedbackView = (ImageView)findViewById(R.id.feedback_imageView);
+
+        ImageView.OnClickListener ocLegal = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startLegalActivity = new Intent(NewsRssActivity.this, Legal.class);
+                startActivity(startLegalActivity);
+            }
+        };
+
+        ImageView.OnClickListener ocRate = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO Rate this app click
+            }
+        };
+        ImageView.OnClickListener ocFeedback = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //TODO Send us feedback click
+            }
+        };
+
+        legalView.setOnClickListener(ocLegal);
+        rateView.setOnClickListener(ocRate);
+        feedbackView.setOnClickListener(ocFeedback);
+
     }
 
     // Main animation for SideBar
