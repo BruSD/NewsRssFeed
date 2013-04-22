@@ -27,21 +27,14 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="Contact Details, Call to Numb, Fix in settings.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/SearchParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.iml" afterPath="$PROJECT_DIR$/NewsFeed.iml" />
+    <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366382856794" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366382883870" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366611975084" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366613801652" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366289089329" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365593401089" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
@@ -138,8 +131,31 @@
       <file leaf-file-name="NewsRssActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="419" column="21" selection-start="13794" selection-end="13794" vertical-scroll-proportion="0.84931505">
+            <state line="397" column="40" selection-start="13560" selection-end="13560" vertical-scroll-proportion="0.5355191">
               <folding>
+                <element signature="method#onCreate#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#onItemClick#0;class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showPodcastsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showJobsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showContactFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showSettingsFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="class#CustomViewBinder#0;class#NewsRssActivity#0" expanded="false" />
               </folding>
@@ -318,16 +334,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SlidingMenu-master/library" />
     <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="TestAVD" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -341,12 +357,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Android Application.NewsFeed">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -356,22 +366,10 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -396,6 +394,24 @@
       </MavenSettings>
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -410,6 +426,35 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -437,35 +482,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -656,10 +672,14 @@
       <created>1366197437154</created>
       <updated>1366197437154</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Setting and Contacts as layout of sidebar">
+      <created>1366382969241</created>
+      <updated>1366382969241</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -683,7 +703,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29131174" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28960818" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -693,12 +713,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5239398" sideWeight="0.48684916" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3867121" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46922025" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105335" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33049405" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21449067" sideWeight="0.3009576" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.70868826" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3475298" sideWeight="0.84576756" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21818182" sideWeight="0.7103918" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34582624" sideWeight="0.84576756" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18794835" sideWeight="0.6867305" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -752,7 +772,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact Details, Call to Numb, Fix in settings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting and Contacts as layout of sidebar" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -785,6 +805,7 @@
     <MESSAGE value="Finished podcast details for all resolution." />
     <MESSAGE value="SettingsDetail" />
     <MESSAGE value="Contact Details, Call to Numb, Fix in settings." />
+    <MESSAGE value="Setting and Contacts as layout of sidebar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -820,6 +841,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="222" column="12" selection-start="7414" selection-end="7414" vertical-scroll-proportion="0.0">
           <folding>
+            <element signature="method#onCreate#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#onItemClick#0;class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showPodcastsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showJobsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showContactFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showSettingsFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="class#CustomViewBinder#0;class#NewsRssActivity#0" expanded="false" />
           </folding>
@@ -855,23 +899,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_podcast.xml">
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java">
@@ -906,23 +946,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/contacts.xml">
+      <provider editor-type-id="text-editor">
+        <state line="44" column="25" selection-start="3053" selection-end="3053" vertical-scroll-proportion="-9.08" />
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="44" column="25" selection-start="3053" selection-end="3053" vertical-scroll-proportion="-9.08">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_settings.xml">
+      <provider editor-type-id="text-editor">
+        <state line="8" column="42" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0" />
+      </provider>
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="8" column="42" selection-start="352" selection-end="352" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
@@ -934,15 +970,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../SlidingMenu-master/library/src/com/slidingmenu/lib/CustomViewAbove.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="43" selection-start="573" selection-end="573" vertical-scroll-proportion="0.25559703">
-          <folding />
-        </state>
+        <state line="17" column="43" selection-start="573" selection-end="573" vertical-scroll-proportion="0.25559703" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="419" column="21" selection-start="13794" selection-end="13794" vertical-scroll-proportion="0.84931505">
+        <state line="397" column="40" selection-start="13560" selection-end="13560" vertical-scroll-proportion="0.5355191">
           <folding>
+            <element signature="method#onCreate#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#onItemClick#0;class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showArticleListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showPodcastsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showJobsListFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showContactFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#showSettingsFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="class#ClickListener#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="class#CustomViewBinder#0;class#NewsRssActivity#0" expanded="false" />
           </folding>

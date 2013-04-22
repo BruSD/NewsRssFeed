@@ -39,14 +39,9 @@ public class NewsRssActivity extends SherlockActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.main);
 
-
-
         app = findViewById(R.id.app);
 
-
         //app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
-
-
 
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -65,7 +60,6 @@ public class NewsRssActivity extends SherlockActivity {
     }
 
     class  LaunchDetalActiviti implements AdapterView.OnItemClickListener{
-
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -100,7 +94,6 @@ public class NewsRssActivity extends SherlockActivity {
     // Methods for reload ListView
     public void showAricleList() {
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
-
 
         SimpleAdapter adapter = new SimpleAdapter(
                 this,
@@ -189,12 +182,11 @@ public class NewsRssActivity extends SherlockActivity {
         }
 
         SimpleAdapter adapter = new SimpleAdapter(
-                this, createJobsList()/*list*/, R.layout.podcast_item_layout,
+                this, createJobsList(), R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
         idLayout = 3;
         rssListView.setAdapter(adapter);
-
     }
 
     private List<Map<String, ?>> createJobsList()   {
@@ -233,9 +225,7 @@ public class NewsRssActivity extends SherlockActivity {
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
 
-
         showAricleList();
-
     }
 
     public void filterToAudit(final View view){
@@ -257,7 +247,6 @@ public class NewsRssActivity extends SherlockActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
         toast.show();
-
     }
 
     public void filterToBusiness(final View view){
@@ -370,8 +359,6 @@ public class NewsRssActivity extends SherlockActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void showSavedSearchFromSideBar(final View view){
@@ -379,47 +366,33 @@ public class NewsRssActivity extends SherlockActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
         toast.show();
-
-
     }
 
     public void showPodcastsListFromSideBar(final View view){
-        //TODO: Утановите вызов Подкасты
-
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
 
-
         showPodcastList();
-
+        //TODO: close Sidebar
     }
 
     public void showJobsListFromSideBar(final View view){
-        //TODO: Утановите вызов Jobs
-
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
 
-
         showJobstList();
+
+        //TODO: close Sidebar
     }
 
     public void showContactFromSideBar(final View view){
-        //TODO: Утановите вызов Contact
-
         slidingMenu.setContent(R.layout.contacts);
-        idLayout = 4;
-        //Intent startContactsActivity = new Intent(NewsRssActivity.this, Contacts.class);
-        //startActivity(startContactsActivity);
+        idLayout = 6;
     }
 
     public void showSettingsFromSideBar(final View view){
-        //TODO: Утановите вызов SettingsFromSideBar
-
         slidingMenu.setContent(R.layout.details_settings);
-        idLayout = 5;
-        //Intent startDetailSetting = new Intent(NewsRssActivity.this, DetailsSettings.class);
-        //startActivity(startDetailSetting);
+        idLayout = 7;
     }
 
        // Main animation for SideBar
@@ -446,3 +419,12 @@ public class NewsRssActivity extends SherlockActivity {
     }
 
 }
+
+// idLayout:
+// 1 - Articles
+// 2 - Podcasts
+// 3 - Jobs
+// 4 - Favorites
+// 5 - Search
+// 6 - Contacts
+// 7 - Settings
