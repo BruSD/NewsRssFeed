@@ -31,5 +31,6 @@
         <activity android:name="com.newsrss.Feed.Legal"
                   android:label="@string/head_app"/>
         <activity android:name=".Contacts"/>
+        <activity android:name=".Map"/>
     </application>
 </manifest>

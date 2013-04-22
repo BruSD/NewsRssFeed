@@ -8,6 +8,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
@@ -39,6 +40,16 @@ public class DetailsPodcast extends Activity {
     ImageButton seek10Button,seek30Button,play_pauseButton;
     SeekBar castSeekbar;
     int podcastBufferedTime;
+
+
+    @Override
+    public void onDestroy(){
+        end_of_play=true;
+        cast_player.stop();
+        cast_player.release();
+        cast_player=null;
+        super.onDestroy();
+    }
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -143,20 +154,22 @@ public class DetailsPodcast extends Activity {
                     cast_player.reset();
                     try {
                         cast_player.setDataSource(podcastUri);
+                        Toast.makeText(getApplicationContext(),"Begin buffering...",Toast.LENGTH_SHORT).show();
+                        cast_player.prepare();
                     } catch (IOException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        System.out.println("30 sec past");
                     }
 
 
-                    if(playSound())
-                    {
+                    if(playSound()) {
                         first_play=false;
                         timeThread.start();
                         int song_dur=cast_player.getDuration();
                         castSeekbar.setMax(song_dur);
                         castSeekbar.setSecondaryProgress(song_dur);
                         allTime.setText(ConvertToTimeString(song_dur));
-                        castSeekbar.setEnabled(true);}
+                        castSeekbar.setEnabled(true);
+                    }
                     return;
                 }
                 if (!play) playSound();
@@ -203,8 +216,6 @@ public class DetailsPodcast extends Activity {
 
             @Override
             public void onPrepared(MediaPlayer arg0) {
-                Toast toast = Toast.makeText(getApplicationContext(),"Start playing",Toast.LENGTH_SHORT);
-                toast.show();
 
             }
         };
@@ -237,28 +248,19 @@ public class DetailsPodcast extends Activity {
         return time_str;
     }
 
-  /*  Thread playCast = new Thread(
-            new Runnable(){
-
-                @Override
-                public void run() {
-                    if (!PlaySound())
-                    {
-                        first_play=true;
-                        Toast toast = Toast.makeText(getApplicationContext(),"Error with playing",Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
-                }
-
-            });
-
-       */
 
     Thread timeThread = new Thread(
             new Runnable() {
                 public void run() {
                     int dur = cast_player.getDuration();
-                    while(cast_player!=null && cast_player.getCurrentPosition() <=dur)
+
+                    boolean flag = cast_player!=null;
+                    if (flag)
+                        flag = flag && cast_player.getCurrentPosition() <=dur;
+                    else
+                    return;
+
+                    while(flag)
                     {
                         if(play)
                         {
@@ -291,6 +293,10 @@ public class DetailsPodcast extends Activity {
                             e.printStackTrace();
                         }
                         }
+
+                        flag = (cast_player!=null&&!end_of_play);
+                        if (flag)
+                            flag = flag && cast_player.getCurrentPosition() <=dur;
                     }
                 }
             }
@@ -298,8 +304,7 @@ public class DetailsPodcast extends Activity {
 
 
     protected void pauseSound() {
-        if (cast_player.isPlaying())
-        {
+        if (cast_player.isPlaying()) {
             cast_player.pause();
             play_pauseButton.setImageResource(R.drawable.play_button);
             play=false;
@@ -308,23 +313,9 @@ public class DetailsPodcast extends Activity {
 
 
     protected boolean playSound() {
-        try {
-            cast_player.prepare();
-        } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
         cast_player.start();
-
-
-        if (cast_player.isPlaying())
-        {
+        if (cast_player.isPlaying()) {
             synchronized (mutex) {
-
                 mutex.notifyAll();
             }
             play=true;
@@ -332,10 +323,8 @@ public class DetailsPodcast extends Activity {
             return true;
         }
 
-        else
-        {first_play=true;
-            Toast toast = Toast.makeText(getApplicationContext(),"Error with playing",Toast.LENGTH_SHORT);
-            toast.show();
+        else {
+            first_play=true;
             return false;
         }
 
