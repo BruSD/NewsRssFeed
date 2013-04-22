@@ -49,15 +49,14 @@ public class DetailsArticle extends Activity {
         Intent startDetailArticle = getIntent();
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
-        currentArticle = DataStorage.getArticleList().get(positionArt);
 
-        if ( positionArt+1 != DataStorage.getArticleList().size()) {
-        nextArticle = DataStorage.getArticleList().get(positionArt + 1);
-        }
+
+
         ShowArticle();
         NextArticle();
     }
     public void ShowArticle(){
+        currentArticle = DataStorage.getArticleList().get(positionArt);
         String dateArticleV;
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
         dateArticleV = sdf.format(currentArticle.getPubDate());
@@ -66,6 +65,9 @@ public class DetailsArticle extends Activity {
         descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html", "UTF-8");
     }
     public void NextArticle(){
+        if ( positionArt+1 != DataStorage.getArticleList().size()) {
+            nextArticle = DataStorage.getArticleList().get(positionArt + 1);
+        }
          if (nextArticle != null){
              nextTitle.setText(nextArticle.getTitle());
              String dateArticleV;
@@ -75,9 +77,10 @@ public class DetailsArticle extends Activity {
          }
     }
     public void ShowNextArticle(final View view){
-        Intent startDetailArticl = new Intent(DetailsArticle.this, DetailsArticle.class);
-        startDetailArticl.putExtra("position", positionArt+1);
-        startActivity(startDetailArticl);
+         positionArt =positionArt+1;
+        ShowArticle();
+        NextArticle();
+
 
     }
 }
