@@ -28,11 +28,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366620897736" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366622697443" ignored="false" />
     <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366620821142" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366096704958" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366619066376" ignored="false" />
@@ -52,7 +53,7 @@
     <file path="/Podcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365585621699" ignored="false" />
     <file path="/JobParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365587202044" ignored="false" />
     <file path="/strings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365843973582" ignored="false" />
-    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366622461553" ignored="false" />
+    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366623747009" ignored="false" />
     <file path="/ArticleParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366372241511" ignored="false" />
     <file path="/styles.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365777300299" ignored="false" />
     <file path="/details_jobs.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366121698814" ignored="false" />
@@ -126,8 +127,49 @@
       <file leaf-file-name="DetailsArticle.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="8" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.99165505">
+            <state line="63" column="25" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.9930459">
+              <folding>
+                <element signature="e#1760#1996#0" expanded="true" />
+                <element signature="e#1985#1986#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_articl.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="41" selection-start="578" selection-end="578" vertical-scroll-proportion="-5.1">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsRssActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="404" column="21" selection-start="13626" selection-end="13626" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToInsolvency#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToPractice#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#filterToTax#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showToFavoritesFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#showSavedSearchFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -267,6 +309,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -639,7 +699,11 @@
       <created>1366620905883</created>
       <updated>1366620905883</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Next Article in DetailsArticle non re-launch Activity">
+      <created>1366622705690</created>
+      <updated>1366622705690</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -735,7 +799,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value=" Slide Menu Bug Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Next Article in DetailsArticle non re-launch Activity" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -770,6 +834,7 @@
     <MESSAGE value="Implement slidemenu" />
     <MESSAGE value="Implement slidemenu + full Slide" />
     <MESSAGE value=" Slide Menu Bug Fix" />
+    <MESSAGE value="Next Article in DetailsArticle non re-launch Activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -789,14 +854,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/JobParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="0" selection-start="4584" selection-end="4584" vertical-scroll-proportion="0.7620529" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="52" selection-start="0" selection-end="4184" vertical-scroll-proportion="1.7145299" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
@@ -861,9 +918,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/src/com/actionbarsherlock/app/SherlockFragmentActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="753" selection-end="753" vertical-scroll-proportion="0.11821975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="28" selection-start="582" selection-end="582" vertical-scroll-proportion="0.48281017">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="380" column="75" selection-start="13027" selection-end="13027" vertical-scroll-proportion="0.40333796">
+        <state line="404" column="21" selection-start="13626" selection-end="13626" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
@@ -885,27 +959,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/src/com/actionbarsherlock/app/SherlockFragmentActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="753" selection-end="753" vertical-scroll-proportion="0.11821975">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="28" selection-start="582" selection-end="582" vertical-scroll-proportion="0.48281017">
+        <state line="15" column="41" selection-start="578" selection-end="578" vertical-scroll-proportion="-5.1">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="8" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.99165505">
-          <folding />
+        <state line="63" column="25" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.9930459">
+          <folding>
+            <element signature="e#1760#1996#0" expanded="true" />
+            <element signature="e#1985#1986#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

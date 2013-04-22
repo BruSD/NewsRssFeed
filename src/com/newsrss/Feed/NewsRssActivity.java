@@ -397,6 +397,7 @@ public class NewsRssActivity extends SherlockActivity {
     public void showContactFromSideBar(final View view){
         slidingMenu.setContent(R.layout.contacts);
         idLayout = 6;
+
     }
 
     public void showSettingsFromSideBar(final View view){

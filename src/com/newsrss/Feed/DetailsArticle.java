@@ -8,6 +8,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -54,6 +55,15 @@ public class DetailsArticle extends Activity {
 
         ShowArticle();
         NextArticle();
+
+        ImageButton backBtn = (ImageButton)findViewById(R.id.back_btn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //To change body of implemented methods use File | Settings | File Templates.
+                finish();
+            }
+        });
     }
     public void ShowArticle(){
         currentArticle = DataStorage.getArticleList().get(positionArt);
@@ -77,7 +87,7 @@ public class DetailsArticle extends Activity {
          }
     }
     public void ShowNextArticle(final View view){
-         positionArt =positionArt+1;
+        positionArt =positionArt+1;
         ShowArticle();
         NextArticle();
 
