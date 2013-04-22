@@ -2,6 +2,10 @@
   <library name="gen">
     <CLASSES />
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://C:/Program Files (x86)/JetBrains/ActionBarSherlock-4.2.0/library/gen" />
+      <root url="file://C:/Program Files (x86)/JetBrains/ActionBarSherlock-4.2.0/library/src" />
+      <root url="file://C:/Program Files (x86)/JetBrains/ActionBarSherlock-4.2.0/library/test" />
+    </SOURCES>
   </library>
 </component>

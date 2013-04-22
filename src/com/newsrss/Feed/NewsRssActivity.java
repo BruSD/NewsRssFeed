@@ -42,6 +42,8 @@ public class NewsRssActivity extends SherlockActivity {
         app = findViewById(R.id.app);
 
         //app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        ImageButton imgB = (ImageButton)findViewById(R.id.BtnSlide);
+        imgB.setOnClickListener(new ClickListener());
 
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -51,7 +53,7 @@ public class NewsRssActivity extends SherlockActivity {
 
         slidingMenu = new SlidingMenu(this);
         int w = app.getMeasuredWidth();
-        int left = (int) (w*0.2);
+
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
@@ -224,8 +226,10 @@ public class NewsRssActivity extends SherlockActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
-
+        slidingMenu.setContent(R.layout.main);
+        idLayout = 1;
         showAricleList();
+
     }
 
     public void filterToAudit(final View view){
@@ -371,18 +375,21 @@ public class NewsRssActivity extends SherlockActivity {
     public void showPodcastsListFromSideBar(final View view){
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
-
+        slidingMenu.setContent(R.layout.main);
+        idLayout = 2;
         showPodcastList();
-        //TODO: close Sidebar
+
+
+
     }
 
     public void showJobsListFromSideBar(final View view){
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
-
+        slidingMenu.setContent(R.layout.main);
+        idLayout = 3;
         showJobstList();
 
-        //TODO: close Sidebar
     }
 
     public void showContactFromSideBar(final View view){
@@ -399,6 +406,10 @@ public class NewsRssActivity extends SherlockActivity {
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
+            toast.show();
+
+            slidingMenu.showMenu();
 
         }
     }
