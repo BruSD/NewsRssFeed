@@ -25,7 +25,7 @@
         <ImageView
                 android:layout_width="23dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView6" android:layout_toRightOf="@+id/imageButton" android:src="@drawable/logo1"
+                android:id="@+id/imageView6" android:layout_toRightOf="@+id/settingSidebarButton" android:src="@drawable/logo1"
                 android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"
                 android:layout_marginRight="3dp"/>
         <TextView android:id="@+id/article_head" android:layout_width="wrap_content"

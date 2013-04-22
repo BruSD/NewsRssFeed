@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.*;
@@ -423,6 +424,13 @@ public class NewsRssActivity extends SherlockActivity {
 
         View sidebarButton  = findViewById(R.id.contactSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
+
+        TextView getinText=(TextView) findViewById(R.id.contacts_text_getin);
+        getinText.setText(Html.fromHtml("Get in touch with <b>Facebook , Linkedin</b> ot <b>Twitter</b>"));
+        TextView tel1Text=(TextView) findViewById(R.id.contacts_text_tel_ir);
+        tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
+        TextView tel2Text=(TextView) findViewById(R.id.contacts_text_telNI);
+        tel2Text.setText(Html.fromHtml("<b>Tel:</b> 00442 8 904 3584"));
 
         ImageView cal_btnIR = (ImageView) findViewById(R.id.contacts_callIR);
         ImageView cal_btnNI= (ImageView) findViewById(R.id.contacts_callNI);
