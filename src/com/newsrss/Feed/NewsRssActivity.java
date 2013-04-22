@@ -41,9 +41,9 @@ public class NewsRssActivity extends SherlockActivity {
 
         app = findViewById(R.id.app);
 
-        //app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
-        ImageButton imgB = (ImageButton)findViewById(R.id.BtnSlide);
-        imgB.setOnClickListener(new ClickListener());
+        app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        //ImageButton imgB = (ImageButton)findViewById(R.id.BtnSlide);
+        //imgB.setOnClickListener(new ClickListener());
 
         ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
@@ -52,7 +52,7 @@ public class NewsRssActivity extends SherlockActivity {
         rssListView.setOnItemClickListener(new LaunchDetalActiviti());
 
         slidingMenu = new SlidingMenu(this);
-        int w = app.getMeasuredWidth();
+
 
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
@@ -67,7 +67,8 @@ public class NewsRssActivity extends SherlockActivity {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             //To change body of implemented methods use File | Settings | File Templates.
 
-            System.out.println("item click" + id);
+            System.out.println("idLayout " + idLayout);
+
 
             switch (idLayout)  {
                 case 1:
@@ -226,9 +227,10 @@ public class NewsRssActivity extends SherlockActivity {
 
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         toast.show();
-        slidingMenu.setContent(R.layout.main);
-        idLayout = 1;
+
+
         showAricleList();
+        slidingMenu.showContent();
 
     }
 
@@ -375,10 +377,10 @@ public class NewsRssActivity extends SherlockActivity {
     public void showPodcastsListFromSideBar(final View view){
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         toast.show();
-        slidingMenu.setContent(R.layout.main);
-        idLayout = 2;
-        showPodcastList();
 
+
+        showPodcastList();
+        slidingMenu.showContent();
 
 
     }
@@ -386,9 +388,9 @@ public class NewsRssActivity extends SherlockActivity {
     public void showJobsListFromSideBar(final View view){
         Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         toast.show();
-        slidingMenu.setContent(R.layout.main);
-        idLayout = 3;
+
         showJobstList();
+        slidingMenu.showContent();
 
     }
 

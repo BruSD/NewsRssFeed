@@ -27,17 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.iml" afterPath="$PROJECT_DIR$/NewsFeed.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/gen.xml" afterPath="$PROJECT_DIR$/.idea/libraries/gen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366617048144" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366619485623" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366619765565" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366620821142" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366096704958" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366619066376" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
@@ -130,16 +126,16 @@
       <file leaf-file-name="NewsRssActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="400" column="85" selection-start="13732" selection-end="13732" vertical-scroll-proportion="0.14047287">
+            <state line="232" column="34" selection-start="7979" selection-end="7979" vertical-scroll-proportion="0.4742698">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+                <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
                 <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
@@ -701,7 +697,11 @@
       <created>1366373409298</created>
       <updated>1366373409298</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Implement slidemenu + full Slide">
+      <created>1366619782740</created>
+      <updated>1366619782740</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -738,7 +738,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52519596" sideWeight="0.48684916" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32013202" sideWeight="0.78413427" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42930153" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4290429" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33370662" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="3" side_tool="false" content_ui="tabs" />
@@ -797,7 +797,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement slidemenu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement slidemenu + full Slide" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -830,6 +830,7 @@
     <MESSAGE value="images for Articles" />
     <MESSAGE value="images for Articles (after pull)" />
     <MESSAGE value="Implement slidemenu" />
+    <MESSAGE value="Implement slidemenu + full Slide" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -945,16 +946,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="400" column="85" selection-start="13732" selection-end="13732" vertical-scroll-proportion="0.14047287">
+        <state line="232" column="34" selection-start="7979" selection-end="7979" vertical-scroll-proportion="0.4742698">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#LaunchDetalActiviti#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#showAricleList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#createArticleList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#showPodcastList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#createPodcastList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#showJobstList#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#createJobsList#0;class#NewsRssActivity#0" expanded="false" />
+            <element signature="method#startSearchActivityFromSideBar#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#filterToAudit#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#filterToBusiness#0;class#NewsRssActivity#0" expanded="false" />
             <element signature="method#filterToGovernance#0;class#NewsRssActivity#0" expanded="false" />
