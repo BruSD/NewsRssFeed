@@ -27,13 +27,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366622697443" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366623826333" ignored="false" />
     <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366620821142" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366096704958" ignored="false" />
     <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366619066376" ignored="false" />
@@ -124,14 +123,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DetailsArticle.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DetailsArticle.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="25" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.9930459">
+            <state line="65" column="16" selection-start="1661" selection-end="1998" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1760#1996#0" expanded="true" />
                 <element signature="e#1985#1986#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailsJobs.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="11" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.77885956">
+              <folding>
+                <element signature="e#1512#1748#0" expanded="true" />
+                <element signature="e#1737#1738#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details_jobs.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="41" selection-start="2652" selection-end="2652" vertical-scroll-proportion="-24.48">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,13 +232,13 @@
         <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/JobParser.java" />
         <option value="$PROJECT_DIR$/res/layout/details_jobs.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DataStorage.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/ArticleParser.java" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" />
       </list>
     </option>
   </component>
@@ -703,7 +726,11 @@
       <created>1366622705690</created>
       <updated>1366622705690</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Back Button on Article Details&#10;">
+      <created>1366623834576</created>
+      <updated>1366623834576</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -799,7 +826,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Next Article in DetailsArticle non re-launch Activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back Button on Article Details&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -835,6 +862,7 @@
     <MESSAGE value="Implement slidemenu + full Slide" />
     <MESSAGE value=" Slide Menu Bug Fix" />
     <MESSAGE value="Next Article in DetailsArticle non re-launch Activity" />
+    <MESSAGE value="Back Button on Article Details&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -854,19 +882,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/JobParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="0" selection-start="4584" selection-end="4584" vertical-scroll-proportion="0.7620529" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="41" selection-start="2652" selection-end="2652" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="44" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.5775" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/Article.java">
@@ -969,12 +984,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/details_jobs.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="41" selection-start="2652" selection-end="2652" vertical-scroll-proportion="-24.48">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="25" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.9930459">
+        <state line="65" column="16" selection-start="1661" selection-end="1998" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1760#1996#0" expanded="true" />
             <element signature="e#1985#1986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="11" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.77885956">
+          <folding>
+            <element signature="e#1512#1748#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
           </folding>
         </state>
       </provider>

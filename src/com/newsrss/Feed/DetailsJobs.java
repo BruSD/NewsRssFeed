@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -43,9 +44,16 @@ public class DetailsJobs extends Activity {
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
         currentArticle = DataStorage.getJobList().get(positionArt);
-
-
         ShowArticle();
+
+        ImageButton backBtn = (ImageButton)findViewById(R.id.back_btn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //To change body of implemented methods use File | Settings | File Templates.
+                finish();
+            }
+        });
 
     }
     public void ShowArticle(){
