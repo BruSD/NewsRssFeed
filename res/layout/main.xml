@@ -13,42 +13,29 @@
             android:layout_height="fill_parent"
             android:orientation="vertical"
             android:background="#ffffffff">
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-
-            android:background="@drawable/soft_bg_side_bar">
-
-
-        <ImageButton
-                android:id="@+id/BtnSlide"
-                style="@style/SidebarButtonStyle"
-
-
-                />
-
-        <ImageView
-                android:id="@+id/article_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo"
-                android:layout_gravity="center_vertical"/>
-        <TextView
-                android:id="@+id/article_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/head_app"
-                android:layout_gravity="center_vertical"/>
-
-    </LinearLayout>
-        <ListView
+       <RelativeLayout
+               style="@style/AB">
+           <ImageView
+                   android:id="@+id/news_AB_BG"
+                   style="@style/AB_Background"/>
+           <TextView
+                   android:id="@+id/article_head"
+                   style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/article_logo"/>
+           <ImageButton
+                   android:id="@+id/BtnSlide"
+                   style="@style/AB_SideBarButton"
+                   />
+           <ImageView
+                   android:id="@+id/article_logo"
+                   style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/BtnSlide"/>
+       </RelativeLayout>
+       <ListView
                 android:id="@+id/rssListView"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_w"/>
 
-    </LinearLayout>
+   </LinearLayout>
 
 </FrameLayout>
 

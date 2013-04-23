@@ -28,9 +28,9 @@ public class Contacts extends Activity {
 
         getinText=(TextView) findViewById(R.id.contacts_text_getin);
         getinText.setText(Html.fromHtml("Get in touch with <b>Facebook , Linkedin</b> ot <b>Twitter</b>"));
-        tel1Text=(TextView) findViewById(R.id.contacts_text_tel_ir);
+        tel1Text=(TextView) findViewById(R.id.contacts_Ireland_tel_text);
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
-        tel2Text=(TextView) findViewById(R.id.contacts_text_telNI);
+        tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);
         tel2Text.setText(Html.fromHtml("<b>Tel:</b> 00442 8 904 3584"));
         cal_btnIR=(ImageView) findViewById(R.id.contacts_callIR);
         cal_btnNI=(ImageView) findViewById(R.id.contacts_callNI);

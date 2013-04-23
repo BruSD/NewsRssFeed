@@ -5,48 +5,31 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:background="#EEEEEA">
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:id="@+id/imageView15" android:adjustViewBounds="true"
-                android:src="@drawable/settings_menu_bar" android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true" android:scaleType="fitXY"/>
-        <ImageButton
-                android:layout_width="38dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/settingSidebarButton"
-                android:src="@drawable/side_bar_btn1" android:padding="0dp" android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:layout_marginLeft="8dp" android:layout_marginRight="12dp"
-                android:layout_centerVertical="true"/>
-        <ImageView
-                android:layout_width="23dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView6" android:layout_toRightOf="@+id/settingSidebarButton" android:src="@drawable/logo1"
-                android:adjustViewBounds="true" android:scaleType="fitXY" android:layout_centerVertical="true"
-                android:layout_marginRight="3dp"/>
-        <TextView android:id="@+id/article_head" android:layout_width="wrap_content"
-                  android:layout_height="wrap_content" android:text="@string/head_app"
-                  android:layout_gravity="center_vertical" android:textColor="#ffffff"
-                  android:layout_toRightOf="@+id/imageView6" android:layout_centerVertical="true"
-                  android:textSize="16dp"/>
+    <RelativeLayout android:id="@+id/settings_actionBar"
+                    style="@style/AB">
+        <ImageView android:id="@+id/settings_actionBarBG"
+                   style="@style/AB_Background"/>
+        <ImageButton android:id="@+id/settingSidebarButton"
+                     style="@style/AB_SideBarButton"/>
+        <ImageView android:id="@+id/settings_firm_symbol"
+                   style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/settingSidebarButton"/>
+        <TextView android:id="@+id/settings_firm_title"
+                  style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/settings_firm_symbol"/>
     </RelativeLayout>
+
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageView"
+                android:id="@+id/settings_topBG"
                 android:adjustViewBounds="true" android:scaleType="fitXY" android:src="@drawable/settings_plate"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Settings"
-                android:id="@+id/textView" android:textStyle="bold"
+                android:id="@+id/settings_top_title" android:textStyle="bold"
                 android:textColor="#ffffff" android:textSize="18dp"
                 android:layout_centerVertical="true" android:layout_marginLeft="12dp"/>
     </RelativeLayout>
@@ -66,7 +49,7 @@
             <ImageView
                     android:layout_width="22dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView4" android:adjustViewBounds="true"
+                    android:id="@+id/settings_legalIcon" android:adjustViewBounds="true"
                     android:src="@drawable/settings_legal"
                     android:layout_alignParentStart="false"
                     android:layout_centerVertical="true" android:layout_marginLeft="12dp"/>
@@ -74,14 +57,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Legal"
-                    android:id="@+id/textView1"
-                    android:textColor="#ffffff" android:textSize="18dp" android:layout_toRightOf="@+id/imageView4"
+                    android:id="@+id/settings_legal_title"
+                    android:textColor="#ffffff" android:textSize="18dp" android:layout_toRightOf="@+id/settings_legalIcon"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
             <ImageView
                     android:layout_width="10dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageView7" android:adjustViewBounds="true"
+                    android:id="@+id/settings_arrow" android:adjustViewBounds="true"
                     android:src="@drawable/settings_arrow"
                     android:layout_marginRight="12dp"
                     android:layout_centerVertical="true" android:layout_alignRight="@+id/legal_imageView"/>
@@ -93,18 +76,18 @@
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                        android:id="@+id/rate_imageView" android:adjustViewBounds="true" android:scaleType="fitXY"
                        android:src="@drawable/settings_plates_for_button"/>
-            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView8"
+            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/settings_arrow"
                        android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
                        android:layout_alignRight="@+id/rate_imageView"
                        android:layout_centerVertical="true"
                        android:layout_marginRight="12dp"/>
-            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView10"
+            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/settings_rateIcon"
                        android:adjustViewBounds="true" android:src="@drawable/settings_star"
                        android:layout_alignParentStart="false" android:layout_centerVertical="true"
                        android:layout_marginLeft="12dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rate this App"
-                      android:id="@+id/textView2" android:textColor="#ffffff" android:textSize="18dp"
-                      android:layout_toRightOf="@+id/imageView10" android:layout_marginLeft="15dp"
+                      android:id="@+id/settings_rate_title" android:textColor="#ffffff" android:textSize="18dp"
+                      android:layout_toRightOf="@+id/settings_rateIcon" android:layout_marginLeft="15dp"
                       android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
         </RelativeLayout>
         <RelativeLayout
@@ -114,17 +97,17 @@
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
                        android:id="@+id/feedback_imageView" android:adjustViewBounds="true" android:scaleType="fitXY"
                        android:src="@drawable/settings_plates_for_button"/>
-            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/imageView9"
+            <ImageView android:layout_width="10dp" android:layout_height="wrap_content" android:id="@+id/settings_arrow"
                        android:adjustViewBounds="true" android:src="@drawable/settings_arrow"
                        android:layout_alignRight="@+id/feedback_imageView" android:layout_centerVertical="true"
                        android:layout_marginRight="12dp"/>
-            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/imageView5"
+            <ImageView android:layout_width="22dp" android:layout_height="wrap_content" android:id="@+id/settings_feedbackIcon"
                        android:adjustViewBounds="true" android:src="@drawable/settings_contacts"
                        android:layout_alignParentStart="false" android:layout_centerVertical="true"
                        android:layout_marginLeft="12dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Send Us Feedback"
-                      android:id="@+id/textView3" android:textColor="#ffffff" android:textSize="18dp"
-                      android:layout_toRightOf="@+id/imageView5" android:layout_marginLeft="15dp"
+                      android:id="@+id/settings_feedback_title" android:textColor="#ffffff" android:textSize="18dp"
+                      android:layout_toRightOf="@+id/settings_feedbackIcon" android:layout_marginLeft="15dp"
                       android:layout_marginTop="8dp" android:layout_centerVertical="true"/>
         </RelativeLayout>
     </LinearLayout>
@@ -135,7 +118,7 @@
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="85dp"
-                android:id="@+id/imageView14" android:src="@drawable/settings_gray_plate"
+                android:id="@+id/settings_sharePanelBG" android:src="@drawable/settings_gray_plate"
                 android:adjustViewBounds="true"
                 android:layout_alignParentEnd="false" android:layout_centerVertical="true"
                 android:scaleType="fitXY"/>
@@ -143,36 +126,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Connect With Us"
-                android:id="@+id/textView4" android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
-                android:layout_marginLeft="12dp" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+                android:id="@+id/settings_sharePanel_text" android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
                 android:textColor="#7D003A" android:textSize="18dp"/>
-        <ImageView
-                android:layout_width="93dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/twitter_imageView" android:layout_below="@+id/textView4" android:src="@drawable/tvitter"
-                android:layout_marginLeft="12dp" android:adjustViewBounds="true" android:scaleType="fitXY"/>
-        <ImageView
-                android:layout_width="84dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/linkedln_imageView" android:layout_below="@+id/textView4"
-                android:adjustViewBounds="true" android:scaleType="fitXY"
-                android:src="@drawable/linkedin"
-                android:layout_alignParentBottom="false" android:layout_alignParentLeft="false"
-                android:layout_alignParentRight="false"
-                android:layout_toRightOf="@+id/twitter_imageView" android:layout_marginLeft="14.5dp"/>
-        <ImageView
-                android:layout_width="89dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/facebook_imageView" android:layout_below="@+id/textView4"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true" android:src="@drawable/facebook" android:layout_marginTop="-1dp"
-                android:layout_alignParentLeft="false" android:layout_alignParentRight="true"
-                android:layout_marginRight="12dp"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_below="@+id/settings_sharePanel_text">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/facebook_imageView" android:layout_below="@+id/settings_sharePanel_text"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true" android:src="@drawable/facebook"
+                    android:layout_alignParentLeft="false" android:layout_alignParentRight="true"
+                    android:layout_marginRight="12dp" android:layout_weight="180" android:layout_marginLeft="12dp"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/twitter_imageView" android:layout_below="@+id/settings_sharePanel_text" android:src="@drawable/tvitter"
+                    android:adjustViewBounds="true" android:scaleType="fitXY"
+                    android:layout_marginRight="12dp" android:layout_weight="189"/>
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linkedln_imageView" android:layout_below="@+id/settings_sharePanel_text"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/linkedin"
+                    android:layout_alignParentBottom="false" android:layout_alignParentLeft="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentTop="false" android:layout_alignWithParentIfMissing="false"
+                    android:scaleType="fitXY" android:layout_centerHorizontal="true" android:layout_weight="170"
+                    android:layout_marginRight="12dp"/>
+        </LinearLayout>
     </RelativeLayout>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="App By Lightbox.ie"
-            android:id="@+id/textView5" android:layout_gravity="right|center_vertical" android:textColor="#CFCECA"
+            android:id="@+id/settings_appBy" android:layout_gravity="right|center_vertical" android:textColor="#CFCECA"
             android:textStyle="italic" android:layout_marginRight="12dp" android:layout_marginTop="22dp"/>
 </LinearLayout>
