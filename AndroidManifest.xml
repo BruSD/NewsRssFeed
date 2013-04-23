@@ -25,12 +25,11 @@
                 android:label="@string/head_app"/>
         <activity android:name="com.newsrss.Feed.DetailsPodcast"
                   android:label="@string/head_app"/>
-        <activity android:name=".DetailsJobs"
+        <activity android:name="com.newsrss.Feed.DetailsJobs"
                   android:label="@string/head_app"/>
-        <activity android:name=".DetailsSettings"/>
+        <activity android:name="com.newsrss.Feed.DetailsSettings"/>
         <activity android:name="com.newsrss.Feed.Legal"
                   android:label="@string/head_app"/>
-        <activity android:name=".Contacts"/>
-        <activity android:name=".Map"/>
+        <activity android:name="com.newsrss.Feed.Contacts"/>
     </application>
 </manifest>
