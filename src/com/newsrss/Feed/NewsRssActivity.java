@@ -219,13 +219,13 @@ public class NewsRssActivity extends SherlockActivity {
     public void startSearchActivityFromSideBar(final View view){
           //TODO: Утановите вызов Активити для поиска
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void showArticleListFromSideBar(final View view){
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
+        //toast.show();
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
             slidingMenu.setContent(R.layout.main);
@@ -258,8 +258,8 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Аудита",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void filterToBusiness(final View view){
@@ -279,8 +279,8 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Бизнеса",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void filterToGovernance(final View view){
@@ -300,8 +300,8 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Правительства",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void filterToInsolvency(final View view){
@@ -321,8 +321,8 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Insolvency",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void filterToPractice(final View view){
@@ -342,8 +342,8 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Practice",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void filterToTax(final View view){
@@ -363,27 +363,27 @@ public class NewsRssActivity extends SherlockActivity {
         imageView.setImageDrawable(image);
         showAricleList();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void showToFavoritesFromSideBar(final View view){
         //TODO: Утановите вызов Favorites
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void showSavedSearchFromSideBar(final View view){
         //TODO: Установите вызов showSavedSearchFromSideBar
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
+        //toast.show();
     }
 
     public void showPodcastsListFromSideBar(final View view){
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
+        //toast.show();
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
             slidingMenu.setContent(R.layout.main);
@@ -401,8 +401,8 @@ public class NewsRssActivity extends SherlockActivity {
     }
 
     public void showJobsListFromSideBar(final View view){
-        Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
-        toast.show();
+        //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
+        //toast.show();
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
             slidingMenu.setContent(R.layout.main);
@@ -497,8 +497,8 @@ public class NewsRssActivity extends SherlockActivity {
     class ClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
-            toast.show();
+            //Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
+            //toast.show();
 
             slidingMenu.showMenu();
 

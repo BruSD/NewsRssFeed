@@ -56,19 +56,19 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                         break;
                     }
                     case Governance: {
-                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/2013/?output=rss&categories=governance,AML%20-NI,AML%20-ROI,Ethics,");
+                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/?output=rss&categories=governance,AML%20-NI,AML%20-ROI,Ethics,");
                         break;
                     }
                     case Insolvency: {
-                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/2013/?output=rss&categories=insolvency");
+                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/?output=rss&categories=insolvency");
                         break;
                     }
                     case Practice: {
-                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/2013/?output=rss&categories=licenses,governance,business");
+                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/?output=rss&categories=licenses,governance,business");
                         break;
                     }
                     case Tax: {
-                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/2013/?output=rss&categories=taxation");
+                        xmlUrl = new URL("http://www.charteredaccountants.ie/en/General/News-and-Events/News1/?output=rss&categories=taxation");
                         break;
                     }
                 }
@@ -132,11 +132,6 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             catch(ParseException e)
                             { _pubDate = new Date(); }
 
-                            /*
-                            Attr attribute = ;
-                            InputStream inputStream = (InputStream) new URL(attribute.getValue()).getContent();
-                            Drawable image = Drawable.createFromStream(inputStream, "src name");
-                             */
                             Drawable image = null;//DataStorage.fetchDrawable(_imageLinkE.getAttributeNode("url").getValue());
 
                             //create Article and add it to the ArrayList

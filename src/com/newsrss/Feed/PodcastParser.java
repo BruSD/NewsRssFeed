@@ -36,7 +36,7 @@ public class PodcastParser extends AsyncTask<Void, Void, ArrayList<Podcast>> {
         // Get url of News type
         URL xmlUrl;
         try {
-            xmlUrl = new URL("http://www.accountancyireland.ie/en/RSS-Feeds/Accountancy-Ireland-Podcast");
+            xmlUrl = new URL("http://www.accountancyireland.ie/en/RSS-Feeds/Accountancy-Ireland-Podcast/");
         }
         catch (MalformedURLException ex) {
             //  This can't be!!!
