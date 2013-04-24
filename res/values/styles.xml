@@ -1,22 +1,4 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="BackButtonStyle" parent="@android:style/Widget.Button">
-        <item name="android:src">@drawable/back_button</item>
-        <item name="android:background">#00000000</item>
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_height">65dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">20dp</item>
-    </style>
-    <style name="SidebarButtonStyle" parent="@android:style/Widget.Button">
-        <item name="android:src">@drawable/side_bar_btn1</item>
-        <item name="android:background">#00000000</item>
-        <item name="android:layout_gravity">center_vertical</item>
-        <item name="android:layout_height">65dp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:paddingLeft">12dp</item>
-        <item name="android:paddingRight">20dp</item>
-    </style>
     <style name="SideBarLayoutDarck">
         <item name="android:layout_height">65dp</item>
         <item name="android:layout_width">fill_parent</item>
@@ -70,8 +52,8 @@
         <item name="android:src">@drawable/tvitter</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="android:layout_marginRight">10</item>
-        <item name="android:layout_marginLeft">10</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
     </style>
     <style name="SharePanelFacebook">
         <item name="android:layout_weight">180</item>
@@ -82,7 +64,7 @@
         <item name="android:src">@drawable/facebook</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="android:layout_marginRight">10</item>
+        <item name="android:layout_marginRight">10dp</item>
     </style>
     <style name="SharePanelLinkedIn">
         <item name="android:layout_weight">170</item>
@@ -93,7 +75,7 @@
         <item name="android:src">@drawable/linkedin</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="android:layout_marginRight">10</item>
+        <item name="android:layout_marginRight">10dp</item>
     </style>
     <style name="SharePanelMail">
         <item name="android:layout_weight">55</item>
@@ -104,7 +86,7 @@
         <item name="android:src">@drawable/button_mail</item>
         <item name="android:scaleType">fitXY</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="android:layout_marginRight">10</item>
+        <item name="android:layout_marginRight">10dp</item>
     </style>
 
     <style name="AB_BackButton">
@@ -163,5 +145,254 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
     </style>
+
+    <style name="Legal_title">
+        <item name="android:text">@string/legalTitle</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+    </style>
+
+    <style name="Legal_description">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+    </style>
+
+    <style name="Contacts_MainLayout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">#EEEEEA</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Contacts_TopPlate">
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">#611B40</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Contacts_MainPlate">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Contacts_Ireland">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+    <style name="Contacts_MapLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+    </style>
+
+    <style name="Contacts_CallLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginTop">-2dp</item>
+    </style>
+
+    <style name="Contacts_NI">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="Contacts_ScrollView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#611B40</item>
+    </style>
+
+    <style name="Contacts_Icon">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">56dp</item>
+        <item name="android:src">@drawable/contact_top_icon</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">53dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="Contacts_Title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Contacts_Text_Getin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginTop">36dp</item>
+        <item name="android:layout_marginBottom">30dp</item>
+        <item name="android:singleLine">false</item>
+    </style>
+
+    <style name="Contacts_CountryTitle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_alignLeft">@+id/contacts_irelandBG</item>
+        <item name="android:layout_alignTop">@+id/contacts_irelandBG</item>
+    </style>
+
+    <style name="Contacts_Map">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">45dp</item>
+        <item name="android:src">@drawable/contacts_button_map</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="Contacts_TextMap">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="Contacts_Separator">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:src">@drawable/contacts_separate_line</item>
+    </style>
+
+    <style name="Contacts_TextTel">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">9dp</item>
+    </style>
+
+    <style name="Contacts_Call">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">42dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@drawable/contacts_button_call</item>
+    </style>
+
+    <style name="Contacts_TextCall">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="Contacts_AddrFirst">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="Contacts_AddrOther">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Contacts_IrelandBG">
+        <item name="android:layout_height">163dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/contacts_grey_plate</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="Contacts_NIBG">
+        <item name="android:layout_height">183dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/contacts_grey_plate</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="SharePanelConSet">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="SharePanelConSet_BG">
+        <item name="android:layout_height">85dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/settings_gray_plate</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="SharePanelConSet_Title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">#7D003A</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="SharePanelConSet_Buttons">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="SharePanelConSet_Facebook">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/facebook</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_weight">180</item>
+    </style>
+
+    <style name="SharePanelConSet_Twitter">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/tvitter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_weight">189</item>
+    </style>
+
+    <style name="SharePanelConSet_Linkedin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@drawable/linkedin</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_weight">170</item>
+    </style>
+
 
 </resources>

@@ -5,6 +5,21 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent" android:background="#EFEEEA">
 
+    <RelativeLayout
+            style="@style/AB">
+        <ImageView
+                android:id="@+id/legal_AB_BG"
+                style="@style/AB_Background"/>
+        <ImageButton
+                android:id="@+id/legal_AB_backButton"
+                style="@style/AB_BackButton"/>
+        <ImageView
+                android:id="@+id/legal_AB_symbol"
+                style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/legal_AB_backButton"/>
+        <TextView
+                android:id="@+id/legal_AB_title"
+                style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/legal_AB_symbol"/>
+    </RelativeLayout>
     <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -14,16 +29,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Legal"
-                    android:id="@+id/textView" android:layout_gravity="left|center_vertical" android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp" android:textSize="16dp" android:textStyle="bold"/>
+                    android:id="@+id/legal_title"
+                    style="@style/Legal_title"/>
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textLegal" android:layout_gravity="left|center_vertical" android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp" android:singleLine="false"/>
+                    android:id="@+id/legal_description"
+                    style="@style/Legal_description"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

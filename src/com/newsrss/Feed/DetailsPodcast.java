@@ -37,7 +37,7 @@ public class DetailsPodcast extends Activity {
     Object mutex = new Object();
     TextView titleText,dateText;
     TextView playedTime,allTime;
-    ImageButton seek10Button,seek30Button,play_pauseButton;
+    ImageButton seek10Button,seek30Button,play_pauseButton,backButton;
     SeekBar castSeekbar;
     int podcastBufferedTime;
 
@@ -64,6 +64,7 @@ public class DetailsPodcast extends Activity {
         WebView podcastDecription = (WebView) findViewById(R.id.PodcastDescription);
         seek10Button = (ImageButton) findViewById(R.id.PodcastSeek10Button);
         seek30Button = (ImageButton) findViewById(R.id.PodcastSeek30Button);
+        backButton = (ImageButton) findViewById(R.id.podcast_backButton);
         play_pauseButton = (ImageButton) findViewById(R.id.PodcastPlay_pauseButton);
         castSeekbar = (SeekBar) findViewById(R.id.PodcastSeekbar);
 
@@ -146,6 +147,13 @@ public class DetailsPodcast extends Activity {
             }
         };
 
+        ImageButton.OnClickListener ocBack = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        };
+
         ImageButton.OnClickListener ocPlay_pause = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,6 +233,7 @@ public class DetailsPodcast extends Activity {
         play_pauseButton.setOnClickListener(ocPlay_pause);
         seek10Button.setOnClickListener(ocSeek_10);
         seek30Button.setOnClickListener(ocSeek_30);
+        backButton.setOnClickListener(ocBack);
         castSeekbar.setOnSeekBarChangeListener(ocSeek);
         cast_player.setOnCompletionListener(ocEnd);
         cast_player.setOnBufferingUpdateListener(ocBuffer);

@@ -16,6 +16,23 @@
     <string name="jobs_string">Jobs</string>
     <string name="contact_string">Contact</string>
     <string name="settings_string">Settings</string>
+    <string name="legalTitle">Legal</string>
+    <string name="contacts_Title">Contacts</string>
+    <string name="contacts_textMap">Map</string>
+    <string name="contacts_textCall">Call</string>
+    <string name="contacts_IrelandTitle">Ireland</string>
+    <string name="contacts_IrelandAddr1line">Chartered Accountants House,</string>
+    <string name="contacts_IrelandAddr2line">47 Pearse St,</string>
+    <string name="contacts_IrelandAddr3line">Dublin 2,</string>
+    <string name="contacts_IrelandAddr4line">Ireland</string>
+    <string name="contacts_NITitle">Northern Ireland</string>
+    <string name="contacts_NIAddr1line">Chartered Accountants House,</string>
+    <string name="contacts_NIAddr2line">32-38 Linenhall Street,</string>
+    <string name="contacts_NIAddr3line">Belfast,</string>
+    <string name="contacts_NIAddr4line">Country Antrim BT2 8BG,</string>
+    <string name="contacts_NIAddr5line">Northen Ireland</string>
+    <string name="SharePanelConSetTitle">Connect With Us</string>
+
     <string name="share_panel_bottom_article_text">Share this article</string>
     <string name="share_panel_bottom_podcast_text">Share this podcast</string>
 
