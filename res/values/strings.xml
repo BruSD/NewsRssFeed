@@ -16,5 +16,7 @@
     <string name="jobs_string">Jobs</string>
     <string name="contact_string">Contact</string>
     <string name="settings_string">Settings</string>
+    <string name="share_panel_bottom_article_text">Share this article</string>
+    <string name="share_panel_bottom_podcast_text">Share this podcast</string>
 
 </resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/share_panel_bottom"
+        style="@style/SharePanelBottom">
+    <TextView
+            android:id="@+id/share_panel_bottom_text"
+            android:text="@string/share_panel_bottom_article_text"
+            style="@style/SharePanelBottomText"
+            />
+    <LinearLayout
+            style="@style/SharePanelButtonLayout">
+        <ImageButton
+                android:id="@+id/share_panel_bottom_twitter"
+                style="@style/SharePanelTwitter"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_facebook"
+                android:layout_toRightOf="@id/share_panel_bottom_twitter"
+                style="@style/SharePanelFacebook"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_linkedin"
+                android:layout_toRightOf="@id/share_panel_bottom_facebook"
+                style="@style/SharePanelLinkedIn"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_mail"
+                android:layout_toRightOf="@id/share_panel_bottom_linkedin"
+                style="@style/SharePanelMail"
+                />
+    </LinearLayout>
+</LinearLayout>

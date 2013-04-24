@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:adjustViewBounds="true"
+              android:background="@drawable/sharepaneltop_bg"
+              android:layout_height="wrap_content">
+    <LinearLayout
+            style="@style/SharePanelButtonLayout">
+        <ImageButton
+                android:id="@+id/share_panel_bottom_twitter"
+                style="@style/SharePanelTwitter"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_facebook"
+                android:layout_toRightOf="@id/share_panel_bottom_twitter"
+                style="@style/SharePanelFacebook"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_linkedin"
+                android:layout_toRightOf="@id/share_panel_bottom_facebook"
+                style="@style/SharePanelLinkedIn"
+                />
+        <ImageButton
+                android:id="@+id/share_panel_bottom_mail"
+                android:layout_toRightOf="@id/share_panel_bottom_linkedin"
+                style="@style/SharePanelMail"
+                />
+    </LinearLayout>
+</LinearLayout>
