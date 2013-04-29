@@ -462,9 +462,9 @@ public class NewsRssActivity extends SherlockActivity {
         idLayout = 7;
         View sidebarButton  = findViewById(R.id.settingSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
-        ImageView legalView = (ImageView)findViewById(R.id.legal_imageView);
-        ImageView rateView = (ImageView)findViewById(R.id.rate_imageView);
-        ImageView feedbackView = (ImageView)findViewById(R.id.feedback_imageView);
+        ImageView legalView = (ImageView)findViewById(R.id.settings_legalBG);
+        ImageView rateView = (ImageView)findViewById(R.id.settings_rateBG);
+        ImageView feedbackView = (ImageView)findViewById(R.id.settings_feedbackBG);
 
         ImageView.OnClickListener ocLegal = new View.OnClickListener() {
             @Override

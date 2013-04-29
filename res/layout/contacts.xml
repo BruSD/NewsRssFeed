@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/contacts_layout"
-              style="@style/Contacts_MainLayout">
+              style="@style/ContactsSettings_MainLayout">
 
     <RelativeLayout android:id="@+id/contacts_actionBar"
                     style="@style/AB">
@@ -20,7 +20,7 @@
             style="@style/Contacts_ScrollView">
         <LinearLayout
                 android:id="@+id/contacts_main"
-                style="@style/Contacts_MainLayout">
+                style="@style/ContactsSettings_MainLayout">
             <RelativeLayout
                     android:id="@+id/contacts_topPlate"
                     style="@style/Contacts_TopPlate">
@@ -176,7 +176,7 @@
 
 
                 <RelativeLayout android:id="@+id/contacts_SharePanelConSet"
-                                style="@style/SharePanelConSet">
+                                style="@style/SharePanelCon">
                     <ImageView android:id="@+id/contacts_sharePanelBG"
                                style="@style/SharePanelConSet_BG"/>
                     <TextView android:id="@+id/contacts_sharePanel_text"

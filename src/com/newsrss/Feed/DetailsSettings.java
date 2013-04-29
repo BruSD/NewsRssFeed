@@ -23,9 +23,9 @@ public class DetailsSettings extends Activity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.details_settings);
 
-        legalView = (ImageView)findViewById(R.id.legal_imageView);
-        rateView = (ImageView)findViewById(R.id.rate_imageView);
-        feedbackView = (ImageView)findViewById(R.id.feedback_imageView);
+        legalView = (ImageView)findViewById(R.id.settings_legalBG);
+        rateView = (ImageView)findViewById(R.id.settings_rateBG);
+        feedbackView = (ImageView)findViewById(R.id.settings_feedbackBG);
 
         ImageView.OnClickListener ocLegal = new View.OnClickListener() {
             @Override

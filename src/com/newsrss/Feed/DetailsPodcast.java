@@ -57,16 +57,16 @@ public class DetailsPodcast extends Activity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.details_podcast);
 
-        titleText = (TextView)findViewById(R.id.PodcastTitleText);
-        dateText = (TextView)findViewById(R.id.PodcastDateText);
-        playedTime = (TextView)findViewById(R.id.PodcastPlayedTime);
-        allTime = (TextView)findViewById(R.id.PodcastAllTime);
-        WebView podcastDecription = (WebView) findViewById(R.id.PodcastDescription);
-        seek10Button = (ImageButton) findViewById(R.id.PodcastSeek10Button);
-        seek30Button = (ImageButton) findViewById(R.id.PodcastSeek30Button);
+        titleText = (TextView)findViewById(R.id.podcast_titleText);
+        dateText = (TextView)findViewById(R.id.podcast_dateText);
+        playedTime = (TextView)findViewById(R.id.podcast_playedTime);
+        allTime = (TextView)findViewById(R.id.podcast_allTime);
+        WebView podcastDecription = (WebView) findViewById(R.id.podcast_description);
+        seek10Button = (ImageButton) findViewById(R.id.podcast_seek10Button);
+        seek30Button = (ImageButton) findViewById(R.id.podcast_seek30Button);
         backButton = (ImageButton) findViewById(R.id.podcast_backButton);
-        play_pauseButton = (ImageButton) findViewById(R.id.PodcastPlay_pauseButton);
-        castSeekbar = (SeekBar) findViewById(R.id.PodcastSeekbar);
+        play_pauseButton = (ImageButton) findViewById(R.id.podcast_play_pauseButton);
+        castSeekbar = (SeekBar) findViewById(R.id.podcast_seekbar);
 
 
         Intent startDetailArticl = getIntent();
@@ -94,24 +94,12 @@ public class DetailsPodcast extends Activity {
         end_of_play=false;
 
 
-
-        MediaPlayer.OnErrorListener obs_err = new MediaPlayer.OnErrorListener() {
-            @Override
-            public boolean onError(MediaPlayer mediaPlayer, int i, int i2) {
-                Toast.makeText(getApplicationContext(),"Error with internet connection!",Toast.LENGTH_SHORT).show();
-                    mediaPlayer.release();
-                    play_pauseButton.setImageResource(R.drawable.play_button);
-                    play=false;
-                return false;
-            }
-        } ;
-
-
         SeekBar.OnSeekBarChangeListener ocSeek = new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 if (!play) {
-                    playedTime.setText(ConvertToTimeString(i));}
+                    playedTime.setText(ConvertToTimeString(i));
+                }
             }
 
             @Override
@@ -122,11 +110,13 @@ public class DetailsPodcast extends Activity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 seeking = false;
+                synchronized (mutex) {
+                    mutex.notifyAll();
+                }
                 if(!first_play)
                 {
                     if (seekBar.getProgress()>podcastBufferedTime)
                     {
-
                         cast_player.seekTo(podcastBufferedTime - 5000);
                         seekBar.setProgress(cast_player.getCurrentPosition());
                     }
@@ -162,7 +152,6 @@ public class DetailsPodcast extends Activity {
                     cast_player.reset();
                     try {
                         cast_player.setDataSource(podcastUri);
-                        Toast.makeText(getApplicationContext(),"Begin buffering...",Toast.LENGTH_SHORT).show();
                         cast_player.prepare();
                     } catch (IOException e) {
                         System.out.println("30 sec past");
@@ -188,11 +177,12 @@ public class DetailsPodcast extends Activity {
         ImageButton.OnClickListener ocSeek_10 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cast_player.seekTo(cast_player.getCurrentPosition()-10000);
-                if (!play)
-                {
-                    playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
-                    castSeekbar.setProgress(cast_player.getCurrentPosition());
+                if(!first_play){
+                    cast_player.seekTo(cast_player.getCurrentPosition()-10000);
+                        if (!play){
+                                    playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
+                                    castSeekbar.setProgress(cast_player.getCurrentPosition());
+                        }
                 }
             }
         };
@@ -200,11 +190,15 @@ public class DetailsPodcast extends Activity {
         ImageButton.OnClickListener ocSeek_30 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cast_player.seekTo(cast_player.getCurrentPosition()+30000);
-                if (!play)
-                {
-                    playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
-                    castSeekbar.setProgress(cast_player.getCurrentPosition());
+                if(!first_play){
+                    if (cast_player.getCurrentPosition()+30000>podcastBufferedTime){
+                        cast_player.seekTo(podcastBufferedTime - 5000);
+                    }
+                    else cast_player.seekTo(cast_player.getCurrentPosition()+30000);
+                    if (!play){
+                         playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
+                         castSeekbar.setProgress(cast_player.getCurrentPosition());
+                    }
                 }
             }
         };
@@ -214,9 +208,8 @@ public class DetailsPodcast extends Activity {
 
             @Override
             public void onBufferingUpdate(MediaPlayer mp, int percent) {
-                podcastBufferedTime=cast_player.getDuration()*percent/100;
+                podcastBufferedTime=castSeekbar.getMax()*percent/100;
                 castSeekbar.setSecondaryProgress(podcastBufferedTime);
-
             }
         };
 
@@ -238,7 +231,6 @@ public class DetailsPodcast extends Activity {
         cast_player.setOnCompletionListener(ocEnd);
         cast_player.setOnBufferingUpdateListener(ocBuffer);
         cast_player.setOnPreparedListener(ocPrepare);
-        cast_player.setOnErrorListener(obs_err);
     }
 
 
@@ -269,10 +261,8 @@ public class DetailsPodcast extends Activity {
                     else
                     return;
 
-                    while(flag)
-                    {
-                        if(play)
-                        {
+                    while(flag) {
+                        if(play) {
                             final int song_dur = cast_player.getCurrentPosition();
                             castSeekbar.post(new Runnable() {
                                 public void run() {
@@ -283,7 +273,9 @@ public class DetailsPodcast extends Activity {
 
                             });
                             try { if(seeking)
-                                Thread.sleep(200);
+                                synchronized (mutex) {
+                                    mutex.wait();
+                                }
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -306,6 +298,7 @@ public class DetailsPodcast extends Activity {
                         flag = (cast_player!=null&&!end_of_play);
                         if (flag)
                             flag = flag && cast_player.getCurrentPosition() <=dur;
+                        else end_of_play=false;
                     }
                 }
             }
