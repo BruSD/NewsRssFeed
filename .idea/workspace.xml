@@ -19,7 +19,6 @@
         <option name="nightMode" value="notnight" />
         <option name="targetHashString" value="android-17" />
         <option name="theme" value="Theme.Sherlock.Light.NoActionBar" />
-        <option name="visible" value="false" />
       </GlobalState>
     </option>
   </component>
@@ -28,27 +27,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/attrs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/Manifest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.iml" afterPath="$PROJECT_DIR$/NewsFeed.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/contacts.xml" afterPath="$PROJECT_DIR$/res/layout/contacts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/details_podcast.xml" afterPath="$PROJECT_DIR$/res/layout/details_podcast.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/details_settings.xml" afterPath="$PROJECT_DIR$/res/layout/details_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" afterPath="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/rss_item_layout.xml" afterPath="$PROJECT_DIR$/res/layout/rss_item_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367218481791" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897477546" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366289089329" ignored="false" />
-    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365593401089" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367321800801" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367312427586" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367228985219" ignored="false" />
+    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367306676434" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
-    <file path="/main.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365843868665" ignored="false" />
+    <file path="/main.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367230358049" ignored="false" />
     <file path="/a.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366041428925" ignored="false" />
     <file path="/podcast_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365774945015" ignored="false" />
-    <file path="/rss_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365691031061" ignored="false" />
+    <file path="/rss_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367238936487" ignored="false" />
     <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365845217253" ignored="false" />
     <file path="/DetailsArticl.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365671112347" ignored="false" />
     <file path="/details_podcast.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366902064164" ignored="false" />
@@ -75,6 +78,8 @@
     <file path="/share_panel.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366721417292" ignored="false" />
     <file path="/details_settings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897129840" ignored="false" />
     <file path="/legal.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366804761206" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367227399728" ignored="false" />
+    <file path="/SwipeListView.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367306611760" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +94,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -126,8 +130,9 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -137,12 +142,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DetailsPodcast.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java">
+      <file leaf-file-name="NewsRssActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="56" selection-start="4781" selection-end="4781" vertical-scroll-proportion="0.041162226">
+            <state line="358" column="54" selection-start="13019" selection-end="13019" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalDB.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="156" column="60" selection-start="5996" selection-end="5996" vertical-scroll-proportion="1.172093">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="42" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="podcast_item_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/podcast_item_layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="25" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rss_item_layout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="8" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -172,22 +222,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/map.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Contacts.java" />
-        <option value="$PROJECT_DIR$/res/layout/share_panel.xml" />
         <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
         <option value="$PROJECT_DIR$/res/layout/details_jobs.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java" />
         <option value="$PROJECT_DIR$/res/layout/legal.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/contacts.xml" />
         <option value="$PROJECT_DIR$/res/layout/details_settings.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/details_podcast.xml" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/layout/rss_item_layout.xml" />
+        <option value="$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/java/com/fortysevendeg/android/swipelistview/SwipeListView.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
       </list>
     </option>
   </component>
@@ -196,9 +246,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="886" />
+    <option name="y" value="22" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -249,7 +299,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,6 +314,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -300,8 +367,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -314,13 +400,13 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.externalTools" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/libs/android-support-v4.jar!/" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0123456789ABCDEF" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4df162a60b876f33" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="andr23" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_for_Nexus_S_by_Google" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -330,6 +416,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\values" />
+      <recent name="D:\Dewelopment\Instal\ActionBarSherlock-4.2.0\library\res\values" />
       <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\drawable-mdpi" />
       <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-mdpi" />
     </key>
@@ -674,7 +762,7 @@
     <option name="localTasksCounter" value="27" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -695,33 +783,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23529412" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23432343" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18910256" sideWeight="0.76567656" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39808482" sideWeight="0.75824964" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39808482" sideWeight="0.241033" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39713973" sideWeight="0.241033" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22668579" sideWeight="0.38440493" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5239398" sideWeight="0.48684916" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3132695" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46922025" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105335" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47704366" sideWeight="0.98789877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.330033" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21449067" sideWeight="0.3009576" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18794835" sideWeight="0.6005472" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3994528" sideWeight="0.8421808" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.101865135" sideWeight="0.6005472" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10844017" sideWeight="0.76567656" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18029115" sideWeight="0.99705595" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.101387404" sideWeight="0.60176015" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2826399" sideWeight="0.6005472" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19899425" sideWeight="0.7647059" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28228387" sideWeight="0.60176015" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31023103" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -834,112 +922,130 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="66" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.6169355">
+          <folding>
+            <element signature="e#4663#4908#0" expanded="true" />
+            <element signature="e#4897#4898#0" expanded="true" />
+            <element signature="e#4956#5101#0" expanded="true" />
+            <element signature="e#5090#5091#0" expanded="true" />
+            <element signature="e#5155#6213#0" expanded="true" />
+            <element signature="e#6202#6203#0" expanded="true" />
+            <element signature="e#6264#6786#0" expanded="true" />
+            <element signature="e#6775#6776#0" expanded="true" />
+            <element signature="e#6837#7513#0" expanded="true" />
+            <element signature="e#7502#7503#0" expanded="true" />
+            <element signature="e#7574#7880#0" expanded="true" />
+            <element signature="e#7869#7870#0" expanded="true" />
+            <element signature="e#9038#11047#0" expanded="true" />
+            <element signature="e#9563#9908#0" expanded="true" />
+            <element signature="e#9876#9877#0" expanded="true" />
+            <element signature="e#11032#11033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="61" selection-start="1018" selection-end="1018" vertical-scroll-proportion="-6.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/src/com/slidingmenu/lib/CustomViewAbove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="166" column="0" selection-start="5082" selection-end="5082" vertical-scroll-proportion="-93.16" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/share_ico.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="29" column="19" selection-start="999" selection-end="999" vertical-scroll-proportion="-19.72" />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/menu.xml">
-      <provider editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/sharepanelbottom_bg.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="179" selection-end="179" vertical-scroll-proportion="0.10381679" />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="25" selection-start="1715" selection-end="1724" vertical-scroll-proportion="0.87741935" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="47" selection-start="3485" selection-end="3485" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/legal.xml">
-      <provider editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/res/drawable-mdpi/button_share.png">
+      <provider selected="true" editor-type-id="images">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="20" selection-start="1473" selection-end="1473" vertical-scroll-proportion="-11.9" />
-      </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/widget/ImageView.class">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="196" selection-end="196" vertical-scroll-proportion="0.14468086" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/share_panel_top.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/share_panel_bottom.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="466" column="81" selection-start="17057" selection-end="17057" vertical-scroll-proportion="0.46489105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="71" selection-start="901" selection-end="901" vertical-scroll-proportion="0.842615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/details_settings.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="36" selection-start="4277" selection-end="4277" vertical-scroll-proportion="0.2427481" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/contacts.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="178" column="59" selection-start="10876" selection-end="10876" vertical-scroll-proportion="0.0" />
+        <state line="0" column="65" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="52" selection-start="1184" selection-end="1184" vertical-scroll-proportion="0.7448454">
+        <state line="17" column="79" selection-start="858" selection-end="858" vertical-scroll-proportion="0.19512194">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/details_podcast.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="76" selection-start="2044" selection-end="2107" vertical-scroll-proportion="0.17073171">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="284" selection-end="284" vertical-scroll-proportion="0.024390243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="42" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state line="85" column="67" selection-start="4457" selection-end="4457" vertical-scroll-proportion="0.0" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/podcast_item_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
+    <entry file="file://$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/java/com/fortysevendeg/android/swipelistview/SwipeListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="625" column="61" selection-start="28201" selection-end="28201" vertical-scroll-proportion="0.7529412">
+        <state line="534" column="4" selection-start="15736" selection-end="15736" vertical-scroll-proportion="0.79640716" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/rss_item_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="8" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="358" column="54" selection-start="13019" selection-end="13019" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java">
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="56" selection-start="4781" selection-end="4781" vertical-scroll-proportion="0.041162226">
+        <state line="156" column="60" selection-start="5996" selection-end="5996" vertical-scroll-proportion="1.172093">
           <folding />
         </state>
       </provider>
@@ -995,7 +1101,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android 4.2.2 Platform</last-edited>
+          <last-edited>Android 4.2.2 Google APIs</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1007,7 +1113,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>NewsFeed</last-edited>
+          <last-edited>SLV</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1031,7 +1137,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gen</last-edited>
+          <last-edited>android-support-v4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

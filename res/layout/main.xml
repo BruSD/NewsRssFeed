@@ -29,12 +29,17 @@
                    android:id="@+id/article_logo"
                    style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/BtnSlide"/>
        </RelativeLayout>
-       <ListView
-                android:id="@+id/rssListView"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_w"/>
 
+       <com.fortysevendeg.android.swipelistview.SwipeListView
+               xmlns:swipe="http://schemas.android.com/apk/res-auto"
+               android:id="@+id/rssListView"
+               android:listSelector="#00000000"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               swipe:swipeFrontView="@+id/front"
+               swipe:swipeBackView="@+id/back"
+               swipe:swipeActionLeft="dismiss"
+               />
    </LinearLayout>
 
 </FrameLayout>

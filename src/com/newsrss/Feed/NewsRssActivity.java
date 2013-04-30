@@ -3,15 +3,21 @@ package com.newsrss.Feed;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.*;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.TranslateAnimation;
+import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
+import com.fortysevendeg.android.swipelistview.SwipeListView;
 import com.slidingmenu.lib.SlidingMenu;
 
 import java.text.SimpleDateFormat;
@@ -33,7 +39,7 @@ public class NewsRssActivity extends SherlockActivity {
     // 7 - Settings
     int idLayout;
     SlidingMenu slidingMenu;
-
+    private SwipeListView rssListView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,68 +49,54 @@ public class NewsRssActivity extends SherlockActivity {
         View app = findViewById(R.id.app);
 
         app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
-        //ImageButton imgB = (ImageButton)findViewById(R.id.BtnSlide);
-        //imgB.setOnClickListener(new ClickListener());
 
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
+        rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         DataStorage.updateArticleList();
         showAricleList();
-        rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+
+
+
 
         slidingMenu = new SlidingMenu(this);
 
         slidingMenu.setMode(SlidingMenu.LEFT);
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
         slidingMenu.setBehindOffset(70);
         slidingMenu.setMenu(R.layout.menu);
+
+        miniSwipeActivator();
+
     }
 
-    class  LaunchDetalActiviti implements AdapterView.OnItemClickListener{
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            //To change body of implemented methods use File | Settings | File Templates.
-
-            System.out.println("idLayout " + idLayout);
 
 
-            switch (idLayout)  {
-                case 1:
+    public void miniSwipeActivator(){
+        if (idLayout == 1){
 
-                    Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
-                    startDetailArticl.putExtra("position", position);
-                    startActivity(startDetailArticl);
-
-                    break;
-                case 2:
-                    Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
-                    startDetailPodcast.putExtra("position", position);
-                    startActivity(startDetailPodcast);
-                    break;
-                case 3:
-                    Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
-                    startDetailJobs.putExtra("position", position);
-                    startActivity(startDetailJobs);
-                    break;
-            }
-
-
-
+            DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+            float otstup = (float) (metrics.widthPixels *0.8) ;
+            rssListView.setSwipeMode(SwipeListView.SWIPE_MODE_RIGHT);
+            rssListView.setOffsetRight(otstup);
+            rssListView.setAnimationTime(500);
+            rssListView.setSwipeOpenOnLongPress(false);
+        }  else {
+            rssListView.setSwipeMode(SwipeListView.SWIPE_MODE_NONE);
+            rssListView.setSwipeOpenOnLongPress(false);
         }
+
     }
 
     // Methods for reload ListView
     public void showAricleList() {
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
-        SimpleAdapter adapter = new SimpleAdapter(
-                this,
-                createArticleList(),
-                R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate", "rssnewsimage"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date, R.id.rss_img_news_pass});
+        MyCAdapter adapter = new MyCAdapter(this,
+                createArticleList(), R.layout.podcast_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
         idLayout = 1;
         adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
@@ -140,17 +132,191 @@ public class NewsRssActivity extends SherlockActivity {
         return items;
     }
 
+    public class MyCAdapter extends SimpleAdapter {
+        private List<? extends Map<String, ?>> data;
+        private Context context;
+
+
+
+
+
+
+
+        public MyCAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+            super(context, data, resource, from, to);
+            this.context = context;
+            this.data = data;
+        }
+
+        @Override
+        public int getCount() {
+            return data.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            SimpleDateFormat sdf;
+            String dateArticleV ;
+            ViewHolder holder;
+            switch (idLayout)  {
+                case 1:
+                    miniSwipeActivator();
+                Article currentArticle = DataStorage.getArticleList().get(position);
+
+                if (convertView == null) {
+                    LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = li.inflate(R.layout.rss_item_layout, parent, false);
+                    holder = new ViewHolder();
+                    holder.favBtn = (ImageButton) convertView.findViewById(R.id.fav_btn);
+                    holder.shareBtn = (ImageButton)convertView.findViewById(R.id.share_btn);
+                    holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
+                    holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+
+
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+                holder.articleTitle.setText(currentArticle.getTitle());
+                sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                dateArticleV = sdf.format(currentArticle.getPubDate());
+                holder.articleDate.setText(dateArticleV);
+
+                rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
+                    @Override
+                    public void  onClickFrontView (int position){
+                        Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
+                        startDetailArticl.putExtra("position", position);
+                        startActivity(startDetailArticl);
+                    }
+
+
+                });
+
+            holder.favBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            });
+
+            holder.shareBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast toast = Toast.makeText(getApplicationContext(),"Share article N  " +position ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            });
+
+            break;
+
+            case 2:
+                miniSwipeActivator();
+
+                Podcast currentPodcast = DataStorage.getPodcastList().get(position);
+
+                if (convertView == null) {
+                    LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = li.inflate(R.layout.rss_item_layout, parent, false);
+                    holder = new ViewHolder();
+
+
+                    holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
+                    holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+
+                    convertView.setTag(holder);
+                } else {
+                    holder = (ViewHolder) convertView.getTag();
+                }
+                holder.articleTitle.setText(currentPodcast.getTitle());
+                sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                dateArticleV = sdf.format(currentPodcast.getPubDate());
+                holder.articleDate.setText(dateArticleV);
+                rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
+                    @Override
+                    public void  onClickFrontView (int position){
+                        Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
+                        startDetailPodcast.putExtra("position", position);
+                        startActivity(startDetailPodcast);
+                    }
+
+
+                });
+
+                break;
+                case 3:
+                    miniSwipeActivator();
+
+                    Job currentJob = DataStorage.getJobList().get(position);
+
+                    if (convertView == null) {
+                        LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        convertView = li.inflate(R.layout.rss_item_layout, parent, false);
+                        holder = new ViewHolder();
+
+
+                        holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
+                        holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+
+                        convertView.setTag(holder);
+                    } else {
+                        holder = (ViewHolder) convertView.getTag();
+                    }
+                    holder.articleTitle.setText(currentJob.getTitle());
+                    sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                    dateArticleV = sdf.format(currentJob.getPubDate());
+                    holder.articleDate.setText(dateArticleV);
+                    rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
+                        @Override
+                        public void  onClickFrontView (int position){
+                            Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
+                            startDetailJobs.putExtra("position", position);
+                            startActivity(startDetailJobs);
+                        }
+
+
+                    });
+
+                    break;
+        }
+
+
+
+            return convertView;
+        }
+
+        public class ViewHolder {
+            ImageButton favBtn;
+            ImageButton shareBtn;
+            TextView articleTitle;
+            TextView articleDate;
+
+        }
+    }
+
     public void showPodcastList(){
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         if(DataStorage.getPodcastList().size() == 0 ){
             DataStorage.updatePodcastList();
         }
 
-        SimpleAdapter adapter = new SimpleAdapter(
-                this, createPodcastList(), R.layout.podcast_item_layout,
+        MyCAdapter adapter = new MyCAdapter(
+                this, createPodcastList(), R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
         idLayout = 2;
         rssListView.setAdapter(adapter);
 
@@ -179,16 +345,16 @@ public class NewsRssActivity extends SherlockActivity {
     }
 
     public void showJobstList(){
-        ListView rssListView = (ListView) findViewById(R.id.rssListView);
+        SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         if(DataStorage.getJobList().size() == 0 ){
             DataStorage.updateJobList();
         }
 
-        SimpleAdapter adapter = new SimpleAdapter(
-                this, createJobsList(), R.layout.podcast_item_layout,
+        MyCAdapter adapter = new MyCAdapter(
+                this, createJobsList(), R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
         idLayout = 3;
         rssListView.setAdapter(adapter);
     }
@@ -231,7 +397,7 @@ public class NewsRssActivity extends SherlockActivity {
             slidingMenu.setContent(R.layout.main);
             showAricleList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
-            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
         }
@@ -389,7 +555,7 @@ public class NewsRssActivity extends SherlockActivity {
             slidingMenu.setContent(R.layout.main);
             showPodcastList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
-            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
         }
@@ -408,7 +574,7 @@ public class NewsRssActivity extends SherlockActivity {
             slidingMenu.setContent(R.layout.main);
             showJobstList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
-            rssListView.setOnItemClickListener(new LaunchDetalActiviti());
+
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
         }
