@@ -418,7 +418,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.audit_check_img_view);
         imageView.setImageDrawable(image);
@@ -439,7 +439,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.business_check_img_view);
         imageView.setImageDrawable(image);
@@ -460,7 +460,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.governance_check_img_view);
         imageView.setImageDrawable(image);
@@ -481,7 +481,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.insolvency_check_img_view);
         imageView.setImageDrawable(image);
@@ -502,7 +502,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.practice_check_img_view);
         imageView.setImageDrawable(image);
@@ -523,7 +523,7 @@ public class NewsRssActivity extends SherlockActivity {
         }
         else {
             //category off
-            image = getResources().getDrawable(R.drawable.un_check);
+            image = getResources().getDrawable(R.drawable.uncheck);
         }
         ImageView imageView = (ImageView) findViewById(R.id.tax_check_img_view);
         imageView.setImageDrawable(image);
@@ -591,8 +591,6 @@ public class NewsRssActivity extends SherlockActivity {
         View sidebarButton  = findViewById(R.id.contactSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
 
-        TextView getinText=(TextView) findViewById(R.id.contacts_text_getin);
-        getinText.setText(Html.fromHtml("Get in touch with <b>Facebook , Linkedin</b> ot <b>Twitter</b>"));
         TextView tel1Text=(TextView) findViewById(R.id.contacts_Ireland_tel_text);
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
         TextView tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);

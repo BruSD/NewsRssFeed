@@ -29,11 +29,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
             <TextView
-                    android:id="@+id/legal_title"
-                    style="@style/Legal_title"/>
-            <TextView
-                    android:id="@+id/legal_description"
-                    style="@style/Legal_description"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/legal_description"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

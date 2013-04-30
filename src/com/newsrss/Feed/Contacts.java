@@ -19,15 +19,13 @@ import android.widget.TextView;
  * To change this template use File | Settings | File Templates.
  */
 public class Contacts extends Activity {
-    TextView getinText,tel1Text,tel2Text;
+    TextView tel1Text,tel2Text;
     ImageView cal_btnIR,cal_btnNI;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.contacts);
 
-        getinText=(TextView) findViewById(R.id.contacts_text_getin);
-        getinText.setText(Html.fromHtml("Get in touch with <b>Facebook , Linkedin</b> ot <b>Twitter</b>"));
         tel1Text=(TextView) findViewById(R.id.contacts_Ireland_tel_text);
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
         tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);

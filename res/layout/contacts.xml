@@ -35,9 +35,6 @@
             <LinearLayout
                     android:id="@+id/contacts_mainPlate"
                     style="@style/Contacts_MainPlate">
-                <TextView
-                        android:id="@+id/contacts_text_getin"
-                        style="@style/Contacts_Text_Getin"/>
                 <RelativeLayout
                         android:id="@+id/contacts_Ireland"
                         style="@style/Contacts_Ireland">

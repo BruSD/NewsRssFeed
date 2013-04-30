@@ -1,14 +1,46 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="SideBarLayoutDarck">
-        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_height">43dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:background">@drawable/search_bg</item>
+        <item name="android:background">@drawable/dark_bg_side_bar</item>
         <item name="android:gravity">center_vertical</item>
-
     </style>
+
+    <style name="SideBarSearchLayout">
+        <item name="android:layout_height">43dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@drawable/search_bg</item>
+    </style>
+
+    <style name="SideBarSearchButtonLayout">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">84</item>
+    </style>
+
+    <style name="SideBarSearchButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">23dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/search_bg</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginLeft">-5dp</item>
+    </style>
+
+    <style name="SideBarSearchField">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">16</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
     <style name="SideBarLayoutSoft">
-        <item name="android:layout_height">65dp</item>
+        <item name="android:layout_height">43dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
@@ -19,6 +51,42 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:textColor" >#ffffff</item>
+    </style>
+
+    <style name="SideBarNewsIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginLeft">14dp</item>
+    </style>
+
+    <style name="SideBarFavIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">22dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginLeft">25dp</item>
+    </style>
+
+    <style name="SideBarCheckIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">28dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="SideBarSearchesIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">19dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginLeft">26dp</item>
     </style>
 
 
@@ -110,7 +178,7 @@
         <item name="android:src">@drawable/side_bar_btn1</item>
         <item name="android:adjustViewBounds">true</item>
         <item name="android:layout_marginRight">12dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
     </style>
 
     <style name="AB_FirmSymbol">
@@ -190,6 +258,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginLeft">12dp</item>
         <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_marginTop">30dp</item>
     </style>
 
     <style name="Contacts_MapLayout">
@@ -238,15 +307,6 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">12dp</item>
         <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="Contacts_Text_Getin">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_marginLeft">12dp</item>
-        <item name="android:layout_marginTop">36dp</item>
-        <item name="android:layout_marginBottom">30dp</item>
-        <item name="android:singleLine">false</item>
     </style>
 
     <style name="Contacts_CountryTitle">
