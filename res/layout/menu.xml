@@ -5,28 +5,29 @@
 
     <LinearLayout android:id="@+id/menu"
                   android:layout_width="match_parent"
-                  android:layout_height="fill_parent"
+                  android:layout_height="match_parent"
                   android:orientation="vertical"
             >
 
         <LinearLayout
                 android:id="@+id/search_layout"
-                style="@style/SideBarLayoutDarck"
+                style="@style/SideBarSearchLayout"
                 android:onClick="startSearchActivityFromSideBar"
                 >
             <ImageView
                     android:src="@drawable/search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            <ImageView
-                    android:src="@drawable/magnifi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    style="@style/SideBarSearchField"/>
+            <FrameLayout
+                    style="@style/SideBarSearchButtonLayout">
+                <ImageView
+                        android:src="@drawable/magnifi"
+                        style="@style/SideBarSearchButton" />
+            </FrameLayout>
 
         </LinearLayout>
         <ScrollView
                 android:layout_height="fill_parent"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent" android:background="#500C31">
             <LinearLayout
 
 
@@ -41,7 +42,7 @@
                         style="@style/SideBarLayoutSoft"
                         >
                     <ImageView
-                            style="@style/StandartToView"
+                            style="@style/SideBarNewsIcon"
                             android:src="@drawable/new_icon"
                             />
                     <TextView
@@ -57,9 +58,8 @@
                         >
                     <ImageView
                             android:id="@+id/audit_check_img_view"
-                            style="@style/StandartToView"
                             android:src="@drawable/check"
-                            />
+                            style="@style/SideBarCheckIcon"/>
                     <TextView
                             style="@style/StandartToView"
                             android:text="@string/audit_string"/>
@@ -73,9 +73,8 @@
                         >
                     <ImageView
                             android:id="@+id/business_check_img_view"
-                            style="@style/StandartToView"
                             android:src="@drawable/check"
-                            />
+                            style="@style/SideBarCheckIcon"/>
                     <TextView
                             style="@style/StandartToView"
                             android:text="@string/business_string"/>
@@ -89,7 +88,7 @@
                         >
                     <ImageView
                             android:id="@+id/governance_check_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarCheckIcon"
                             android:src="@drawable/check"
                             />
                     <TextView
@@ -105,7 +104,7 @@
                         >
                     <ImageView
                             android:id="@+id/insolvency_check_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarCheckIcon"
                             android:src="@drawable/check"
                             />
                     <TextView
@@ -121,7 +120,7 @@
                         >
                     <ImageView
                             android:id="@+id/practice_check_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarCheckIcon"
                             android:src="@drawable/check"
                             />
                     <TextView
@@ -137,7 +136,7 @@
                         >
                     <ImageView
                             android:id="@+id/tax_check_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarCheckIcon"
                             android:src="@drawable/check"
                             />
                     <TextView
@@ -153,7 +152,7 @@
                         >
                     <ImageView
                             android:id="@+id/favorites_check_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarFavIcon"
                             android:src="@drawable/favorites"
                             />
                     <TextView
@@ -169,7 +168,7 @@
                         >
                     <ImageView
                             android:id="@+id/saved_searches_img_view"
-                            style="@style/StandartToView"
+                            style="@style/SideBarSearchesIcon"
                             android:src="@drawable/saved_searches"
                             />
                     <TextView
@@ -184,7 +183,7 @@
                         style="@style/SideBarLayoutSoft"
                         >
                     <ImageView
-                            style="@style/StandartToView"
+                            style="@style/SideBarNewsIcon"
                             android:src="@drawable/podcasts_icon"
                             />
                     <TextView
@@ -199,7 +198,7 @@
                         style="@style/SideBarLayoutSoft"
                         >
                     <ImageView
-                            style="@style/StandartToView"
+                            style="@style/SideBarNewsIcon"
                             android:src="@drawable/jobs_icon"
                             />
                     <TextView
@@ -214,7 +213,7 @@
                         style="@style/SideBarLayoutSoft"
                         >
                     <ImageView
-                            style="@style/StandartToView"
+                            style="@style/SideBarNewsIcon"
                             android:src="@drawable/contact_icon"
                             />
                     <TextView
@@ -229,7 +228,7 @@
                         style="@style/SideBarLayoutSoft"
                         >
                     <ImageView
-                            style="@style/StandartToView"
+                            style="@style/SideBarNewsIcon"
                             android:src="@drawable/settings_icon"
                             />
                     <TextView

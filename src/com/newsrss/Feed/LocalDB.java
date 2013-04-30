@@ -1,4 +1,7 @@
 package com.newsrss.Feed;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -8,8 +11,13 @@ import java.util.*;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 
 public class LocalDB {
 
@@ -22,30 +30,36 @@ public class LocalDB {
     private static SQLiteDatabase LocalDatabase;
     private static SQLiteDatabase LocalDatabaseSearches;
 
+
+
+    // Перед першим використанням бази даних потрыбно виконати open(context)
+    // Далі просто використовувати методи
+    // Доступ до методів статичний через LocalDB.метод
 	
-	static public void open() throws SQLException {
+	static private void open() throws SQLException {
         LocalDatabase = dbHelper.getWritableDatabase();
         LocalDatabaseSearches = dbHelperSearches.getWritableDatabase();
 	  }
 
     static public void open(Context context) throws SQLException {
-        dbHelper= new SQLLiteHelper(context)    ;
+        dbHelper= new SQLLiteHelper(context);
         dbHelperSearches = new SQLLiteHelperSearch(context);
-        LocalDatabase = dbHelper.getWritableDatabase();
-        LocalDatabaseSearches = dbHelperSearches.getWritableDatabase();
+        //LocalDatabase = dbHelper.getWritableDatabase();
+        //LocalDatabaseSearches = dbHelperSearches.getWritableDatabase();
     }
 
-	static public void close() {
+	static private void close() {
 		LocalDatabase.close();
         LocalDatabaseSearches.close();
 	}
 	
 	private static Article articleToComment(Cursor cursor) {
-	    Article result_art = null;
+        Article result_art = null;
 	    URL art_url = null;
 		XMLNewsType art_type = null;
 		Date art_date = null;
-			try {
+        byte[] picture_array;
+        try {
                 art_url = new URL(cursor.getString(2));
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
@@ -59,31 +73,64 @@ public class LocalDB {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			result_art = new Article(cursor.getString(0), cursor.getString(1), art_url, art_date, cursor.getString(4), art_type, null);
-			
+
+            Drawable picture = null;
+            picture_array= cursor.getBlob(6);
+            if (picture_array!=null) {
+                InputStream picture_stream = new ByteArrayInputStream(picture_array);
+                picture =  Drawable.createFromStream(picture_stream, "src");
+            }
+           // Bitmap bitmapPicture = BitmapFactory.decodeByteArray(picture_array, 0, picture_array.length);
+            //Drawable picture = (Drawable)new BitmapDrawable(getResources(),bitmapPicture);
+			result_art = new Article(cursor.getString(0), cursor.getString(1), art_url, art_date, cursor.getString(4), art_type, picture);
 	    return result_art;
 	  }
 	
 	static public void deleteArticle (int guid){
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
 	        + " = " + guid, null);
+        close();
 	}
 	
 	static public void addArticle (Article art){
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
 		ContentValues article_values = new ContentValues();
-		int id = Integer.parseInt(art.getGuid());
+        byte[]  savedPicture = null;
+        int id = Integer.parseInt(art.getGuid());
+        if (art.getNewsImage()!=null){
+            Bitmap picture = ((BitmapDrawable)art.getNewsImage()).getBitmap();
+            ByteArrayOutputStream picture_array = new ByteArrayOutputStream();
+            picture.compress(Bitmap.CompressFormat.PNG, 100, picture_array);
+            savedPicture =  picture_array.toByteArray();
+        }
         article_values.put(SQLLiteHelper.COLUMN_guID, id);
         article_values.put(SQLLiteHelper.COLUMN_Title, art.getTitle());
         article_values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
         article_values.put(SQLLiteHelper.COLUMN_PubDate, dateStr);
         article_values.put(SQLLiteHelper.COLUMN_Description, art.getDescription());
         article_values.put(SQLLiteHelper.COLUMN_NewsType, art.getNewsType().getIndex());
+        article_values.put(SQLLiteHelper.COLUMN_Picture,savedPicture );
 	    long added = LocalDatabase.insert(SQLLiteHelper.DATABASE_NAME, null,
                 article_values);
+        close();
 	}
 
     static public List<Article> getAllArticles () {
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 	    List<Article> allArticles = new ArrayList<Article>();
 	    Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
 	        allColumns, null, null, null, null, null);
@@ -96,10 +143,16 @@ public class LocalDB {
 	    }
 	    // Make sure to close the cursor
 	    cursor.close();
+        close();
 	    return allArticles;
 	}
 
     static public void addSearch(String search){
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
         Date currentDate = new Date(System.currentTimeMillis());
         String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(currentDate);
         ContentValues seatch_values = new ContentValues();
@@ -107,14 +160,26 @@ public class LocalDB {
         seatch_values.put(SQLLiteHelperSearch.COLUMN_SearchDate, dateStr);
         LocalDatabaseSearches.insert(SQLLiteHelperSearch.DATABASE_NAME, null,
                 seatch_values);
+        close();
     }
 
     static public void deleteSearch (int id){
+        try {
+            open();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
        LocalDatabaseSearches.delete(SQLLiteHelperSearch.DATABASE_NAME, SQLLiteHelperSearch.COLUMN_ID
                 + " = " + id, null);
+        close();
     }
 
    static public List<Searches> get10Searches() {
+       try {
+           open();
+       } catch (SQLException e) {
+           e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+       }
         List<Searches> allSearches = new ArrayList<Searches>();
         Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
                 allColumnsSearches, null, null, null, null, null);
@@ -134,7 +199,7 @@ public class LocalDB {
               last10Searches.add(allSearches.get(searchCount-1));
               searchCount--;
           }
-
+           close();
             return last10Searches ;
         }
 
@@ -151,6 +216,8 @@ public class LocalDB {
         search = new Searches(cursor.getInt(0), cursor.getString(1), search_date);
         return search;
     }
+
+
 
 }
 

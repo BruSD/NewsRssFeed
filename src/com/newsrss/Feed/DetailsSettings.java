@@ -21,7 +21,6 @@ public class DetailsSettings extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.details_settings);
 
         legalView = (ImageView)findViewById(R.id.settings_legalBG);
         rateView = (ImageView)findViewById(R.id.settings_rateBG);

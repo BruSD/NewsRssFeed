@@ -80,7 +80,7 @@ public class DetailsPodcast extends Activity {
         podcastDecription.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         podcastUri=currentPodcast.getMP3Link().toString();
         titleText.setText(currentPodcast.getTitle());
-        String date_str = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(currentPodcast.getPubDate());
+        String date_str = new SimpleDateFormat("EEEE, MMMM dd, yyyy").format(currentPodcast.getPubDate());
         dateText.setText(date_str);
         podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html", "UTF-8");
         castSeekbar.setEnabled(false);

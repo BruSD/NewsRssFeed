@@ -15,6 +15,7 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_PubDate = "pubDate";
 	public static final String COLUMN_Description = "description";
 	public static final String COLUMN_NewsType = "newsType";
+    public static final String COLUMN_Picture = "picture";
 
 	public static final String ArtTable= "articles.sqlite3";
 
@@ -26,6 +27,7 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 			    "pubDate TEXT, "+
 			    "description TEXT, "+
 			    "newstype INTEGER "+
+                "picture BLOB "+
 		        ");";
 	
 	public SQLLiteHelper(Context context) {		
