@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">NewsFeed</string>
     <string name="head_app">Chartered Accountants Ireland</string>
+    <string name="app_id">363664483735184</string>
 
     <string name="news_string">News</string>
     <string name="audit_string">Audit &amp; Accounting</string>

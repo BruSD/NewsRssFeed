@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/facebook.iml" filepath="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/facebook.iml" />
     </modules>
   </component>
 </project>

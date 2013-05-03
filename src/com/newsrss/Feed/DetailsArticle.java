@@ -3,17 +3,15 @@ package com.newsrss.Feed;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.app.Activity;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.View;
 import android.webkit.WebView;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.*;
+
+
 
 import java.text.SimpleDateFormat;
-import java.util.Locale;
 
+import com.facebook.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +20,8 @@ import java.util.Locale;
  * Time: 10:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsArticle extends Activity {
+public class DetailsArticle extends shareToSocial {
+
 
     Article currentArticle = null;
     Article nextArticle = null;
@@ -32,7 +31,13 @@ public class DetailsArticle extends Activity {
     WebView descriptionArticle;
     TextView nextTitle;
     TextView nextDate;
+
+
+
+    ImageButton shareButtonTest;
+
     public void onCreate(Bundle savedInstanceState) {
+
     super.onCreate(savedInstanceState);
     setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     setContentView(R.layout.details_articl);
@@ -46,6 +51,7 @@ public class DetailsArticle extends Activity {
 
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
+
 
         Intent startDetailArticle = getIntent();
         positionArt = startDetailArticle.getIntExtra("position", -1);
@@ -64,7 +70,29 @@ public class DetailsArticle extends Activity {
                 finish();
             }
         });
+
+        shareButtonTest = (ImageButton)findViewById(R.id.article_share);
+        shareButtonTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickbtnConnectFB(1, positionArt);
+            }
+        });
+
+        Session session = Session.getActiveSession();
+        if (session == null) {
+            if (savedInstanceState != null) {
+                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
+            }
+            if (session == null) {
+                session = new Session(this);
+            }
+            Session.setActiveSession(session);
+
+        }
     }
+
+
     public void ShowArticle(){
         currentArticle = DataStorage.getArticleList().get(positionArt);
         String dateArticleV;
@@ -72,7 +100,8 @@ public class DetailsArticle extends Activity {
         dateArticleV = sdf.format(currentArticle.getPubDate());
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
-        descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html", "UTF-8");
+        descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html", "UTF-8");
+        //
     }
     public void NextArticle(){
         if ( positionArt+1 != DataStorage.getArticleList().size()) {
@@ -90,7 +119,6 @@ public class DetailsArticle extends Activity {
         positionArt =positionArt+1;
         ShowArticle();
         NextArticle();
-
-
     }
+
 }

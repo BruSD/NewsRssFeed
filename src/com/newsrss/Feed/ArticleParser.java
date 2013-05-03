@@ -124,13 +124,20 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             String _description = _descriptionE.getTextContent();//getFirstChild().getNodeValue();
 
                             Date _pubDate = null;
-                            try
-                            {
-                                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
-                                _pubDate = format.parse(_pubDateE.getTextContent());//getFirstChild().getNodeValue());
-                            }
-                            catch(ParseException e)
-                            { _pubDate = new Date(); }
+                            //try
+                            //{
+                            //    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZ", Locale.ENGLISH);
+                            //    _pubDate = format.parse(_pubDateE.getTextContent());
+                            //}
+                            //catch(ParseException e1) {
+                                //try {
+                                //    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+                                //    _pubDate = format.parse(_pubDateE.getTextContent());
+                                //}
+                                //catch (ParseException e2){
+                                    _pubDate = new Date();
+                                //w}
+                            //}
 
                             Drawable image = DataStorage.fetchDrawable(_imageLinkE.getAttributeNode("url").getValue());
 

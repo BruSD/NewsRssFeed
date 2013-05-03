@@ -52,7 +52,7 @@
                             style="@style/Contacts_MapLayout">
                         <ImageView
                                 android:id="@+id/contacts_mapIR"
-                                style="@style/Contacts_Map"/>
+                                style="@style/Contacts_Map" android:onClick="goToMap_Activity"/>
                         <TextView
                                 android:id="@+id/contacts_mapText"
                                 style="@style/Contacts_TextMap" android:text="@string/contacts_textMap"/>

@@ -60,11 +60,12 @@ public class NewsRssActivity extends SherlockActivity {
 
 
         slidingMenu = new SlidingMenu(this);
-
+        DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+        int otstup =(int) (metrics.widthPixels *0.15) ;
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        slidingMenu.setBehindOffset(70);
+        slidingMenu.setBehindOffset(otstup);
         slidingMenu.setMenu(R.layout.menu);
 
         miniSwipeActivator();
@@ -617,8 +618,11 @@ public class NewsRssActivity extends SherlockActivity {
             }
         };
 
+
         cal_btnIR.setOnClickListener(ocCall);
         cal_btnNI.setOnClickListener(ocCallNI);
+
+
     }
 
     public void showSettingsFromSideBar(final View view){

@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="ABS" exported="" />
     <orderEntry type="module" module-name="SM" exported="" />
     <orderEntry type="module" module-name="SLV" exported="" />
+    <orderEntry type="module" module-name="facebook" exported="" />
   </component>
 </module>
 
