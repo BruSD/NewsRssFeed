@@ -212,13 +212,14 @@ public class NewsRssActivity extends SherlockActivity {
                 public void onClick(View v) {
                     Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
                     toast.show();
+                    Article currentArticle1 = DataStorage.getArticleList().get(position);
                     try {
                         LocalDB.open(context);
                     } catch (SQLException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
 
-                    LocalDB.addArticle(currentArticle);
+                    LocalDB.addArticle(currentArticle1);
                 }
             });
 
@@ -556,7 +557,6 @@ public class NewsRssActivity extends SherlockActivity {
             showFavoritesList();
             slidingMenu.showContent();
         }
-        showFavoritesList();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
         toast.show();
@@ -596,6 +596,11 @@ public class NewsRssActivity extends SherlockActivity {
     public void showFavoritesList(){
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
+        try {
+            LocalDB.open(this.getApplicationContext());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+       }
         List<Article> artList = null;
         artList = LocalDB.getAllArticles();
         if(artList.isEmpty() ){
@@ -607,7 +612,7 @@ public class NewsRssActivity extends SherlockActivity {
                 this,  createFavoritesList(), R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idLayout = 2;
+        idLayout = 1;
         rssListView.setAdapter(adapter);
         }
     }

@@ -27,7 +27,7 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 			    "pubDate TEXT, "+
 			    "description TEXT, "+
 			    "newstype INTEGER "+
-                "picture BLOB "+
+               // "picture BLOB "+
 		        ");";
 	
 	public SQLLiteHelper(Context context) {		
