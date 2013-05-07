@@ -146,6 +146,34 @@ public class LocalDB {
 	    return allArticles;
 	}
 
+    static public Article getArticle (int id) {
+        //    try {
+        //        open();
+        //    } catch (SQLException e) {
+        //        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        //    }
+        Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
+                allColumns, null, null, null, null, null);
+
+        cursor.moveToFirst();
+        int numbOfArt=0;
+        while (!cursor.isAfterLast()) {
+            Article art = articleToComment(cursor);
+            if (numbOfArt!=id)  {
+                cursor.moveToNext();
+                numbOfArt++;
+            }
+            else {
+                cursor.close();
+                return art;
+            }
+        }
+        // Make sure to close the cursor
+        cursor.close();
+        //   close();
+        return null;
+    }
+
     static public void addSearch(String search){
         try {
             open();
