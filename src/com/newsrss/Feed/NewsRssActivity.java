@@ -173,7 +173,7 @@ public class NewsRssActivity extends SherlockActivity {
             switch (idLayout)  {
                 case 1:
                     miniSwipeActivator();
-                Article currentArticle = DataStorage.getArticleList().get(position);
+                final Article currentArticle = DataStorage.getArticleList().get(position);
 
                 if (convertView == null) {
                     LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -210,6 +210,7 @@ public class NewsRssActivity extends SherlockActivity {
                 public void onClick(View v) {
                     Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
                     toast.show();
+                   // LocalDB.addArticle(currentArticle);
                 }
             });
 

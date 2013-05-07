@@ -36,7 +36,9 @@ public class shareToSocial extends Activity {
 
 
 
-
+    //listIDn = 1 Articl List
+    //listIDn = 2 Podcast
+    //listIDn = 3 jobs
     public void onClickbtnConnectFB( int listID,  int articleID) {
 
         onClickLogin();
