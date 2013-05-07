@@ -20,6 +20,7 @@ import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.android.swipelistview.SwipeListView;
 import com.slidingmenu.lib.SlidingMenu;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,6 +70,7 @@ public class NewsRssActivity extends SherlockActivity {
         slidingMenu.setMenu(R.layout.menu);
 
         miniSwipeActivator();
+
 
     }
 
@@ -210,7 +212,13 @@ public class NewsRssActivity extends SherlockActivity {
                 public void onClick(View v) {
                     Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
                     toast.show();
-                   // LocalDB.addArticle(currentArticle);
+                    try {
+                        LocalDB.open(context);
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+
+                    LocalDB.addArticle(currentArticle);
                 }
             });
 
@@ -534,12 +542,74 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         //toast.show();
     }
-
     public void showToFavoritesFromSideBar(final View view){
         //TODO: Утановите вызов Favorites
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+            slidingMenu.setContent(R.layout.main);
+            showFavoritesList();
+            ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
-        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
-        //toast.show();
+            View app = findViewById(R.id.app);
+            app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
+        }
+        else {
+            showFavoritesList();
+            slidingMenu.showContent();
+        }
+        showFavoritesList();
+
+        Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
+        toast.show();
+    }
+    private List<Map<String, ?>> createFavoritesList() {
+        List<Article> artList = null;
+
+        List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
+        try
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+            artList = LocalDB.getAllArticles();
+
+            for (Article article : artList)
+            {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("rssnewstitle", article.getTitle());
+                map.put("rssnewsdate", sdf.format(article.getPubDate()));
+                if (article.getNewsImage() == null) {
+                    //System.out.println("NULL");
+                    map.put("rssnewsimage", getResources().getDrawable(R.drawable.default_news_icon));
+                }
+                else {
+                    //System.out.println("NOT NULL");
+                    map.put("rssnewsimage", article.getNewsImage());
+                }
+                items.add(map);
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return items;
+    }
+
+    public void showFavoritesList(){
+        SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+        List<Article> artList = null;
+        artList = LocalDB.getAllArticles();
+        if(artList.isEmpty() ){
+            Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
+            toast.show();
+        }  else {
+
+        MyCAdapter adapter = new MyCAdapter(
+                this,  createFavoritesList(), R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        idLayout = 2;
+        rssListView.setAdapter(adapter);
+        }
     }
 
     public void showSavedSearchFromSideBar(final View view){
@@ -548,6 +618,7 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
         //toast.show();
     }
+
 
     public void showPodcastsListFromSideBar(final View view){
         //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);

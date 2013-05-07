@@ -21,7 +21,7 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 
 	
 	public static final String DATABASE_CREATE = "create table "
-		      + DATABASE_NAME + "(guid INTEGER primary key, " +
+		      + DATABASE_NAME + "(guid TEXT primary key, " +
 			    "title TEXT, "+
 			    "link TEXT, "+
 			    "pubDate TEXT, "+

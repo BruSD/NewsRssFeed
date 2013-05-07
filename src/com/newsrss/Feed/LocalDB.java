@@ -86,7 +86,7 @@ public class LocalDB {
 	    return result_art;
 	  }
 	
-	static public void deleteArticle (int guid){
+	static public void deleteArticle (String guid){
         try {
             open();
         } catch (SQLException e) {
@@ -106,14 +106,13 @@ public class LocalDB {
     	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
 		ContentValues article_values = new ContentValues();
         byte[]  savedPicture = null;
-        int id = Integer.parseInt(art.getGuid());
         if (art.getNewsImage()!=null){
             Bitmap picture = ((BitmapDrawable)art.getNewsImage()).getBitmap();
             ByteArrayOutputStream picture_array = new ByteArrayOutputStream();
             picture.compress(Bitmap.CompressFormat.PNG, 100, picture_array);
             savedPicture =  picture_array.toByteArray();
         }
-        article_values.put(SQLLiteHelper.COLUMN_guID, id);
+        article_values.put(SQLLiteHelper.COLUMN_guID, art.getGuid());
         article_values.put(SQLLiteHelper.COLUMN_Title, art.getTitle());
         article_values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
         article_values.put(SQLLiteHelper.COLUMN_PubDate, dateStr);
