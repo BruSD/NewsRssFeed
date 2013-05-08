@@ -5,7 +5,6 @@
       <profile>
         <option name="device" value="4in WVGA (Nexus S)" />
         <option name="deviceConfiguration" value="Portrait" />
-        <option name="localeLanguage" value="es" />
         <option name="targetHashString" value="android-17" />
         <option name="theme" value="Theme.Sherlock.Light.NoActionBar" />
       </profile>
@@ -15,7 +14,7 @@
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
       <GlobalState>
-        <option name="device" value="4in WVGA (Nexus S)" />
+        <option name="device" value="2.7in QVGA" />
         <option name="dockMode" value="" />
         <option name="nightMode" value="notnight" />
         <option name="targetHashString" value="android-17" />
@@ -29,25 +28,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/httpclient-4.0.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/signpost-commonshttp4-1.2.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/signpost-core-1.2.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/twitter4j-core-2.1.11.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/Constants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/httpclient_4_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/signpost_commonshttp4_1_2_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/signpost_core_1_2_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j_core_2_1_11.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NewsFeed.iml" afterPath="$PROJECT_DIR$/NewsFeed.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367929215283" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367926823254" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366289089329" ignored="false" />
-    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367230894388" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368002006700" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367931589914" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367912625385" ignored="false" />
+    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367911790948" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
-    <file path="/main.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365843868665" ignored="false" />
+    <file path="/main.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367230358049" ignored="false" />
     <file path="/a.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366041428925" ignored="false" />
     <file path="/podcast_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365774945015" ignored="false" />
-    <file path="/rss_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365691031061" ignored="false" />
-    <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365845217253" ignored="false" />
+    <file path="/rss_item_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367912473627" ignored="false" />
+    <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367485560789" ignored="false" />
     <file path="/DetailsArticl.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365671112347" ignored="false" />
     <file path="/details_podcast.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366902064164" ignored="false" />
-    <file path="/DetailsPodcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367226194226" ignored="false" />
+    <file path="/DetailsPodcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366974498609" ignored="false" />
     <file path="/DataStarage.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365587903266" ignored="false" />
     <file path="/Job.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365585677343" ignored="false" />
     <file path="/DataStorage.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366017036377" ignored="false" />
@@ -55,25 +72,99 @@
     <file path="/Podcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365585621699" ignored="false" />
     <file path="/JobParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365587202044" ignored="false" />
     <file path="/strings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366899583970" ignored="false" />
-    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365844357533" ignored="false" />
-    <file path="/ArticleParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365675311372" ignored="false" />
-    <file path="/styles.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367319338765" ignored="false" />
+    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368019830955" ignored="false" />
+    <file path="/ArticleParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367326822719" ignored="false" />
+    <file path="/styles.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366902083864" ignored="false" />
     <file path="$USER_HOME$/.IdeaIC12/system/compile-server/newsfeed_ceeba28c/targets/java-production/NewsFeed/android/generated_sources/aapt/com/newsrss/Feed/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366108536410" ignored="false" />
     <file path="$USER_HOME$/.IdeaIC12/system/compile-server/newsfeed_ceeba28c/targets/java-production/NewsFeed/android/generated_sources/aapt/com/actionbarsherlock/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366108536411" ignored="false" />
-    <file path="/DetailsSettings.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367317244021" ignored="false" />
-    <file path="/LocalDB.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367930236433" ignored="false" />
-    <file path="/Legal.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367231662588" ignored="false" />
+    <file path="/DetailsSettings.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897396367" ignored="false" />
+    <file path="/LocalDB.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367918527617" ignored="false" />
+    <file path="/Legal.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366804098062" ignored="false" />
     <file path="/Searches.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366288171777" ignored="false" />
     <file path="/Contacts.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366717814253" ignored="false" />
     <file path="/contacts.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897268703" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367921466902" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366817176491" ignored="false" />
     <file path="/share_panel.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366721417292" ignored="false" />
     <file path="/details_settings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897129840" ignored="false" />
     <file path="/legal.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366804761206" ignored="false" />
-    <file path="/SQLLiteHelper.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367923021208" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Libs/JakeWharton-NineOldAndroids-9f20fd7/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367921568315" ignored="false" />
-    <file path="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367921872698" ignored="false" />
-    <file path="/SwipeListView.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367922022587" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368002065450" ignored="false" />
+    <file path="/SwipeListView.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367306611760" ignored="false" />
+    <file path="/mapCAIActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367327495046" ignored="false" />
+    <file path="/map_CAI.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367327561875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SAA/examples/share-button/gen/org/brickred/socialshare/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367482387536" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SAA/examples/LifeView/gen/org/labs/lifeview/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367482920278" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SAA/examples/custom-ui/gen/org/brickred/customui/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367483008017" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SAA/examples/share-bar/gen/org/brickred/socialbar/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367483044512" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Instal/SAA/examples/share-bar/gen/org/brickred/socialbar/BuildConfig.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367483475601" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/TwitterTesting/src/net/schwiz/oauth/Main.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367500866160" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502076183" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/gen/com/whiterabbit/postmanlibsample/BuildConfig.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367501936779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/workspace.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502456254" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/commands/ServerCommand.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/SimpleRestRequest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/ServerInteractionHelperTest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/SimpleServerCommand.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/SimpleClientActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/CommandExecutionTest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/pom.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502076183" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/NestedRestRequest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/RestCommandTest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502076183" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/test/java/com/whiterabbit/postman/oauth/OauthAuthenticateTest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/vcs.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/encodings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502236419" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/compiler.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502236419" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/modules.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502236419" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/misc.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502236419" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/gen/com/whiterabbit/postman/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502086455" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/uiDesigner.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/no_auth.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/twitter.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/sample_list.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/linkedin.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/twitter_scheduled.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/layout/fb.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/res/values/strings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/pom.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/SampleCommand.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/SampleList.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/WakefulAlarmManagerSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/NoAuthSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/TwitterSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/LinkedinSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/StoreUtils.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/WakefulInteractionService.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/User.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/ServerInteractionResponseInterface.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/AlarmManagerSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/InteractionService.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/src/main/java/com/whiterabbit/postmanlibsample/FacebookSample.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/ServerInteractionHelper.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/oauth/OAuthFragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/oauth/StorableServiceBuilder.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/oauth/OAuthHelper.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/oauth/OAuthServiceInfo.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/utils/Constants.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/commands/RestServerCommand.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/src/main/java/com/whiterabbit/postman/commands/RestServerRequest.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075875" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/.idea/.name" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/library/proguard.cfg" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502075874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/proguard.cfg" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502076183" ignored="false" />
+    <file path="$PROJECT_DIR$/../../exp/PostmanLib--Rings-Twice--Android-master/example/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367502076183" ignored="false" />
+    <file path="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/samples/SessionLoginSample/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367568091724" ignored="false" />
+    <file path="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/samples/GraphApiSample/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367571448669" ignored="false" />
+    <file path="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/samples/BooleanOGSample/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367571840251" ignored="false" />
+    <file path="/AccessTokenSource.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367580962573" ignored="false" />
+    <file path="/Session.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367583788579" ignored="false" />
+    <file path="/shareToFacebook.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367590561735" ignored="false" />
+    <file path="/FBHelper.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367588296722" ignored="false" />
+    <file path="/shareToSocial.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368019777819" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367930549088" ignored="false" />
+    <file path="/PrepareRequestTokenActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368002969347" ignored="false" />
+    <file path="/TwitterDialog.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368010169642" ignored="false" />
+    <file path="/TwitterApp.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368018160070" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,54 +179,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" line="221" class="com.newsrss.Feed.NewsRssActivity.MyCAdapter$2" package="com.newsrss.Feed">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" line="214" class="com.newsrss.Feed.NewsRssActivity.MyCAdapter$2" package="com.newsrss.Feed">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" line="556" class="com.newsrss.Feed.NewsRssActivity" package="com.newsrss.Feed">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -172,6 +215,87 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" line="221" class="com.newsrss.Feed.NewsRssActivity.MyCAdapter$2" package="com.newsrss.Feed">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" line="232" class="com.newsrss.Feed.shareToSocial" package="com.newsrss.Feed">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" line="235" class="com.newsrss.Feed.shareToSocial$4" package="com.newsrss.Feed">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" line="247" class="com.newsrss.Feed.shareToSocial$4" package="com.newsrss.Feed">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/com/newsrss/Feed/TwitterSession.java" line="23" class="com.newsrss.Feed.TwitterSession" package="com.newsrss.Feed">
+        <option name="WATCH_ENTRY" value="true" />
+        <option name="WATCH_EXIT" value="true" />
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </method_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -182,12 +306,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LocalDB.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java">
+      <file leaf-file-name="shareToSocial.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="32" selection-start="6595" selection-end="6595" vertical-scroll-proportion="0.40588236">
+            <state line="216" column="16" selection-start="7646" selection-end="7646" vertical-scroll-proportion="-25.44">
               <folding>
-                <element signature="e#5533#5542#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5755#7537#0" expanded="true" />
+                <element signature="e#7517#7518#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailsArticle.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="18" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.6558642">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwitterApp.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/TwitterApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="104" column="68" selection-start="2980" selection-end="2980" vertical-scroll-proportion="-58.48">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2092#2124#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -219,22 +366,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/details_settings.xml" />
-        <option value="$PROJECT_DIR$/res/layout/details_podcast.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/ArticleParser.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Contacts.java" />
-        <option value="$PROJECT_DIR$/res/layout/contacts.xml" />
-        <option value="$PROJECT_DIR$/res/layout/legal.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java" />
-        <option value="$PROJECT_DIR$/res/layout/menu.xml" />
-        <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/../../Libs/android-swipelistview-master/src/main/java/com/fortysevendeg/android/swipelistview/SwipeListView.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+        <option value="$USER_HOME$/Desktop/FBHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/shareToFacebook.java" />
+        <option value="$PROJECT_DIR$/res/layout/rss_item_layout.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/SQLLiteHelper.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Constants.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/OAuthRequestTokenTask.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/PrepareRequestTokenActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterSession.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterDialog.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/TwitterApp.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
       </list>
     </option>
   </component>
@@ -242,10 +389,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="886" />
+    <option name="y" value="30" />
+    <option name="width" value="1926" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -296,7 +442,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,6 +450,10 @@
               <option name="myItemId" value="NewsFeed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -312,6 +462,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsRssFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,10 +496,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -343,58 +507,59 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NewsFeed" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.externalTools" />
+    <property name="options.lastSelected" value="reference.projectsettings.compiler.javacompiler" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook" />
-    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0123456789ABCDEF" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="S5830e2b418c5" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="andr23" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_for_Nexus_S_by_Google" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\drawable-mdpi" />
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-xhdpi" />
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-hdpi" />
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-ldpi" />
       <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-mdpi" />
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\values" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\drawable-ldpi" />
       <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\drawable-mdpi" />
-      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\raw" />
-      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res" />
-      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\doc" />
+      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-mdpi" />
+      <recent name="C:\Program Files\Android\workspace\NewsRssFeed\src\com\newsrss\Feed" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.NewsFeed">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -404,22 +569,10 @@
       <setting name="debug" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
@@ -444,6 +597,24 @@
       </MavenSettings>
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="GriffonRunConfigurationType" factoryName="Griffon">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -458,6 +629,35 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -485,35 +685,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -568,7 +739,7 @@
     </configuration>
     <configuration default="false" name="NewsFeed" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="NewsFeed" />
-      <option name="ACTIVITY_CLASS" value="com.newsrss.Feed.NewsRssActivity" />
+      <option name="ACTIVITY_CLASS" value="com.newsrss.Feed.mapCAIActivity" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
@@ -720,22 +891,26 @@
       <created>1366817372787</created>
       <updated>1366817372787</updated>
     </task>
-    <task id="LOCAL-00027" summary="Style of Setting, Podcast Layout.">
-      <created>1367218978682</created>
-      <updated>1367218978682</updated>
+    <task id="LOCAL-00027" summary="Add animation on swipe&#10;">
+      <created>1367321909360</created>
+      <updated>1367321909360</updated>
     </task>
-    <task id="LOCAL-00028" summary="Background SB menu, saller items, new good icon. Legal doesnt work.&#10;Little change to action bar button positin. Also Local DB changes (no need to open and close all time).">
-      <created>1367320434141</created>
-      <updated>1367320434141</updated>
+    <task id="LOCAL-00028" summary="Facebook share to Article, Podcasts, Jobs,">
+      <created>1367590893860</created>
+      <updated>1367590893860</updated>
     </task>
-    <task id="LOCAL-00029" summary="Complete add to favorites">
-      <created>1367929229339</created>
-      <updated>1367929229339</updated>
+    <task id="LOCAL-00029" summary="Fix app Icon &amp; default article Icon">
+      <created>1367913245772</created>
+      <updated>1367913245772</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Implement add to Fav">
+      <created>1367921131260</created>
+      <updated>1367921131260</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -756,33 +931,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="30" width="1926" height="1050" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.100430414" sideWeight="0.6019152" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2754663" sideWeight="0.6019152" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23529412" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21724524" sideWeight="0.995471" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18910256" sideWeight="0.82068205" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32698768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39808482" sideWeight="0.75824964" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39808482" sideWeight="0.241033" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36282194" sideWeight="0.75824964" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39713973" sideWeight="0.241033" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22668579" sideWeight="0.38440493" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5239398" sideWeight="0.48684916" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3132695" sideWeight="0.47361112" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46922025" sideWeight="0.8611111" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105335" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5229563" sideWeight="0.48684916" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30907056" sideWeight="0.47361112" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26203808" sideWeight="0.99492383" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.330033" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21449067" sideWeight="0.3009576" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18579628" sideWeight="0.6019152" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994528" sideWeight="0.8421808" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19899425" sideWeight="0.7647059" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1502146" sideWeight="0.7827548" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23068309" sideWeight="0.96696943" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09910913" sideWeight="0.83426654" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27951002" sideWeight="0.83426654" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -828,7 +1003,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete add to favorites" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement add to Fav" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -863,10 +1038,10 @@
     <MESSAGE value="Stop playing after quit from podcast." />
     <MESSAGE value="Style of all ActionBars." />
     <MESSAGE value="Style of ContactsLayout." />
-    <MESSAGE value="Style of Setting, Podcast Layout." />
-    <MESSAGE value="Background SB menu, saller items, new good icon. Legal doesnt work.&#10;Little change to action bar button positin." />
-    <MESSAGE value="Background SB menu, saller items, new good icon. Legal doesnt work.&#10;Little change to action bar button positin. Also Local DB changes (no need to open and close all time)." />
-    <MESSAGE value="Complete add to favorites" />
+    <MESSAGE value="Add animation on swipe&#10;" />
+    <MESSAGE value="Facebook share to Article, Podcasts, Jobs," />
+    <MESSAGE value="Fix app Icon &amp; default article Icon" />
+    <MESSAGE value="Implement add to Fav" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -898,128 +1073,122 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/menu.xml">
-      <provider editor-type-id="text-editor">
-        <state line="60" column="51" selection-start="2388" selection-end="2388" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/attrs.xml">
+    <entry file="jar://$PROJECT_DIR$/libs/twitter4j-core-2.1.11.jar!/twitter4j/conf/PropertyConfigurationFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.2">
+        <state line="15" column="16" selection-start="576" selection-end="576" vertical-scroll-proportion="0.45945945">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libs/android-swipelistview-master/src/main/java/com/fortysevendeg/android/swipelistview/SwipeListView.java">
+    <entry file="jar://$PROJECT_DIR$/libs/twitter4j-core-2.1.11.jar!/twitter4j/conf/PropertyConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="75" selection-start="4754" selection-end="4755" vertical-scroll-proportion="0.14242879">
+        <state line="57" column="4" selection-start="4045" selection-end="4045" vertical-scroll-proportion="0.33204633">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsItem.java">
+    <entry file="jar://$PROJECT_DIR$/libs/twitter4j-core-2.1.11.jar!/twitter4j/conf/ConfigurationContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.3">
+        <state line="11" column="11" selection-start="484" selection-end="484" vertical-scroll-proportion="0.32818532">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SQLLiteHelperSearch.java">
+    <entry file="file://C:/Android/sources/android-17/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="915" selection-end="915" vertical-scroll-proportion="-5.16">
+        <state line="125" column="0" selection-start="4913" selection-end="4913" vertical-scroll-proportion="0.33204633">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/database/sqlite/SQLiteDatabase.class">
+    <entry file="jar://$PROJECT_DIR$/libs/twitter4j-core-2.1.11.jar!/twitter4j/TwitterFactory.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="16" selection-start="9076" selection-end="9076" vertical-scroll-proportion="0.0">
+        <state line="10" column="11" selection-start="343" selection-end="343" vertical-scroll-proportion="0.2953668">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/database/sqlite/SQLiteOpenHelper.class">
+    <entry file="file://C:/Android/sources/android-17/android/app/Dialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="50" selection-start="918" selection-end="918" vertical-scroll-proportion="0.0">
+        <state line="306" column="0" selection-start="10224" selection-end="10224" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/src/com/slidingmenu/lib/SlidingMenu.java">
+    <entry file="file://C:/Android/sources/android-17/android/view/ContextThemeWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="513" column="0" selection-start="15081" selection-end="15081" vertical-scroll-proportion="-5.16">
+        <state line="72" column="0" selection-start="2460" selection-end="2460" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SQLLiteHelper.java">
+    <entry file="file://C:/Android/sources/android-17/android/app/ProgressDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="341" selection-end="341" vertical-scroll-proportion="0.12">
+        <state line="144" column="0" selection-start="5237" selection-end="5237" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/view/View.class">
+    <entry file="file://C:/Android/sources/android-17/android/content/ContextWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="79" column="0" selection-start="2562" selection-end="2562" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/os/Handler.class">
+    <entry file="file://C:/Android/sources/android-17/android/view/LayoutInflater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="16" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0">
+        <state line="317" column="0" selection-start="11965" selection-end="11965" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../sdk/platforms/android-17/android.jar!/android/os/Looper.class">
+    <entry file="file://C:/Android/sources/android-17/android/content/res/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="16" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0">
+        <state line="887" column="0" selection-start="38075" selection-end="38075" vertical-scroll-proportion="-6.88">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+    <entry file="file://C:/Android/sources/android-17/android/content/res/AssetManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="574" column="38" selection-start="20781" selection-end="20781" vertical-scroll-proportion="0.33161953">
+        <state line="200" column="0" selection-start="6536" selection-end="6536" vertical-scroll-proportion="-6.88">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Android/sources/android-17/android/util/SparseArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="308" column="0" selection-start="8246" selection-end="8246" vertical-scroll-proportion="-6.88">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/TwitterApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="68" selection-start="2980" selection-end="2980" vertical-scroll-proportion="-58.48">
           <folding>
-            <element signature="e#7232#7941#0" expanded="true" />
-            <element signature="e#7926#7927#0" expanded="true" />
-            <element signature="e#20514#20530#0" expanded="true" />
-            <element signature="e#20796#20812#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2092#2124#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/contacts.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/shareToSocial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.648855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="32" selection-start="6595" selection-end="6595" vertical-scroll-proportion="0.40588236">
+        <state line="216" column="16" selection-start="7646" selection-end="7646" vertical-scroll-proportion="-25.44">
           <folding>
-            <element signature="e#5533#5542#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5755#7537#0" expanded="true" />
+            <element signature="e#7517#7518#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="18" selection-start="2337" selection-end="2337" vertical-scroll-proportion="0.6558642">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +1243,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android 4.2.2 Platform</last-edited>
+          <last-edited>1.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1110,7 +1279,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>android-support-v4</last-edited>
+          <last-edited>twitter4j-core-2.1.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

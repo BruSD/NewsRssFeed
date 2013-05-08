@@ -1,10 +1,15 @@
 package com.newsrss.Feed;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.Toast;
 import com.facebook.*;
 import com.facebook.widget.WebDialog;
@@ -13,6 +18,8 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.newsrss.Feed.TwitterApp.TwDialogListener;
+import android.app.AlertDialog;
 /**
  * Created with IntelliJ IDEA.
  * User: BruSD
@@ -22,6 +29,17 @@ import java.util.Date;
  */
 public class shareToSocial extends Activity {
 
+    //Twitter Variable
+    private TwitterApp mTwitter;
+    //private CheckBox mTwitterBtn;
+
+    private static final String twitter_consumer_key = "rLdUmSbLw38ZPujnbGZM8g";
+    private static final String twitter_secret_key = "oVLV1wvDmBimSf69iWs9dUtGmPJOY0VNMTSCBRzH3E";
+
+
+
+
+    //FB Variable
     String postName;
     String postURL;
     String postImageURL;
@@ -32,6 +50,8 @@ public class shareToSocial extends Activity {
     private  Podcast currentPodcast;
     private Job    currentJob;
     public Session.StatusCallback statusCallback = new SessionStatusCallback();
+
+
 
 
 
@@ -190,4 +210,43 @@ public class shareToSocial extends Activity {
                 .build();
         feedDialog.show();
     }
+
+
+
+    // Twitter Functionality
+    public void onTwitterClick(String messageToTwitter) {
+
+        mTwitter 	= new TwitterApp(this, twitter_consumer_key,twitter_secret_key);
+
+        mTwitter.setListener(mTwLoginDialogListener);
+
+        if (mTwitter.hasAccessToken()) {
+           // SHARE MSG
+           mTwitter.postToTwitter(messageToTwitter);
+        } else {
+
+
+            mTwitter.authorize();
+        }
+    }
+
+    private final TwDialogListener mTwLoginDialogListener = new TwDialogListener() {
+        @Override
+        public void onComplete(String value) {
+            String username = mTwitter.getUsername();
+            username		= (username.equals("")) ? "No Name" : username;
+
+
+
+            Toast.makeText(getApplicationContext(), "Connected to Twitter as " + username, Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        public void onError(String value) {
+
+
+            Toast.makeText(getApplicationContext(), "Twitter connection failed", Toast.LENGTH_LONG).show();
+        }
+    };
+
 }

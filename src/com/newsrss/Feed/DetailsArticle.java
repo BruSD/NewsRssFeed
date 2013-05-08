@@ -1,8 +1,11 @@
 package com.newsrss.Feed;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.*;
@@ -10,6 +13,7 @@ import android.widget.*;
 
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.facebook.*;
 
@@ -31,7 +35,6 @@ public class DetailsArticle extends shareToSocial {
     WebView descriptionArticle;
     TextView nextTitle;
     TextView nextDate;
-
 
 
     ImageButton shareButtonTest;
@@ -75,10 +78,12 @@ public class DetailsArticle extends shareToSocial {
         shareButtonTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onClickbtnConnectFB(1, positionArt);
+                //onClickbtnConnectFB(1, positionArt);
+                //onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
             }
         });
 
+        //FB
         Session session = Session.getActiveSession();
         if (session == null) {
             if (savedInstanceState != null) {
@@ -90,6 +95,16 @@ public class DetailsArticle extends shareToSocial {
             Session.setActiveSession(session);
 
         }
+        ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
+        addToFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocalDB.addArticle(currentArticle);
+            }
+        });
+
+        // Twitter
+
     }
 
 
@@ -120,5 +135,8 @@ public class DetailsArticle extends shareToSocial {
         ShowArticle();
         NextArticle();
     }
+
+    //Twitter
+
 
 }

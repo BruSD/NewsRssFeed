@@ -43,6 +43,8 @@ public class NewsRssActivity extends SherlockActivity {
     private SwipeListView rssListView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.main);
@@ -70,7 +72,11 @@ public class NewsRssActivity extends SherlockActivity {
         slidingMenu.setMenu(R.layout.menu);
 
         miniSwipeActivator();
-
+        try {
+            LocalDB.open(this);
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
     }
 
@@ -213,11 +219,6 @@ public class NewsRssActivity extends SherlockActivity {
                     Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
                     toast.show();
                     Article currentArticle1 = DataStorage.getArticleList().get(position);
-                    try {
-                        LocalDB.open(context);
-                    } catch (SQLException e) {
-                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                    }
 
                     LocalDB.addArticle(currentArticle1);
                 }
@@ -301,6 +302,46 @@ public class NewsRssActivity extends SherlockActivity {
                     });
 
                     break;
+
+                case 4:
+                    miniSwipeActivator();
+
+                    Article currentFav = LocalDB.getArticle(position);
+
+                    if (convertView == null) {
+                        LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        convertView = li.inflate(R.layout.rss_item_layout, parent, false);
+                        holder = new ViewHolder();
+
+
+                        holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
+                        holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+
+                        convertView.setTag(holder);
+                    } else {
+                        holder = (ViewHolder) convertView.getTag();
+                    }
+                    holder.articleTitle.setText(currentFav.getTitle());
+                    sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                    dateArticleV = sdf.format(currentFav.getPubDate());
+                    holder.articleDate.setText(dateArticleV);
+                    rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
+                        @Override
+                        public void  onClickFrontView (int position){
+                            /*
+                            Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
+                            startDetailJobs.putExtra("position", position);
+                            startActivity(startDetailJobs);
+                            */
+                            Toast toast = Toast.makeText(getApplicationContext(),"Открыть " + position,Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
+
+                    });
+
+                    break;
+
         }
 
 
@@ -404,7 +445,7 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Показать все статьи",Toast.LENGTH_SHORT);
         //toast.show();
 
-        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
             showAricleList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
@@ -545,7 +586,7 @@ public class NewsRssActivity extends SherlockActivity {
     }
     public void showToFavoritesFromSideBar(final View view){
         //TODO: Утановите вызов Favorites
-        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
             showFavoritesList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
@@ -612,7 +653,7 @@ public class NewsRssActivity extends SherlockActivity {
                 this,  createFavoritesList(), R.layout.rss_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate"},
                 new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idLayout = 1;
+        idLayout = 4;
         rssListView.setAdapter(adapter);
         }
     }
@@ -629,7 +670,7 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         //toast.show();
 
-        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
             showPodcastList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
@@ -648,7 +689,7 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Jobs",Toast.LENGTH_SHORT);
         //toast.show();
 
-        if (idLayout != 1 & idLayout != 2 & idLayout != 3) {
+        if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
             showJobstList();
             ListView rssListView = (ListView) findViewById(R.id.rssListView);
