@@ -19,10 +19,31 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                        android:host="litestcalback"
+                        android:scheme="x-oauthflow-linkedin" />
+            </intent-filter>
         </activity>
         <activity android:name="com.newsrss.Feed.DetailsArticle"
-                android:label="@string/head_app"/>
+                android:label="@string/head_app"
+                android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                        android:host="litestcalback"
+                        android:scheme="x-oauthflow-linkedin" />
+            </intent-filter>
+                </activity>
         <activity android:name="com.newsrss.Feed.DetailsPodcast"
                   android:label="@string/head_app"/>
         <activity android:name="com.newsrss.Feed.DetailsJobs"

@@ -3,6 +3,7 @@ package com.newsrss.Feed;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -16,6 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.facebook.*;
+import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
+import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
 
 /**
  * Created with IntelliJ IDEA.
@@ -80,6 +83,7 @@ public class DetailsArticle extends shareToSocial {
             public void onClick(View v) {
                 //onClickbtnConnectFB(1, positionArt);
                 //onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
+                createServiseToLinkedIn(1, positionArt);
             }
         });
 
@@ -103,7 +107,9 @@ public class DetailsArticle extends shareToSocial {
             }
         });
 
-        // Twitter
+        // LinkedIn
+
+
 
     }
 

@@ -72,11 +72,7 @@ public class NewsRssActivity extends SherlockActivity {
         slidingMenu.setMenu(R.layout.menu);
 
         miniSwipeActivator();
-        try {
-            LocalDB.open(this);
-        } catch (SQLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+
 
     }
 
@@ -91,6 +87,7 @@ public class NewsRssActivity extends SherlockActivity {
             rssListView.setOffsetRight(otstup);
             rssListView.setAnimationTime(500);
             rssListView.setSwipeOpenOnLongPress(false);
+
         }  else {
             rssListView.setSwipeMode(SwipeListView.SWIPE_MODE_NONE);
             rssListView.setSwipeOpenOnLongPress(false);
@@ -216,6 +213,11 @@ public class NewsRssActivity extends SherlockActivity {
             holder.favBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                     Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
                     toast.show();
                     Article currentArticle1 = DataStorage.getArticleList().get(position);
@@ -227,6 +229,7 @@ public class NewsRssActivity extends SherlockActivity {
             holder.shareBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     Toast toast = Toast.makeText(getApplicationContext(),"Share article N  " +position ,Toast.LENGTH_SHORT);
                     toast.show();
                 }
@@ -447,8 +450,9 @@ public class NewsRssActivity extends SherlockActivity {
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
+
+            rssListView = (SwipeListView) findViewById(R.id.rssListView);
             showAricleList();
-            ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
@@ -457,6 +461,7 @@ public class NewsRssActivity extends SherlockActivity {
             showAricleList();
             slidingMenu.showContent();
         }
+        miniSwipeActivator();
     }
 
     public void filterToAudit(final View view){
@@ -584,12 +589,14 @@ public class NewsRssActivity extends SherlockActivity {
         //Toast toast = Toast.makeText(getApplicationContext(),"Использовать фильтер для Tax",Toast.LENGTH_SHORT);
         //toast.show();
     }
+
     public void showToFavoritesFromSideBar(final View view){
         //TODO: Утановите вызов Favorites
         if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
+
+            rssListView = (SwipeListView) findViewById(R.id.rssListView);
             showFavoritesList();
-            ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
@@ -598,6 +605,7 @@ public class NewsRssActivity extends SherlockActivity {
             showFavoritesList();
             slidingMenu.showContent();
         }
+        miniSwipeActivator();
 
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
         toast.show();
@@ -672,8 +680,9 @@ public class NewsRssActivity extends SherlockActivity {
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
+
+            rssListView = (SwipeListView) findViewById(R.id.rssListView);
             showPodcastList();
-            ListView rssListView = (ListView) findViewById(R.id.rssListView);
 
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
@@ -691,8 +700,10 @@ public class NewsRssActivity extends SherlockActivity {
 
         if (idLayout != 1 & idLayout != 2 & idLayout != 3 & idLayout != 4) {
             slidingMenu.setContent(R.layout.main);
+
+            rssListView = (SwipeListView) findViewById(R.id.rssListView);
             showJobstList();
-            ListView rssListView = (ListView) findViewById(R.id.rssListView);
+
 
             View app = findViewById(R.id.app);
             app.findViewById(R.id.BtnSlide).setOnClickListener(new ClickListener());
@@ -701,6 +712,7 @@ public class NewsRssActivity extends SherlockActivity {
             showJobstList();
             slidingMenu.showContent();
         }
+
     }
 
     public void showContactFromSideBar(final View view){
