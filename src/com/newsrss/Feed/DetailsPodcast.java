@@ -1,6 +1,7 @@
 package com.newsrss.Feed;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -9,11 +10,11 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.KeyEvent;
-import android.view.View;
+import android.view.*;
 import android.webkit.WebView;
 import android.widget.*;
 import com.actionbarsherlock.view.Menu;
+import com.facebook.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -28,7 +29,8 @@ import java.util.Date;
  * Time: 10:32 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsPodcast extends Activity {
+public class DetailsPodcast extends shareToSocial implements GestureDetector.OnGestureListener {
+    private GestureDetector gd;
 
     Podcast currentPodcast = null;
     MediaPlayer cast_player;
@@ -40,7 +42,7 @@ public class DetailsPodcast extends Activity {
     ImageButton seek10Button,seek30Button,play_pauseButton,backButton;
     SeekBar castSeekbar;
     int podcastBufferedTime;
-
+    WebView podcastDecription;
 
     @Override
     public void onDestroy(){
@@ -56,12 +58,13 @@ public class DetailsPodcast extends Activity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.details_podcast);
+        getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
 
         titleText = (TextView)findViewById(R.id.podcast_titleText);
         dateText = (TextView)findViewById(R.id.podcast_dateText);
         playedTime = (TextView)findViewById(R.id.podcast_playedTime);
         allTime = (TextView)findViewById(R.id.podcast_allTime);
-        WebView podcastDecription = (WebView) findViewById(R.id.podcast_description);
+        podcastDecription = (WebView) findViewById(R.id.podcast_description);
         seek10Button = (ImageButton) findViewById(R.id.podcast_seek10Button);
         seek30Button = (ImageButton) findViewById(R.id.podcast_seek30Button);
         backButton = (ImageButton) findViewById(R.id.podcast_backButton);
@@ -70,7 +73,7 @@ public class DetailsPodcast extends Activity {
 
 
         Intent startDetailArticl = getIntent();
-        int position = startDetailArticl.getIntExtra("position", -1);
+        final int position = startDetailArticl.getIntExtra("position", -1);
         currentPodcast = DataStorage.getPodcastList().get(position);
 
         play_pauseButton.setImageResource(R.drawable.play_button);
@@ -231,6 +234,87 @@ public class DetailsPodcast extends Activity {
         cast_player.setOnCompletionListener(ocEnd);
         cast_player.setOnBufferingUpdateListener(ocBuffer);
         cast_player.setOnPreparedListener(ocPrepare);
+
+        //FB
+        Session session = Session.getActiveSession();
+        if (session == null) {
+            if (savedInstanceState != null) {
+                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
+            }
+            if (session == null) {
+                session = new Session(this);
+            }
+            Session.setActiveSession(session);
+
+        }
+        //Double Tap
+        gd = new GestureDetector(DetailsPodcast.this);
+
+        gd.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
+            @Override
+            public boolean onSingleTapConfirmed(MotionEvent e) {
+
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Toast toast = Toast.makeText(getApplicationContext(),"Double Tap",Toast.LENGTH_SHORT);
+                toast.show();
+                final Dialog dialog = new Dialog(DetailsPodcast.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
+                dialog.setContentView(R.layout.share_panel_bottom);
+
+                ImageButton facebokShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_facebook);
+                facebokShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onClickbtnConnectFB(1, position);
+                    }
+                });
+
+                ImageButton twitterShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_twitter);
+                twitterShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onTwitterClick(currentPodcast.getTitle()+" "+ currentPodcast.getMP3Link().toString());
+                    }
+                });
+
+                ImageButton linkedinShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_linkedin);
+                linkedinShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+                ImageButton mailShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_mail);
+                mailShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        MailSender.send(DetailsPodcast.this, currentPodcast);
+                    }
+                });
+
+                dialog.show();
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public boolean onDoubleTapEvent(MotionEvent e) {
+
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
+
+        podcastDecription.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
     }
 
 
@@ -332,5 +416,39 @@ public class DetailsPodcast extends Activity {
 
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        return gd.onTouchEvent(event);//return the double tap events
+    }
 
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 }
