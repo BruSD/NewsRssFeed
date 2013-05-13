@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              style="@style/SharePanelInListView"
+        >
+    <LinearLayout
+            style="@style/SharePanelButtonLayoutInList">
+        <ImageButton
+                android:id="@+id/facebook_in_listview"
+
+                style="@style/SharePanelFacebookInList"
+                />
+        <ImageButton
+                android:id="@+id/twitter_in_listview"
+                style="@style/SharePanelTwitterInList"
+                />
+    </LinearLayout>
+    <LinearLayout
+
+
+            style="@style/SharePanelButtonLayoutInList">
+        <ImageButton
+                android:id="@+id/linkedin_in_listview"
+
+                style="@style/SharePanelLinkedInInList"
+                />
+        <ImageButton
+                android:id="@+id/mail_in_listview"
+
+                style="@style/SharePanelMailInList"
+                />
+    </LinearLayout
+            >
+    <LinearLayout
+            style="@style/SharePanelButtonLayoutInList">
+
+        <Button
+                style="@style/SharePanelCopyInList"
+                android:id="@+id/copy_url_list"
+                android:text="Copy URL"
+                />
+    </LinearLayout>
+</LinearLayout>

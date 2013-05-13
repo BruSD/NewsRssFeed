@@ -40,7 +40,7 @@ public class MailSender {
          iMailSender.setType("message/rfc822");
          iMailSender.putExtra(Intent.EXTRA_EMAIL  , new String[]{""});
          iMailSender.putExtra(Intent.EXTRA_SUBJECT, subject);
-         iMailSender.putExtra(Intent.EXTRA_TEXT   , body);
+         iMailSender.putExtra(Intent.EXTRA_TEXT   ,  body);
 
          try {
              activity.startActivity(Intent.createChooser(iMailSender, "Send mail..."));

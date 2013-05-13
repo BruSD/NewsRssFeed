@@ -83,7 +83,7 @@ public class DetailsArticle extends shareToSocial {
             public void onClick(View v) {
                 //onClickbtnConnectFB(1, positionArt);
                 //onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
-                createServiseToLinkedIn(1, positionArt);
+                //createServiseToLinkedIn(1, positionArt);
             }
         });
 

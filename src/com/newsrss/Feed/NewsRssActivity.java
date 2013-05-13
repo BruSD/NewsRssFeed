@@ -1,5 +1,7 @@
 package com.newsrss.Feed;
 
+import android.app.Dialog;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,10 +14,12 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.content.ClipboardManager;
 import android.view.animation.Animation;
 import android.widget.*;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.view.animation.TranslateAnimation;
+import com.facebook.Session;
 import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.android.swipelistview.SwipeListView;
 import com.slidingmenu.lib.SlidingMenu;
@@ -28,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class NewsRssActivity extends SherlockActivity {
+public class NewsRssActivity extends shareToSocial {
 
     // idLayout:
     // 1 - Articles
@@ -73,6 +77,18 @@ public class NewsRssActivity extends SherlockActivity {
 
         miniSwipeActivator();
 
+        //FB
+        Session session = Session.getActiveSession();
+        if (session == null) {
+            if (savedInstanceState != null) {
+                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
+            }
+            if (session == null) {
+                session = new Session(this);
+            }
+            Session.setActiveSession(session);
+
+        }
 
     }
 
@@ -229,9 +245,60 @@ public class NewsRssActivity extends SherlockActivity {
             holder.shareBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    final Dialog dialog = new Dialog(context);
+                    dialog.setContentView(R.layout.share_panel_in_list);
+                    dialog.setTitle("Share: " +currentArticle.getTitle());
 
-                    Toast toast = Toast.makeText(getApplicationContext(),"Share article N  " +position ,Toast.LENGTH_SHORT);
-                    toast.show();
+                    ImageButton faceBookShare = (ImageButton)dialog.findViewById(R.id.facebook_in_listview);
+                    faceBookShare.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            onClickbtnConnectFB(1, position);
+
+                        }
+                    });
+                    ImageButton twitterShare = (ImageButton)dialog.findViewById(R.id.twitter_in_listview);
+                    twitterShare.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
+                        }
+                    });
+                    ImageButton linkeinShare = (ImageButton)dialog.findViewById(R.id.linkedin_in_listview);
+                    linkeinShare.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                           // createServiseToLinkedIn(1, position);
+
+                        }
+                    });
+                    ImageButton mailShare =  (ImageButton)dialog.findViewById(R.id.mail_in_listview);
+                    mailShare.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            MailSender.send(NewsRssActivity.this, currentArticle);
+                        }
+                    });
+                    Button copyURLShare = (Button)dialog.findViewById(R.id.copy_url_list);
+                    copyURLShare.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int sdk = android.os.Build.VERSION.SDK_INT;
+                            if(sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+                                android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                clipboard.setText(currentArticle.getLink().toString());
+                            } else {
+                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                ClipData clip = ClipData.newPlainText("label",currentArticle.getLink().toString());
+                                clipboard.setPrimaryClip(clip);
+                            }
+                            Toast toast = Toast.makeText(getApplicationContext(),"URL Copied ",Toast.LENGTH_SHORT);
+                            toast.show();
+
+                        }
+                    });
+
+                    dialog.show();
                 }
             });
 
@@ -336,8 +403,7 @@ public class NewsRssActivity extends SherlockActivity {
                             startDetailJobs.putExtra("position", position);
                             startActivity(startDetailJobs);
                             */
-                            Toast toast = Toast.makeText(getApplicationContext(),"Открыть " + position,Toast.LENGTH_SHORT);
-                            toast.show();
+
                         }
 
 

@@ -90,6 +90,85 @@
     </style>
 
 
+    <style name="SharePanelInListView">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/sharepanelbottom_bg</item>
+        <item name="android:adjustViewBounds">true</item>
+
+    </style>
+    <style name="SharePanelButtonLayoutInList">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+    <style name="SharePanelFacebookInList">
+        <item name="android:layout_weight">180</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:background">#00000000</item>
+        <item name="android:src">@drawable/facebook</item>
+
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    <style name="SharePanelTwitterInList">
+        <item name="android:layout_weight">189</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:background">#00000000</item>
+        <item name="android:src">@drawable/tvitter</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    <style name="SharePanelLinkedInInList">
+        <item name="android:layout_weight">170</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:src">@drawable/linkedin</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    <style name="SharePanelMailInList">
+        <item name="android:layout_weight">55</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:src">@drawable/button_mail</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+    <style name="SharePanelCopyInList">
+        <item name="android:layout_weight">55</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/articlebg</item>
+
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
+
+
     <style name="SharePanelBottom">
         <item name="android:orientation">vertical</item>
         <item name="android:layout_width">fill_parent</item>

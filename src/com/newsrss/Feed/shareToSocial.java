@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
+import com.actionbarsherlock.app.SherlockActivity;
 import com.facebook.*;
 import com.facebook.widget.WebDialog;
 
@@ -48,7 +49,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
  * Time: 16:25
  * To change this template use File | Settings | File Templates.
  */
-public class shareToSocial extends Activity {
+public class shareToSocial extends SherlockActivity {
 
 
     //LinkedIn
@@ -267,8 +268,7 @@ public class shareToSocial extends Activity {
         if (session.isOpened()) {
 
             publishFeedDialog();
-            Toast toast = Toast.makeText(getApplicationContext(), "Вы вышли", Toast.LENGTH_SHORT);
-            toast.show();
+
 
 
         } else {
@@ -285,10 +285,10 @@ public class shareToSocial extends Activity {
     private void publishFeedDialog() {
         Bundle params = new Bundle();
         params.putString("name", postName);
-        params.putString("caption", "Build great social apps and get more installs.");
-        params.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
+        //params.putString("caption", "Build great social apps and get more installs.");
+        //params.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
         params.putString("link", postURL);
-        params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
+        //params.putString("picture", "https://raw.github.com/fbsamples/ios-3.x-howtos/master/Images/iossdk_logo.png");
 
         WebDialog feedDialog = (
                 new WebDialog.FeedDialogBuilder(this,
@@ -304,9 +304,9 @@ public class shareToSocial extends Activity {
                             // and the post Id.
                             final String postId = values.getString("post_id");
                             if (postId != null) {
-                                //   Toast.makeText(getApplicationContext(),
-                                //    "Posted story, id: "+postId,
-                                //    Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(getApplicationContext(),
+                                    "Posted story: "+postName,
+                                   Toast.LENGTH_SHORT).show();
                             } else {
                                 // User clicked the Cancel button
                                 //Toast.makeText(getApplicationContext().getApplicationContext(),
