@@ -1,13 +1,19 @@
 package com.newsrss.Feed;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.support.v4.app.DialogFragment;
+import android.view.*;
+import android.view.GestureDetector.OnDoubleTapListener;
+import android.view.GestureDetector.OnGestureListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.view.View;
+
 import android.webkit.WebView;
 import android.widget.*;
 
@@ -15,7 +21,7 @@ import android.widget.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import android.view.ViewGroup.LayoutParams;
 import com.facebook.*;
 import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
 import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
@@ -27,8 +33,8 @@ import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
  * Time: 10:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsArticle extends shareToSocial {
-
+public class DetailsArticle extends shareToSocial implements OnGestureListener  {
+    private GestureDetector gd;
 
     Article currentArticle = null;
     Article nextArticle = null;
@@ -47,6 +53,8 @@ public class DetailsArticle extends shareToSocial {
     super.onCreate(savedInstanceState);
     setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     setContentView(R.layout.details_articl);
+        getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+
 
         titleArticle = (TextView)findViewById(R.id.article_title);
         dateArticle = (TextView)findViewById(R.id.article_date);
@@ -103,15 +111,86 @@ public class DetailsArticle extends shareToSocial {
         addToFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LocalDB.addArticle(currentArticle);
+                //LocalDB.addArticle(currentArticle);
             }
         });
 
-        // LinkedIn
 
+        //Double Tap
+        gd = new GestureDetector(DetailsArticle.this);
 
+        gd.setOnDoubleTapListener(new OnDoubleTapListener() {
+            @Override
+            public boolean onSingleTapConfirmed(MotionEvent e) {
 
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Toast toast = Toast.makeText(getApplicationContext(),"Double Tap",Toast.LENGTH_SHORT);
+                toast.show();
+                final Dialog dialog = new Dialog(DetailsArticle.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
+                dialog.setContentView(R.layout.share_panel_bottom);
+
+                ImageButton facebokShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_facebook);
+                facebokShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onClickbtnConnectFB(1, positionArt);
+                    }
+                });
+
+                ImageButton twitterShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_twitter);
+                twitterShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
+                    }
+                });
+
+                ImageButton linkedinShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_linkedin);
+                linkedinShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+
+                ImageButton mailShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_mail);
+                mailShareTo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        MailSender.send(DetailsArticle.this, currentArticle);
+                    }
+                });
+
+                dialog.show();
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public boolean onDoubleTapEvent(MotionEvent e) {
+
+                return false;  //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
+
+        descriptionArticle.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
     }
+
+
+
+
+
+
 
 
     public void ShowArticle(){
@@ -142,7 +221,39 @@ public class DetailsArticle extends shareToSocial {
         NextArticle();
     }
 
-    //Twitter
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        return gd.onTouchEvent(event);//return the double tap events
+    }
 
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 
+    @Override
+    public void onShowPress(MotionEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

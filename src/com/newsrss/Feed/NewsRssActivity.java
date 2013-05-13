@@ -788,6 +788,10 @@ public class NewsRssActivity extends shareToSocial {
         View sidebarButton  = findViewById(R.id.contactSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
 
+        ImageButton facebookGoToPage = (ImageButton)findViewById(R.id.contacts_facebook);
+        ImageButton twitterGoToPage = (ImageButton)findViewById(R.id.contacts_twitter);
+        ImageButton linkeinGoToPage = (ImageButton)findViewById(R.id.contacts_linkedin);
+
         TextView tel1Text=(TextView) findViewById(R.id.contacts_Ireland_tel_text);
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
         TextView tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);
@@ -818,6 +822,28 @@ public class NewsRssActivity extends shareToSocial {
         cal_btnIR.setOnClickListener(ocCall);
         cal_btnNI.setOnClickListener(ocCallNI);
 
+        facebookGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                startActivity(myIntent);
+            }
+        });
+        twitterGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/charteredaccirl"));
+                startActivity(myIntent);
+            }
+        });
+        linkeinGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.linkedin.com/groups?gid=1783368&trk=myg_ugrp_ovr"));
+                startActivity(myIntent);
+            }
+        });
+
 
     }
 
@@ -825,6 +851,8 @@ public class NewsRssActivity extends shareToSocial {
         slidingMenu.setContent(R.layout.details_settings);
         idLayout = 7;
         View sidebarButton  = findViewById(R.id.settingSidebarButton);
+
+
         sidebarButton.setOnClickListener(new ClickListener());
         ImageView legalView = (ImageView)findViewById(R.id.settings_legalBG);
         ImageView rateView = (ImageView)findViewById(R.id.settings_rateBG);
@@ -854,6 +882,7 @@ public class NewsRssActivity extends shareToSocial {
         legalView.setOnClickListener(ocLegal);
         rateView.setOnClickListener(ocRate);
         feedbackView.setOnClickListener(ocFeedback);
+
 
     }
 

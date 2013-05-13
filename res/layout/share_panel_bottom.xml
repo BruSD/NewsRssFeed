@@ -3,7 +3,8 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/share_panel_bottom"
-        style="@style/SharePanelBottom">
+        style="@style/SharePanelBottom"
+        android:minWidth="300dp">
     <TextView
             android:id="@+id/share_panel_bottom_text"
             android:text="@string/share_panel_bottom_article_text"

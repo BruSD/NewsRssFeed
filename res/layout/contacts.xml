@@ -182,13 +182,13 @@
                     <LinearLayout style="@style/SharePanelConSet_Buttons"
                                   android:layout_below="@+id/contacts_sharePanel_text"
                                   android:id="@+id/contacts_SharePanelButtons">
-                        <ImageView android:id="@+id/contacts_facebook"
+                        <ImageButton android:id="@+id/contacts_facebook"
                                    android:layout_below="@+id/contacts_sharePanel_text"
                                    style="@style/SharePanelConSet_Facebook"/>
-                        <ImageView android:id="@+id/contacts_twitter"
+                        <ImageButton android:id="@+id/contacts_twitter"
                                    android:layout_below="@+id/contacts_sharePanel_text"
                                    style="@style/SharePanelConSet_Twitter"/>
-                        <ImageView android:id="@+id/contacts_linkedin"
+                        <ImageButton android:id="@+id/contacts_linkedin"
                                    android:layout_below="@+id/contacts_sharePanel_text"
                                    style="@style/SharePanelConSet_Linkedin"/>
                     </LinearLayout>

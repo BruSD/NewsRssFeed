@@ -39,6 +39,7 @@
                 style="@style/SharePanelCopyInList"
                 android:id="@+id/copy_url_list"
                 android:text="Copy URL"
+                android:textAppearance="?android:attr/textAppearanceSmall"
                 />
     </LinearLayout>
 </LinearLayout>
