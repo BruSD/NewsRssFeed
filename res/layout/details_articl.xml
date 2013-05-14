@@ -13,7 +13,8 @@
                 style="@style/AB_Background"/>
         <ImageView
                 android:id="@+id/article_logo"
-                style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/back_btn"/>
+                style="@style/AB_FirmSymbol"
+                android:layout_toRightOf="@+id/back_btn"/>
         <ImageButton
                 android:id="@+id/back_btn"
                 style="@style/AB_BackButton"
@@ -31,7 +32,8 @@
            android:layout_width="fill_parent"
            android:layout_height="fill_parent"
            android:orientation="vertical"
-           android:scrollbars="vertical">
+           android:scrollbars="vertical"
+           android:background="#efeee9">
        <LinearLayout
                android:id="@+id/linearbar"
                android:layout_width="wrap_content"
@@ -47,18 +49,20 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:textSize="24dp"
-
+            android:paddingLeft="10dp"
             />
     <LinearLayout
-
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="right">
+            android:paddingLeft="10dp"
+            >
         <TextView
                 android:id="@+id/article_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="8"
                 />
         <ImageButton
                 android:id="@+id/article_share"
@@ -69,18 +73,18 @@
                 android:paddingRight="10dp"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-
+                android:layout_weight="1"
                 />
         <ImageButton
                 android:id="@+id/article_fav"
-
+                android:layout_height="40dp"
                 android:layout_width="wrap_content"
                 android:src="@drawable/articles_star_button"
                 android:background="#00000000"
                 android:paddingRight="10dp"
-                android:layout_height="40dp"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
+                android:layout_weight="1"
                 />
 
     </LinearLayout>

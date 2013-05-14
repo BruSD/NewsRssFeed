@@ -31,34 +31,46 @@
                 android:layout_height="fill_parent"
                 android:orientation="vertical"
                 android:scrollbars="vertical">
+            <LinearLayout
+                    android:id="@+id/linearbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    >
+            </LinearLayout>
             <TextView
                     android:id="@+id/jobs_title"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:textSize="24dp"
-
+                    android:paddingLeft="10dp"
                     />
             <LinearLayout
 
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right">
+                    android:paddingLeft="10dp">
                 <TextView
                         android:id="@+id/jobs_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="9"
                         />
                 <ImageButton
                         android:id="@+id/jobs_share"
                         android:layout_width="wrap_content"
-
+                        android:layout_height="40dp"
                         android:src="@drawable/articles_share_button"
                         android:background="#00000000"
                         android:paddingRight="10dp"
-                        android:layout_height="40dp"
                         android:scaleType="fitCenter"
                         android:adjustViewBounds="true"
+                        android:layout_weight="1"
                         />
 
 
