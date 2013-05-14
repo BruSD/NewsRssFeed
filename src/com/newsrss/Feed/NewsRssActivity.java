@@ -852,6 +852,9 @@ public class NewsRssActivity extends shareToSocial {
         idLayout = 7;
         View sidebarButton  = findViewById(R.id.settingSidebarButton);
 
+        ImageButton facebookGoToPage = (ImageButton)findViewById(R.id.facebook_imageView);
+        ImageButton twitterGoToPage = (ImageButton)findViewById(R.id.twitter_imageView);
+        ImageButton linkeinGoToPage = (ImageButton)findViewById(R.id.linkedln_imageView);
 
         sidebarButton.setOnClickListener(new ClickListener());
         ImageView legalView = (ImageView)findViewById(R.id.settings_legalBG);
@@ -882,6 +885,28 @@ public class NewsRssActivity extends shareToSocial {
         legalView.setOnClickListener(ocLegal);
         rateView.setOnClickListener(ocRate);
         feedbackView.setOnClickListener(ocFeedback);
+
+        facebookGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                startActivity(myIntent);
+            }
+        });
+        twitterGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/charteredaccirl"));
+                startActivity(myIntent);
+            }
+        });
+        linkeinGoToPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.linkedin.com/groups?gid=1783368&trk=myg_ugrp_ovr"));
+                startActivity(myIntent);
+            }
+        });
 
 
     }

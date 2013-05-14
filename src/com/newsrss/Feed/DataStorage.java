@@ -30,6 +30,7 @@ public class DataStorage {
     private static ArrayList<Article> articleList = new ArrayList<Article>();
     private static ArrayList<Podcast> podcastList = new ArrayList<Podcast>();
     private static ArrayList<Job> jobList = new ArrayList<Job>();
+    private static ArrayList<Article> searchList = new ArrayList<Article>();
 
     public static ArrayList<Article> getArticleList() {
         ArrayList<Article> result = new ArrayList<Article>();
@@ -119,7 +120,7 @@ public class DataStorage {
 
         // TODO: add only new podcast (unique for guid)
         jobList.clear();
-       jobList.addAll(tempList);
+        jobList.addAll(tempList);
 
         Collections.sort(jobList);
     }
@@ -161,6 +162,23 @@ public class DataStorage {
         drawableMap.put(imageURLString, image);
 
         return image;
+    }
+
+    public static ArrayList<Article> startSearch(String searchText){
+        ArrayList<Article> tempList = new ArrayList<Article>();
+        try {
+            AsyncTask<String, Void, ArrayList<Article>> searchParser = new SearchParser().execute(searchText);
+            tempList = searchParser.get();
+        }
+        catch (ExecutionException e) {}
+        catch (InterruptedException e) {}
+
+        searchList = tempList;
+        return searchList;
+    }
+
+    public static ArrayList<Article> getSearchList() {
+        return searchList;
     }
 
 }

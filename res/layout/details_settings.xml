@@ -99,16 +99,16 @@
                 style="@style/SharePanelConSet_Buttons"
                 android:id="@+id/settings_sharePanel_buttons"
                 android:layout_below="@+id/settings_sharePanel_text">
-            <ImageView
+            <ImageButton
                     android:id="@+id/facebook_imageView"
                     android:layout_below="@+id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Facebook"
                     />
-            <ImageView
+            <ImageButton
                     android:id="@+id/twitter_imageView"
                     android:layout_below="@+id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Twitter"/>
-            <ImageView
+            <ImageButton
                     android:id="@+id/linkedln_imageView"
                     android:layout_below="@+id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Linkedin"/>
