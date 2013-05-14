@@ -151,7 +151,7 @@ public class DetailsJobs extends shareToSocial implements GestureDetector.OnGest
         dateArticleV = sdf.format(currentArticle.getPubDate());
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
-        descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html", "UTF-8");
+        descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)

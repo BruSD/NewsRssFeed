@@ -25,6 +25,7 @@ import android.view.ViewGroup.LayoutParams;
 import com.facebook.*;
 import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
 import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
+import org.apache.http.protocol.HTTP;
 
 /**
  * Created with IntelliJ IDEA.
@@ -200,7 +201,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         dateArticleV = sdf.format(currentArticle.getPubDate());
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
-        descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html", "UTF-8");
+        descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
         //
     }
     public void NextArticle(){

@@ -85,7 +85,7 @@ public class DetailsPodcast extends shareToSocial implements GestureDetector.OnG
         titleText.setText(currentPodcast.getTitle());
         String date_str = new SimpleDateFormat("EEEE, MMMM dd, yyyy").format(currentPodcast.getPubDate());
         dateText.setText(date_str);
-        podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html", "UTF-8");
+        podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
         castSeekbar.setEnabled(false);
 
 
