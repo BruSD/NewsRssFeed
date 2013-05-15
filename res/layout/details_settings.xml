@@ -26,7 +26,8 @@
                 style="@style/Settings_TopTitle"
                 android:text="@string/settings_string"
                 android:id="@+id/settings_top_title"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                />
     </RelativeLayout>
     <LinearLayout
             style="@style/Settings_MainPlate"

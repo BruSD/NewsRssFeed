@@ -353,6 +353,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         dateArticle.setText(dateArticleV);
         descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
         //descriptionArticle.loadData("<html><body style='margin:0;padding:0;background-color:#efeee9'> <style type='text/css'> body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; } ul{list-style-type:none; padding-left:1.5em;} ul li{margin-bottom:1em;text-indent:5px;} ul li:before{margin-left:-.5em;  position:relative; font-size:2em; content:'\\2022'; color:#860945; left:-.15em; top:.2em;} img{border:1px ridge #777774;} p{margin:10px 0;} a{font-weight:bold;text-decoration:none; color:#860945;}ol{counter-reset:my-counter;} ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}</style>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
+
     }
     public void NextArticle(){
         if ( positionArt+1 != DataStorage.getArticleList().size()) {
@@ -367,9 +368,10 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
          }
     }
     public void ShowNextArticle(final View view){
-        positionArt =positionArt+1;
+        positionArt = positionArt+1;
         ShowArticle();
         NextArticle();
+        // TODO: Resize scroll
     }
 
     @Override

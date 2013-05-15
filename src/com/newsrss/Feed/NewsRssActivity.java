@@ -677,6 +677,11 @@ public class NewsRssActivity extends shareToSocial {
             slidingMenu.setContent(R.layout.main);
 
             rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+            LayoutInflater inflater = getLayoutInflater();
+            ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+            rssListView.addHeaderView(header, null, false);
+
             showFavoritesList();
 
             View app = findViewById(R.id.app);
@@ -691,6 +696,7 @@ public class NewsRssActivity extends shareToSocial {
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
         toast.show();
     }
+
     private List<Map<String, ?>> createFavoritesList() {
         List<Article> artList = null;
 
@@ -730,13 +736,17 @@ public class NewsRssActivity extends shareToSocial {
             LocalDB.open(this.getApplicationContext());
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-       }
+        }
+
         List<Article> artList = null;
         artList = LocalDB.getAllArticles();
         if(artList.isEmpty() ){
             Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
             toast.show();
         }  else {
+
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
 
         MyCAdapter adapter = new MyCAdapter(
                 this,  createFavoritesList(), R.layout.rss_item_layout,

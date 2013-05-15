@@ -2,19 +2,10 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/rss_list_header_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/jobs_header"
-            >
+                style="@style/RssListHeaderImage">
     <TextView
             android:id="@+id/rss_list_header_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:paddingLeft="15dp"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_alignParentLeft="true"
+            style="@style/RssListHeaderText"
+
             android:layout_centerVertical="true"/>
 </RelativeLayout>

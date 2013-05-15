@@ -43,7 +43,8 @@
                             style="@style/Contacts_IrelandBG"/>
                     <TextView
                             android:id="@+id/contacts_IrelandTitle"
-                            style="@style/Contacts_CountryTitle" android:text="@string/contacts_IrelandTitle"/>
+                            style="@style/Contacts_CountryTitle"
+                            android:text="@string/contacts_IrelandTitle"/>
                     <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:layout_alignRight="@+id/contacts_irelandBG"
