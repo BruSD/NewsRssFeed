@@ -52,13 +52,14 @@ public class SearchActivity extends shareToSocial {
         searchListResult.setSwipeOpenOnLongPress(false);
 
 
-        MyCAdapter adapter = new MyCAdapter(this,
-                new ArrayList<Map<String, ?>>(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
 
-        adapter.setViewBinder(new CustomViewBinder());
-        searchListResult.setAdapter(adapter);
+        ImageButton backBTN = (ImageButton)findViewById(R.id.BtnBack);
+        backBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         searchStart.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +69,9 @@ public class SearchActivity extends shareToSocial {
             }
         });
 
-        savedSEarchButton = (Button)findViewById(R.id.saved_search_button);
+
+
+        /*savedSEarchButton = (Button)findViewById(R.id.saved_search_button);
 
         savedSEarchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,12 +90,15 @@ public class SearchActivity extends shareToSocial {
 
                 //:TODO Close DB
             }
-        });
+        }); */
 
     }
     public void serchArticle(){
          if (searchQueryHolder.getText().length() != 0){
 
+             LayoutInflater inflater = getLayoutInflater();
+             ViewGroup header = (ViewGroup)inflater.inflate(R.layout.search_head, searchListResult, false);
+             searchListResult.addHeaderView(header, null, false);
              MyCAdapter adapter = new MyCAdapter(this,
                      createArticleList(), R.layout.rss_item_layout,
                      new String[] { "rssnewstitle", "rssnewsdate"},
@@ -100,9 +106,27 @@ public class SearchActivity extends shareToSocial {
 
              adapter.setViewBinder(new CustomViewBinder());
              searchListResult.setAdapter(adapter);
+             View saveSearch = (View)findViewById(R.id.save_search);
+             saveSearch.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View v) {
 
+                     try {
+                         LocalDB.open(getApplicationContext());
+                     } catch (SQLException e) {
+                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                     }
+                     ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+
+                     LocalDB.addSearch(searchQueryHolder.getText().toString());
+                     Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
+                     toast.show();
+
+                     //:TODO Close DB
+                 }
+             });
          }   else {
-             Toast toast = Toast.makeText(SearchActivity.this,"Enter Searche Query", Toast.LENGTH_LONG);
+             Toast toast = Toast.makeText(SearchActivity.this, "Enter Searche Query", Toast.LENGTH_LONG);
              toast.show();
          }
     }

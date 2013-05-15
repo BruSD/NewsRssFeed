@@ -189,8 +189,8 @@
                            android:layout_height="wrap_content"
                            swipe:swipeFrontView="@+id/front"
                            swipe:swipeBackView="@+id/delete"
-                           android:scrollbars="none"
 
+                           android:visibility="gone"
                            />
 
                 <LinearLayout

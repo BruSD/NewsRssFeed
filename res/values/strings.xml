@@ -44,4 +44,7 @@
 
 
     <string name="enter_search_query">Enter Search Query</string>
+    <string name="save_this_search_button">Save this Search</string>
+    <string name="saved_search_button">Saved</string>
+
 </resources>

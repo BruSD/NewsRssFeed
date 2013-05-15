@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -34,7 +35,7 @@ import java.util.Map;
 
 public class NewsRssActivity extends shareToSocial {
     SwipeListView savedSearchListView;
-    SavedSearchAdapter SaveSearchadapter;
+
     // idLayout:
     // 1 - Articles
     // 2 - Podcasts
@@ -77,7 +78,7 @@ public class NewsRssActivity extends shareToSocial {
         slidingMenu.setBehindOffset(otstup);
         slidingMenu.setMenu(R.layout.menu);
 
-        savedSearchListView = (SwipeListView) findViewById(R.id.saved_search);
+        //
         miniSwipeActivator();
 
         //FB
@@ -119,12 +120,15 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("News");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.news_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.news_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.news_header));
 
         MyCAdapter adapter = new MyCAdapter(this,
                 createArticleList(), R.layout.podcast_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+                new String[] { "rssnewstitle", "rssnewsdate","rssnewsimage"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date,R.id.rss_img_news_pass});
         idLayout = 1;
         adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
@@ -437,17 +441,22 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("Podcasts");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.podcast_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.podcast_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.podcast_header));
 
         if(DataStorage.getPodcastList().size() == 0 ){
             DataStorage.updatePodcastList();
         }
 
+
         MyCAdapter adapter = new MyCAdapter(
                 this, createPodcastList(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+                new String[] { "rssnewstitle", "rssnewsdate", "rssnewsimage"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date,R.id.rss_img_news_pass});
         idLayout = 2;
+        adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
 
     }
@@ -464,6 +473,7 @@ public class NewsRssActivity extends shareToSocial {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", podcast.getTitle());
                 map.put("rssnewsdate", dateArticleV);
+                map.put("rssnewsimage", getResources().getDrawable(R.drawable.podcast_icon));
                 items.add(map);
             }
         }
@@ -478,7 +488,10 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("Jobs");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.jobs_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.jobs_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.jobs_header));
 
         if(DataStorage.getJobList().size() == 0 ){
             DataStorage.updateJobList();
@@ -750,23 +763,26 @@ public class NewsRssActivity extends shareToSocial {
             toast.show();
         }  else {
 
-        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
+            ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
+            if (Build.VERSION.SDK_INT >= 16)
+                findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
+            else
+                findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.favorites_header));
 
-        MyCAdapter adapter = new MyCAdapter(
-                this,  createFavoritesList(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idLayout = 4;
-        rssListView.setAdapter(adapter);
+            MyCAdapter adapter = new MyCAdapter(
+                    this,  createFavoritesList(), R.layout.rss_item_layout,
+                    new String[] { "rssnewstitle", "rssnewsdate"},
+                    new int [] { R.id.rss_news_title, R.id.rss_news_date});
+            idLayout = 4;
+            rssListView.setAdapter(adapter);
         }
     }
 
 
     public void showSavedSearchFromSideBar(final View view){
         //TODO: Установите вызов showSavedSearchFromSideBar
-
-        if(savedSearchListView.getCount() == 0)       {
+        savedSearchListView = (SwipeListView) findViewById(R.id.saved_search);
+        if(savedSearchListView.getVisibility() == View.GONE)       {
             DisplayMetrics metrics = this.getResources().getDisplayMetrics();
             float otstup = (float) (metrics.widthPixels *0.7) ;
             savedSearchListView.setSwipeMode(SwipeListView.SWIPE_MODE_RIGHT);
@@ -1103,9 +1119,9 @@ public class NewsRssActivity extends shareToSocial {
             savedSearchListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                 @Override
                 public void  onClickFrontView (int position){
-                    Intent startDetailArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
-                    startDetailArticl.putExtra("searchquery", currentSearchQuery.getId());
-                    startActivity(startDetailArticl);
+                   // Intent startDetailArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
+                   // startDetailArticl.putExtra("searchquery", currentSearchQuery.getId());
+                   // startActivity(startDetailArticl);
                 }
 
 

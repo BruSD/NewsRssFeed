@@ -12,6 +12,7 @@
                 android:layout_height="120dp"
                 android:layout_width="wrap_content"
                 android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 >
 
 
