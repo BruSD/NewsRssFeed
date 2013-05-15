@@ -44,13 +44,14 @@ public class DetailsPodcast extends shareToSocial implements GestureDetector.OnG
     int podcastBufferedTime;
     WebView podcastDecription;
 
+
     @Override
-    public void onDestroy(){
+    public void onBackPressed (){
         end_of_play=true;
         cast_player.stop();
         cast_player.release();
         cast_player=null;
-        super.onDestroy();
+        super.onBackPressed();
     }
 
 
@@ -143,7 +144,7 @@ public class DetailsPodcast extends shareToSocial implements GestureDetector.OnG
         ImageButton.OnClickListener ocBack = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                onBackPressed();
             }
         };
 

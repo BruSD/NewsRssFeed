@@ -5,12 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.app.DialogFragment;
 import android.view.*;
 import android.view.GestureDetector.OnDoubleTapListener;
 import android.view.GestureDetector.OnGestureListener;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.*;
+import com.nineoldandroids.animation.*;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 
@@ -23,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import android.view.ViewGroup.LayoutParams;
 import com.facebook.*;
+import com.nineoldandroids.view.ViewHelper;
 import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
 import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
 import org.apache.http.protocol.HTTP;
@@ -37,6 +42,7 @@ import org.apache.http.protocol.HTTP;
 public class DetailsArticle extends shareToSocial implements OnGestureListener  {
     private GestureDetector gd;
 
+
     Article currentArticle = null;
     Article nextArticle = null;
     int positionArt;
@@ -45,9 +51,17 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
     WebView descriptionArticle;
     TextView nextTitle;
     TextView nextDate;
+    LinearLayout layoutToAddSharePanel,mainArticleLayout,nextLayout;
+    RelativeLayout descriptionAndNextPanel;
+    LinearLayout.LayoutParams lParamsOfSharePanel;
+    LayoutInflater inflaterSharePanel;
+    ScrollView scrollView;
+    int sharePanelHeight;
+    AnimatorSet setSharePanelShow, setSharePanelHide;
 
 
-    ImageButton shareButtonTest;
+    boolean sharePanelTopIsShow=false;
+    ImageButton shareButtonTest,starButton,shareTwitter,shareFacebook,shareLinkedin,shareMail;
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -56,7 +70,16 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
     setContentView(R.layout.details_articl);
         getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 
+        layoutToAddSharePanel = (LinearLayout)findViewById(R.id.article_layoutToShare);
+        nextLayout = (LinearLayout) findViewById(R.id.next_article);
+        descriptionAndNextPanel = (RelativeLayout)findViewById(R.id.article_descriptionAndNext);
+        lParamsOfSharePanel=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        inflaterSharePanel = getLayoutInflater();
+        layoutToAddSharePanel.addView(inflaterSharePanel.inflate(R.layout.share_panel_top, null), lParamsOfSharePanel);
+        layoutToAddSharePanel.setVisibility(View.GONE);
+        mainArticleLayout = (LinearLayout)findViewById(R.id.article_main_layout);
 
+        scrollView = (ScrollView)findViewById(R.id.article_scroll);
         titleArticle = (TextView)findViewById(R.id.article_title);
         dateArticle = (TextView)findViewById(R.id.article_date);
         descriptionArticle = (WebView)findViewById(R.id.article_description);
@@ -71,9 +94,6 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         Intent startDetailArticle = getIntent();
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
-
-
-
         ShowArticle();
         NextArticle();
 
@@ -87,6 +107,11 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         });
 
         shareButtonTest = (ImageButton)findViewById(R.id.article_share);
+        starButton = (ImageButton)findViewById(R.id.article_fav);
+        shareTwitter = (ImageButton) findViewById(R.id.share_panel_bottom_twitter);
+        shareFacebook = (ImageButton) findViewById(R.id.share_panel_bottom_facebook);
+        shareLinkedin = (ImageButton) findViewById(R.id.share_panel_bottom_linkedin);
+        shareMail = (ImageButton) findViewById(R.id.share_panel_bottom_mail);
         shareButtonTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +120,135 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
                 //createServiseToLinkedIn(1, positionArt);
             }
         });
+
+        ImageButton.OnClickListener ocTwitter = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
+            }
+        };
+
+        ImageButton.OnClickListener ocFacebook = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickbtnConnectFB(1, positionArt);
+            }
+        };
+
+        ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        ImageButton.OnClickListener ocMail = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MailSender.send(DetailsArticle.this, currentArticle);
+            }
+        };
+
+        final AnimatorSet.AnimatorListener sharePanelShowListener  = new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                for (int i = 0; i < mainArticleLayout.getChildCount(); i++) {
+                    View child = mainArticleLayout.getChildAt(i);
+                    if ((i!=2)&&(i!=3))
+                        ObjectAnimator.ofFloat(child, "alpha", 1, 0.5f ).setDuration(0).start();
+                }
+                ObjectAnimator.ofFloat(starButton, "alpha", 1, 0.5f ).setDuration(0).start();
+                ObjectAnimator.ofFloat(dateArticle, "alpha", 1, 0.5f ).setDuration(0).start();
+                nextLayout.setEnabled(false);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        };
+
+
+        final AnimatorSet.AnimatorListener sharePanelHideListener  = new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                for (int i = 0; i < mainArticleLayout.getChildCount(); i++) {
+                    View child = mainArticleLayout.getChildAt(i);
+                    ObjectAnimator.ofFloat(child, "alpha", 0.5f, 1f ).setDuration(0).start();
+                    child.setEnabled(true);
+                }
+                ObjectAnimator.ofFloat(starButton, "alpha", 0.5f, 1f ).setDuration(0).start();
+                ObjectAnimator.ofFloat(dateArticle, "alpha", 0.5f, 1f ).setDuration(0).start();
+                ViewHelper.setAlpha(descriptionArticle, 1f);
+                ObjectAnimator.ofFloat(nextLayout, "alpha", 0.5f, 1f ).setDuration(0).start();
+                nextLayout.setEnabled(true);
+
+                layoutToAddSharePanel.setVisibility(View.GONE);
+                ObjectAnimator.ofFloat(descriptionAndNextPanel, "translationY", 0, 0).setDuration(0).start();
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        };
+
+        ImageButton.OnClickListener ocShare = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!sharePanelTopIsShow)   {
+                    layoutToAddSharePanel.setVisibility(View.VISIBLE);
+                    //TODO size of layoutSharePanel
+                    sharePanelHeight=layoutToAddSharePanel.getHeight();
+                    setSharePanelShow = new AnimatorSet();
+                    setSharePanelShow.playTogether(
+                            ObjectAnimator.ofFloat(descriptionAndNextPanel, "translationY", -105, 0 ),
+                            ObjectAnimator.ofFloat(layoutToAddSharePanel, "Y", -105, 0)
+                    );
+                    setSharePanelShow.addListener(sharePanelShowListener);
+                    setSharePanelShow.setDuration(200).start();
+                    sharePanelTopIsShow=true;
+                }
+                else  {
+                    setSharePanelHide = new AnimatorSet();
+                    setSharePanelHide.playTogether(
+                            ObjectAnimator.ofFloat(descriptionAndNextPanel, "translationY", 0, -105),
+                            ObjectAnimator.ofFloat(layoutToAddSharePanel, "Y", 0, -105)
+                    );
+                    setSharePanelHide.addListener(sharePanelHideListener);
+                    setSharePanelHide.setDuration(200).start();
+                    sharePanelTopIsShow=false;
+                }
+
+            }
+        };
+
+        shareTwitter.setOnClickListener(ocTwitter);
+        shareFacebook.setOnClickListener(ocFacebook);
+        shareLinkedin.setOnClickListener(ocLinkedIn);
+        shareMail.setOnClickListener(ocMail);
+        shareButtonTest.setOnClickListener(ocShare);
 
         //FB
         Session session = Session.getActiveSession();
@@ -116,19 +270,19 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
             }
         });
 
-
         //Double Tap
         gd = new GestureDetector(DetailsArticle.this);
 
         gd.setOnDoubleTapListener(new OnDoubleTapListener() {
             @Override
             public boolean onSingleTapConfirmed(MotionEvent e) {
-
                 return false;  //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public boolean onDoubleTap(MotionEvent e) {
+                if(sharePanelTopIsShow)
+                return  false;
                 Toast toast = Toast.makeText(getApplicationContext(),"Double Tap",Toast.LENGTH_SHORT);
                 toast.show();
                 final Dialog dialog = new Dialog(DetailsArticle.this);
@@ -182,16 +336,12 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         descriptionArticle.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                if(sharePanelTopIsShow)
+                return true;
                 return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
             }
         });
     }
-
-
-
-
-
-
 
 
     public void ShowArticle(){
@@ -202,7 +352,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
         descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
-        //
+        //descriptionArticle.loadData("<html><body style='margin:0;padding:0;background-color:#efeee9'> <style type='text/css'> body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; } ul{list-style-type:none; padding-left:1.5em;} ul li{margin-bottom:1em;text-indent:5px;} ul li:before{margin-left:-.5em;  position:relative; font-size:2em; content:'\\2022'; color:#860945; left:-.15em; top:.2em;} img{border:1px ridge #777774;} p{margin:10px 0;} a{font-weight:bold;text-decoration:none; color:#860945;}ol{counter-reset:my-counter;} ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}</style>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
     }
     public void NextArticle(){
         if ( positionArt+1 != DataStorage.getArticleList().size()) {
