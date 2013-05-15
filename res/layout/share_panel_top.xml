@@ -5,7 +5,7 @@
               android:layout_width="fill_parent"
               android:adjustViewBounds="true"
               android:background="@drawable/sharepaneltop_bg"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content" android:id="@+id/share_panel_top">
     <LinearLayout
             style="@style/SharePanelButtonLayout">
         <ImageButton

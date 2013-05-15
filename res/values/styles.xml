@@ -22,12 +22,12 @@
 
     <style name="SideBarSearchButton">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">23dp</item>
+        <item name="android:layout_width">30dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:background">@drawable/search_bg</item>
         <item name="android:adjustViewBounds">true</item>
         <item name="android:scaleType">fitXY</item>
-        <item name="android:layout_marginLeft">-5dp</item>
+        <item name="android:layout_marginLeft">-6dp</item>
     </style>
 
     <style name="SideBarSearchField">
@@ -295,6 +295,30 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+
+    <style name="Articles_ShareButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">42dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:src">@drawable/articles_share_button</item>
+        <item name="android:layout_toLeftOf">@+id/article_fav</item>
+    </style>
+
+    <style name="Articles_StarButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">32dp</item>
+        <item name="android:src">@drawable/articles_star_button</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
     <style name="Legal_title">
         <item name="android:text">@string/legalTitle</item>
         <item name="android:layout_gravity">left|center_vertical</item>
@@ -388,6 +412,7 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_marginLeft">12dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
 
     <style name="Contacts_CountryTitle">
@@ -563,6 +588,7 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
 
     <style name="Settings_MainPlate">
@@ -782,6 +808,22 @@
         <item name="android:layout_alignParentRight">true</item>
     </style>
 
+    <style name="RssListHeaderImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/news_header</item>
+    </style>
+    <style name="RssListHeaderText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:text">@string/news_string</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
     <style name="AB_search">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">fill_parent</item>
