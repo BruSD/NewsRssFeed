@@ -42,4 +42,6 @@
     <string name="share_panel_bottom_article_text">Share this article</string>
     <string name="share_panel_bottom_podcast_text">Share this podcast</string>
 
+
+    <string name="enter_search_query">Enter Search Query</string>
 </resources>

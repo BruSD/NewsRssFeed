@@ -73,16 +73,18 @@ public class SearchActivity extends shareToSocial {
         savedSEarchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 try {
                     LocalDB.open(getApplicationContext());
                 } catch (SQLException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
-                Toast toast = Toast.makeText(SearchActivity.this,"Add to Favorit article N " ,Toast.LENGTH_SHORT);
-                toast.show();
 
 
                 LocalDB.addSearch(searchQueryHolder.getText().toString());
+                Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
+                toast.show();
+
                 //:TODO Close DB
             }
         });

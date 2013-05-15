@@ -509,7 +509,7 @@ public class NewsRssActivity extends shareToSocial {
           //TODO: Утановите вызов Активити для поиска
         Intent startSearchActivity = new Intent(NewsRssActivity.this,SearchActivity.class );
         String searchQuery = null;
-        startSearchActivity.putExtra("searchquery", searchQuery);
+
         startActivity(startSearchActivity);
         //Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
         //toast.show();
