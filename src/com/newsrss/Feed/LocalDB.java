@@ -74,14 +74,14 @@ public class LocalDB {
 				e.printStackTrace();
 			}
 
-       //     Drawable picture = null;
-         //   picture_array= cursor.getBlob(6);
-        //    if (picture_array!=null) {
-        //        InputStream picture_stream = new ByteArrayInputStream(picture_array);
-        //        picture =  Drawable.createFromStream(picture_stream, "src");
-       //     }
-           // Bitmap bitmapPicture = BitmapFactory.decodeByteArray(picture_array, 0, picture_array.length);
-            //Drawable picture = (Drawable)new BitmapDrawable(getResources(),bitmapPicture);
+           // Drawable picture = null;
+          //  picture_array= cursor.getBlob(6);
+          //  if (picture_array!=null) {
+          //      InputStream picture_stream = new ByteArrayInputStream(picture_array);
+          //      picture =  Drawable.createFromStream(picture_stream, "src");
+          //  }
+          //  Bitmap bitmapPicture = BitmapFactory.decodeByteArray(picture_array, 0, picture_array.length);
+          //  Drawable picture = (Drawable)new BitmapDrawable(null,bitmapPicture);
 			result_art = new Article(cursor.getString(0), cursor.getString(1), art_url, art_date, cursor.getString(4), art_type, null);
 	    return result_art;
 	  }
@@ -98,20 +98,15 @@ public class LocalDB {
 	}
 	
 	static public void addArticle (Article art){
-    //    try {
-     //       open();
-     //   } catch (SQLException e) {
-    //        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    //    }
     	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
 		ContentValues article_values = new ContentValues();
-     //   byte[]  savedPicture = null;
-     //   if (art.getNewsImage()!=null){
-     //       Bitmap picture = ((BitmapDrawable)art.getNewsImage()).getBitmap();
-     //       ByteArrayOutputStream picture_array = new ByteArrayOutputStream();
-     //       picture.compress(Bitmap.CompressFormat.PNG, 100, picture_array);
-     //       savedPicture =  picture_array.toByteArray();
-     //   }
+        byte[]  savedPicture = null;
+        if (art.getNewsImage()!=null){
+            Bitmap picture = ((BitmapDrawable)art.getNewsImage()).getBitmap();
+            ByteArrayOutputStream picture_array = new ByteArrayOutputStream();
+            picture.compress(Bitmap.CompressFormat.PNG, 100, picture_array);
+            savedPicture =  picture_array.toByteArray();
+        }
         article_values.put(SQLLiteHelper.COLUMN_guID, art.getGuid());
         article_values.put(SQLLiteHelper.COLUMN_Title, art.getTitle());
         article_values.put(SQLLiteHelper.COLUMN_Link, art.getLink().toString());
@@ -121,7 +116,6 @@ public class LocalDB {
       //  article_values.put(SQLLiteHelper.COLUMN_Picture,savedPicture );
 	    long added = LocalDatabase.insert(SQLLiteHelper.DATABASE_NAME, null,
                 article_values);
-      //  close();
 	}
 
     static public List<Article> getAllArticles () {
