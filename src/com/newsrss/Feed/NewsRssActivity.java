@@ -60,11 +60,12 @@ public class NewsRssActivity extends shareToSocial {
 
         rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
+        LayoutInflater inflater = getLayoutInflater();
+        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+        rssListView.addHeaderView(header, null, false);
+
         DataStorage.updateArticleList();
         showAricleList();
-
-
-
 
         slidingMenu = new SlidingMenu(this);
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
@@ -114,6 +115,9 @@ public class NewsRssActivity extends shareToSocial {
     // Methods for reload ListView
     public void showAricleList() {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("News");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.news_header));
 
         MyCAdapter adapter = new MyCAdapter(this,
                 createArticleList(), R.layout.podcast_item_layout,
@@ -430,6 +434,9 @@ public class NewsRssActivity extends shareToSocial {
     public void showPodcastList(){
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Podcasts");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.podcast_header));
+
         if(DataStorage.getPodcastList().size() == 0 ){
             DataStorage.updatePodcastList();
         }
@@ -467,6 +474,9 @@ public class NewsRssActivity extends shareToSocial {
 
     public void showJobstList(){
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Jobs");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.jobs_header));
 
         if(DataStorage.getJobList().size() == 0 ){
             DataStorage.updateJobList();
@@ -518,6 +528,11 @@ public class NewsRssActivity extends shareToSocial {
             slidingMenu.setContent(R.layout.main);
 
             rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+            LayoutInflater inflater = getLayoutInflater();
+            ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+            rssListView.addHeaderView(header, null, false);
+
             showAricleList();
 
             View app = findViewById(R.id.app);
@@ -748,6 +763,11 @@ public class NewsRssActivity extends shareToSocial {
             slidingMenu.setContent(R.layout.main);
 
             rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+            LayoutInflater inflater = getLayoutInflater();
+            ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+            rssListView.addHeaderView(header, null, false);
+
             showPodcastList();
 
             View app = findViewById(R.id.app);
@@ -768,6 +788,11 @@ public class NewsRssActivity extends shareToSocial {
             slidingMenu.setContent(R.layout.main);
 
             rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+            LayoutInflater inflater = getLayoutInflater();
+            ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+            rssListView.addHeaderView(header, null, false);
+
             showJobstList();
 
 
