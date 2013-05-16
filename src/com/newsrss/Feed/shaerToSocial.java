@@ -49,7 +49,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
  * Time: 16:25
  * To change this template use File | Settings | File Templates.
  */
-public class shareToSocial extends SherlockActivity {
+public class shaerToSocial extends SherlockActivity {
 
 
     //LinkedIn
@@ -215,6 +215,7 @@ public class shareToSocial extends SherlockActivity {
                 //postImageURL = currentArticle.getNewsImage();
                 break;
         }
+        //:TODO get Fav Article & Get Searched Article to shaer in soc
 
 
 

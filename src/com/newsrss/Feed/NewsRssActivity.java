@@ -5,7 +5,6 @@ import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
@@ -16,10 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.ClipboardManager;
-import android.view.animation.Animation;
 import android.widget.*;
-import com.actionbarsherlock.app.SherlockActivity;
-import android.view.animation.TranslateAnimation;
 import com.facebook.Session;
 import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.android.swipelistview.SwipeListView;
@@ -33,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class NewsRssActivity extends shareToSocial {
+public class NewsRssActivity extends shaerToSocial {
     SwipeListView savedSearchListView;
 
     List<Searches> artList = null;
@@ -101,7 +97,7 @@ public class NewsRssActivity extends shareToSocial {
 
 
     public void miniSwipeActivator(){
-        if (idLayout == 1){
+        if (idLayout == 1 || idLayout == 4){
 
             DisplayMetrics metrics = this.getResources().getDisplayMetrics();
             float otstup = (float) (metrics.widthPixels *0.8) ;
@@ -231,7 +227,7 @@ public class NewsRssActivity extends shareToSocial {
                     @Override
                     public void  onClickFrontView (int position){
                         Intent startDetailArticl = new Intent(NewsRssActivity.this, DetailsArticle.class);
-                        startDetailArticl.putExtra("position", position);
+                        startDetailArticl.putExtra("position", position-1);
                         startActivity(startDetailArticl);
                     }
 
@@ -345,7 +341,7 @@ public class NewsRssActivity extends shareToSocial {
                     @Override
                     public void  onClickFrontView (int position){
                         Intent startDetailPodcast = new Intent(NewsRssActivity.this,DetailsPodcast.class );
-                        startDetailPodcast.putExtra("position", position);
+                        startDetailPodcast.putExtra("position", position-1);
                         startActivity(startDetailPodcast);
                     }
 
@@ -379,7 +375,7 @@ public class NewsRssActivity extends shareToSocial {
                         @Override
                         public void  onClickFrontView (int position){
                             Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
-                            startDetailJobs.putExtra("position", position);
+                            startDetailJobs.putExtra("position", position-1);
                             startActivity(startDetailJobs);
                         }
 
@@ -415,7 +411,7 @@ public class NewsRssActivity extends shareToSocial {
                         public void  onClickFrontView (int position){
                             /*
                             Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
-                            startDetailJobs.putExtra("position", position);
+                            startDetailJobs.putExtra("position", position-1);
                             startActivity(startDetailJobs);
                             */
 
@@ -712,12 +708,10 @@ public class NewsRssActivity extends shareToSocial {
         }
         else {
             showFavoritesList();
-            slidingMenu.showContent();
         }
         miniSwipeActivator();
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
-        toast.show();
+
     }
 
     private List<Map<String, ?>> createFavoritesList() {
@@ -764,12 +758,17 @@ public class NewsRssActivity extends shareToSocial {
         List<Article> artList = null;
         artList = LocalDB.getAllArticles();
         if(artList.isEmpty() ){
-            Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(),"There are currently no favourite articles saved.",Toast.LENGTH_SHORT);
             toast.show();
+
         }  else {
 
-        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
+            ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
+            if (Build.VERSION.SDK_INT >= 16)
+                findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
+            else
+                findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.favorites_header));
+
 
             MyCAdapter adapter = new MyCAdapter(
                     this,  createFavoritesList(), R.layout.rss_item_layout,
@@ -777,6 +776,7 @@ public class NewsRssActivity extends shareToSocial {
                     new int [] { R.id.rss_news_title, R.id.rss_news_date});
             idLayout = 4;
             rssListView.setAdapter(adapter);
+            slidingMenu.showContent();
         }
     }
 

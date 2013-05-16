@@ -30,7 +30,7 @@ import java.util.Map;
  * Time: 10:36
  * To change this template use File | Settings | File Templates.
  */
-public class SearchActivity extends shareToSocial {
+public class SearchActivity extends shaerToSocial {
 
     ImageButton searchStart;
     EditText searchQueryHolder;
@@ -72,6 +72,8 @@ public class SearchActivity extends shareToSocial {
             public void onClick(View v) {
                 if (searchQueryHolder.getText().length() != 0){
                     searchQueryId = searchQueryHolder.getText().toString();
+                    ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+
                 serchArticle();
                 }else {
                     Toast toast = Toast.makeText(SearchActivity.this, "Enter Search Query", Toast.LENGTH_LONG);
@@ -92,7 +94,7 @@ public class SearchActivity extends shareToSocial {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
                     ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
-                    ((TextView)findViewById(R.id.text_to_saved)).setEnabled(false);
+
                     LocalDB.addSearch(searchQueryHolder.getText().toString());
                     Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
                     toast.show();
@@ -236,7 +238,7 @@ public class SearchActivity extends shareToSocial {
             String dateArticleV ;
             ViewHolder holder;
 
-                    final Article currentArticle = DataStorage.getArticleList().get(position);
+                    final Article currentArticle = DataStorage.getSearchList().get(position);
 
                     if (convertView == null) {
                         LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -260,8 +262,8 @@ public class SearchActivity extends shareToSocial {
                     searchListResult.setSwipeListViewListener(new BaseSwipeListViewListener() {
                         @Override
                         public void  onClickFrontView (int position){
-                            Intent startDetailArticl = new Intent(SearchActivity.this, DetailsArticle.class);
-                            startDetailArticl.putExtra("position", position);
+                            Intent startDetailArticl = new Intent(SearchActivity.this, DetailsSearch.class);
+                            startDetailArticl.putExtra("position", position-1);
                             startActivity(startDetailArticl);
                         }
 

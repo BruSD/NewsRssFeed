@@ -1,26 +1,19 @@
 package com.newsrss.Feed;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.*;
 import android.webkit.WebView;
 import android.widget.*;
-import com.actionbarsherlock.view.Menu;
 import com.facebook.*;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,7 +22,7 @@ import java.util.Date;
  * Time: 10:32 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsPodcast extends shareToSocial implements GestureDetector.OnGestureListener {
+public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnGestureListener {
     private GestureDetector gd;
 
     Podcast currentPodcast = null;

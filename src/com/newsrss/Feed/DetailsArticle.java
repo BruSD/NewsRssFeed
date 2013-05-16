@@ -1,36 +1,24 @@
 package com.newsrss.Feed;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.v4.app.DialogFragment;
 import android.view.*;
-import android.view.GestureDetector.OnDoubleTapListener;
-import android.view.GestureDetector.OnGestureListener;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.*;
-import com.nineoldandroids.animation.*;
-import android.os.Handler;
-import android.preference.PreferenceManager;
 
+import android.os.Bundle;
+import com.nineoldandroids.animation.*;
+import com.facebook.Session;
 import android.webkit.WebView;
 import android.widget.*;
-
+import android.widget.Toast;
 
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import android.view.ViewGroup.LayoutParams;
-import com.facebook.*;
+
+
 import com.nineoldandroids.view.ViewHelper;
-import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
-import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
-import org.apache.http.protocol.HTTP;
 
 /**
  * Created with IntelliJ IDEA.
@@ -39,7 +27,7 @@ import org.apache.http.protocol.HTTP;
  * Time: 10:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsArticle extends shareToSocial implements OnGestureListener  {
+public class DetailsArticle extends shaerToSocial implements GestureDetector.OnGestureListener  {
     private GestureDetector gd;
 
 
@@ -90,6 +78,18 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
 
+        //FB
+        Session session = Session.getActiveSession();
+        if (session == null) {
+            if (savedInstanceState != null) {
+                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
+            }
+            if (session == null) {
+                session = new Session(this);
+            }
+            Session.setActiveSession(session);
+
+        }
 
         Intent startDetailArticle = getIntent();
         positionArt = startDetailArticle.getIntExtra("position", -1);
@@ -112,14 +112,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         shareFacebook = (ImageButton) findViewById(R.id.share_panel_bottom_facebook);
         shareLinkedin = (ImageButton) findViewById(R.id.share_panel_bottom_linkedin);
         shareMail = (ImageButton) findViewById(R.id.share_panel_bottom_mail);
-        shareButtonTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //onClickbtnConnectFB(1, positionArt);
-                //onTwitterClick(currentArticle.getTitle()+" "+ currentArticle.getLink().toString());
-                //createServiseToLinkedIn(1, positionArt);
-            }
-        });
+
 
         ImageButton.OnClickListener ocTwitter = new View.OnClickListener() {
             @Override
@@ -250,18 +243,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         shareMail.setOnClickListener(ocMail);
         shareButtonTest.setOnClickListener(ocShare);
 
-        //FB
-        Session session = Session.getActiveSession();
-        if (session == null) {
-            if (savedInstanceState != null) {
-                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
-            }
-            if (session == null) {
-                session = new Session(this);
-            }
-            Session.setActiveSession(session);
 
-        }
         ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
         addToFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -273,7 +255,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
         //Double Tap
         gd = new GestureDetector(DetailsArticle.this);
 
-        gd.setOnDoubleTapListener(new OnDoubleTapListener() {
+        gd.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
             @Override
             public boolean onSingleTapConfirmed(MotionEvent e) {
                 return false;  //To change body of implemented methods use File | Settings | File Templates.
@@ -283,8 +265,7 @@ public class DetailsArticle extends shareToSocial implements OnGestureListener  
             public boolean onDoubleTap(MotionEvent e) {
                 if(sharePanelTopIsShow)
                 return  false;
-                Toast toast = Toast.makeText(getApplicationContext(),"Double Tap",Toast.LENGTH_SHORT);
-                toast.show();
+
                 final Dialog dialog = new Dialog(DetailsArticle.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.getWindow().setGravity(Gravity.BOTTOM);

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/bg_w">
+
+    <RelativeLayout
+            style="@style/AB">
+        <ImageView
+                android:id="@+id/jobs_AB_BG"
+                style="@style/AB_Background"/>
+        <ImageButton
+                android:id="@+id/back_btn"
+                style="@style/AB_BackButton"
+                />
+        <ImageView
+                android:id="@+id/article_logo"
+                style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/back_btn"/>
+        <TextView
+                android:id="@+id/article_head"
+                style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/article_logo"/>
+    </RelativeLayout>
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical">
+            <LinearLayout
+                    android:id="@+id/linearbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    >
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/jobs_title"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:textSize="24dp"
+                    android:paddingLeft="10dp"
+                    />
+            <LinearLayout
+
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp">
+                <TextView
+                        android:id="@+id/jobs_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="9"
+                        />
+                <ImageButton
+                        android:id="@+id/jobs_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@drawable/articles_share_button"
+                        android:background="#00000000"
+                        android:paddingRight="10dp"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_weight="1"
+                        />
+
+
+            </LinearLayout>
+            <WebView
+                    android:id="@+id/jobs_description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_w"
+                    android:scrollbars="none"
+
+                    />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

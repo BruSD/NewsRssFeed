@@ -1,6 +1,5 @@
 package com.newsrss.Feed;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -21,7 +20,7 @@ import java.text.SimpleDateFormat;
  * Time: 10:17
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsJobs extends shareToSocial implements GestureDetector.OnGestureListener {
+public class DetailsJobs extends shaerToSocial implements GestureDetector.OnGestureListener {
     private GestureDetector gd;
 
     Job currentArticle = null;
@@ -98,7 +97,7 @@ public class DetailsJobs extends shareToSocial implements GestureDetector.OnGest
                 facebokShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        onClickbtnConnectFB(1, positionArt);
+                        onClickbtnConnectFB(3, positionArt);
                     }
                 });
 
