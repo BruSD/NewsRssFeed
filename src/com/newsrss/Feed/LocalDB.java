@@ -48,7 +48,7 @@ public class LocalDB {
         LocalDatabaseSearches = dbHelperSearches.getWritableDatabase();
     }
 
-	static private void close() {
+	static public void close() {
 		LocalDatabase.close();
         LocalDatabaseSearches.close();
 	}
@@ -87,14 +87,8 @@ public class LocalDB {
 	  }
 	
 	static public void deleteArticle (String guid){
-        try {
-            open();
-        } catch (SQLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
 	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
 	        + " = " + guid, null);
-        close();
 	}
 	
 	static public void addArticle (Article art){
@@ -119,11 +113,6 @@ public class LocalDB {
 	}
 
     static public List<Article> getAllArticles () {
-    //    try {
-    //        open();
-    //    } catch (SQLException e) {
-    //        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-    //    }
 	    List<Article> allArticles = new ArrayList<Article>();
 	    Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
 	        allColumns, null, null, null, null, null);
@@ -136,16 +125,10 @@ public class LocalDB {
 	    }
 	    // Make sure to close the cursor
 	    cursor.close();
-     //   close();
 	    return allArticles;
 	}
 
     static public Article getArticle (int id) {
-        //    try {
-        //        open();
-        //    } catch (SQLException e) {
-        //        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        //    }
         Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
                 allColumns, null, null, null, null, null);
 
@@ -164,7 +147,6 @@ public class LocalDB {
         }
         // Make sure to close the cursor
         cursor.close();
-        //   close();
         return null;
     }
 
@@ -185,22 +167,11 @@ public class LocalDB {
     }
 
     static public void deleteSearch (int id){
-        try {
-            open();
-        } catch (SQLException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
        LocalDatabaseSearches.delete(SQLLiteHelperSearch.DATABASE_NAME, SQLLiteHelperSearch.COLUMN_ID
                 + " = " + id, null);
-        close();
     }
 
    static public List<Searches> get10Searches() {
-       try {
-           open();
-       } catch (SQLException e) {
-           e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-       }
         List<Searches> allSearches = new ArrayList<Searches>();
         Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
                 allColumnsSearches, null, null, null, null, null);
@@ -220,7 +191,6 @@ public class LocalDB {
               last10Searches.add(allSearches.get(searchCount-1));
               searchCount--;
           }
-           close();
             return last10Searches ;
         }
 

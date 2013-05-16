@@ -243,8 +243,6 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
-
-
         play_pauseButton.setOnClickListener(ocPlay_pause);
         seek10Button.setOnClickListener(ocSeek_10);
         seek30Button.setOnClickListener(ocSeek_30);

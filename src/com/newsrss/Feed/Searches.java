@@ -39,6 +39,6 @@ public class Searches implements Comparable<Searches> {
 
     @Override
     public int compareTo(Searches anotherSearches) {
-       return  anotherSearches.searchDate.compareTo(this.searchDate);
+       return  this.searchDate.compareTo(anotherSearches.searchDate);
     }
 }
