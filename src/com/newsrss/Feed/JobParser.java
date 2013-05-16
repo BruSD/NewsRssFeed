@@ -88,14 +88,12 @@ public class JobParser extends AsyncTask<Void, Void, ArrayList<Job>> {
                         String _description = _descriptionE.getTextContent();//getFirstChild().getNodeValue();
 
                         Date _pubDate = null;
-                        try
-                        {
-                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
-                            _pubDate = format.parse(_pubDateE.getTextContent());//getFirstChild().getNodeValue());
+                        try {
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+                            _pubDate = format.parse(_pubDateE.getTextContent().substring(0,19));
                         }
-                        catch (ParseException e)
-                        {
-                            _pubDate = new Date();
+                        catch(ParseException e) {
+                            _pubDate = null;
                         }
 
                         //create Job and add it to the ArrayList

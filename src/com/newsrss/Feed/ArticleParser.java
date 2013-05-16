@@ -41,7 +41,6 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
 
         for (int j = 0; j < newsTypes.length; j++) {
             XMLNewsType xmlNewsType = newsTypes[j];
-            System.out.println("!!! "+xmlNewsType.toString());
 
             // Get url of News type
             URL xmlUrl = null;
@@ -124,6 +123,14 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                             String _description = _descriptionE.getTextContent();//getFirstChild().getNodeValue();
 
                             Date _pubDate = null;
+                            try {
+                                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+                                _pubDate = format.parse(_pubDateE.getTextContent().substring(0,19));
+                            }
+                            catch(ParseException e) {
+                                _pubDate = null;
+                            }
+
                             //try
                             //{
                             //    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZ", Locale.ENGLISH);
@@ -135,7 +142,7 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                                 //    _pubDate = format.parse(_pubDateE.getTextContent());
                                 //}
                                 //catch (ParseException e2){
-                                    _pubDate = new Date();
+                                    //_pubDate = new Date();
                                 //w}
                             //}
 

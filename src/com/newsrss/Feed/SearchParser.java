@@ -84,11 +84,12 @@ public class SearchParser extends AsyncTask<String, Void, ArrayList<Article>> {
                         Date pubDate = null;
                         try
                         {
-                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ", Locale.ENGLISH);
-                            pubDate = format.parse(_pubDateE.getTextContent());
+                            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
+                            pubDate = format.parse(_pubDateE.getTextContent().substring(0,19));
                         }
-                        catch(ParseException e)
-                        { pubDate = new Date(); }
+                        catch(ParseException e) {
+                            pubDate = null;
+                        }
 
                         Drawable image =  null;
 

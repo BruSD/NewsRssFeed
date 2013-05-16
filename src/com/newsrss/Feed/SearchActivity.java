@@ -31,11 +31,13 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class SearchActivity extends shareToSocial {
+
     ImageButton searchStart;
     EditText searchQueryHolder;
     SwipeListView searchListResult;
     String searchQueryId;
     String searchToGenerate;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -129,6 +131,7 @@ public class SearchActivity extends shareToSocial {
 
 
     }
+
     public void serchArticle(){
 
              if(!createArticleList().isEmpty()){
@@ -179,6 +182,7 @@ public class SearchActivity extends shareToSocial {
 
         return items;
     }
+
     class CustomViewBinder implements SimpleAdapter.ViewBinder {
         @Override
         public boolean setViewValue(View view, Object data,String textRepresentation) {
@@ -193,6 +197,7 @@ public class SearchActivity extends shareToSocial {
         }
 
     }
+
     public class MyCAdapter extends SimpleAdapter {
         private List<? extends Map<String, ?>> data;
         private Context context;

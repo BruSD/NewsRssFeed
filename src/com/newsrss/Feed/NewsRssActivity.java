@@ -130,7 +130,7 @@ public class NewsRssActivity extends shareToSocial {
         MyCAdapter adapter = new MyCAdapter(this,
                 createArticleList(), R.layout.podcast_item_layout,
                 new String[] { "rssnewstitle", "rssnewsdate","rssnewsimage"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date,R.id.rss_img_news_pass});
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date, R.id.rss_img_news_pass});
         idLayout = 1;
         adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
@@ -170,12 +170,6 @@ public class NewsRssActivity extends shareToSocial {
         private List<? extends Map<String, ?>> data;
         private Context context;
 
-
-
-
-
-
-
         public MyCAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
             super(context, data, resource, from, to);
             this.context = context;
@@ -191,7 +185,6 @@ public class NewsRssActivity extends shareToSocial {
         public Object getItem(int position) {
             return null;  //To change body of implemented methods use File | Settings | File Templates.
         }
-
 
         @Override
         public long getItemId(int position) {
@@ -216,7 +209,7 @@ public class NewsRssActivity extends shareToSocial {
                     holder.shareBtn = (ImageButton)convertView.findViewById(R.id.share_btn);
                     holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
                     holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
-
+                    holder.articleImage = (ImageView) convertView.findViewById(R.id.rss_img_news_pass);
 
                     convertView.setTag(holder);
                 } else {
@@ -226,6 +219,13 @@ public class NewsRssActivity extends shareToSocial {
                 sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
                 dateArticleV = sdf.format(currentArticle.getPubDate());
                 holder.articleDate.setText(dateArticleV);
+                if (currentArticle.getNewsImage() == null) {
+                    holder.articleImage.setImageDrawable(getResources().getDrawable(R.drawable.default_news_icon));
+                }
+                else {
+                    holder.articleImage.setImageDrawable(currentArticle.getNewsImage());
+                }
+
 
                 rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                     @Override
@@ -329,6 +329,7 @@ public class NewsRssActivity extends shareToSocial {
 
                     holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
                     holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+                    holder.articleImage = (ImageView) convertView.findViewById(R.id.rss_img_news_pass);
 
                     convertView.setTag(holder);
                 } else {
@@ -338,6 +339,8 @@ public class NewsRssActivity extends shareToSocial {
                 sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
                 dateArticleV = sdf.format(currentPodcast.getPubDate());
                 holder.articleDate.setText(dateArticleV);
+                holder.articleImage.setImageDrawable(getResources().getDrawable(R.drawable.podcast_icon));
+
                 rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                     @Override
                     public void  onClickFrontView (int position){
@@ -435,6 +438,7 @@ public class NewsRssActivity extends shareToSocial {
             ImageButton shareBtn;
             TextView articleTitle;
             TextView articleDate;
+            ImageView articleImage;
 
         }
     }
@@ -451,7 +455,6 @@ public class NewsRssActivity extends shareToSocial {
         if(DataStorage.getPodcastList().size() == 0 ){
             DataStorage.updatePodcastList();
         }
-
 
         MyCAdapter adapter = new MyCAdapter(
                 this, createPodcastList(), R.layout.rss_item_layout,
@@ -765,11 +768,8 @@ public class NewsRssActivity extends shareToSocial {
             toast.show();
         }  else {
 
-            ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
-            if (Build.VERSION.SDK_INT >= 16)
-                findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
-            else
-                findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.favorites_header));
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
 
             MyCAdapter adapter = new MyCAdapter(
                     this,  createFavoritesList(), R.layout.rss_item_layout,
@@ -779,7 +779,6 @@ public class NewsRssActivity extends shareToSocial {
             rssListView.setAdapter(adapter);
         }
     }
-
 
     public void showSavedSearchFromSideBar(final View view){
         //TODO: Установите вызов showSavedSearchFromSideBar
@@ -801,6 +800,7 @@ public class NewsRssActivity extends shareToSocial {
 
 
     }
+
     public void showSavedSearchList(){
         SavedSearchAdapter SaveSearchadapter;
 
@@ -853,9 +853,6 @@ public class NewsRssActivity extends shareToSocial {
         return items;
     }
 
-
-
-
     public void showPodcastsListFromSideBar(final View view){
         //Toast toast = Toast.makeText(getApplicationContext(),"Показать все Подкасты",Toast.LENGTH_SHORT);
         //toast.show();
@@ -906,7 +903,6 @@ public class NewsRssActivity extends shareToSocial {
         }
 
     }
-
 
     public void showContactFromSideBar(final View view){
         slidingMenu.setContent(R.layout.contacts);
@@ -1065,6 +1061,7 @@ public class NewsRssActivity extends shareToSocial {
         }
 
     }
+
     public class SavedSearchAdapter extends SimpleAdapter {
         private List<? extends Map<String, ?>> data;
         private Context context;
