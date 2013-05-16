@@ -33,7 +33,7 @@
                     style="@style/Podcast_DateText"
                     android:id="@+id/podcast_dateText"/>
                 <ImageButton
-                        android:id="@+id/article_share"
+                        android:id="@+id/podcast_share"
                         android:layout_width="wrap_content"
 
                         android:src="@drawable/articles_share_button"
@@ -46,67 +46,80 @@
 
                         />
             </LinearLayout>
-            <WebView
-                    style="@style/Podcast_DescriptionText"
-                    android:id="@+id/podcast_description"/>
-            <LinearLayout
-                    style="@style/Podcast_PlayerLayout"
-                    android:id="@+id/podcast_playerLayout">
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
                 <LinearLayout
-                         style="@style/Podcast_ButtonsLayout"
-                         android:id="@+id/podcast_buttonsLayout">
-                    <LinearLayout
-                            style="@style/Podcast_SeekPlayLayout"
-                            android:id="@+id/podcast_seek10Layout">
-                        <ImageButton
-                                android:id="@+id/podcast_seek10Button"
-                                style="@style/Podcast_ButtonsImg"
-                                android:src="@drawable/seek_button2"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            style="@style/Podcast_SeparateLayout"
-                            android:id="@+id/podcast_sepatateLeft">
-                    </LinearLayout>
-                    <LinearLayout
-                            style="@style/Podcast_SeekPlayLayout"
-                            android:id="@+id/podcast_playPauseLayout">
-                        <ImageButton
-                                android:id="@+id/podcast_play_pauseButton"
-                                style="@style/Podcast_ButtonsImg"
-                                android:src="@drawable/play_button"/>
-                    </LinearLayout>
-                    <LinearLayout
-                            style="@style/Podcast_SeparateLayout"
-                            android:id="@+id/podcast_sepatateRigth">
-                    </LinearLayout>
-                    <LinearLayout
-                            style="@style/Podcast_SeekPlayLayout"
-                            android:id="@+id/podcast_seek30Layout">
-                        <ImageButton
-                                android:id="@+id/podcast_seek30Button"
-                                style="@style/Podcast_ButtonsImg"
-                                android:src="@drawable/seek_button1"/>
-                    </LinearLayout>
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" android:id="@+id/podcast_layoutToShare">
                 </LinearLayout>
-                <RelativeLayout
-                        style="@style/Podcast_ScrollLayout"
-                        android:id="@+id/podcast_scrollLayout">
-                    <SeekBar
-                            style="@style/Podcast_Seekbar"
-                            android:id="@+id/podcast_seekbar"/>
-                    <TextView
-                            style="@style/Podcast_PlayedTimeText"
-                            android:id="@+id/podcast_playedTime"
-                            android:text="@string/podcast_ZeroTime"
-                            android:layout_alignTop="@+id/podcast_allTime"
-                            />
-                    <TextView
-                            style="@style/Podcast_AllTimeText"
-                            android:id="@+id/podcast_allTime"
-                            android:text="@string/podcast_ZeroTime"
-                            android:layout_below="@+id/podcast_seekbar"/>
-                </RelativeLayout>
-            </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" android:id="@+id/descriptionAndPlayPanel">
+                <WebView
+                        style="@style/Podcast_DescriptionText"
+                        android:id="@+id/podcast_description"/>
+                <LinearLayout
+                        style="@style/Podcast_PlayerLayout"
+                        android:id="@+id/podcast_playerLayout" android:layout_below="@+id/podcast_description">
+                    <LinearLayout
+                             style="@style/Podcast_ButtonsLayout"
+                             android:id="@+id/podcast_buttonsLayout">
+                        <LinearLayout
+                                style="@style/Podcast_SeekPlayLayout"
+                                android:id="@+id/podcast_seek10Layout">
+                            <ImageButton
+                                    android:id="@+id/podcast_seek10Button"
+                                    style="@style/Podcast_ButtonsImg"
+                                    android:src="@drawable/seek_button2"/>
+                        </LinearLayout>
+                        <LinearLayout
+                                style="@style/Podcast_SeparateLayout"
+                                android:id="@+id/podcast_sepatateLeft">
+                        </LinearLayout>
+                        <LinearLayout
+                                style="@style/Podcast_SeekPlayLayout"
+                                android:id="@+id/podcast_playPauseLayout">
+                            <ImageButton
+                                    android:id="@+id/podcast_play_pauseButton"
+                                    style="@style/Podcast_ButtonsImg"
+                                    android:src="@drawable/play_button"/>
+                        </LinearLayout>
+                        <LinearLayout
+                                style="@style/Podcast_SeparateLayout"
+                                android:id="@+id/podcast_sepatateRigth">
+                        </LinearLayout>
+                        <LinearLayout
+                                style="@style/Podcast_SeekPlayLayout"
+                                android:id="@+id/podcast_seek30Layout">
+                            <ImageButton
+                                    android:id="@+id/podcast_seek30Button"
+                                    style="@style/Podcast_ButtonsImg"
+                                    android:src="@drawable/seek_button1"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <RelativeLayout
+                            style="@style/Podcast_ScrollLayout"
+                            android:id="@+id/podcast_scrollLayout">
+                        <SeekBar
+                                style="@style/Podcast_Seekbar"
+                                android:id="@+id/podcast_seekbar"/>
+                        <TextView
+                                style="@style/Podcast_PlayedTimeText"
+                                android:id="@+id/podcast_playedTime"
+                                android:text="@string/podcast_ZeroTime"
+                                android:layout_alignTop="@+id/podcast_allTime"
+                                />
+                        <TextView
+                                style="@style/Podcast_AllTimeText"
+                                android:id="@+id/podcast_allTime"
+                                android:text="@string/podcast_ZeroTime"
+                                android:layout_below="@+id/podcast_seekbar"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

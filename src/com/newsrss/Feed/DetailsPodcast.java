@@ -11,6 +11,10 @@ import android.view.*;
 import android.webkit.WebView;
 import android.widget.*;
 import com.facebook.*;
+import com.nineoldandroids.animation.Animator;
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.view.ViewHelper;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -36,6 +40,14 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
     SeekBar castSeekbar;
     int podcastBufferedTime;
     WebView podcastDecription;
+    RelativeLayout descriptionAndPlayPanel;
+    LinearLayout layoutToAddSharePanel,mainPodcastLayout;
+    LinearLayout.LayoutParams lParamsOfSharePanel;
+    LayoutInflater inflaterSharePanel;
+    int sharePanelHeight;
+    AnimatorSet setSharePanelShow, setSharePanelHide;
+    boolean sharePanelTopIsShow=false;
+    ImageButton shareButtonTest,shareTwitter,shareFacebook,shareLinkedin,shareMail;
 
 
     @Override
@@ -53,6 +65,14 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.details_podcast);
         getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
+
+        descriptionAndPlayPanel = (RelativeLayout) findViewById(R.id.descriptionAndPlayPanel);
+        layoutToAddSharePanel = (LinearLayout)findViewById(R.id.podcast_layoutToShare);
+        mainPodcastLayout = (LinearLayout)findViewById(R.id.podcast_mainLayout);
+        lParamsOfSharePanel=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        inflaterSharePanel = getLayoutInflater();
+        layoutToAddSharePanel.addView(inflaterSharePanel.inflate(R.layout.share_panel_top, null), lParamsOfSharePanel);
+        layoutToAddSharePanel.setVisibility(View.GONE);
 
         titleText = (TextView)findViewById(R.id.podcast_titleText);
         dateText = (TextView)findViewById(R.id.podcast_dateText);
@@ -90,8 +110,13 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         seeking=false;
         end_of_play=false;
 
+        shareButtonTest = (ImageButton)findViewById(R.id.podcast_share);
+        shareTwitter = (ImageButton) findViewById(R.id.share_panel_bottom_twitter);
+        shareFacebook = (ImageButton) findViewById(R.id.share_panel_bottom_facebook);
+        shareLinkedin = (ImageButton) findViewById(R.id.share_panel_bottom_linkedin);
+        shareMail = (ImageButton) findViewById(R.id.share_panel_bottom_mail);
 
-        SeekBar.OnSeekBarChangeListener ocSeek = new SeekBar.OnSeekBarChangeListener() {
+        final SeekBar.OnSeekBarChangeListener ocSeek = new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 if (!play) {
@@ -141,7 +166,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
-        ImageButton.OnClickListener ocPlay_pause = new ImageButton.OnClickListener() {
+        final ImageButton.OnClickListener ocPlay_pause = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (first_play)
@@ -171,20 +196,20 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
-        ImageButton.OnClickListener ocSeek_10 = new ImageButton.OnClickListener() {
+        final ImageButton.OnClickListener ocSeek_10 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!first_play){
                     cast_player.seekTo(cast_player.getCurrentPosition()-10000);
-                        if (!play){
-                                    playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
-                                    castSeekbar.setProgress(cast_player.getCurrentPosition());
-                        }
+                    if (!play){
+                        playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
+                        castSeekbar.setProgress(cast_player.getCurrentPosition());
+                    }
                 }
             }
         };
 
-        ImageButton.OnClickListener ocSeek_30 = new ImageButton.OnClickListener() {
+        final ImageButton.OnClickListener ocSeek_30 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!first_play){
@@ -193,8 +218,8 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                     }
                     else cast_player.seekTo(cast_player.getCurrentPosition()+30000);
                     if (!play){
-                         playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
-                         castSeekbar.setProgress(cast_player.getCurrentPosition());
+                        playedTime.setText(ConvertToTimeString(cast_player.getCurrentPosition()));
+                        castSeekbar.setProgress(cast_player.getCurrentPosition());
                     }
                 }
             }
@@ -228,6 +253,139 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         cast_player.setOnCompletionListener(ocEnd);
         cast_player.setOnBufferingUpdateListener(ocBuffer);
         cast_player.setOnPreparedListener(ocPrepare);
+
+        ImageButton.OnClickListener ocTwitter = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onTwitterClick(currentPodcast.getTitle()+" "+ currentPodcast.getMP3Link().toString());
+            }
+        };
+
+        ImageButton.OnClickListener ocFacebook = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickbtnConnectFB(2, position);
+            }
+        };
+
+        ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        ImageButton.OnClickListener ocMail = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MailSender.send(DetailsPodcast.this, currentPodcast);
+            }
+        };
+
+        final AnimatorSet.AnimatorListener sharePanelShowListener  = new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                for (int i = 0; i < mainPodcastLayout.getChildCount(); i++) {
+                    View child = mainPodcastLayout.getChildAt(i);
+                    if ((i!=1)&&(i!=2))
+                        ObjectAnimator.ofFloat(child, "alpha", 1, 0.5f).setDuration(0).start();
+                }
+                ObjectAnimator.ofFloat(dateText, "alpha", 1, 0.5f ).setDuration(0).start();
+                play_pauseButton.setOnClickListener(null);
+                seek10Button.setOnClickListener(null);
+                seek30Button.setOnClickListener(null);
+                castSeekbar.setOnSeekBarChangeListener(null);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        };
+
+
+        final AnimatorSet.AnimatorListener sharePanelHideListener  = new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                for (int i = 0; i < mainPodcastLayout.getChildCount(); i++) {
+                    View child = mainPodcastLayout.getChildAt(i);
+                    ObjectAnimator.ofFloat(child, "alpha", 0.5f, 1f ).setDuration(0).start();
+                    child.setEnabled(true);
+                }
+                ObjectAnimator.ofFloat(dateText, "alpha", 0.5f, 1f ).setDuration(0).start();
+                ObjectAnimator.ofFloat(descriptionAndPlayPanel, "alpha", 0.5f, 1f ).setDuration(0).start();
+                play_pauseButton.setOnClickListener(ocPlay_pause);
+                seek10Button.setOnClickListener(ocSeek_10);
+                seek30Button.setOnClickListener(ocSeek_30);
+                castSeekbar.setOnSeekBarChangeListener(ocSeek);
+                descriptionAndPlayPanel.setEnabled(true);
+                layoutToAddSharePanel.setVisibility(View.GONE);
+                ObjectAnimator.ofFloat(descriptionAndPlayPanel, "translationY", 0, 0).setDuration(0).start();
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        };
+
+        ImageButton.OnClickListener ocShare = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!sharePanelTopIsShow)   {
+                    layoutToAddSharePanel.setVisibility(View.VISIBLE);
+                    //TODO size of layoutSharePanel
+                    sharePanelHeight=layoutToAddSharePanel.getHeight();
+                    setSharePanelShow = new AnimatorSet();
+                    setSharePanelShow.playTogether(
+                            ObjectAnimator.ofFloat(descriptionAndPlayPanel, "translationY", -105, 0 ),
+                            ObjectAnimator.ofFloat(layoutToAddSharePanel, "Y", -105, 0)
+                    );
+                    setSharePanelShow.addListener(sharePanelShowListener);
+                    setSharePanelShow.setDuration(200).start();
+                    sharePanelTopIsShow=true;
+                }
+                else  {
+                    setSharePanelHide = new AnimatorSet();
+                    setSharePanelHide.playTogether(
+                            ObjectAnimator.ofFloat(descriptionAndPlayPanel, "translationY", 0, -105),
+                            ObjectAnimator.ofFloat(layoutToAddSharePanel, "Y", 0, -105)
+                    );
+                    setSharePanelHide.addListener(sharePanelHideListener);
+                    setSharePanelHide.setDuration(200).start();
+                    sharePanelTopIsShow=false;
+                }
+
+            }
+        };
+
+        shareTwitter.setOnClickListener(ocTwitter);
+        shareFacebook.setOnClickListener(ocFacebook);
+        shareLinkedin.setOnClickListener(ocLinkedIn);
+        shareMail.setOnClickListener(ocMail);
+        shareButtonTest.setOnClickListener(ocShare);
+
 
         //FB
         Session session = Session.getActiveSession();
@@ -264,7 +422,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                 facebokShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        onClickbtnConnectFB(1, position);
+                        onClickbtnConnectFB(2, position);
                     }
                 });
 
@@ -306,6 +464,8 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         podcastDecription.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                if(sharePanelTopIsShow)
+                    return true;
                 return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
             }
         });
@@ -337,7 +497,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                     if (flag)
                         flag = flag && cast_player.getCurrentPosition() <=dur;
                     else
-                    return;
+                        return;
 
                     while(flag) {
                         if(play) {
