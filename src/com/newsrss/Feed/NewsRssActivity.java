@@ -36,6 +36,8 @@ import java.util.Map;
 public class NewsRssActivity extends shareToSocial {
     SwipeListView savedSearchListView;
 
+    List<Searches> artList = null;
+    String blabla;
     // idLayout:
     // 1 - Articles
     // 2 - Podcasts
@@ -533,9 +535,9 @@ public class NewsRssActivity extends shareToSocial {
     // SideBar Elements Click
     public void startSearchActivityFromSideBar(final View view){
           //TODO: Утановите вызов Активити для поиска
-        Intent startSearchActivity = new Intent(NewsRssActivity.this,SearchActivity.class );
-        String searchQuery = null;
-
+        Intent startSearchActivity = new Intent(NewsRssActivity.this,SearchActivity.class);
+        String stringgg = " ";
+        startSearchActivity.putExtra("searchquery",stringgg);
         startActivity(startSearchActivity);
         //Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
         //toast.show();
@@ -807,7 +809,7 @@ public class NewsRssActivity extends shareToSocial {
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-        List<Searches> artList = null;
+
         artList = LocalDB.get10Searches();
         if(artList.isEmpty() ){
             Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
@@ -1096,9 +1098,9 @@ public class NewsRssActivity extends shareToSocial {
         public View getView(final int position, View convertView, ViewGroup parent) {
 
 
-            ViewHolder holder;
+            final ViewHolder holder;
 
-            final Searches currentSearchQuery = LocalDB.get10Searches().get(position);
+            Searches currentSearchQuery =artList.get(position);
 
             if (convertView == null) {
                 LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -1111,13 +1113,14 @@ public class NewsRssActivity extends shareToSocial {
                 holder = (ViewHolder) convertView.getTag();
             }
             holder.searchQuery.setText(currentSearchQuery.getSearch());
-
-
+            //final String strToIntent =     holder.searchQuery.getText().toString();
+            blabla = currentSearchQuery.getSearch();
             savedSearchListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                 @Override
                 public void  onClickFrontView (int position){
+
                    Intent startSearchArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
-                    startSearchArticl.putExtra("searchquery", currentSearchQuery.getId());
+                   startSearchArticl.putExtra("searchquery",  artList.get(position).getSearch().toString());
                    startActivity(startSearchArticl);
                 }
 
