@@ -995,13 +995,14 @@ public class NewsRssActivity extends shaerToSocial {
         ImageView.OnClickListener ocRate = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Rate this app click
+                Toast.makeText(NewsRssActivity.this, "Rate", Toast.LENGTH_LONG).show();
             }
         };
+
         ImageView.OnClickListener ocFeedback = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Send us feedback click
+                MailSender.sendFeedback(NewsRssActivity.this);
             }
         };
 

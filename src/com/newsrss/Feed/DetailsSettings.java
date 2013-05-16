@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,40 +17,34 @@ import android.widget.ImageView;
  */
 public class DetailsSettings extends Activity {
 
-    ImageView legalView,rateView,feedbackView;
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        legalView = (ImageView)findViewById(R.id.settings_legalBG);
-        rateView = (ImageView)findViewById(R.id.settings_rateBG);
-        feedbackView = (ImageView)findViewById(R.id.settings_feedbackBG);
-
-        ImageView.OnClickListener ocLegal = new View.OnClickListener() {
+        ImageView legalView = (ImageView)findViewById(R.id.settings_legalBG);
+        legalView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent startLegalActivity = new Intent(DetailsSettings.this, Legal.class);
                 startActivity(startLegalActivity);
             }
-        };
+        });
 
-        ImageView.OnClickListener ocRate = new View.OnClickListener() {
+        ImageView feedbackView = (ImageView)findViewById(R.id.settings_feedbackBG);
+        feedbackView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Rate this app click
+                MailSender.sendFeedback(DetailsSettings.this);
             }
-        };
-        ImageView.OnClickListener ocFeedback = new View.OnClickListener() {
+        });
+
+        ImageView rateView = (ImageView)findViewById(R.id.settings_rateBG);
+        rateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO Send us feedback click
+                Toast.makeText(DetailsSettings.this, "ocRate", Toast.LENGTH_LONG).show();
             }
-        };
-
-        legalView.setOnClickListener(ocLegal);
-        rateView.setOnClickListener(ocRate);
-        feedbackView.setOnClickListener(ocFeedback);
+        });
 
     }
 }

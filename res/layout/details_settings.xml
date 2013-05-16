@@ -11,9 +11,11 @@
         <ImageButton android:id="@+id/settingSidebarButton"
                      style="@style/AB_SideBarButton"/>
         <ImageView android:id="@+id/settings_firm_symbol"
-                   style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/settingSidebarButton"/>
+                   style="@style/AB_FirmSymbol"
+                   android:layout_toRightOf="@id/settingSidebarButton"/>
         <TextView android:id="@+id/settings_firm_title"
-                  style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/settings_firm_symbol"/>
+                  style="@style/AB_FirmTitle"
+                  android:layout_toRightOf="@id/settings_firm_symbol"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -45,13 +47,13 @@
             <TextView
                     android:text="@string/settings_legal"
                     android:id="@+id/settings_legalTitle"
-                    android:layout_toRightOf="@+id/settings_legalIcon"
+                    android:layout_toRightOf="@id/settings_legalIcon"
                     style="@style/Settings_LegalRateFeedbackTitle"
                     />
             <ImageView
                     android:id="@+id/settings_arrow"
                     android:src="@drawable/settings_arrow"
-                    android:layout_alignRight="@+id/settings_legalBG"
+                    android:layout_alignRight="@id/settings_legalBG"
                     style="@style/Settings_Arrow"/>
         </RelativeLayout>
         <RelativeLayout
@@ -61,12 +63,12 @@
                        android:id="@+id/settings_rateBG" />
             <ImageView android:id="@+id/settings_arrow"
                        style="@style/Settings_Arrow"
-                       android:layout_alignRight="@+id/settings_rateBG"/>
+                       android:layout_alignRight="@id/settings_rateBG"/>
             <ImageView android:id="@+id/settings_rateIcon"
                        style="@style/Settings_RateIcon"/>
             <TextView android:text="@string/settings_rate"
                       android:id="@+id/settings_rateTitle"
-                      android:layout_toRightOf="@+id/settings_rateIcon"
+                      android:layout_toRightOf="@id/settings_rateIcon"
                       style="@style/Settings_LegalRateFeedbackTitle"/>
         </RelativeLayout>
         <RelativeLayout
@@ -76,12 +78,12 @@
                        android:id="@+id/settings_feedbackBG"/>
             <ImageView android:id="@+id/settings_arrow"
                        style="@style/Settings_Arrow"
-                       android:layout_alignRight="@+id/settings_feedbackBG"/>
+                       android:layout_alignRight="@id/settings_feedbackBG"/>
             <ImageView android:id="@+id/settings_feedbackIcon"
                        style="@style/Settings_FeedbackIcon"/>
             <TextView android:text="@string/settings_feedback"
                       android:id="@+id/settings_feedbackTitle"
-                      android:layout_toRightOf="@+id/settings_feedbackIcon"
+                      android:layout_toRightOf="@id/settings_feedbackIcon"
                       style="@style/Settings_LegalRateFeedbackTitle"/>
         </RelativeLayout>
     </LinearLayout>
@@ -99,19 +101,19 @@
         <LinearLayout
                 style="@style/SharePanelConSet_Buttons"
                 android:id="@+id/settings_sharePanel_buttons"
-                android:layout_below="@+id/settings_sharePanel_text">
+                android:layout_below="@id/settings_sharePanel_text">
             <ImageButton
                     android:id="@+id/facebook_imageView"
-                    android:layout_below="@+id/settings_sharePanel_text"
+                    android:layout_below="@id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Facebook"
                     />
             <ImageButton
                     android:id="@+id/twitter_imageView"
-                    android:layout_below="@+id/settings_sharePanel_text"
+                    android:layout_below="@id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Twitter"/>
             <ImageButton
                     android:id="@+id/linkedln_imageView"
-                    android:layout_below="@+id/settings_sharePanel_text"
+                    android:layout_below="@id/settings_sharePanel_text"
                     style="@style/SharePanelConSet_Linkedin"/>
         </LinearLayout>
     </RelativeLayout>

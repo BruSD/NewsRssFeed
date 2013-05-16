@@ -13,7 +13,7 @@ import android.widget.Toast;
  */
 public class MailSender {
 
-     public static void send(Activity activity, Object target) {
+    public static void send(Activity activity, Object target) {
          String subject = "";
          String body = "";
 
@@ -49,4 +49,19 @@ public class MailSender {
              Toast.makeText(activity, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
          }
      }
+
+    public static void sendFeedback(Activity activity) {
+        Intent iMailSender = new Intent(Intent.ACTION_SEND);
+        iMailSender.setType("message/rfc822");
+        iMailSender.putExtra(Intent.EXTRA_EMAIL  , new String[]{"webmaster@charteredaccountants.ie"});
+        iMailSender.putExtra(Intent.EXTRA_SUBJECT, "Send Feedback Chartered News");
+        iMailSender.putExtra(Intent.EXTRA_TEXT   ,  "");
+
+        try {
+            activity.startActivity(Intent.createChooser(iMailSender, "Send mail..."));
+        }
+        catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(activity, "There are no email clients installed.", Toast.LENGTH_LONG).show();
+        }
+    }
 }
