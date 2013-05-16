@@ -65,37 +65,24 @@ public class SearchActivity extends shareToSocial {
         searchStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (searchQueryHolder.getText().toString() != null){
                 serchArticle();
+                }else {
+                    Toast toast = Toast.makeText(SearchActivity.this, "Enter Search Query", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
             }
         });
 
 
 
-        /*savedSEarchButton = (Button)findViewById(R.id.saved_search_button);
 
-        savedSEarchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                try {
-                    LocalDB.open(getApplicationContext());
-                } catch (SQLException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-
-
-                LocalDB.addSearch(searchQueryHolder.getText().toString());
-                Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
-                toast.show();
-
-                //:TODO Close DB
-            }
-        }); */
 
     }
     public void serchArticle(){
-         if (searchQueryHolder.getText().length() != 0){
 
+             if(!createArticleList().isEmpty()){
              LayoutInflater inflater = getLayoutInflater();
              ViewGroup header = (ViewGroup)inflater.inflate(R.layout.search_head, searchListResult, false);
              searchListResult.addHeaderView(header, null, false);
@@ -104,31 +91,36 @@ public class SearchActivity extends shareToSocial {
                      new String[] { "rssnewstitle", "rssnewsdate"},
                      new int [] { R.id.rss_news_title, R.id.rss_news_date});
 
+
              adapter.setViewBinder(new CustomViewBinder());
              searchListResult.setAdapter(adapter);
-             View saveSearch = (View)findViewById(R.id.save_search);
-             saveSearch.setOnClickListener(new View.OnClickListener() {
-                 @Override
-                 public void onClick(View v) {
 
-                     try {
-                         LocalDB.open(getApplicationContext());
-                     } catch (SQLException e) {
-                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                 View saveSearch = (View)findViewById(R.id.save_search);
+                 saveSearch.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+
+                         try {
+                             LocalDB.open(getApplicationContext());
+                         } catch (SQLException e) {
+                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                         }
+                         ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+
+                         LocalDB.addSearch(searchQueryHolder.getText().toString());
+                         Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
+                         toast.show();
+
+                         //:TODO Close DB
                      }
-                     ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+                 });
+             } else {
+                 Toast toast = Toast.makeText(SearchActivity.this, "No Result for this Query", Toast.LENGTH_LONG);
+                 toast.show();
+             }
 
-                     LocalDB.addSearch(searchQueryHolder.getText().toString());
-                     Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
-                     toast.show();
 
-                     //:TODO Close DB
-                 }
-             });
-         }   else {
-             Toast toast = Toast.makeText(SearchActivity.this, "Enter Searche Query", Toast.LENGTH_LONG);
-             toast.show();
-         }
+
     }
 
     private List<Map<String, ?>> createArticleList() {
