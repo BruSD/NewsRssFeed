@@ -177,10 +177,27 @@
 
                 </LinearLayout>
 
+               <RelativeLayout
+                       android:layout_height="match_parent"
+                       android:layout_width="match_parent"
+                       >
+                   <com.fortysevendeg.android.swipelistview.SwipeListView
+                           xmlns:swipe="http://schemas.android.com/apk/res-auto"
+                           android:id="@+id/saved_search"
+                           android:listSelector="#00000000"
+                           android:layout_width="fill_parent"
+                           android:layout_height="wrap_content"
+                           swipe:swipeFrontView="@+id/front"
+                           swipe:swipeBackView="@+id/delete"
+
+                           android:visibility="gone"
+                           />
+
                 <LinearLayout
                         android:id="@+id/podcasts_show"
                         android:onClick="showPodcastsListFromSideBar"
                         style="@style/SideBarLayoutSoft"
+                        android:layout_below="@+id/saved_search"
                         >
                     <ImageView
                             style="@style/SideBarNewsIcon"
@@ -196,6 +213,7 @@
                         android:id="@+id/jobs_show"
                         android:onClick="showJobsListFromSideBar"
                         style="@style/SideBarLayoutSoft"
+                        android:layout_below="@+id/podcasts_show"
                         >
                     <ImageView
                             style="@style/SideBarNewsIcon"
@@ -211,6 +229,7 @@
                         android:id="@+id/contact_show"
                         android:onClick="showContactFromSideBar"
                         style="@style/SideBarLayoutSoft"
+                        android:layout_below="@+id/jobs_show"
                         >
                     <ImageView
                             style="@style/SideBarNewsIcon"
@@ -226,6 +245,8 @@
                         android:id="@+id/settings_show"
                         android:onClick="showSettingsFromSideBar"
                         style="@style/SideBarLayoutSoft"
+                        android:layout_below="@+id/contact_show"
+
                         >
                     <ImageView
                             style="@style/SideBarNewsIcon"
@@ -236,7 +257,7 @@
                             android:text="@string/settings_string"/>
 
                 </LinearLayout>
-
+               </RelativeLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

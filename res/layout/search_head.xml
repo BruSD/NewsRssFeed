@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <RelativeLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/save_search"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/saved_search_button"
+            android:padding="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            >
+        <ImageView
+                android:id="@+id/saved_search_button"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingLeft="5dp"
+                />
+        <TextView
+            android:id="@+id/text_to_saved"
+            android:text="@string/save_this_search_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:background="#00000000"
+            android:textColor="#ffffff"
+            android:layout_toRightOf="@id/saved_search_button"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+
+
+
+
+            />
+    </RelativeLayout>

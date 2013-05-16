@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -33,6 +34,7 @@ import java.util.Map;
 
 
 public class NewsRssActivity extends shareToSocial {
+    SwipeListView savedSearchListView;
 
     // idLayout:
     // 1 - Articles
@@ -76,6 +78,7 @@ public class NewsRssActivity extends shareToSocial {
         slidingMenu.setBehindOffset(otstup);
         slidingMenu.setMenu(R.layout.menu);
 
+        //
         miniSwipeActivator();
 
         //FB
@@ -117,12 +120,15 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("News");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.news_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.news_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.news_header));
 
         MyCAdapter adapter = new MyCAdapter(this,
                 createArticleList(), R.layout.podcast_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date});
+                new String[] { "rssnewstitle", "rssnewsdate","rssnewsimage"},
+                new int [] { R.id.rss_podcast_title, R.id.rss_podcast_date,R.id.rss_img_news_pass});
         idLayout = 1;
         adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
@@ -435,7 +441,10 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("Podcasts");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.podcast_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.podcast_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.podcast_header));
 
         if(DataStorage.getPodcastList().size() == 0 ){
             DataStorage.updatePodcastList();
@@ -443,9 +452,10 @@ public class NewsRssActivity extends shareToSocial {
 
         MyCAdapter adapter = new MyCAdapter(
                 this, createPodcastList(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+                new String[] { "rssnewstitle", "rssnewsdate", "rssnewsimage"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date,R.id.rss_img_news_pass});
         idLayout = 2;
+        adapter.setViewBinder(new CustomViewBinder());
         rssListView.setAdapter(adapter);
 
     }
@@ -462,6 +472,7 @@ public class NewsRssActivity extends shareToSocial {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("rssnewstitle", podcast.getTitle());
                 map.put("rssnewsdate", dateArticleV);
+                map.put("rssnewsimage", getResources().getDrawable(R.drawable.podcast_icon));
                 items.add(map);
             }
         }
@@ -476,7 +487,10 @@ public class NewsRssActivity extends shareToSocial {
         SwipeListView rssListView = (SwipeListView) findViewById(R.id.rssListView);
 
         ((TextView)findViewById(R.id.rss_list_header_text)).setText("Jobs");
-        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.jobs_header));
+        if (Build.VERSION.SDK_INT >= 16)
+            findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.jobs_header));
+        else
+            findViewById(R.id.rss_list_header_image).setBackgroundDrawable(getResources().getDrawable(R.drawable.jobs_header));
 
         if(DataStorage.getJobList().size() == 0 ){
             DataStorage.updateJobList();
@@ -515,7 +529,10 @@ public class NewsRssActivity extends shareToSocial {
     // SideBar Elements Click
     public void startSearchActivityFromSideBar(final View view){
           //TODO: Утановите вызов Активити для поиска
+        Intent startSearchActivity = new Intent(NewsRssActivity.this,SearchActivity.class );
+        String searchQuery = null;
 
+        startActivity(startSearchActivity);
         //Toast toast = Toast.makeText(getApplicationContext(),"Запустить Поиск",Toast.LENGTH_SHORT);
         //toast.show();
     }
@@ -677,6 +694,11 @@ public class NewsRssActivity extends shareToSocial {
             slidingMenu.setContent(R.layout.main);
 
             rssListView = (SwipeListView) findViewById(R.id.rssListView);
+
+            LayoutInflater inflater = getLayoutInflater();
+            ViewGroup header = (ViewGroup)inflater.inflate(R.layout.rss_header, rssListView, false);
+            rssListView.addHeaderView(header, null, false);
+
             showFavoritesList();
 
             View app = findViewById(R.id.app);
@@ -691,6 +713,7 @@ public class NewsRssActivity extends shareToSocial {
         Toast toast = Toast.makeText(getApplicationContext(),"Использовать Favorites",Toast.LENGTH_SHORT);
         toast.show();
     }
+
     private List<Map<String, ?>> createFavoritesList() {
         List<Article> artList = null;
 
@@ -730,7 +753,8 @@ public class NewsRssActivity extends shareToSocial {
             LocalDB.open(this.getApplicationContext());
         } catch (SQLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-       }
+        }
+
         List<Article> artList = null;
         artList = LocalDB.getAllArticles();
         if(artList.isEmpty() ){
@@ -738,21 +762,91 @@ public class NewsRssActivity extends shareToSocial {
             toast.show();
         }  else {
 
-        MyCAdapter adapter = new MyCAdapter(
-                this,  createFavoritesList(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        idLayout = 4;
-        rssListView.setAdapter(adapter);
+        ((TextView)findViewById(R.id.rss_list_header_text)).setText("Favorites");
+        findViewById(R.id.rss_list_header_image).setBackground(getResources().getDrawable(R.drawable.favorites_header));
+
+            MyCAdapter adapter = new MyCAdapter(
+                    this,  createFavoritesList(), R.layout.rss_item_layout,
+                    new String[] { "rssnewstitle", "rssnewsdate"},
+                    new int [] { R.id.rss_news_title, R.id.rss_news_date});
+            idLayout = 4;
+            rssListView.setAdapter(adapter);
         }
     }
 
     public void showSavedSearchFromSideBar(final View view){
         //TODO: Установите вызов showSavedSearchFromSideBar
+        savedSearchListView = (SwipeListView) findViewById(R.id.saved_search);
+        if(savedSearchListView.getVisibility() == View.GONE)       {
+            DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+            float otstup = (float) (metrics.widthPixels *0.7) ;
+            savedSearchListView.setSwipeMode(SwipeListView.SWIPE_MODE_RIGHT);
+            savedSearchListView.setOffsetRight(otstup);
+            savedSearchListView.setAnimationTime(500);
+            savedSearchListView.setSwipeOpenOnLongPress(false);
+            showSavedSearchList();
+            Utility.setListViewHeightBasedOnChildren(savedSearchListView);
+            savedSearchListView.setVisibility(View.VISIBLE);
+        }  else{
+           savedSearchListView.setVisibility(View.GONE);
+        }
 
-        //Toast toast = Toast.makeText(getApplicationContext(),"Использовать SavedSearch",Toast.LENGTH_SHORT);
-        //toast.show();
+
+
     }
+    public void showSavedSearchList(){
+        SavedSearchAdapter SaveSearchadapter;
+
+        try {
+            LocalDB.open(this.getApplicationContext());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        List<Searches> artList = null;
+        artList = LocalDB.get10Searches();
+        if(artList.isEmpty() ){
+            Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
+            toast.show();
+        }  else {
+
+            SaveSearchadapter = new SavedSearchAdapter(
+                    this,  createSavedSearchList(), R.layout.saved_search_item,
+                    new String[] { "rssnewstitle"},
+                    new int [] { R.id.search_query});
+
+            savedSearchListView.setAdapter(SaveSearchadapter);
+        }
+
+
+    }
+
+    private List<Map<String, ?>> createSavedSearchList() {
+        List<Searches> searchQuery;
+
+        List<Map<String, ?>> items = new ArrayList<Map<String, ?>>();
+
+        try
+        {
+
+            searchQuery = LocalDB.get10Searches();
+
+            for (Searches searches : searchQuery)
+            {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("rssnewstitle", searches.getSearch());
+
+                items.add(map);
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return items;
+    }
+
+
 
 
     public void showPodcastsListFromSideBar(final View view){
@@ -962,6 +1056,102 @@ public class NewsRssActivity extends shareToSocial {
             return false;
         }
 
+    }
+    public class SavedSearchAdapter extends SimpleAdapter {
+        private List<? extends Map<String, ?>> data;
+        private Context context;
+
+
+
+
+
+
+
+        public SavedSearchAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+            super(context, data, resource, from, to);
+            this.context = context;
+            this.data = data;
+        }
+
+        @Override
+        public int getCount() {
+            return data.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;  //To change body of implemented methods use File | Settings | File Templates.
+        }
+
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+
+
+            ViewHolder holder;
+
+            final Searches currentSearchQuery = LocalDB.get10Searches().get(position);
+
+            if (convertView == null) {
+                LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = li.inflate(R.layout.saved_search_item, parent, false);
+                holder = new ViewHolder();
+                holder.searchQuery = (TextView)convertView.findViewById(R.id.search_query);
+                holder.delete_search_query = (ImageButton)convertView.findViewById(R.id.del_btn);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+            holder.searchQuery.setText(currentSearchQuery.getSearch());
+
+
+            savedSearchListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
+                @Override
+                public void  onClickFrontView (int position){
+                   // Intent startDetailArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
+                   // startDetailArticl.putExtra("searchquery", currentSearchQuery.getId());
+                   // startActivity(startDetailArticl);
+                }
+
+
+            });
+
+            holder.delete_search_query.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    Toast toast = Toast.makeText(getApplicationContext(),"Search Query Deleted " +position ,Toast.LENGTH_SHORT);
+                    toast.show();
+                    Searches currentSearchToDelete = LocalDB.get10Searches().get(position);
+
+                    LocalDB.deleteSearch(currentSearchToDelete.getId());
+                    showSavedSearchList();
+                    Utility.setListViewHeightBasedOnChildren(savedSearchListView);
+                }
+            });
+
+            return convertView;
+        }
+
+        public class ViewHolder {
+            ImageButton delete_search_query;
+            TextView searchQuery;
+
+
+        }
+        public void clearData() {
+            // clear the data
+            data.clear();
+        }
     }
 
 }

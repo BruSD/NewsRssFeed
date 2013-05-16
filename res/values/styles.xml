@@ -41,7 +41,7 @@
 
     <style name="SideBarLayoutSoft">
         <item name="android:layout_height">43dp</item>
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@drawable/soft_bg_side_bar</item>
@@ -271,6 +271,7 @@
         <item name="android:adjustViewBounds">true</item>
         <item name="android:layout_marginRight">3dp</item>
     </style>
+
 
     <style name="AB_FirmTitle">
         <item name="android:layout_height">wrap_content</item>
@@ -822,6 +823,55 @@
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+    <style name="AB_search">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
+
+
+        <item name="android:orientation">horizontal</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/settings_menu_bar</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="AB_SideBarCancelButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">65</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/cancel</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginLeft">5dp</item>
+
+
+
+    </style>
+
+    <style name="AB_Search_Fild">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">50</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:src">@drawable/bg_search_query_</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+
+    </style>
+    <style name="AB_searchBTN">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">85</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@drawable/magnifi</item>
+        <item name="android:adjustViewBounds">true</item>
+
+        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
 </resources>
