@@ -150,6 +150,7 @@ public class DataStorage {
             image = null;
         }
 
+        /*
         if (image == null) {
             //System.out.println("BAD : "+imageURLString);
 
@@ -158,7 +159,7 @@ public class DataStorage {
         }
         else {
             //System.out.println("GOOD : "+imageURLString);
-        }
+        } */
         drawableMap.put(imageURLString, image);
 
         return image;

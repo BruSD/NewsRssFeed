@@ -93,7 +93,7 @@ public class PodcastParser extends AsyncTask<Void, Void, ArrayList<Podcast>> {
                             _pubDate = format.parse(_pubDateE.getTextContent());//getFirstChild().getNodeValue());
                         }
                         catch (ParseException e) {
-                            _pubDate = new Date();
+                            _pubDate = null;
                         }
 
                         //create Podcast and add it to the ArrayList
