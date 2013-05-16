@@ -73,6 +73,7 @@
                     android:background="@drawable/bg"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     swipe:swipeFrontView="@+id/front"
                     swipe:swipeBackView="@+id/back"
 

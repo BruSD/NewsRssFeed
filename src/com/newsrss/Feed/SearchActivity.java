@@ -34,7 +34,8 @@ public class SearchActivity extends shareToSocial {
     ImageButton searchStart;
     EditText searchQueryHolder;
     SwipeListView searchListResult;
-    Button savedSEarchButton;
+    String searchQueryId;
+    String searchToGenerate;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -50,8 +51,10 @@ public class SearchActivity extends shareToSocial {
         searchListResult.setOffsetRight(otstup);
         searchListResult.setAnimationTime(500);
         searchListResult.setSwipeOpenOnLongPress(false);
-
-
+        LayoutInflater inflater = getLayoutInflater();
+        ViewGroup header = (ViewGroup)inflater.inflate(R.layout.search_head, searchListResult, false);
+        searchListResult.addHeaderView(header, null, false);
+        ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
 
         ImageButton backBTN = (ImageButton)findViewById(R.id.BtnBack);
         backBTN.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +68,8 @@ public class SearchActivity extends shareToSocial {
         searchStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (searchQueryHolder.getText().toString() != null){
+                if (searchQueryHolder.getText().length() != 0){
+                    searchQueryId = searchQueryHolder.getText().toString();
                 serchArticle();
                 }else {
                     Toast toast = Toast.makeText(SearchActivity.this, "Enter Search Query", Toast.LENGTH_LONG);
@@ -74,8 +78,53 @@ public class SearchActivity extends shareToSocial {
 
             }
         });
+        View saveSearch = (View)findViewById(R.id.save_search);
+
+        saveSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(((TextView)findViewById(R.id.text_to_saved)).getText().toString() != getString(R.string.saved_search_button)){
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+                    ((TextView)findViewById(R.id.text_to_saved)).setEnabled(false);
+                    LocalDB.addSearch(searchQueryHolder.getText().toString());
+                    Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }  else {
+                    Toast toast = Toast.makeText(SearchActivity.this,"Search Query already Saved " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                //:TODO Close DB
+            }
+        });
+        Intent startDetailArticle = getIntent();
+        searchQueryId = startDetailArticle.getStringExtra("searchquery");
+
+        if (searchQueryId.length() == 1){
+        MyCAdapter adapter = new MyCAdapter(this,
+                new ArrayList<Map<String, ?>>(), R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        adapter.setViewBinder(new CustomViewBinder());
+        searchListResult.setAdapter(adapter);
+            ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+        }else {
+            try {
+                LocalDB.open(getApplicationContext());
+            } catch (SQLException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+
+            searchQueryHolder.setText(searchQueryId);
+            serchArticle();
 
 
+        }
 
 
 
@@ -83,40 +132,18 @@ public class SearchActivity extends shareToSocial {
     public void serchArticle(){
 
              if(!createArticleList().isEmpty()){
-             LayoutInflater inflater = getLayoutInflater();
-             ViewGroup header = (ViewGroup)inflater.inflate(R.layout.search_head, searchListResult, false);
-             searchListResult.addHeaderView(header, null, false);
              MyCAdapter adapter = new MyCAdapter(this,
                      createArticleList(), R.layout.rss_item_layout,
                      new String[] { "rssnewstitle", "rssnewsdate"},
                      new int [] { R.id.rss_news_title, R.id.rss_news_date});
-
-
              adapter.setViewBinder(new CustomViewBinder());
              searchListResult.setAdapter(adapter);
+             searchListResult.setVisibility(View.VISIBLE);
 
-                 View saveSearch = (View)findViewById(R.id.save_search);
-                 saveSearch.setOnClickListener(new View.OnClickListener() {
-                     @Override
-                     public void onClick(View v) {
-
-                         try {
-                             LocalDB.open(getApplicationContext());
-                         } catch (SQLException e) {
-                             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                         }
-                         ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
-
-                         LocalDB.addSearch(searchQueryHolder.getText().toString());
-                         Toast toast = Toast.makeText(SearchActivity.this,"Search Query is Saved " ,Toast.LENGTH_SHORT);
-                         toast.show();
-
-                         //:TODO Close DB
-                     }
-                 });
              } else {
                  Toast toast = Toast.makeText(SearchActivity.this, "No Result for this Query", Toast.LENGTH_LONG);
                  toast.show();
+                 searchListResult.setVisibility(View.GONE);
              }
 
 
@@ -128,7 +155,7 @@ public class SearchActivity extends shareToSocial {
         try
         {
             SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
-            ArrayList<Article> articleList = DataStorage.startSearch(searchQueryHolder.getText().toString());
+            ArrayList<Article> articleList = DataStorage.startSearch(searchQueryId);
 
             for (Article article : articleList)
             {
