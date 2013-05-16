@@ -1113,9 +1113,9 @@ public class NewsRssActivity extends shareToSocial {
             savedSearchListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                 @Override
                 public void  onClickFrontView (int position){
-                   // Intent startDetailArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
-                   // startDetailArticl.putExtra("searchquery", currentSearchQuery.getId());
-                   // startActivity(startDetailArticl);
+                   Intent startSearchArticl = new Intent(NewsRssActivity.this, SearchActivity.class);
+                    startSearchArticl.putExtra("searchquery", currentSearchQuery.getId());
+                   startActivity(startSearchArticl);
                 }
 
 
