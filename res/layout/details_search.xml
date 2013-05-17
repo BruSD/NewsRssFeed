@@ -17,10 +17,12 @@
                 />
         <ImageView
                 android:id="@+id/article_logo"
-                style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/back_btn"/>
+                style="@style/AB_FirmSymbol"
+                android:layout_toRightOf="@+id/back_btn"/>
         <TextView
                 android:id="@+id/article_head"
-                style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/article_logo"/>
+                style="@style/AB_FirmTitle"
+                android:layout_toRightOf="@+id/article_logo"/>
     </RelativeLayout>
     <ScrollView
             android:layout_width="fill_parent"
@@ -45,21 +47,25 @@
                     android:id="@+id/jobs_title"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
-                    android:textSize="24dp"
-                    android:paddingLeft="10dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
                     />
             <LinearLayout
 
                     android:orientation="horizontal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp">
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp">
                 <TextView
                         android:id="@+id/jobs_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="9"
+                        android:textStyle="italic"
                         />
                 <ImageButton
                         android:id="@+id/jobs_share"
@@ -81,7 +87,10 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_w"
                     android:scrollbars="none"
-
+                    android:layout_marginTop="10dp"
+                    android:padding="0dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
                     />
 
         </LinearLayout>

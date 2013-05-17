@@ -413,7 +413,7 @@ public class NewsRssActivity extends shaerToSocial {
                         public void  onClickFrontView (int position){
 
                             Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsFavorites.class );
-                            startDetailJobs.putExtra("position", position);
+                            startDetailJobs.putExtra("position", position-1);
                             startActivity(startDetailJobs);
 
 
