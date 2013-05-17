@@ -99,7 +99,22 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         titleText.setText(currentPodcast.getTitle());
         String date_str = new SimpleDateFormat("EEEE, MMMM dd, yyyy").format(currentPodcast.getPubDate());
         dateText.setText(date_str);
-        podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
+
+        String data = "<html><head>" +
+                "<style type=\"text/css\">" +
+                "body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; }" +
+                //"ul{list-style-type:none; padding-left:1.5em; margin-top:-2.5em;margin-bottom:2em;} " +
+                //"ul li{margin-bottom:-2em;text-indent:5px; position:relative;top:0em;margin-top:-.15em;} " +
+                //"ul li:before{position:relative; margin-left:-.5em !important; font-size:2em; content:'\\2022'; color:#860945; left:-.15em  !important; top:1.1em;margin-top:2em;} " +
+                "img{border:1px ridge #777774;} " +
+                "p{margin:10px 0;} " +
+                "a{font-weight:bold;text-decoration:none; color:#860945;} " +
+                "ol{counter-reset:my-counter;} " +
+                "ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}" +
+                "</style>"+
+                "</head><body>" + currentPodcast.getDescription()+"</body></html>";
+        podcastDecription.loadDataWithBaseURL(null, data, "text/html", "utf-8", null);
+        //podcastDecription.loadData("<html><body>" + currentPodcast.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
         castSeekbar.setEnabled(false);
 
 

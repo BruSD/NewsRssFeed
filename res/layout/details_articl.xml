@@ -53,12 +53,14 @@
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:textSize="18dp"
-
-                        android:textStyle="bold" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+                        android:textStyle="bold"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"/>
                 <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/article_StarShareLayout"
-                        android:layout_marginLeft="18dp" android:layout_marginRight="18dp">
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp">
                     <ImageButton
                             android:id="@+id/article_share"
                             style="@style/Articles_ShareButton"/>
@@ -69,7 +71,9 @@
                             android:id="@+id/article_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left" android:layout_centerVertical="true" android:textStyle="italic"/>
+                            android:gravity="left"
+                            android:layout_centerVertical="true"
+                            android:textStyle="italic"/>
                 </RelativeLayout>
                 <RelativeLayout
                         android:layout_width="fill_parent"
