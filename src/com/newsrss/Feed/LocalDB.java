@@ -90,6 +90,15 @@ public class LocalDB {
 	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
 	        + " = " + guid, null);
 	}
+
+    static public boolean isArticleFavotites (String guid){
+        String [] searchesinDB = {guid};
+        Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
+                allColumns, "guid = ?", searchesinDB, null, null, null);
+        if(cursor.getCount()==0)
+        return false;
+        return true;
+    }
 	
 	static public void addArticle (Article art){
     	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
@@ -150,6 +159,15 @@ public class LocalDB {
         return null;
     }
 
+    static public boolean isSearchInDB (String search){
+        String [] searchesinDB = {search};
+        Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
+                allColumnsSearches, "search = ?", searchesinDB, null, null, null);
+        if(cursor.getCount()==0)
+            return false;
+        return true;
+    }
+
     static public void addSearch(String search){
         try {
             open();
@@ -161,8 +179,14 @@ public class LocalDB {
         ContentValues seatch_values = new ContentValues();
         seatch_values.put(SQLLiteHelperSearch.COLUMN_Search, search);
         seatch_values.put(SQLLiteHelperSearch.COLUMN_SearchDate, dateStr);
+        if (!isSearchInDB(search))
         LocalDatabaseSearches.insert(SQLLiteHelperSearch.DATABASE_NAME, null,
                 seatch_values);
+        else {
+            String [] searchesinDB = {search};
+            LocalDatabaseSearches.update(SQLLiteHelperSearch.DATABASE_NAME,
+                seatch_values,"search = ?",searchesinDB);
+        }
         close();
     }
 
