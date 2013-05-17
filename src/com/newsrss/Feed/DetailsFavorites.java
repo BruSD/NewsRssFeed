@@ -3,23 +3,21 @@ package com.newsrss.Feed;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.view.*;
-
 import android.os.Bundle;
-import com.nineoldandroids.animation.*;
-import com.facebook.Session;
+import android.view.*;
 import android.webkit.WebView;
 import android.widget.*;
-import android.widget.Toast;
-
+import com.facebook.Session;
+import com.nineoldandroids.animation.Animator;
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.view.ViewHelper;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-import android.view.ViewGroup.LayoutParams;
 
-
-import com.nineoldandroids.view.ViewHelper;
+import android.widget.Toast;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,7 +26,7 @@ import com.nineoldandroids.view.ViewHelper;
  * Time: 10:31 AM
  * To change this template use File | Settings | File Templates.
  */
-public class DetailsArticle extends shaerToSocial implements GestureDetector.OnGestureListener  {
+public class DetailsFavorites extends shaerToSocial implements GestureDetector.OnGestureListener  {
     private GestureDetector gd;
 
 
@@ -54,13 +52,13 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
 
     public void onCreate(Bundle savedInstanceState) {
 
-    super.onCreate(savedInstanceState);
-    setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-    setContentView(R.layout.details_articl);
-        getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+        super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.details_favorites);
+        getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
 
         layoutToAddSharePanel = (LinearLayout)findViewById(R.id.article_layoutToShare);
-        nextLayout = (LinearLayout) findViewById(R.id.next_article);
+
         descriptionAndNextPanel = (RelativeLayout)findViewById(R.id.article_descriptionAndNext);
         lParamsOfSharePanel=new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         inflaterSharePanel = getLayoutInflater();
@@ -76,8 +74,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
 
         descriptionArticle.setBackgroundColor(0);
 
-        nextTitle = (TextView)findViewById(R.id.next_a_title);
-        nextDate = (TextView)findViewById(R.id.next_a_date);
+
 
         //FB
         Session session = Session.getActiveSession();
@@ -96,7 +93,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
         ShowArticle();
-        NextArticle();
+
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.back_btn);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +136,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         ImageButton.OnClickListener ocMail = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MailSender.send(DetailsArticle.this, currentArticle);
+                MailSender.send(DetailsFavorites.this, currentArticle);
             }
         };
 
@@ -154,11 +151,11 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 for (int i = 0; i < mainArticleLayout.getChildCount(); i++) {
                     View child = mainArticleLayout.getChildAt(i);
                     if ((i!=2)&&(i!=3))
-                        ObjectAnimator.ofFloat(child, "alpha", 1, 0.5f ).setDuration(0).start();
+                        ObjectAnimator.ofFloat(child, "alpha", 1, 0.5f).setDuration(0).start();
                 }
                 ObjectAnimator.ofFloat(starButton, "alpha", 1, 0.5f ).setDuration(0).start();
                 ObjectAnimator.ofFloat(dateArticle, "alpha", 1, 0.5f ).setDuration(0).start();
-                nextLayout.setEnabled(false);
+
             }
 
             @Override
@@ -189,8 +186,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 ObjectAnimator.ofFloat(starButton, "alpha", 0.5f, 1f ).setDuration(0).start();
                 ObjectAnimator.ofFloat(dateArticle, "alpha", 0.5f, 1f ).setDuration(0).start();
                 ViewHelper.setAlpha(descriptionArticle, 1f);
-                ObjectAnimator.ofFloat(nextLayout, "alpha", 0.5f, 1f ).setDuration(0).start();
-                nextLayout.setEnabled(true);
+
 
                 layoutToAddSharePanel.setVisibility(View.GONE);
                 ObjectAnimator.ofFloat(descriptionAndNextPanel, "translationY", 0, 0).setDuration(0).start();
@@ -260,7 +256,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         });
 
         //Double Tap
-        gd = new GestureDetector(DetailsArticle.this);
+        gd = new GestureDetector(DetailsFavorites.this);
 
         gd.setOnDoubleTapListener(new GestureDetector.OnDoubleTapListener() {
             @Override
@@ -271,9 +267,9 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
             @Override
             public boolean onDoubleTap(MotionEvent e) {
                 if(sharePanelTopIsShow)
-                return  false;
+                    return  false;
 
-                final Dialog dialog = new Dialog(DetailsArticle.this);
+                final Dialog dialog = new Dialog(DetailsFavorites.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
                 dialog.setContentView(R.layout.share_panel_bottom);
@@ -306,12 +302,12 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 mailShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        MailSender.send(DetailsArticle.this, currentArticle);
+                        MailSender.send(DetailsFavorites.this, currentArticle);
                     }
                 });
 
                 dialog.show();
-                return false;  //To change body of implemented methods use File | Settings | File Templates.
+                return false;  //To change body of implemented methods .use File | Settings | File Templates.
             }
 
             @Override
@@ -325,7 +321,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(sharePanelTopIsShow)
-                return true;
+                    return true;
                 return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
             }
         });
@@ -333,7 +329,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
 
 
     public void ShowArticle(){
-        currentArticle = DataStorage.getArticleList().get(positionArt);
+        currentArticle = LocalDB.getArticle(positionArt);
         String dateArticleV;
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
         dateArticleV = sdf.format(currentArticle.getPubDate());
@@ -343,24 +339,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         //descriptionArticle.loadData("<html><body style='margin:0;padding:0;background-color:#efeee9'> <style type='text/css'> body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; } ul{list-style-type:none; padding-left:1.5em;} ul li{margin-bottom:1em;text-indent:5px;} ul li:before{margin-left:-.5em;  position:relative; font-size:2em; content:'\\2022'; color:#860945; left:-.15em; top:.2em;} img{border:1px ridge #777774;} p{margin:10px 0;} a{font-weight:bold;text-decoration:none; color:#860945;}ol{counter-reset:my-counter;} ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}</style>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
 
     }
-    public void NextArticle(){
-        if ( positionArt+1 != DataStorage.getArticleList().size()) {
-            nextArticle = DataStorage.getArticleList().get(positionArt + 1);
-        }
-         if (nextArticle != null){
-             nextTitle.setText(nextArticle.getTitle());
-             String dateArticleV;
-             SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
-             dateArticleV = sdf.format(nextArticle.getPubDate());
-             nextDate.setText(dateArticleV);
-         }
-    }
-    public void ShowNextArticle(final View view){
-        positionArt = positionArt+1;
-        ShowArticle();
-        NextArticle();
-        // TODO: Resize scroll
-    }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event)
@@ -398,3 +377,4 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
+

@@ -48,7 +48,9 @@
                   android:label="@string/head_app"/>
         <activity android:name="com.newsrss.Feed.DetailsJobs"
                   android:label="@string/head_app"/>
+
         <activity android:name="com.newsrss.Feed.DetailsSettings"/>
+        <activity android:name="com.newsrss.Feed.DetailsFavorites"/>
         <activity android:name="com.newsrss.Feed.Legal"
                   android:label="@string/head_app"/>
         <activity android:name="com.newsrss.Feed.Contacts"/>

@@ -242,11 +242,12 @@ public class NewsRssActivity extends shaerToSocial {
                     } catch (SQLException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
-                    Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
                     toast.show();
                     Article currentArticle1 = DataStorage.getArticleList().get(position);
 
                     LocalDB.addArticle(currentArticle1);
+
                 }
             });
 
@@ -409,11 +410,11 @@ public class NewsRssActivity extends shaerToSocial {
                     rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                         @Override
                         public void  onClickFrontView (int position){
-                            /*
-                            Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsJobs.class );
+
+                            Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsFavorites.class );
                             startDetailJobs.putExtra("position", position-1);
                             startActivity(startDetailJobs);
-                            */
+
 
                         }
 

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#efeee9">
+
+    <RelativeLayout
+            style="@style/AB">
+        <ImageView
+                android:id="@+id/article_actionBar_BG"
+                style="@style/AB_Background"/>
+        <ImageView
+                android:id="@+id/article_logo"
+                style="@style/AB_FirmSymbol" android:layout_toRightOf="@+id/back_btn"/>
+        <ImageButton
+                android:id="@+id/back_btn"
+                style="@style/AB_BackButton"
+                />
+
+        <TextView
+                android:id="@+id/article_head"
+                style="@style/AB_FirmTitle" android:layout_toRightOf="@+id/article_logo"/>
+    </RelativeLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:id="@+id/article_scroll">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="false"
+                    android:background="#efeee9"
+                    android:id="@+id/article_main_layout">
+                <LinearLayout
+                        android:id="@+id/linearbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="20dp"
+                        >
+                </LinearLayout>
+                <TextView
+                        android:id="@+id/article_title"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+
+                        android:textStyle="bold" android:layout_marginLeft="18dp" android:layout_marginRight="18dp"/>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/article_StarShareLayout"
+                        android:layout_marginLeft="18dp" android:layout_marginRight="18dp">
+                    <ImageButton
+                            android:id="@+id/article_share"
+                            style="@style/Articles_ShareButton"/>
+                    <ImageButton
+                            android:id="@+id/article_fav"
+                            style="@style/Articles_StarButton"/>
+                    <TextView
+                            android:id="@+id/article_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left" android:layout_centerVertical="true" android:textStyle="italic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" android:layout_marginTop="10dp">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:focusableInTouchMode="false"
+                            android:id="@+id/article_layoutToShare"
+                            android:baselineAligned="false" android:measureWithLargestChild="false"
+                            android:layout_marginTop="10dp">
+                    </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:id="@+id/article_descriptionAndNext"
+                        android:background="#efeee9">
+                    <WebView
+                            android:id="@+id/article_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" android:padding="0dp" android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
