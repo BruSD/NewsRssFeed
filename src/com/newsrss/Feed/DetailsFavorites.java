@@ -122,7 +122,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
         ImageButton.OnClickListener ocFacebook = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickbtnConnectFB(1, positionArt);
+                onClickbtnConnectFB(4, positionArt);
             }
         };
 
@@ -278,7 +278,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
                 facebokShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        onClickbtnConnectFB(1, positionArt);
+                        onClickbtnConnectFB(4, positionArt);
                     }
                 });
 

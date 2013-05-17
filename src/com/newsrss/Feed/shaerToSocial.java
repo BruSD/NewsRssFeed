@@ -19,6 +19,7 @@ import com.facebook.widget.WebDialog;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.EnumSet;
@@ -214,7 +215,40 @@ public class shaerToSocial extends SherlockActivity {
                 postDiscription= currentJob.getDescription();
                 //postImageURL = currentArticle.getNewsImage();
                 break;
-        }
+
+            case 4:
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                currentArticle = LocalDB.getArticle(ID);
+
+                //SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                //postName = sdf.format(currentArticle.getPubDate());
+                postName = currentArticle.getTitle();
+                postURL = currentArticle.getLink().toString();
+                postDiscription= currentArticle.getDescription();
+                //postImageURL = currentArticle.getNewsImage();
+            break;
+
+            case 5:
+                try {
+                    LocalDB.open(getApplicationContext());
+                } catch (SQLException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+                currentArticle = LocalDB.getArticle(ID);
+
+                //SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+                //postName = sdf.format(currentArticle.getPubDate());
+                postName = currentArticle.getTitle();
+                postURL = currentArticle.getLink().toString();
+                postDiscription= currentArticle.getDescription();
+                //postImageURL = currentArticle.getNewsImage();
+                break;
+
+    }
         //:TODO get Fav Article & Get Searched Article to shaer in soc
 
 

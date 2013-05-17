@@ -388,14 +388,15 @@ public class NewsRssActivity extends shaerToSocial {
                 case 4:
                     miniSwipeActivator();
 
-                    Article currentFav = LocalDB.getArticle(position);
+                    final Article currentFav = LocalDB.getArticle(position);
 
                     if (convertView == null) {
                         LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                         convertView = li.inflate(R.layout.rss_item_layout, parent, false);
                         holder = new ViewHolder();
 
-
+                        holder.favBtn = (ImageButton) convertView.findViewById(R.id.fav_btn);
+                        holder.shareBtn = (ImageButton)convertView.findViewById(R.id.share_btn);
                         holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
                         holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
 
@@ -412,13 +413,72 @@ public class NewsRssActivity extends shaerToSocial {
                         public void  onClickFrontView (int position){
 
                             Intent startDetailJobs = new Intent(NewsRssActivity.this, DetailsFavorites.class );
-                            startDetailJobs.putExtra("position", position-1);
+                            startDetailJobs.putExtra("position", position);
                             startActivity(startDetailJobs);
 
 
                         }
 
 
+                    });
+                    holder.shareBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final Dialog dialog = new Dialog(context);
+                            dialog.setContentView(R.layout.share_panel_in_list);
+                            dialog.setTitle("Share: " +currentFav.getTitle());
+
+                            ImageButton faceBookShare = (ImageButton)dialog.findViewById(R.id.facebook_in_listview);
+                            faceBookShare.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    onClickbtnConnectFB(4, position);
+
+                                }
+                            });
+                            ImageButton twitterShare = (ImageButton)dialog.findViewById(R.id.twitter_in_listview);
+                            twitterShare.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    onTwitterClick(currentFav.getTitle()+" "+ currentFav.getLink().toString());
+                                }
+                            });
+                            ImageButton linkeinShare = (ImageButton)dialog.findViewById(R.id.linkedin_in_listview);
+                            linkeinShare.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    // createServiseToLinkedIn(1, position);
+
+                                }
+                            });
+                            ImageButton mailShare =  (ImageButton)dialog.findViewById(R.id.mail_in_listview);
+                            mailShare.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    MailSender.send(NewsRssActivity.this, currentFav);
+                                }
+                            });
+                            Button copyURLShare = (Button)dialog.findViewById(R.id.copy_url_list);
+                            copyURLShare.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    int sdk = android.os.Build.VERSION.SDK_INT;
+                                    if(sdk < android.os.Build.VERSION_CODES.HONEYCOMB) {
+                                        android.text.ClipboardManager clipboard = (android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                        clipboard.setText(currentFav.getLink().toString());
+                                    } else {
+                                        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                        ClipData clip = ClipData.newPlainText("label",currentFav.getLink().toString());
+                                        clipboard.setPrimaryClip(clip);
+                                    }
+                                    Toast toast = Toast.makeText(getApplicationContext(),"URL Copied ",Toast.LENGTH_SHORT);
+                                    toast.show();
+
+                                }
+                            });
+
+                            dialog.show();
+                        }
                     });
 
                     break;
