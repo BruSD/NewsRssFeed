@@ -245,7 +245,20 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         shareButtonTest.setOnClickListener(ocShare);
 
 
-        ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
+        final ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
+        try {
+            LocalDB.open(getApplicationContext());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+            addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_button));
+        }   else {
+            addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_push_button));
+
+        }
+        LocalDB.close();
+
         addToFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -254,7 +267,17 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 } catch (SQLException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
-                LocalDB.addArticle(currentArticle);
+                if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                    LocalDB.addArticle(currentArticle);
+                    addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_push_button));
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }else{
+                    LocalDB.deleteArticle(currentArticle.getGuid());
+                    addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_button));
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }
                 LocalDB.close();
             }
         });
@@ -329,6 +352,8 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 return gd.onTouchEvent(event);  //To change body of implemented methods use File | Settings | File Templates.
             }
         });
+
+
     }
 
 

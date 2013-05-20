@@ -88,7 +88,7 @@ public class LocalDB {
 	
 	static public void deleteArticle (String guid){
 	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
-	        + " = " + guid, null);
+	        + " = " + "'"+guid+"'", null);
 	}
 
     static public boolean isArticleFavotites (String guid){

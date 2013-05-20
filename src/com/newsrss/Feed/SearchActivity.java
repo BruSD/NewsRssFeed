@@ -70,15 +70,32 @@ public class SearchActivity extends shaerToSocial {
         searchStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (searchQueryHolder.getText().length() != 0){
-                    searchQueryId = searchQueryHolder.getText().toString();
-                    ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
 
-                serchArticle();
+                if (searchQueryHolder.getText().length() != 0){
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    if  (!LocalDB.isSearchInDB(searchQueryHolder.getText().toString()))    {
+
+
+                        ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+                        searchQueryId = searchQueryHolder.getText().toString();
+                        serchArticle();
+
+
+
+                    }else{
+                        ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+                        searchQueryId = searchQueryHolder.getText().toString();
+                        serchArticle();
+                    }
                 }else {
                     Toast toast = Toast.makeText(SearchActivity.this, "Enter Search Query", Toast.LENGTH_LONG);
                     toast.show();
                 }
+
 
             }
         });
@@ -236,7 +253,13 @@ public class SearchActivity extends shaerToSocial {
         public View getView(final int position, View convertView, ViewGroup parent) {
             SimpleDateFormat sdf;
             String dateArticleV ;
-            ViewHolder holder;
+            final ViewHolder holder;
+
+            try {
+                LocalDB.open(getApplicationContext());
+            } catch (SQLException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
 
                     final Article currentArticle = DataStorage.getSearchList().get(position);
 
@@ -270,21 +293,37 @@ public class SearchActivity extends shaerToSocial {
 
                     });
 
-                    holder.favBtn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            try {
-                                LocalDB.open(getApplicationContext());
-                            } catch (SQLException e) {
-                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                            }
-                            Toast toast = Toast.makeText(getApplicationContext(),"Add to Favorit article N " +position ,Toast.LENGTH_SHORT);
-                            toast.show();
-                            Article currentArticle1 = DataStorage.getArticleList().get(position);
+            if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+            }   else {
+                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
 
-                            LocalDB.addArticle(currentArticle1);
-                        }
-                    });
+            }
+            LocalDB.close();
+
+            holder.favBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
+                    if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                        LocalDB.addArticle(currentArticle);
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
+                        Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
+                        toast.show();
+                    }else{
+                        LocalDB.deleteArticle(currentArticle.getGuid());
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+                        Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                    LocalDB.close();
+
+                }
+            });
 
                     holder.shareBtn.setOnClickListener(new View.OnClickListener() {
                         @Override

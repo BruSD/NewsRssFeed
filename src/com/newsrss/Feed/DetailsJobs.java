@@ -299,7 +299,7 @@ public class DetailsJobs extends shaerToSocial implements GestureDetector.OnGest
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
 
-        /*
+
         String data = "<html><head>" +
                 "<style type=\"text/css\">" +
                 "body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; }" +
@@ -313,8 +313,8 @@ public class DetailsJobs extends shaerToSocial implements GestureDetector.OnGest
                 "ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}" +
                 "</style>"+
                 "</head><body>" + currentArticle.getDescription()+"</body></html>";
-        descriptionArticle.loadDataWithBaseURL(null, data, "text/html", "utf-8", null);  */
-        descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
+        descriptionArticle.loadDataWithBaseURL(null, data, "text/html", "utf-8", null);
+        //descriptionArticle.loadData("<html><body>" + currentArticle.getDescription() + "</body></html>", "text/html; charset=UTF-8", null);
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)

@@ -31,7 +31,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
 
 
     Article currentArticle = null;
-    Article nextArticle = null;
+
     int positionArt;
     TextView titleArticle;
     TextView dateArticle;
@@ -89,10 +89,50 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
 
         }
 
+        ShowArticle();
+        final ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
+
+        try {
+            LocalDB.open(getApplicationContext());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+            addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_button));
+        }   else {
+            addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_push_button));
+
+        }
+        LocalDB.close();
+
+        addToFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    LocalDB.open(getApplicationContext());
+                } catch (SQLException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+                if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                    LocalDB.addArticle(currentArticle);
+                    addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_push_button));
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }else{
+                    LocalDB.deleteArticle(currentArticle.getGuid());
+                    addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_button));
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                LocalDB.close();
+            }
+        });
+
         Intent startDetailArticle = getIntent();
         positionArt = startDetailArticle.getIntExtra("position", -1);
 
-        ShowArticle();
+
 
 
         ImageButton backBtn = (ImageButton)findViewById(R.id.back_btn);
@@ -241,19 +281,8 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
         shareButtonTest.setOnClickListener(ocShare);
 
 
-        ImageButton addToFav = (ImageButton)findViewById(R.id.article_fav);
-        addToFav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    LocalDB.open(getApplicationContext());
-                } catch (SQLException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
-                LocalDB.addArticle(currentArticle);
-                LocalDB.close();
-            }
-        });
+
+
 
         //Double Tap
         gd = new GestureDetector(DetailsFavorites.this);
@@ -329,12 +358,18 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
 
 
     public void ShowArticle(){
+        try {
+            LocalDB.open(getApplicationContext());
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
         currentArticle = LocalDB.getArticle(positionArt);
         String dateArticleV;
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
         dateArticleV = sdf.format(currentArticle.getPubDate());
         titleArticle.setText(currentArticle.getTitle());
         dateArticle.setText(dateArticleV);
+
 
         String data = "<html><head>" +
                 "<style type=\"text/css\">" +
@@ -352,7 +387,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
         descriptionArticle.loadDataWithBaseURL(null, data, "text/html", "utf-8", null);
         //descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
         //descriptionArticle.loadData("<html><body style='margin:0;padding:0;background-color:#efeee9'> <style type='text/css'> body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; } ul{list-style-type:none; padding-left:1.5em;} ul li{margin-bottom:1em;text-indent:5px;} ul li:before{margin-left:-.5em;  position:relative; font-size:2em; content:'\\2022'; color:#860945; left:-.15em; top:.2em;} img{border:1px ridge #777774;} p{margin:10px 0;} a{font-weight:bold;text-decoration:none; color:#860945;}ol{counter-reset:my-counter;} ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}</style>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
-
+        LocalDB.close();
     }
 
 

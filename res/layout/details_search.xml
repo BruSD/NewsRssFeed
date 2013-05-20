@@ -78,6 +78,9 @@
                         android:adjustViewBounds="true"
                         android:layout_weight="1"
                         />
+                <ImageButton
+                        android:id="@+id/article_fav"
+                        style="@style/Articles_StarButton"/>
 
 
             </LinearLayout>

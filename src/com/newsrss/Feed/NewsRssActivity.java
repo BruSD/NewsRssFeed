@@ -191,7 +191,7 @@ public class NewsRssActivity extends shaerToSocial {
         public View getView(final int position, View convertView, ViewGroup parent) {
             SimpleDateFormat sdf;
             String dateArticleV ;
-            ViewHolder holder;
+            final ViewHolder holder;
             switch (idLayout)  {
                 case 1:
                     miniSwipeActivator();
@@ -233,20 +233,41 @@ public class NewsRssActivity extends shaerToSocial {
 
 
                 });
-
-            holder.favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
                     try {
                         LocalDB.open(getApplicationContext());
                     } catch (SQLException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
-                    Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
-                    toast.show();
-                    Article currentArticle1 = DataStorage.getArticleList().get(position);
+                    if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+                    }   else {
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
 
-                    LocalDB.addArticle(currentArticle1);
+                    }
+                    LocalDB.close();
+
+
+
+                    holder.favBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            try {
+                                LocalDB.open(getApplicationContext());
+                            } catch (SQLException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            }
+                            if (!LocalDB.isArticleFavotites(currentArticle.getGuid())){
+                                LocalDB.addArticle(currentArticle);
+                                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
+                                Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
+                                toast.show();
+                            }else{
+                                LocalDB.deleteArticle(currentArticle.getGuid());
+                                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+                                Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            LocalDB.close();
 
                 }
             });
@@ -387,7 +408,11 @@ public class NewsRssActivity extends shaerToSocial {
 
                 case 4:
                     miniSwipeActivator();
-
+                    try {
+                        LocalDB.open(getApplicationContext());
+                    } catch (SQLException e) {
+                        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    }
                     final Article currentFav = LocalDB.getArticle(position);
 
                     if (convertView == null) {
@@ -421,6 +446,39 @@ public class NewsRssActivity extends shaerToSocial {
 
 
                     });
+
+                    if (!LocalDB.isArticleFavotites(currentFav.getGuid())){
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+                    }   else {
+                        holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
+
+                    }
+                    LocalDB.close();
+
+                    holder.favBtn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            try {
+                                LocalDB.open(getApplicationContext());
+                            } catch (SQLException e) {
+                                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                            }
+                            if (!LocalDB.isArticleFavotites(currentFav.getGuid())){
+                                LocalDB.addArticle(currentFav);
+                                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.favorites));
+                                Toast toast = Toast.makeText(getApplicationContext(),"Article Added to Favorites " ,Toast.LENGTH_SHORT);
+                                toast.show();
+                            }else{
+                                LocalDB.deleteArticle(currentFav.getGuid());
+                                holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
+                                Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                            LocalDB.close();
+
+                        }
+                    });
+
                     holder.shareBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
