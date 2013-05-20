@@ -8,7 +8,7 @@ import android.util.Log;
 public class SQLLiteHelper extends SQLiteOpenHelper {
 
 	public static final String DATABASE_NAME  = "ArtLocalDB";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 3;
 	public static final String COLUMN_guID = "guid";
 	public static final String COLUMN_Title = "title";
 	public static final String COLUMN_Link = "link";
@@ -26,8 +26,8 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 			    "link TEXT, "+
 			    "pubDate TEXT, "+
 			    "description TEXT, "+
-			    "newstype INTEGER "+
-               // "picture BLOB "+
+			    "newstype INTEGER, "+
+                "picture BLOB "+
 		        ");";
 	
 	public SQLLiteHelper(Context context) {		
@@ -41,8 +41,9 @@ public class SQLLiteHelper extends SQLiteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-	    db.execSQL("DROP TABLE IF EXISTS " + ArtTable);
+	    db.execSQL("DROP TABLE IF EXISTS " + DATABASE_NAME);
 	    onCreate(db);		
 	}
+
 
 }

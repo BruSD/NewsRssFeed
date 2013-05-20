@@ -44,6 +44,7 @@ public class NewsRssActivity extends shaerToSocial {
     // 7 - Settings
     int idLayout;
     SlidingMenu slidingMenu;
+    private static Context context = getAppContext();
     private SwipeListView rssListView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -424,6 +425,7 @@ public class NewsRssActivity extends shaerToSocial {
                         holder.shareBtn = (ImageButton)convertView.findViewById(R.id.share_btn);
                         holder.articleTitle = (TextView)convertView.findViewById(R.id.rss_news_title);
                         holder.articleDate = (TextView)convertView.findViewById(R.id.rss_news_date);
+                        holder.articleImage = (ImageView) convertView.findViewById(R.id.rss_img_news_pass);
 
                         convertView.setTag(holder);
                     } else {
@@ -433,6 +435,13 @@ public class NewsRssActivity extends shaerToSocial {
                     sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
                     dateArticleV = sdf.format(currentFav.getPubDate());
                     holder.articleDate.setText(dateArticleV);
+                    if (currentFav.getNewsImage() == null) {
+                        holder.articleImage.setImageDrawable(getResources().getDrawable(R.drawable.default_news_icon));
+                    }
+                    else {
+                        holder.articleImage.setImageDrawable(currentFav.getNewsImage());
+                    }
+
                     rssListView.setSwipeListViewListener(new BaseSwipeListViewListener() {
                         @Override
                         public void  onClickFrontView (int position){
@@ -1280,5 +1289,8 @@ public class NewsRssActivity extends shaerToSocial {
         }
     }
 
+    public static Context getAppContext() {
+        return NewsRssActivity.context;
+    }
 }
 
