@@ -89,8 +89,6 @@ public class DetailsSearch extends shaerToSocial implements GestureDetector.OnGe
                 LocalDB.close();
             }
         });
-
-
         ImageButton backBtn = (ImageButton)findViewById(R.id.back_btn);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

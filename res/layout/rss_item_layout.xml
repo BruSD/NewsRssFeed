@@ -67,6 +67,9 @@
                     android:textSize="16sp"
                     android:paddingTop="10sp"
                     android:paddingBottom="5sp"
+                    android:maxLines="4"
+                    android:maxLength="100"
+                    android:ellipsize="marquee"
 
                     />
 
