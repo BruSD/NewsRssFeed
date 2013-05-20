@@ -40,6 +40,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
     WebView descriptionArticle;
     TextView nextTitle;
     TextView nextDate;
+    ImageView nextImage;
     LinearLayout layoutToAddSharePanel,mainArticleLayout,nextLayout;
     RelativeLayout descriptionAndNextPanel;
     LinearLayout.LayoutParams lParamsOfSharePanel;
@@ -78,6 +79,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
 
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
+        nextImage = (ImageView) findViewById(R.id.next_a_img);
 
         //FB
         Session session = Session.getActiveSession();
@@ -393,6 +395,12 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
              SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
              dateArticleV = sdf.format(nextArticle.getPubDate());
              nextDate.setText(dateArticleV);
+             if (nextArticle.getNewsImage() == null) {
+                 nextImage.setImageDrawable(getResources().getDrawable(R.drawable.default_news_icon));
+             }
+             else {
+                 nextImage.setImageDrawable(nextArticle.getNewsImage());
+             }
          }
     }
     public void ShowNextArticle(final View view){
