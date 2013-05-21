@@ -46,6 +46,8 @@ public class NewsRssActivity extends shaerToSocial {
     SlidingMenu slidingMenu;
     private static Context context = getAppContext();
     private SwipeListView rssListView;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -193,6 +195,7 @@ public class NewsRssActivity extends shaerToSocial {
             SimpleDateFormat sdf;
             String dateArticleV ;
             final ViewHolder holder;
+
             switch (idLayout)  {
                 case 1:
                     miniSwipeActivator();
@@ -431,6 +434,9 @@ public class NewsRssActivity extends shaerToSocial {
                     } else {
                         holder = (ViewHolder) convertView.getTag();
                     }
+                    if (currentFav == null)
+                        break;
+
                     holder.articleTitle.setText(currentFav.getTitle());
                     sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
                     dateArticleV = sdf.format(currentFav.getPubDate());
@@ -480,7 +486,7 @@ public class NewsRssActivity extends shaerToSocial {
                             }else{
                                 LocalDB.deleteArticle(currentFav.getGuid());
                                 holder.favBtn.setImageDrawable(getResources().getDrawable(R.drawable.purple_favorite_vhite));
-                                Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                                Toast toast = Toast.makeText(getApplicationContext(),"Article Removed from Favourites " ,Toast.LENGTH_SHORT);
                                 toast.show();
                             }
                             LocalDB.close();
