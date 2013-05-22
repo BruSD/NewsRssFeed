@@ -302,7 +302,7 @@ public class NewsRssActivity extends shaerToSocial {
                     linkeinShare.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           // createServiseToLinkedIn(1, position);
+                            createServiseToLinkedIn(1, position);
 
                         }
                     });

@@ -134,6 +134,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                createServiseToLinkedIn(1, positionArt);
                 Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
             }
         };
