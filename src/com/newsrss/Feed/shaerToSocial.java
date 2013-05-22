@@ -77,7 +77,7 @@ public class shaerToSocial extends SherlockActivity {
     String postImageURL;
     String postDiscription;
 
-    private Intent intent;
+
 
     private  Article currentArticle;
     private  Podcast currentPodcast;
@@ -90,8 +90,13 @@ public class shaerToSocial extends SherlockActivity {
 
      public void createServiseToLinkedIn(int listID,  int articleID){
          setDatetoShare(listID, articleID);
+
+         new Thread() {
+             @Override
+             public void run() {
+
          oAuthService = LinkedInOAuthServiceFactory.getInstance().createLinkedInOAuthService(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
-        System.out.println("oAuthService : " + oAuthService);
+            System.out.println("oAuthService : " + oAuthService);
 
         factory = LinkedInApiClientFactory.newInstance(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
 
@@ -99,6 +104,8 @@ public class shaerToSocial extends SherlockActivity {
         System.out.println("onCreate:linktoURL : " + liToken.getAuthorizationUrl());
         i = new Intent(Intent.ACTION_VIEW, Uri.parse(liToken.getAuthorizationUrl()));
         startActivity(i);
+             }
+         }.start();
 
 
     }
@@ -107,6 +114,7 @@ public class shaerToSocial extends SherlockActivity {
         super.onNewIntent(intent);
 
         try {
+
             linkedInImport(intent);
         } catch (NullPointerException e) {
             e.printStackTrace();
@@ -141,6 +149,7 @@ public class shaerToSocial extends SherlockActivity {
         consumer.setTokenWithSecret(accessToken.getToken(), accessToken.getTokenSecret());
 
         DefaultHttpClient httpclient = new DefaultHttpClient();
+
         HttpPost post = new HttpPost("https://api.linkedin.com/v1/people/~/shares");
         try {
             consumer.sign(post);
@@ -173,7 +182,7 @@ public class shaerToSocial extends SherlockActivity {
     }
 
 
-
+    //FB
 
     //listIDn = 1 Articl List
     //listIDn = 2 Podcast

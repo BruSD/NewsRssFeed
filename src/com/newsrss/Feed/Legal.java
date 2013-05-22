@@ -26,22 +26,25 @@ import java.net.URL;
  */
 public class Legal extends Activity {
 
-    TextView legalDescription;
+    WebView legalDescription;
     ImageButton backBtn;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.legal);
         backBtn = (ImageButton) findViewById(R.id.legal_AB_backButton);
-        legalDescription = (TextView) findViewById(R.id.legal_description);
-       // legalDescription.getSettings().setJavaScriptEnabled(true);
-       // String legalDoc = "android.resource://" + getPackageName() + "/raw/"+R.raw.legal;
-       // legalDescription.loadData("<html><body>" + "http://www.google.com" + "</body></html>", "text/html", "UTF-8");
+        legalDescription = (WebView) findViewById(R.id.legal_description);
+
+        legalDescription.getSettings().setJavaScriptEnabled(true);
+        legalDescription.loadUrl("file:///android_res/raw/legal.html");
+        // legalDescription.getSettings().setJavaScriptEnabled(true);
+       //String legalDoc = "android.resource://" + getPackageName() + "/raw/"+R.raw.legal;
+        //legalDescription.loadData("<html><body>" + legalDoc + "</body></html>", "text/html", "UTF-8");
         //File file = new File(Environment.getExternalStorageDirectory()
-         //       + "/legal.doc");
-       // Uri uri = Uri.fromFile(file);
-       // legalDescription.loadUrl(uri.toString());
-      //  legalDescription.loadUrl(legalDoc);
+        //       + "/legal.html");
+        //Uri uri = Uri.fromFile(file);
+        //legalDescription.loadUrl(uri.toString());
+       //legalDescription.loadUrl(legalDoc);
        ImageButton.OnClickListener ocBack = new View.OnClickListener() {
            @Override
            public void onClick(View view) {

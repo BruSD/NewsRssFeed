@@ -103,7 +103,8 @@
                             android:id="@+id/contacts_Ireland_tel_text"
                             android:layout_alignLeft="@+id/contacts_IrelandTitle"
                             android:layout_below="@+id/contacts_IrelandAddr4"
-                            style="@style/Contacts_TextTel"/>
+                            style="@style/Contacts_TextTel"
+                            />
                 </RelativeLayout>
                 <RelativeLayout
                                 android:id="@+id/contacts_NI"
