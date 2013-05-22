@@ -58,7 +58,6 @@
         <activity android:name="com.newsrss.Feed.Legal"
                   />
         <activity android:name="com.newsrss.Feed.Contacts"/>
-        <activity android:name="com.newsrss.Feed.mapCAIActivity"/>
         <activity android:name="com.newsrss.Feed.SearchActivity"
                   android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.newsrss.Feed.DetailsSearch"/>
