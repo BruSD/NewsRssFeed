@@ -359,7 +359,7 @@
     </style>
 
     <style name="Contacts_Ireland">
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginLeft">12dp</item>
         <item name="android:layout_marginRight">12dp</item>
@@ -483,8 +483,8 @@
     </style>
 
     <style name="Contacts_IrelandBG">
-        <item name="android:layout_height">163dp</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">183dp</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:src">@drawable/contacts_grey_plate</item>
         <item name="android:adjustViewBounds">true</item>
         <item name="android:scaleType">fitXY</item>
@@ -492,7 +492,7 @@
 
     <style name="Contacts_NIBG">
         <item name="android:layout_height">183dp</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:src">@drawable/contacts_grey_plate</item>
         <item name="android:adjustViewBounds">true</item>
         <item name="android:scaleType">fitXY</item>
