@@ -27,6 +27,8 @@
     <orderEntry type="library" exported="" name="twitter4j-core-2.1.11" level="project" />
     <orderEntry type="module" module-name="SLV" exported="" />
     <orderEntry type="module" module-name="facebook" exported="" />
+    <orderEntry type="library" exported="" name="google-play-services" level="project" />
+    <orderEntry type="module" module-name="google-play-services_lib" exported="" />
   </component>
 </module>
 

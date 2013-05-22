@@ -1045,40 +1045,55 @@ public class NewsRssActivity extends shaerToSocial {
         View sidebarButton  = findViewById(R.id.contactSidebarButton);
         sidebarButton.setOnClickListener(new ClickListener());
 
-        ImageButton facebookGoToPage = (ImageButton)findViewById(R.id.contacts_facebook);
-        ImageButton twitterGoToPage = (ImageButton)findViewById(R.id.contacts_twitter);
-        ImageButton linkeinGoToPage = (ImageButton)findViewById(R.id.contacts_linkedin);
-
         TextView tel1Text=(TextView) findViewById(R.id.contacts_Ireland_tel_text);
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
+
         TextView tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);
         tel2Text.setText(Html.fromHtml("<b>Tel:</b> 00442 8 904 3584"));
 
         ImageView cal_btnIR = (ImageView) findViewById(R.id.contacts_callIR);
-        ImageView cal_btnNI= (ImageView) findViewById(R.id.contacts_callNI);
-
-        ImageView.OnClickListener ocCall=new View.OnClickListener() {
+        cal_btnIR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:0035316377200"));
                 startActivity(callIntent);
             }
-        };
+        });
 
-        ImageView.OnClickListener ocCallNI=new View.OnClickListener() {
+        ImageView cal_btnNI= (ImageView) findViewById(R.id.contacts_callNI);
+        cal_btnNI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:0044289043584"));
                 startActivity(callIntent);
             }
-        };
+        });
 
+        ImageView mapIR = (ImageView) findViewById(R.id.contacts_mapIR);
+        mapIR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapIR_Intent = new Intent(NewsRssActivity.this, MapActivity.class);
+                mapIR_Intent.putExtra("map_choose", 1);
+                startActivity(mapIR_Intent);
+            }
+        });
 
-        cal_btnIR.setOnClickListener(ocCall);
-        cal_btnNI.setOnClickListener(ocCallNI);
+        ImageView mapNI = (ImageView) findViewById(R.id.contacts_mapNI);
+        mapNI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mapNI_Intent = new Intent(NewsRssActivity.this, MapActivity.class);
+                mapNI_Intent.putExtra("map_choose", 2);
+                startActivity(mapNI_Intent);
+            }
+        });
 
+        ImageButton facebookGoToPage = (ImageButton)findViewById(R.id.contacts_facebook);
+        ImageButton twitterGoToPage = (ImageButton)findViewById(R.id.contacts_twitter);
+        ImageButton linkeinGoToPage = (ImageButton)findViewById(R.id.contacts_linkedin);
         facebookGoToPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
