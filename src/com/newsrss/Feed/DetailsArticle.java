@@ -3,6 +3,7 @@ package com.newsrss.Feed;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.view.*;
 
 import android.os.Bundle;
@@ -405,24 +406,17 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
     }
     public void ShowNextArticle(final View view){
 
-        /*
-
-        try {
-            Thread.sleep(2000,0);
-        }
-        catch (InterruptedException e) {}
-        descriptionArticle.requestLayout();  */
-        //descriptionArticle.setVisibility(View.GONE);
-
         positionArt = positionArt+1;
-        //descriptionArticle.reload();
+        if (Build.VERSION.SDK_INT <= 10)
+            descriptionArticle.clearView();
 
         NextArticle();
         ShowArticle();
 
-        descriptionArticle.reload();
-        ShowArticle();
-
+        if (Build.VERSION.SDK_INT >= 14) {
+            descriptionArticle.reload();
+            ShowArticle();
+        }
         //descriptionArticle.setVisibility(View.VISIBLE);
     }
 
