@@ -67,7 +67,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
     super.onCreate(savedInstanceState);
     setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     setContentView(R.layout.details_articl);
-        getWindow().setLayout(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+        getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 
         layoutToAddSharePanel = (LinearLayout)findViewById(R.id.article_layoutToShare);
         nextLayout = (LinearLayout) findViewById(R.id.next_article);
@@ -83,8 +83,8 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         dateArticle = (TextView)findViewById(R.id.article_date);
         descriptionArticle = (WebView)findViewById(R.id.article_description);
         descriptionArticle.setBackgroundResource(R.drawable.bg_w);
-
         descriptionArticle.setBackgroundColor(0);
+        descriptionArticle.setAlwaysDrawnWithCacheEnabled(true);
 
         nextTitle = (TextView)findViewById(R.id.next_a_title);
         nextDate = (TextView)findViewById(R.id.next_a_date);
@@ -395,7 +395,6 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         descriptionArticle.loadDataWithBaseURL(null, data, "text/html", "utf-8", null);
         //descriptionArticle.loadData("<html><body>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
         //descriptionArticle.loadData("<html><body style='margin:0;padding:0;background-color:#efeee9'> <style type='text/css'> body{color:#280016; margin:0 10px; font-family:Helvetica; font-size:15px; line-height:24px; } ul{list-style-type:none; padding-left:1.5em;} ul li{margin-bottom:1em;text-indent:5px;} ul li:before{margin-left:-.5em;  position:relative; font-size:2em; content:'\\2022'; color:#860945; left:-.15em; top:.2em;} img{border:1px ridge #777774;} p{margin:10px 0;} a{font-weight:bold;text-decoration:none; color:#860945;}ol{counter-reset:my-counter;} ol li:before{content:counter(my-counter); counter-increment(my-counter); color:#860945;}</style>"+ currentArticle.getDescription()+"</body></html>", "text/html; charset=UTF-8", null);
-
     }
     public void NextArticle(){
         if ( positionArt+1 != DataStorage.getArticleList().size()) {
@@ -416,10 +415,26 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
          }
     }
     public void ShowNextArticle(final View view){
+
+        /*
+
+        try {
+            Thread.sleep(2000,0);
+        }
+        catch (InterruptedException e) {}
+        descriptionArticle.requestLayout();  */
+        //descriptionArticle.setVisibility(View.GONE);
+
         positionArt = positionArt+1;
-        ShowArticle();
+        //descriptionArticle.reload();
+
         NextArticle();
-        // TODO: Resize scroll
+        ShowArticle();
+
+        descriptionArticle.reload();
+        ShowArticle();
+
+        //descriptionArticle.setVisibility(View.VISIBLE);
     }
 
     @Override

@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" />
       <module fileurl="file://$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../ActionBarSherlock-4.2.0/library/ABS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../../Instal/ActionBarSherlock-4.2.0/library/ABS.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/ABS.iml" filepath="$PROJECT_DIR$/../../Libs/ActionBarSherlock-4.2.0/library/ABS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Instal/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" filepath="$PROJECT_DIR$/../../Instal/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" />
       <module fileurl="file://$PROJECT_DIR$/../JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" filepath="$PROJECT_DIR$/../JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Instal/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" filepath="$PROJECT_DIR$/../../Instal/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" filepath="$PROJECT_DIR$/../../Libs/JakeWharton-NineOldAndroids-9f20fd7/library/NOA.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewsFeed.iml" filepath="$PROJECT_DIR$/NewsFeed.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/SLV.iml" filepath="$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/SLV.iml" />
       <module fileurl="file://$PROJECT_DIR$/../android-swipelistview-master/src/main/SLV.iml" filepath="$PROJECT_DIR$/../android-swipelistview-master/src/main/SLV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/SLV.iml" filepath="$PROJECT_DIR$/../../Instal/android-swipelistview-master/src/main/SLV.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/android-swipelistview-master/src/main/SLV.iml" filepath="$PROJECT_DIR$/../../Libs/android-swipelistview-master/src/main/SLV.iml" />
       <module fileurl="file://$PROJECT_DIR$/../android-swipelistview-master/src/main/SLW.iml" filepath="$PROJECT_DIR$/../android-swipelistview-master/src/main/SLW.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../SlidingMenu-master/library/SM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" filepath="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/SM.iml" />
       <module fileurl="file://$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/facebook.iml" filepath="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/facebook.iml" />
+      <module fileurl="file://C:/Program Files (x86)/Android/android-sdk/extras/google/google_play_services/libproject/google-play-services_lib/google-play-services_lib.iml" filepath="C:/Program Files (x86)/Android/android-sdk/extras/google/google_play_services/libproject/google-play-services_lib/google-play-services_lib.iml" />
     </modules>
   </component>
 </project>

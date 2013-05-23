@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+            style="@style/AB">
+        <ImageView
+                android:id="@+id/map_actionBar_BG"
+                style="@style/AB_Background"/>
+        <ImageView
+                android:id="@+id/map_article_logo"
+                style="@style/AB_FirmSymbol"
+                android:layout_toRightOf="@+id/map_back_btn"/>
+        <ImageButton
+                android:id="@+id/map_back_btn"
+                style="@style/AB_BackButton"
+                />
+        <TextView
+                android:id="@+id/map_article_head"
+                style="@style/AB_FirmTitle"
+                android:layout_toRightOf="@+id/map_article_logo"/>
+    </RelativeLayout>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/map"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              class="com.google.android.gms.maps.SupportMapFragment"/>
+</LinearLayout>
