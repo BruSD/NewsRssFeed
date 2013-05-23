@@ -122,7 +122,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
                 }else{
                     LocalDB.deleteArticle(currentArticle.getGuid());
                     addToFav.setImageDrawable(getResources().getDrawable(R.drawable.articles_star_button));
-                    Toast toast = Toast.makeText(getApplicationContext(),"Article Remove from Favorites " ,Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Article Removed from Favorites " ,Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 LocalDB.close();
