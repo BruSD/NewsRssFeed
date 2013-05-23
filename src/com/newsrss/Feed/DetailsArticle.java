@@ -1,8 +1,12 @@
 package com.newsrss.Feed;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.util.Log;
 import android.view.*;
 
 import android.os.Bundle;
@@ -20,6 +24,10 @@ import android.view.ViewGroup.LayoutParams;
 
 
 import com.nineoldandroids.view.ViewHelper;
+import org.brickred.socialauth.android.DialogListener;
+import org.brickred.socialauth.android.SocialAuthAdapter;
+import org.brickred.socialauth.android.SocialAuthAdapter.Provider;
+import org.brickred.socialauth.android.SocialAuthError;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,6 +39,7 @@ import com.nineoldandroids.view.ViewHelper;
 public class DetailsArticle extends shaerToSocial implements GestureDetector.OnGestureListener  {
     private GestureDetector gd;
 
+    SocialAuthAdapter adapter;
 
     Article currentArticle = null;
     Article nextArticle = null;
@@ -134,10 +143,12 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createServiseToLinkedIn(1, positionArt);
-                Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
+                RunLinkedIn(1, positionArt, DetailsArticle.this);
+
             }
         };
+
+
 
         ImageButton.OnClickListener ocMail = new View.OnClickListener() {
             @Override
@@ -324,7 +335,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 linkedinShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        RunLinkedIn(1, positionArt, DetailsArticle.this);
                     }
                 });
 
@@ -446,4 +457,6 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
+
+
 }

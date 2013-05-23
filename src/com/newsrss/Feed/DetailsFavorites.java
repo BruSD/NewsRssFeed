@@ -169,7 +169,7 @@ public class DetailsFavorites extends shaerToSocial implements GestureDetector.O
         ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
+                RunLinkedIn(4, positionArt, DetailsFavorites.this);
             }
         };
 

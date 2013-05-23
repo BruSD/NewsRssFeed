@@ -1,6 +1,7 @@
 package com.newsrss.Feed;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,8 +10,10 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.facebook.*;
@@ -42,6 +45,9 @@ import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.brickred.socialauth.android.DialogListener;
+import org.brickred.socialauth.android.SocialAuthAdapter;
+import org.brickred.socialauth.android.SocialAuthError;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,13 +59,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class shaerToSocial extends SherlockActivity {
 
 
-    //LinkedIn
-    private LinkedInOAuthService oAuthService;
-    private LinkedInApiClientFactory factory;
-    private LinkedInRequestToken liToken;
-    private LinkedInApiClient client;
-    public static final String LINKEDIN_PREF = "GamePrefs";
-    Intent i;
+
 
     //Twitter Variable
     private TwitterApp mTwitter;
@@ -85,100 +85,60 @@ public class shaerToSocial extends SherlockActivity {
     public Session.StatusCallback statusCallback = new SessionStatusCallback();
 
 
+    //LinkedIn
+
+    SocialAuthAdapter adapter;
 
 
+    //LinkedIn
+    public void RunLinkedIn(int listID,  int articleID,Context ctx ){
+        setDatetoShare(listID, articleID);
 
-     public void createServiseToLinkedIn(int listID,  int articleID){
-         setDatetoShare(listID, articleID);
+        adapter = new SocialAuthAdapter(new ResponseListener());
 
-         new Thread() {
-             @Override
-             public void run() {
-
-         oAuthService = LinkedInOAuthServiceFactory.getInstance().createLinkedInOAuthService(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
-            System.out.println("oAuthService : " + oAuthService);
-
-        factory = LinkedInApiClientFactory.newInstance(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
-
-        liToken = oAuthService.getOAuthRequestToken(Constants.OAUTH_CALLBACK_URL);
-        System.out.println("onCreate:linktoURL : " + liToken.getAuthorizationUrl());
-        i = new Intent(Intent.ACTION_VIEW, Uri.parse(liToken.getAuthorizationUrl()));
-        startActivity(i);
-             }
-         }.start();
-
-
+        adapter.authorize(ctx, SocialAuthAdapter.Provider.LINKEDIN);
+        adapter.updateStatus(postName + postURL);
+        Toast.makeText(ctx, "Message posted on LinkedIn" , Toast.LENGTH_LONG).show();
     }
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
+    final class ResponseListener implements DialogListener {
+        @Override
+        public void onComplete(Bundle values) {
 
-        try {
+            // Variable to receive message status
+            Log.d("Share-Bar", "Authentication Successful");
 
-            linkedInImport(intent);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
+            // Get name of provider after authentication
+            final String providerName = values.getString(SocialAuthAdapter.PROVIDER);
+            Log.d("Share-Bar", "Provider Name = " + providerName);
+            //Toast.makeText(this, providerName + " connected", Toast.LENGTH_SHORT).show();
 
-    private void linkedInImport(Intent intent) {
-        String verifier = intent.getData().getQueryParameter("oauth_verifier");
-        System.out.println("liToken " + liToken);
-        System.out.println("verifier " + verifier);
 
-        LinkedInAccessToken accessToken = oAuthService.getOAuthAccessToken(liToken, verifier);
-        SharedPreferences settings = getSharedPreferences(LINKEDIN_PREF, MODE_PRIVATE);
-         final SharedPreferences.Editor edit = settings.edit();
-         edit.putString(OAuth.OAUTH_TOKEN, accessToken.getToken());
-         edit.putString(OAuth.OAUTH_TOKEN_SECRET,
-         accessToken.getTokenSecret());
-         edit.putString("linkedin_login", "valid");
-         edit.commit();
 
-        client = factory.createLinkedInApiClient(accessToken);
 
-        //client.postNetworkUpdate("LinkedIn Android app test");
+            // Please avoid sending duplicate message. Social Media Providers
+            // block duplicate messages.
 
-        Person profile = client.getProfileForCurrentUser(EnumSet.of(ProfileField.ID, ProfileField.FIRST_NAME, ProfileField.LAST_NAME, ProfileField.HEADLINE));
+                    //adapter.updateStatus(postName + postURL);
+                    //Toast.makeText(ctx, "Message posted on " + providerName, Toast.LENGTH_LONG).show();
 
-        System.out.println("First Name :: " + profile.getFirstName());
-        System.out.println("Last Name :: " + profile.getLastName());
-        System.out.println("Head Line :: " + profile.getHeadline());
-
-        OAuthConsumer consumer = new CommonsHttpOAuthConsumer(Constants.CONSUMER_KEY, Constants.CONSUMER_SECRET);
-        consumer.setTokenWithSecret(accessToken.getToken(), accessToken.getTokenSecret());
-
-        DefaultHttpClient httpclient = new DefaultHttpClient();
-
-        HttpPost post = new HttpPost("https://api.linkedin.com/v1/people/~/shares");
-        try {
-            consumer.sign(post);
-            post.setHeader("content-type", "text/XML");
-            String myEntity = "<share><comment>"+postName+"</comment>" +
-                    "<content>" +
-                    "<submitted-url>"+postURL+"</submitted-url>"
-                    +"</content>"+
-                    "<visibility><code>anyone</code></visibility>" +
-                    "</share>";
-            post.setEntity(new StringEntity(myEntity));
-            org.apache.http.HttpResponse response = httpclient.execute(post);
-            // Get the response
-            BufferedReader rd = new BufferedReader
-                    (new InputStreamReader(response.getEntity().getContent()));
-            StringBuffer strBfr = new StringBuffer();
-            String line = "";
-            while ((line = rd.readLine()) != null) {
-
-                strBfr.append(line);
-            }
-            System.out.println("Response is : "+strBfr.toString());
-            Toast.makeText(getApplicationContext(), strBfr.toString(), Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
 
+        @Override
+        public void onError(SocialAuthError error) {
+            error.printStackTrace();
+            Log.d("Share-Bar", error.getMessage());
+        }
 
+        @Override
+        public void onCancel() {
+            Log.d("Share-Bar", "Authentication Cancelled");
+        }
+
+        @Override
+        public void onBack() {
+            Log.d("Share-Bar", "Dialog Closed by pressing Back Key");
+
+        }
     }
 
 
