@@ -45,24 +45,16 @@ public class MapActivity extends FragmentActivity {
         int mapChoose = getIntent().getIntExtra("map_choose", -1);
 
         if (mapChoose == 1)
-            showDublin();
+            showPlace(Dublin);
         else
         if (mapChoose == 2)
-            showBelfast();
-
+            showPlace(Belfast);
     }
 
-    private void showDublin(){
-        Marker dublin = map.addMarker(new MarkerOptions().position(Dublin)
+    private void showPlace(LatLng somePlace) {
+        Marker place = map.addMarker(new MarkerOptions().position(somePlace)
                 .title("Chartered Accountants Ireland"));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Dublin, 10));
-        map.animateCamera(CameraUpdateFactory.zoomTo(17), 2000, null);
-    }
-
-    private void showBelfast(){
-        Marker belfast = map.addMarker(new MarkerOptions().position(Belfast)
-                .title("Chartered Accountants Ireland"));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(Belfast, 10));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(somePlace, 10));
         map.animateCamera(CameraUpdateFactory.zoomTo(17), 2000, null);
     }
 
