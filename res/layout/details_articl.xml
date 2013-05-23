@@ -104,8 +104,10 @@
                             android:layout_height="wrap_content"
                             android:layout_width="match_parent"
                             android:orientation="horizontal"
-                            android:onClick="ShowNextArticle" android:layout_marginTop="15dp"
-                            android:layout_marginLeft="18dp" android:layout_marginRight="18dp"
+                            android:onClick="ShowNextArticle"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginRight="18dp"
                             android:layout_below="@+id/article_description">
                         <ImageView
                                 android:id="@+id/next_a_img"

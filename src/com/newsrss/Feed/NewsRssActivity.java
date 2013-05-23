@@ -1116,7 +1116,6 @@ public class NewsRssActivity extends shaerToSocial {
             }
         });
 
-
     }
 
     public void showSettingsFromSideBar(final View view){
