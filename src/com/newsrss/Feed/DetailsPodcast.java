@@ -284,7 +284,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         ImageButton.OnClickListener ocLinkedIn = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Share LinkedIn" ,Toast.LENGTH_SHORT).show();
+                RunLinkedIn(2, position, DetailsPodcast.this);
             }
         };
 
@@ -451,7 +451,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                 linkedinShareTo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        RunLinkedIn(2, position, DetailsPodcast.this);
                     }
                 });
 
