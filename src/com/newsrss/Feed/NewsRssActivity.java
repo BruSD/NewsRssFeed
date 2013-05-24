@@ -1097,7 +1097,7 @@ public class NewsRssActivity extends shaerToSocial {
         facebookGoToPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/CharteredAccountantsIreland"));
                 startActivity(myIntent);
             }
         });
@@ -1161,7 +1161,7 @@ public class NewsRssActivity extends shaerToSocial {
         facebookGoToPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/CharteredAccountantsIreland"));
                 startActivity(myIntent);
             }
         });
