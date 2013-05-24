@@ -1051,7 +1051,7 @@ public class NewsRssActivity extends shaerToSocial {
         TextView tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);
         tel2Text.setText(Html.fromHtml("<b>Tel:</b> 00442 8 904 3584"));
 
-        ImageView cal_btnIR = (ImageView) findViewById(R.id.contacts_callIR);
+        RelativeLayout cal_btnIR = (RelativeLayout) findViewById(R.id.contacts_IrelandCall);
         cal_btnIR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1061,7 +1061,7 @@ public class NewsRssActivity extends shaerToSocial {
             }
         });
 
-        ImageView cal_btnNI= (ImageView) findViewById(R.id.contacts_callNI);
+        RelativeLayout cal_btnNI = (RelativeLayout) findViewById(R.id.contacts_NICall);
         cal_btnNI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -1071,7 +1071,7 @@ public class NewsRssActivity extends shaerToSocial {
             }
         });
 
-        ImageView mapIR = (ImageView) findViewById(R.id.contacts_mapIR);
+        RelativeLayout mapIR = (RelativeLayout) findViewById(R.id.contacts_IrelandMap);
         mapIR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1081,7 +1081,7 @@ public class NewsRssActivity extends shaerToSocial {
             }
         });
 
-        ImageView mapNI = (ImageView) findViewById(R.id.contacts_mapNI);
+        RelativeLayout mapNI = (RelativeLayout) findViewById(R.id.contacts_NIMap);
         mapNI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1097,7 +1097,7 @@ public class NewsRssActivity extends shaerToSocial {
         facebookGoToPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/CharteredAccountantsIreland"));
                 startActivity(myIntent);
             }
         });
@@ -1161,8 +1161,9 @@ public class NewsRssActivity extends shaerToSocial {
         facebookGoToPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/groups/303317250605/?fref=ts"));
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/CharteredAccountantsIreland"));
                 startActivity(myIntent);
+
             }
         });
         twitterGoToPage.setOnClickListener(new View.OnClickListener() {
