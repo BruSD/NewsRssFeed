@@ -33,7 +33,8 @@
     </RelativeLayout>
     <LinearLayout
             style="@style/Settings_MainPlate"
-            android:id="@+id/settings_mainPlate">
+            android:id="@+id/settings_mainPlate"
+            >
         <RelativeLayout
                 style="@style/Settings_LegalLayout"
                 android:id="@+id/settings_legalLayout">
@@ -58,7 +59,10 @@
         </RelativeLayout>
         <RelativeLayout
                 style="@style/Settings_RateLayout"
-                android:id="@+id/settings_rateLayout">
+                android:id="@+id/settings_rateLayout"
+
+
+                android:visibility="gone">
             <ImageView style="@style/Settings_LegalRateFeedbackBG"
                        android:id="@+id/settings_rateBG" />
             <ImageView android:id="@+id/settings_arrow"

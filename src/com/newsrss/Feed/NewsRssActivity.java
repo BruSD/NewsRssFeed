@@ -1163,6 +1163,7 @@ public class NewsRssActivity extends shaerToSocial {
             public void onClick(View v) {
                 Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/CharteredAccountantsIreland"));
                 startActivity(myIntent);
+
             }
         });
         twitterGoToPage.setOnClickListener(new View.OnClickListener() {
