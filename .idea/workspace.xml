@@ -3,7 +3,7 @@
   <component name="AndroidDesignerProfile">
     <option name="fullProfile">
       <profile>
-        <option name="device" value="2.7in QVGA" />
+        <option name="device" value="4in WVGA (Nexus S)" />
         <option name="deviceConfiguration" value="Portrait" />
         <option name="localeLanguage" value="es" />
         <option name="targetHashString" value="android-17" />
@@ -15,11 +15,12 @@
   <component name="AndroidLayoutPreviewToolWindow">
     <option name="state">
       <GlobalState>
-        <option name="device" value="3.7in WVGA (Nexus One)" />
+        <option name="device" value="2.7in QVGA" />
         <option name="dockMode" value="" />
         <option name="nightMode" value="notnight" />
         <option name="targetHashString" value="android-10" />
-        <option name="theme" value="Theme.Black.NoTitleBar" />
+        <option name="theme" value="Theme.Sherlock.Light.NoActionBar" />
+        <option name="visible" value="false" />
       </GlobalState>
     </option>
   </component>
@@ -28,16 +29,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3251f52-7116-443f-9a75-eed7acd4a2fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/search_layout.xml" afterPath="$PROJECT_DIR$/res/layout/search_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/styles.xml" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" afterPath="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" afterPath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NewsFeed.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369311951774" ignored="false" />
-    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369300304926" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366289089329" ignored="false" />
-    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369233618514" ignored="false" />
+    <file path="/Dummy.txt" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369377645568" ignored="false" />
+    <file path="/NewsRssActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369223695182" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369214711561" ignored="false" />
+    <file path="/fragment.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369302317286" ignored="false" />
     <file path="/MyCAdapter.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365499650624" ignored="false" />
     <file path="/main.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365843868665" ignored="false" />
     <file path="/a.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366041428925" ignored="false" />
@@ -46,7 +48,7 @@
     <file path="/details_articl.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368608562633" ignored="false" />
     <file path="/DetailsArticl.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365671112347" ignored="false" />
     <file path="/details_podcast.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366902064164" ignored="false" />
-    <file path="/DetailsPodcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369299999499" ignored="false" />
+    <file path="/DetailsPodcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368714831571" ignored="false" />
     <file path="/DataStarage.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365587903266" ignored="false" />
     <file path="/Job.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365585677343" ignored="false" />
     <file path="/DataStorage.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366017036377" ignored="false" />
@@ -54,38 +56,33 @@
     <file path="/Podcast.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365585621699" ignored="false" />
     <file path="/JobParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365587202044" ignored="false" />
     <file path="/strings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366899583970" ignored="false" />
-    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369308725541" ignored="false" />
+    <file path="/DetailsArticle.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369310428296" ignored="false" />
     <file path="/ArticleParser.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1365675311372" ignored="false" />
-    <file path="/styles.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369314407680" ignored="false" />
+    <file path="/styles.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368015588056" ignored="false" />
     <file path="$USER_HOME$/.IdeaIC12/system/compile-server/newsfeed_ceeba28c/targets/java-production/NewsFeed/android/generated_sources/aapt/com/newsrss/Feed/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366108536410" ignored="false" />
     <file path="$USER_HOME$/.IdeaIC12/system/compile-server/newsfeed_ceeba28c/targets/java-production/NewsFeed/android/generated_sources/aapt/com/actionbarsherlock/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366108536411" ignored="false" />
     <file path="/DetailsSettings.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367317244021" ignored="false" />
     <file path="/LocalDB.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368795720950" ignored="false" />
-    <file path="/Legal.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369215346366" ignored="false" />
+    <file path="/Legal.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367231662588" ignored="false" />
     <file path="/Searches.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368718852503" ignored="false" />
     <file path="/Contacts.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366717814253" ignored="false" />
-    <file path="/contacts.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369223942002" ignored="false" />
+    <file path="/contacts.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897268703" ignored="false" />
     <file path="$PROJECT_DIR$/../../Libs/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368795892811" ignored="false" />
     <file path="/share_panel.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366721417292" ignored="false" />
     <file path="/details_settings.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366897129840" ignored="false" />
-    <file path="/legal.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369212619436" ignored="false" />
+    <file path="/legal.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1366804761206" ignored="false" />
     <file path="/SQLLiteHelper.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367923021208" ignored="false" />
     <file path="$PROJECT_DIR$/../../Libs/JakeWharton-NineOldAndroids-9f20fd7/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367921568315" ignored="false" />
     <file path="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367921872698" ignored="false" />
     <file path="/SwipeListView.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1367922022587" ignored="false" />
     <file path="/LoginButton.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368013120709" ignored="false" />
-    <file path="/DetailsJobs.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369300085552" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369307602163" ignored="false" />
-    <file path="/shaerToSocial.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369299260752" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/SlidingMenu-master/library/gen/com/slidingmenu/lib/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369210176230" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/exemplSOCIAL/examples/custom-ui/gen/org/brickred/customui/BuildConfig.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369229903976" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/exemplSOCIAL/examples/custom-ui/gen/org/brickred/customui/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369229903976" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/exemplSOCIAL/examples/custom-ui/src/org/brickred/customui/CustomUI.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369232754966" ignored="false" />
-    <file path="$PROJECT_DIR$/../../Instal/exemplSOCIAL/examples/share-button/src/org/brickred/socialshare/ShareButtonActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369234885517" ignored="false" />
-    <file path="/ShareButtonActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369234885517" ignored="false" />
-    <file path="/DetailsFavorites.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369300220695" ignored="false" />
-    <file path="/SearchActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369300371943" ignored="false" />
-    <file path="/search_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369314538365" ignored="false" />
+    <file path="/DetailsJobs.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1368801610033" ignored="false" />
+    <file path="$PROJECT_DIR$/../MapTest/gen/com/mobilesoft364/MapTest/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369212293860" ignored="false" />
+    <file path="$PROJECT_DIR$/../MapTest/project.properties" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369212864489" ignored="false" />
+    <file path="/map_layout.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369224729983" ignored="false" />
+    <file path="/MapActivity.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369303764256" ignored="false" />
+    <file path="$PROJECT_DIR$/../MapTest/AndroidManifest.xml" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369214724960" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/newsrss/Feed/R.java" changelist="d3251f52-7116-443f-9a75-eed7acd4a2fc" time="1369319594457" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,19 +145,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SearchActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SearchActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="17" selection-start="2096" selection-end="2096" vertical-scroll-proportion="-16.32">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search_layout.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="search_layout.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/search_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="24" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.46977547">
+            <state line="45" column="34" selection-start="1385" selection-end="1385" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -169,10 +157,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
+      <file leaf-file-name="DetailsArticle.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="833" column="50" selection-start="37560" selection-end="37560" vertical-scroll-proportion="-14.6">
+            <state line="431" column="33" selection-start="19216" selection-end="19216" vertical-scroll-proportion="0.5862069">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SearchParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="13" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -204,22 +201,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/res/layout/legal.xml" />
-        <option value="$PROJECT_DIR$/res/layout/contacts.xml" />
-        <option value="$PROJECT_DIR$/assets/oauth_consumer.properties" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/shaerToSocial.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/SearchActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsFavorites.java" />
-        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java" />
+        <option value="$PROJECT_DIR$/../facebook-android-sdk-3.0.1/facebook/src/com/facebook/widget/LoginButton.java" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/res/layout/search_layout.xml" />
+        <option value="$PROJECT_DIR$/res/layout/share_panel_top.xml" />
+        <option value="$PROJECT_DIR$/res/layout/details_podcast.xml" />
+        <option value="$PROJECT_DIR$/res/layout/details_jobs.xml" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/Searches.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java" />
+        <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/res/layout/map_layout.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/details_articl.xml" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/MapActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java" />
       </list>
     </option>
   </component>
@@ -228,9 +225,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="22" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -279,6 +276,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -308,7 +306,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Feed" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,14 +327,9 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,13 +341,13 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.externalTools" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="last_opened_file_path" value="C:/Android/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar!/" />
+    <property name="last_opened_file_path" value="C:/Program Files (x86)/Android/android-sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar!/" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="4df162a60b876f33" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Api17" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
@@ -360,7 +357,6 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\layout" />
       <recent name="C:\Program Files\Android\workspace\NewsRssFeed\res\drawable-mdpi" />
       <recent name="D:\Dewelopment\IdeaPro\NewsRssFeed\res\drawable-mdpi" />
     </key>
@@ -732,31 +728,35 @@
       <created>1368798866325</created>
       <updated>1368798866325</updated>
     </task>
-    <task id="LOCAL-00034" summary="Implement Legal View">
-      <created>1369213746741</created>
-      <updated>1369213746741</updated>
+    <task id="LOCAL-00034" summary="image of next article">
+      <created>1369060255869</created>
+      <updated>1369060255869</updated>
     </task>
-    <task id="LOCAL-00035" summary="Implement Legal View">
-      <created>1369222566766</created>
-      <updated>1369222566766</updated>
+    <task id="LOCAL-00035" summary="add google map">
+      <created>1369225567450</created>
+      <updated>1369225567450</updated>
     </task>
-    <task id="LOCAL-00036" summary="Default news Icon">
-      <created>1369223161170</created>
-      <updated>1369223161170</updated>
+    <task id="LOCAL-00036" summary="gooogle map (after merge)">
+      <created>1369228158489</created>
+      <updated>1369228158489</updated>
     </task>
-    <task id="LOCAL-00037" summary="Contact fix tel position">
-      <created>1369226309566</created>
-      <updated>1369226309566</updated>
+    <task id="LOCAL-00037" summary="fix white space problem">
+      <created>1369302598539</created>
+      <updated>1369302598539</updated>
     </task>
-    <task id="LOCAL-00038" summary="LinkedIN posting">
-      <created>1369300962442</created>
-      <updated>1369300962442</updated>
+    <task id="LOCAL-00038" summary="fix white space problem (after merge)">
+      <created>1369303953454</created>
+      <updated>1369303953454</updated>
     </task>
-    <task id="LOCAL-00039" summary="Legal Fix">
-      <created>1369311968903</created>
-      <updated>1369311968903</updated>
+    <task id="LOCAL-00039" summary="fix white space problem (part 2)">
+      <created>1369312020095</created>
+      <updated>1369312020095</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="merge (part 2)">
+      <created>1369313034785</created>
+      <updated>1369313034785</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -780,33 +780,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27942795" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.439523" sideWeight="0.84166664" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37339744" sideWeight="0.72057205" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39693356" sideWeight="0.75824964" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5758092" sideWeight="0.75824964" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994528" sideWeight="0.22238164" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22668579" sideWeight="0.38440493" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5239398" sideWeight="0.48684916" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28382838" sideWeight="0.47361112" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53355336" sideWeight="0.8611111" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5229983" sideWeight="0.48684916" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4020443" sideWeight="0.8611111" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33105335" sideWeight="0.47184986" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2682927" sideWeight="0.3994528" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.333691" sideWeight="0.7861142" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175213" sideWeight="0.72057205" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43234324" sideWeight="0.98709035" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1" sideWeight="0.7649063" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23787878" sideWeight="0.560477" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5417377" sideWeight="0.776901" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09924243" sideWeight="0.8943782" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26818183" sideWeight="0.7649063" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2469697" sideWeight="0.8943782" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19878604" sideWeight="0.6149915" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31175467" sideWeight="0.47361112" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -852,7 +852,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Legal Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge (part 2)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -866,8 +866,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Non complete Side Bar" />
-    <MESSAGE value="Load Lists only one time." />
     <MESSAGE value="Design News and Podcasts ListView" />
     <MESSAGE value="Basic design to side bar and OnClick event to all side bar element" />
     <MESSAGE value="Set set the background image to WebView" />
@@ -886,11 +884,13 @@
     <MESSAGE value="TopSharePanel on Jobs and podcast view." />
     <MESSAGE value="Fix with Get10Searches" />
     <MESSAGE value="design" />
-    <MESSAGE value="Implement Legal View" />
-    <MESSAGE value="Default news Icon" />
-    <MESSAGE value="Contact fix tel position" />
-    <MESSAGE value="LinkedIN posting" />
-    <MESSAGE value="Legal Fix" />
+    <MESSAGE value="image of next article" />
+    <MESSAGE value="add google map" />
+    <MESSAGE value="gooogle map (after merge)" />
+    <MESSAGE value="fix white space problem" />
+    <MESSAGE value="fix white space problem (after merge)" />
+    <MESSAGE value="fix white space problem (part 2)" />
+    <MESSAGE value="merge (part 2)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -922,113 +922,124 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/libs/socialauth-4.0.jar!/org/brickred/socialauth/plugin/Plugin.class">
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/LocalDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="63" selection-start="321" selection-end="321" vertical-scroll-proportion="0.17662337" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/socialauth-4.0.jar!/org/brickred/socialauth/AuthProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="89" selection-start="2000" selection-end="2000" vertical-scroll-proportion="0.80845445" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/socialauth-android-2.0.jar!/org/brickred/socialauth/android/Util.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="65" selection-start="958" selection-end="958" vertical-scroll-proportion="0.4857143" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/socialauth-android-2.0.jar!/org/brickred/socialauth/android/SocialAuthAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="2345" selection-end="2345" vertical-scroll-proportion="0.76354027" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/Legal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="62" selection-start="675" selection-end="675" vertical-scroll-proportion="0.39766082">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsFavorites.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="89" selection-start="4976" selection-end="4976" vertical-scroll-proportion="0.42105263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="257" column="36" selection-start="10673" selection-end="10681" vertical-scroll-proportion="0.38934427">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsPodcast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="449" column="34" selection-start="19294" selection-end="19300" vertical-scroll-proportion="0.38934427">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="77" selection-start="445" selection-end="445" vertical-scroll-proportion="0.37918216">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/MapActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="84" selection-start="950" selection-end="950" vertical-scroll-proportion="0.5633528">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="89" selection-start="12332" selection-end="12332" vertical-scroll-proportion="0.9621053">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="522" column="49" selection-start="23859" selection-end="23859" vertical-scroll-proportion="0.0331384">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/shaerToSocial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="25" selection-start="3052" selection-end="3052" vertical-scroll-proportion="0.0331384">
+        <state line="92" column="26" selection-start="3602" selection-end="3602" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="17" selection-start="2096" selection-end="2096" vertical-scroll-proportion="-16.32">
+        <state line="105" column="0" selection-start="3942" selection-end="3942" vertical-scroll-proportion="2.6584363">
+          <folding>
+            <element signature="e#4970#4971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsJobs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="0" selection-start="5114" selection-end="5114" vertical-scroll-proportion="3.3580246">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="415" selection-end="415" vertical-scroll-proportion="0.33266532">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/contacts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="44" selection-start="2823" selection-end="2823" vertical-scroll-proportion="0.051359516" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="833" column="50" selection-start="37560" selection-end="37560" vertical-scroll-proportion="-14.6">
+        <state line="284" column="17" selection-start="13165" selection-end="13165" vertical-scroll-proportion="0.33427763" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/map_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="19" selection-start="624" selection-end="624" vertical-scroll-proportion="0.4652568" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="63" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.7522124">
+          <folding>
+            <element signature="tag#activity#1;tag#application#0;tag#manifest#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/details_articl.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="28" selection-start="5495" selection-end="5495" vertical-scroll-proportion="0.88235295">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/MailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="31" selection-start="452" selection-end="452" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/socialauth-android-2.0.jar!/org/brickred/socialauth/android/SocialAuthAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.21091811" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/MapActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="22" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.38115633">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/NewsRssActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="900" column="37" selection-start="38237" selection-end="38244" vertical-scroll-proportion="0.037444934">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/search_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="24" selection-start="1563" selection-end="1563" vertical-scroll-proportion="0.46977547">
+        <state line="45" column="34" selection-start="1385" selection-end="1385" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/SearchParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="13" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/newsrss/Feed/DetailsArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="431" column="33" selection-start="19216" selection-end="19216" vertical-scroll-proportion="0.5862069">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
@@ -1094,7 +1105,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>NewsFeed</last-edited>
+          <last-edited>google-play-services_lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1118,7 +1129,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>google-play-services</last-edited>
+          <last-edited>twitter4j-core-2.1.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

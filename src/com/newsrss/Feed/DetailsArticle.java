@@ -418,6 +418,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
     public void ShowNextArticle(final View view){
 
         positionArt = positionArt+1;
+
         if (Build.VERSION.SDK_INT <= 10)
             descriptionArticle.clearView();
 
