@@ -30,8 +30,8 @@ public class Contacts extends Activity {
         tel1Text.setText(Html.fromHtml("<b>Tel:</b> 00353 1 637 7200"));
         tel2Text=(TextView) findViewById(R.id.contacts_NI_tel_text);
         tel2Text.setText(Html.fromHtml("<b>Tel:</b> 00442 8 904 3584"));
-        cal_btnIR=(ImageView) findViewById(R.id.contacts_callIR);
-        cal_btnNI=(ImageView) findViewById(R.id.contacts_callNI);
+       // cal_btnIR=(ImageView) findViewById(R.id.contacts_callIR);
+        //cal_btnNI=(ImageView) findViewById(R.id.contacts_callNI);
 
         ImageView.OnClickListener ocCall=new View.OnClickListener() {
             @Override

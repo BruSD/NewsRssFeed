@@ -38,22 +38,15 @@
                 <RelativeLayout
                         android:id="@+id/contacts_Ireland"
                         style="@style/Contacts_Ireland">
-                    <ImageView
-                            android:id="@+id/contacts_irelandBG"
-                            style="@style/Contacts_IrelandBG"/>
                     <TextView
                             android:id="@+id/contacts_IrelandTitle"
                             style="@style/Contacts_CountryTitle"
                             android:text="@string/contacts_IrelandTitle"/>
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:layout_alignRight="@+id/contacts_irelandBG"
-                            android:layout_alignTop="@+id/contacts_irelandBG"
+                            android:layout_height="wrap_content" android:layout_alignRight="@+id/contacts_separator"
                             android:id="@+id/contacts_IrelandMap"
                             style="@style/Contacts_MapLayout">
-                        <ImageView
-                                android:id="@+id/contacts_mapIR"
-                                style="@style/Contacts_Map"/>
                         <TextView
                                 android:id="@+id/contacts_mapText"
                                 style="@style/Contacts_TextMap" android:text="@string/contacts_textMap"/>
@@ -91,9 +84,6 @@
                                     android:layout_toRightOf="@+id/contacts_Ireland_tel_text"
                                     android:layout_alignTop="@+id/contacts_Ireland_tel_text"
                                     style="@style/Contacts_CallLayout">
-                        <ImageView
-                                android:id="@+id/contacts_callIR"
-                                style="@style/Contacts_Call"/>
                         <TextView
                                 android:id="@+id/contacts_callText"
                                 style="@style/Contacts_TextCall"
@@ -109,19 +99,12 @@
                 <RelativeLayout
                                 android:id="@+id/contacts_NI"
                                 style="@style/Contacts_NI">
-                    <ImageView android:id="@+id/contacts_NI_BG"
-                               style="@style/Contacts_NIBG"/>
                     <TextView
                               android:id="@+id/contacts_NI_Title"
-                              android:layout_alignLeft="@+id/contacts_NI_BG"
-                              android:layout_alignTop="@+id/contacts_NI_BG"
                               style="@style/Contacts_CountryTitle" android:text="@string/contacts_NITitle"/>
-                    <RelativeLayout android:layout_alignRight="@+id/contacts_NI_BG"
-                                    android:layout_alignTop="@+id/contacts_NI_BG"
+                    <RelativeLayout android:layout_alignRight="@+id/contacts_separator"
                                     android:id="@+id/contacts_NIMap"
                                     style="@style/Contacts_MapLayout">
-                        <ImageView android:id="@+id/contacts_mapNI"
-                                   style="@style/Contacts_Map"/>
                         <TextView android:text="@string/contacts_textMap"
                                   android:id="@+id/contacts_mapText"
                                   style="@style/Contacts_TextMap"/>
@@ -165,8 +148,6 @@
                                     android:layout_alignTop="@+id/contacts_NI_tel_text"
                                     android:id="@+id/contacts_NICall"
                                     style="@style/Contacts_CallLayout">
-                        <ImageView android:id="@+id/contacts_callNI"
-                                   style="@style/Contacts_Call"/>
                         <TextView android:text="@string/contacts_textCall"
                                   android:id="@+id/contacts_callText"
                                   style="@style/Contacts_TextCall"/>
