@@ -157,12 +157,10 @@ public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Articl
                 }
                 else {
                     // Bad Connection
-                    // TODO: ConnectionExcepion?
                 }
             }
             catch (IOException ex){
                 // Bad Connection
-                // TODO: ConnectionExcepion?
             }
 
         } // end of xmlNewsType array

@@ -119,6 +119,7 @@ public class SearchActivity extends shaerToSocial {
                     Toast toast = Toast.makeText(SearchActivity.this,"Search Query already Saved " ,Toast.LENGTH_SHORT);
                     toast.show();
                 }
+                LocalDB.close();
                 //:TODO Close DB
             }
         });
@@ -133,7 +134,8 @@ public class SearchActivity extends shaerToSocial {
         adapter.setViewBinder(new CustomViewBinder());
         searchListResult.setAdapter(adapter);
             ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
-        }else {
+        }
+        else {
             try {
                 LocalDB.open(getApplicationContext());
             } catch (SQLException e) {
@@ -144,7 +146,7 @@ public class SearchActivity extends shaerToSocial {
             searchQueryHolder.setText(searchQueryId);
             serchArticle();
 
-
+            LocalDB.close();
         }
 
 

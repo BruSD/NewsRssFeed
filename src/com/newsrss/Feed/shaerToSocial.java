@@ -27,16 +27,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.EnumSet;
 
-
-import com.google.code.linkedinapi.client.LinkedInApiClient;
-import com.google.code.linkedinapi.client.LinkedInApiClientFactory;
-import com.google.code.linkedinapi.client.enumeration.ProfileField;
-import com.google.code.linkedinapi.client.oauth.LinkedInAccessToken;
-import com.google.code.linkedinapi.client.oauth.LinkedInOAuthService;
-import com.google.code.linkedinapi.client.oauth.LinkedInOAuthServiceFactory;
-import com.google.code.linkedinapi.client.oauth.LinkedInRequestToken;
-
-import com.google.code.linkedinapi.schema.Person;
 import com.newsrss.Feed.TwitterApp.TwDialogListener;
 import android.app.AlertDialog;
 import oauth.signpost.OAuth;
@@ -147,12 +137,14 @@ public class shaerToSocial extends SherlockActivity {
     //listIDn = 1 Articl List
     //listIDn = 2 Podcast
     //listIDn = 3 jobs
+
     public void onClickbtnConnectFB( int listID,  int articleID) {
 
         onClickLogin();
         setDatetoShare(listID, articleID);
     }
-    public void setDatetoShare(int list, int ID){
+
+    public void setDatetoShare(int list, int ID) {
         switch (list){
             case 1:
                 currentArticle = DataStorage.getArticleList().get(ID);
@@ -199,7 +191,7 @@ public class shaerToSocial extends SherlockActivity {
                 postURL = currentArticle.getLink().toString();
                 postDiscription= currentArticle.getDescription();
                 //postImageURL = currentArticle.getNewsImage();
-            break;
+                break;
 
             case 5:
                 try {
@@ -217,12 +209,11 @@ public class shaerToSocial extends SherlockActivity {
                 //postImageURL = currentArticle.getNewsImage();
                 break;
 
-    }
+        }
         //:TODO get Fav Article & Get Searched Article to shaer in soc
 
-
-
     }
+
     @Override
     public void onStart() {
         super.onStart();

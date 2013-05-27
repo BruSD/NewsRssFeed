@@ -104,12 +104,10 @@ public class PodcastParser extends AsyncTask<Void, Void, ArrayList<Podcast>> {
             }
             else {
                 // Bad Connection
-                // TODO: ConnectionExcepion?
             }
         }
         catch (IOException ex){
             // Bad Connection
-            // TODO: ConnectionExcepion?
         }
 
         return  podcastList;

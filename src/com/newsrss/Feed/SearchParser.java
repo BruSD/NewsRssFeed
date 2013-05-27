@@ -101,7 +101,6 @@ public class SearchParser extends AsyncTask<String, Void, ArrayList<Article>> {
             }
             else {
                 // Bad Connection
-                // TODO: ConnectionExcepion?
             }
         }
         catch(MalformedURLException e) {
@@ -109,7 +108,6 @@ public class SearchParser extends AsyncTask<String, Void, ArrayList<Article>> {
         }
         catch(IOException e){
             // Bad Connection
-            // TODO: ConnectionExcepion?
         }
 
         return result;

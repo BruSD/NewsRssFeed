@@ -104,12 +104,10 @@ public class JobParser extends AsyncTask<Void, Void, ArrayList<Job>> {
             }
             else {
                 // Bad Connection
-                // TODO: ConnectionExcepion?
             }
         }
         catch (IOException ex){
             // Bad Connection
-            // TODO: ConnectionExcepion?
         }
 
         return  jobList;

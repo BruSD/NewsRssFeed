@@ -118,7 +118,7 @@ public class DataStorage {
         catch (ExecutionException e) {}
         catch (InterruptedException e) {}
 
-        // TODO: add only new podcast (unique for guid)
+        // TODO: add only new jobs (unique for guid)
         jobList.clear();
         jobList.addAll(tempList);
 
@@ -150,16 +150,6 @@ public class DataStorage {
             image = null;
         }
 
-        /*
-        if (image == null) {
-            //System.out.println("BAD : "+imageURLString);
-
-            // TODO: set default image from resourse
-            // like this image = Drawable.createFromPath("res\\drawable-mdpi\\default_news_icon.png");
-        }
-        else {
-            //System.out.println("GOOD : "+imageURLString);
-        } */
         drawableMap.put(imageURLString, image);
 
         return image;
