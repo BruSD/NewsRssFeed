@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import com.google.analytics.tracking.android.EasyTracker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -56,6 +57,18 @@ public class MapActivity extends FragmentActivity {
                 .title("Chartered Accountants Ireland"));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(somePlace, 10));
         map.animateCamera(CameraUpdateFactory.zoomTo(17), 2000, null);
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        EasyTracker.getInstance().activityStop(this); // Add this method.
     }
 
 }

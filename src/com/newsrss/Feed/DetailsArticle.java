@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.*;
 
 import android.os.Bundle;
+import com.google.analytics.tracking.android.EasyTracker;
 import com.nineoldandroids.animation.*;
 import com.facebook.Session;
 import android.webkit.WebView;
@@ -468,5 +469,16 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
         return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
 
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        EasyTracker.getInstance().activityStop(this); // Add this method.
+    }
 }

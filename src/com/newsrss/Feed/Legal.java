@@ -10,6 +10,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import com.google.analytics.tracking.android.EasyTracker;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -52,5 +53,17 @@ public class Legal extends Activity {
            }
        } ;
         backBtn.setOnClickListener(ocBack);
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        EasyTracker.getInstance().activityStop(this); // Add this method.
     }
 }

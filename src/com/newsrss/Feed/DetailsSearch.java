@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.Session;
+import com.google.analytics.tracking.android.EasyTracker;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -241,6 +242,18 @@ public class DetailsSearch extends shaerToSocial implements GestureDetector.OnGe
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        EasyTracker.getInstance().activityStop(this); // Add this method.
     }
 
 }

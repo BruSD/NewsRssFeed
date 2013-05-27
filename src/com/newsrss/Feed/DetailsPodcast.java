@@ -11,6 +11,7 @@ import android.view.*;
 import android.webkit.WebView;
 import android.widget.*;
 import com.facebook.*;
+import com.google.analytics.tracking.android.EasyTracker;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -617,5 +618,17 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        EasyTracker.getInstance().activityStop(this); // Add this method.
     }
 }
