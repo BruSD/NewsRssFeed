@@ -52,7 +52,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
 
 
     @Override
-    public void onBackPressed (){
+    public void onBackPressed (){     // Stop playing podcast on back button
         end_of_play=true;
         cast_player.stop();
         cast_player.release();
@@ -67,6 +67,8 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         setContentView(R.layout.details_podcast);
         getWindow().setLayout(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
 
+
+        //Top share panel create
         descriptionAndPlayPanel = (RelativeLayout) findViewById(R.id.descriptionAndPlayPanel);
         layoutToAddSharePanel = (LinearLayout)findViewById(R.id.podcast_layoutToShare);
         mainPodcastLayout = (LinearLayout)findViewById(R.id.podcast_mainLayout);
@@ -132,6 +134,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         shareLinkedin = (ImageButton) findViewById(R.id.share_panel_bottom_linkedin);
         shareMail = (ImageButton) findViewById(R.id.share_panel_bottom_mail);
 
+        //sweeking podcast
         final SeekBar.OnSeekBarChangeListener ocSeek = new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -166,6 +169,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         };
 
 
+        //On end of play
         MediaPlayer.OnCompletionListener ocEnd = new MediaPlayer.OnCompletionListener() {
 
             @Override
@@ -182,9 +186,11 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
+        //play podcast (if play==false) or pause (if play==true)
         final ImageButton.OnClickListener ocPlay_pause = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Initialization player if podcast is playing for a first time
                 if (first_play)
                 {
                     cast_player.reset();
@@ -212,6 +218,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
+        //Seeking back 10 sec
         final ImageButton.OnClickListener ocSeek_10 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,6 +232,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
+        //Seeking forward 30 sec
         final ImageButton.OnClickListener ocSeek_30 = new ImageButton.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -241,7 +249,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
-
+        //Show buffered time in seekbar
         MediaPlayer.OnBufferingUpdateListener ocBuffer = new MediaPlayer.OnBufferingUpdateListener() {
 
             @Override
@@ -251,13 +259,6 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
-        MediaPlayer.OnPreparedListener ocPrepare = new MediaPlayer.OnPreparedListener() {
-
-            @Override
-            public void onPrepared(MediaPlayer arg0) {
-
-            }
-        };
 
         play_pauseButton.setOnClickListener(ocPlay_pause);
         seek10Button.setOnClickListener(ocSeek_10);
@@ -266,7 +267,6 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         castSeekbar.setOnSeekBarChangeListener(ocSeek);
         cast_player.setOnCompletionListener(ocEnd);
         cast_player.setOnBufferingUpdateListener(ocBuffer);
-        cast_player.setOnPreparedListener(ocPrepare);
 
         ImageButton.OnClickListener ocTwitter = new View.OnClickListener() {
             @Override
@@ -302,6 +302,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                 //To change body of implemented methods use File | Settings | File Templates.
             }
 
+            //Set alpha on animation ends and set button unenabled
             @Override
             public void onAnimationEnd(Animator animation) {
                 for (int i = 0; i < mainPodcastLayout.getChildCount(); i++) {
@@ -334,6 +335,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                 //To change body of implemented methods use File | Settings | File Templates.
             }
 
+            //Set alpha on animation ends and set button enabled
             @Override
             public void onAnimationEnd(Animator animation) {
                 for (int i = 0; i < mainPodcastLayout.getChildCount(); i++) {
@@ -364,6 +366,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
             }
         };
 
+        //Show top share panel
         ImageButton.OnClickListener ocShare = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -485,7 +488,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
         });
     }
 
-
+    //Convert time in milisec to string time with minutes and seconds
     protected String ConvertToTimeString(int time)
     {
         String time_str;
@@ -502,6 +505,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
     }
 
 
+    //Thread to show current time and progress of podcast
     Thread timeThread = new Thread(
             new Runnable() {
                 public void run() {
@@ -524,6 +528,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                                 }
 
                             });
+                            //Stop showing time when podcast is seeking
                             try { if(seeking)
                                 synchronized (mutex) {
                                     mutex.wait();
@@ -533,6 +538,7 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
                             }
                         }
                         else
+                        //Stop showing time when podcast is on pause
                         {	try
                         {
                             synchronized (mutex)

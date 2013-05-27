@@ -30,11 +30,7 @@ public class LocalDB {
     private static SQLiteDatabase LocalDatabase;
     private static SQLiteDatabase LocalDatabaseSearches;
 
-
-
-    // Перед першим використанням бази даних потрыбно виконати open(context)
-    // Далі просто використовувати методи
-    // Доступ до методів статичний через LocalDB.метод
+    // Access to method of this class : LocalDB.method
 	
 	static private void open() throws SQLException {
         LocalDatabase = dbHelper.getWritableDatabase();
@@ -52,7 +48,8 @@ public class LocalDB {
 		LocalDatabase.close();
         LocalDatabaseSearches.close();
 	}
-	
+
+    //Convert Cursor that we get from DB to Article
 	private static Article articleToComment(Cursor cursor) {
         Article result_art = null;
 	    URL art_url = null;
@@ -84,12 +81,14 @@ public class LocalDB {
 			result_art = new Article(cursor.getString(0), cursor.getString(1), art_url, art_date, cursor.getString(4), art_type, picture);
 	    return result_art;
 	  }
-	
+
+    // Delete Article from DB by id parameters(string)
 	static public void deleteArticle (String guid){
 	    LocalDatabase.delete(SQLLiteHelper.DATABASE_NAME, SQLLiteHelper.COLUMN_guID
 	        + " = " + "'"+guid+"'", null);
 	}
 
+    // Is articles allready in Favorites or not
     static public boolean isArticleFavotites (String guid){
         String [] searchesinDB = {guid};
         Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
@@ -98,7 +97,7 @@ public class LocalDB {
         return false;
         return true;
     }
-	
+
 	static public void addArticle (Article art){
     	String dateStr = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(art.getPubDate());
 		ContentValues article_values = new ContentValues();
@@ -120,6 +119,7 @@ public class LocalDB {
                 article_values);
 	}
 
+    //Get all Articles from DB
     static public List<Article> getAllArticles () {
 	    List<Article> allArticles = new ArrayList<Article>();
 	    Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
@@ -136,6 +136,7 @@ public class LocalDB {
 	    return allArticles;
 	}
 
+    //Get one Article from DB
     static public Article getArticle (int id) {
         Cursor cursor = LocalDatabase.query(SQLLiteHelper.DATABASE_NAME,
                 allColumns, null, null, null, null, null);
@@ -158,6 +159,7 @@ public class LocalDB {
         return null;
     }
 
+    // Is current search allready in DB or not
     static public boolean isSearchInDB (String search){
         String [] searchesinDB = {search};
         Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
@@ -194,6 +196,7 @@ public class LocalDB {
                 + " = " + id, null);
     }
 
+    //Return last 10 searches from DB
    static public List<Searches> get10Searches() {
         List<Searches> allSearches = new ArrayList<Searches>();
         Cursor cursor = LocalDatabaseSearches.query(SQLLiteHelperSearch.DATABASE_NAME,
