@@ -1,5 +1,7 @@
 package com.newsrss.Feed;
 
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
@@ -10,6 +12,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,6 +36,7 @@ public class DataStorage {
     private static ArrayList<Job> jobList = new ArrayList<Job>();
     private static ArrayList<Article> searchList = new ArrayList<Article>();
 
+    // Articles
     public static ArrayList<Article> getArticleList() {
         ArrayList<Article> result = new ArrayList<Article>();
         HashSet<String> guidSet = new HashSet<String>();
@@ -49,14 +54,42 @@ public class DataStorage {
         //return  articleList;
     }
 
+    public static void addToArticleList(ArrayList<Article> loadingArticles) {
+        // TODO: add only new article (unique for guid and newsType)
+        articleList.clear();
+        articleList.addAll(loadingArticles);
+
+        Collections.sort(articleList);
+    }
+
+
+    // Podcasts
     public static ArrayList<Podcast> getPodcastList() {
         return podcastList;
     }
 
+    public static void addToPodcastList(ArrayList<Podcast> loadingPodcasts) {
+        // TODO: add only new podcast (unique for guid)
+        podcastList.clear();
+        podcastList.addAll(loadingPodcasts);
+
+        Collections.sort(podcastList);
+    }
+
+    // Jobs
     public static ArrayList<Job> getJobList() {
         return jobList;
     }
 
+    public static void addToJobList(ArrayList<Job> loadingJobs) {
+        // TODO: add only new jobs (unique for guid)
+        jobList.clear();
+        jobList.addAll(loadingJobs);
+
+        Collections.sort(jobList);
+    }
+
+    // Filters
     public static boolean changeFilterStatus(XMLNewsType newsType) {
         if (filters.contains(newsType)) {
             filters.remove(newsType);
@@ -69,62 +102,7 @@ public class DataStorage {
 
     }
 
-    public static void updateArticleList () {
-        ArrayList<Article> tempList = new ArrayList<Article>();
-
-        try {
-            AsyncTask<XMLNewsType, Void, ArrayList<Article>> articleParser = new ArticleParser().execute(XMLNewsType.AuditNAccounting,
-                    XMLNewsType.Business,
-                    XMLNewsType.Governance,
-                    XMLNewsType.Insolvency,
-                    XMLNewsType.Practice,
-                    XMLNewsType.Tax);
-            tempList = articleParser.get();
-        }
-        catch (ExecutionException e) {}
-        catch (InterruptedException e) {}
-
-        // TODO: add only new article (unique for guid and newsType)
-        articleList.clear();
-        articleList.addAll(tempList);
-
-        Collections.sort(articleList);
-    }
-
-    public static void updatePodcastList() {
-        ArrayList<Podcast> tempList = new ArrayList<Podcast>();
-
-        try {
-            AsyncTask<Void, Void, ArrayList<Podcast>> podcastParser = new PodcastParser().execute();
-            tempList = podcastParser.get();
-        }
-        catch (ExecutionException e) {}
-        catch (InterruptedException e) {}
-
-        // TODO: add only new podcast (unique for guid)
-        podcastList.clear();
-        podcastList.addAll(tempList);
-
-        Collections.sort(podcastList);
-    }
-
-    public static void updateJobList() {
-        ArrayList<Job> tempList = new ArrayList<Job>();
-
-        try {
-            AsyncTask<Void, Void, ArrayList<Job>> jobParser = new JobParser().execute();
-            tempList = jobParser.get();
-        }
-        catch (ExecutionException e) {}
-        catch (InterruptedException e) {}
-
-        // TODO: add only new jobs (unique for guid)
-        jobList.clear();
-        jobList.addAll(tempList);
-
-        Collections.sort(jobList);
-    }
-
+    // Images
     public static Drawable fetchDrawable(String imageURLString) {
         if  (drawableMap.containsKey(imageURLString)) {
             //System.out.println("EXIST : "+imageURLString);
@@ -155,17 +133,14 @@ public class DataStorage {
         return image;
     }
 
-    public static ArrayList<Article> startSearch(String searchText){
-        ArrayList<Article> tempList = new ArrayList<Article>();
-        try {
-            AsyncTask<String, Void, ArrayList<Article>> searchParser = new SearchParser().execute(searchText);
-            tempList = searchParser.get();
-        }
-        catch (ExecutionException e) {}
-        catch (InterruptedException e) {}
+    // Search Article
+    public static void startSearch(Activity activity, String searchText){
+        searchList.clear();
+        new SearchParser(activity).execute(searchText);
+    }
 
-        searchList = tempList;
-        return searchList;
+    public static void updateSearchList(ArrayList<Article> loadingSearchArticles) {
+        searchList = loadingSearchArticles;
     }
 
     public static ArrayList<Article> getSearchList() {

@@ -1,6 +1,8 @@
 package com.newsrss.Feed;
 
+import android.app.Activity;
 import android.app.Application;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -34,6 +36,34 @@ import java.util.Locale;
  * To change this template use File | Settings | File Templates.
  */
 public class ArticleParser extends AsyncTask<XMLNewsType, Void, ArrayList<Article>> {
+
+    private Activity activity;
+    private ProgressDialog dialog;
+
+    public ArticleParser(Activity currentActivity){
+        this.activity = currentActivity;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        dialog = new ProgressDialog(activity);
+        dialog.setMessage("Loading...");
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<Article> result) {
+        if (dialog != null && dialog.isShowing())
+            dialog.dismiss();
+
+        if (activity instanceof NewsRssActivity) {
+            DataStorage.addToArticleList(result);
+            ((NewsRssActivity) activity).updateListForArticles();
+        }
+    }
 
     @Override
     protected ArrayList<Article> doInBackground(XMLNewsType... newsTypes) {

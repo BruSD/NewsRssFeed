@@ -1,5 +1,8 @@
 package com.newsrss.Feed;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -28,6 +31,34 @@ import java.util.Locale;
  * To change this template use File | Settings | File Templates.
  */
 public class JobParser extends AsyncTask<Void, Void, ArrayList<Job>> {
+
+    private Activity activity;
+    private ProgressDialog dialog;
+
+    public JobParser(Activity currentActivity){
+        this.activity = currentActivity;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        dialog = new ProgressDialog(activity);
+        dialog.setMessage("Loading...");
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<Job> result) {
+        if (dialog != null && dialog.isShowing())
+            dialog.dismiss();
+
+        if (activity instanceof NewsRssActivity) {
+            DataStorage.addToJobList(result);
+            ((NewsRssActivity) activity).updateListForJobs();
+        }
+    }
 
     @Override
     public ArrayList<Job> doInBackground(Void... params) {

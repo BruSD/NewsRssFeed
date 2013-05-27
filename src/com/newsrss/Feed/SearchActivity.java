@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.*;
 import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
 import com.fortysevendeg.android.swipelistview.SwipeListView;
+import com.google.analytics.tracking.android.EasyTracker;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -71,32 +72,26 @@ public class SearchActivity extends shaerToSocial {
             @Override
             public void onClick(View v) {
 
-                if (searchQueryHolder.getText().length() != 0){
+                if (searchQueryHolder.getText().length() != 0) {
                     try {
                         LocalDB.open(getApplicationContext());
                     } catch (SQLException e) {
                         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                     }
+
                     if  (!LocalDB.isSearchInDB(searchQueryHolder.getText().toString()))    {
-
-
                         ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
                         searchQueryId = searchQueryHolder.getText().toString();
-                        serchArticle();
-
-
-
-                    }else{
+                        searchArticle();
+                     } else {
                         ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
                         searchQueryId = searchQueryHolder.getText().toString();
-                        serchArticle();
+                        searchArticle();
                     }
-                }else {
+                } else {
                     Toast toast = Toast.makeText(SearchActivity.this, "Enter Search Query", Toast.LENGTH_LONG);
                     toast.show();
                 }
-
-
             }
         });
         View saveSearch = (View)findViewById(R.id.save_search);
@@ -104,7 +99,7 @@ public class SearchActivity extends shaerToSocial {
         saveSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(((TextView)findViewById(R.id.text_to_saved)).getText().toString() != getString(R.string.saved_search_button)){
+                if(((TextView)findViewById(R.id.text_to_saved)).getText().toString() != getString(R.string.saved_search_button)) {
                     try {
                         LocalDB.open(getApplicationContext());
                     } catch (SQLException e) {
@@ -126,14 +121,8 @@ public class SearchActivity extends shaerToSocial {
         Intent startDetailArticle = getIntent();
         searchQueryId = startDetailArticle.getStringExtra("searchquery");
 
-        if (searchQueryId.length() == 1){
-        MyCAdapter adapter = new MyCAdapter(this,
-                new ArrayList<Map<String, ?>>(), R.layout.rss_item_layout,
-                new String[] { "rssnewstitle", "rssnewsdate"},
-                new int [] { R.id.rss_news_title, R.id.rss_news_date});
-        adapter.setViewBinder(new CustomViewBinder());
-        searchListResult.setAdapter(adapter);
-            ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+        if (searchQueryId.length() == 1) {
+            emptyListView();
         }
         else {
             try {
@@ -144,7 +133,7 @@ public class SearchActivity extends shaerToSocial {
             ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
 
             searchQueryHolder.setText(searchQueryId);
-            serchArticle();
+            searchArticle();
 
             LocalDB.close();
         }
@@ -153,25 +142,57 @@ public class SearchActivity extends shaerToSocial {
 
     }
 
-    public void serchArticle(){
+    @Override
+    public void onStart() {
+        super.onStart();
 
-             if(!createArticleList().isEmpty()){
-             MyCAdapter adapter = new MyCAdapter(this,
-                     createArticleList(), R.layout.rss_item_layout,
-                     new String[] { "rssnewstitle", "rssnewsdate"},
-                     new int [] { R.id.rss_news_title, R.id.rss_news_date});
-             adapter.setViewBinder(new CustomViewBinder());
-             searchListResult.setAdapter(adapter);
-             searchListResult.setVisibility(View.VISIBLE);
+        EasyTracker.getInstance().activityStart(this); // Add this method.
+    }
 
-             } else {
-                 Toast toast = Toast.makeText(SearchActivity.this, "No Result for this Query", Toast.LENGTH_LONG);
-                 toast.show();
-                 searchListResult.setVisibility(View.GONE);
-             }
+    @Override
+    public void onStop() {
+        super.onStop();
 
+        EasyTracker.getInstance().activityStop(this); // Add this method.
+    }
 
+    public void searchArticle(){
+        DataStorage.startSearch(SearchActivity.this, searchQueryId);
+        updateListForSearch(true);
+    }
 
+    public void updateListForSearch(boolean isCallFromActivity) {
+        List<Map<String, ?>> mapList = createArticleList();
+        if(!mapList.isEmpty()){
+            MyCAdapter adapter = new MyCAdapter(this,
+                    mapList, R.layout.rss_item_layout,
+                    new String[] { "rssnewstitle", "rssnewsdate"},
+                    new int [] { R.id.rss_news_title, R.id.rss_news_date});
+            adapter.setViewBinder(new CustomViewBinder());
+            searchListResult.setAdapter(adapter);
+            searchListResult.setVisibility(View.VISIBLE);
+
+            try {
+                LocalDB.open(getApplicationContext());
+            } catch (SQLException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            if  (!LocalDB.isSearchInDB(searchQueryId))    {
+                ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+            } else {
+                ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.saved_search_button);
+                LocalDB.addSearch(searchQueryId);
+            }
+            LocalDB.close();
+        } else {
+            if (!isCallFromActivity) {
+                Toast toast = Toast.makeText(SearchActivity.this, "No Result for this Query", Toast.LENGTH_LONG);
+                toast.show();
+                searchListResult.setVisibility(View.GONE);
+            }
+            else
+                emptyListView();
+        }
     }
 
     private List<Map<String, ?>> createArticleList() {
@@ -179,7 +200,7 @@ public class SearchActivity extends shaerToSocial {
         try
         {
             SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
-            ArrayList<Article> articleList = DataStorage.startSearch(searchQueryId);
+            ArrayList<Article> articleList = DataStorage.getSearchList();
 
             for (Article article : articleList)
             {
@@ -204,6 +225,16 @@ public class SearchActivity extends shaerToSocial {
         return items;
     }
 
+    private void emptyListView() {
+        MyCAdapter adapter = new MyCAdapter(this,
+                new ArrayList<Map<String, ?>>(), R.layout.rss_item_layout,
+                new String[] { "rssnewstitle", "rssnewsdate"},
+                new int [] { R.id.rss_news_title, R.id.rss_news_date});
+        adapter.setViewBinder(new CustomViewBinder());
+        searchListResult.setAdapter(adapter);
+        ((TextView)findViewById(R.id.text_to_saved)).setText(R.string.save_this_search_button);
+    }
+
     class CustomViewBinder implements SimpleAdapter.ViewBinder {
         @Override
         public boolean setViewValue(View view, Object data,String textRepresentation) {
@@ -219,7 +250,7 @@ public class SearchActivity extends shaerToSocial {
 
     }
 
-    public class MyCAdapter extends SimpleAdapter {
+    class MyCAdapter extends SimpleAdapter {
         private List<? extends Map<String, ?>> data;
         private Context context;
 

@@ -1,5 +1,7 @@
 package com.newsrss.Feed;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import org.w3c.dom.Document;
@@ -29,6 +31,36 @@ import java.util.Locale;
  * To change this template use File | Settings | File Templates.
  */
 public class SearchParser extends AsyncTask<String, Void, ArrayList<Article>> {
+
+    private Activity activity;
+    private ProgressDialog dialog;
+
+    public SearchParser(Activity currentActivity){
+        this.activity = currentActivity;
+    }
+
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        dialog = new ProgressDialog(activity);
+        dialog.setMessage("Loading...");
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<Article> result) {
+        if (dialog != null && dialog.isShowing())
+            dialog.dismiss();
+
+        if (activity instanceof SearchActivity) {
+            DataStorage.updateSearchList(result);
+            ((SearchActivity) activity).updateListForSearch(false);
+        }
+    }
+
     @Override
     protected ArrayList<Article> doInBackground(String... searchText) {
         ArrayList<Article> result = new ArrayList<Article>();

@@ -1,5 +1,7 @@
 package com.newsrss.Feed;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -28,6 +30,34 @@ import java.util.Locale;
  * To change this template use File | Settings | File Templates.
  */
 public class PodcastParser extends AsyncTask<Void, Void, ArrayList<Podcast>> {
+
+    private Activity activity;
+    private ProgressDialog dialog;
+
+    public PodcastParser(Activity currentActivity){
+        this.activity = currentActivity;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        dialog = new ProgressDialog(activity);
+        dialog.setMessage("Loading...");
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<Podcast> result) {
+        if (dialog != null && dialog.isShowing())
+            dialog.dismiss();
+
+        if (activity instanceof NewsRssActivity) {
+            DataStorage.addToPodcastList(result);
+            ((NewsRssActivity) activity).updateListForPodcasts();
+        }
+    }
 
     @Override
     public ArrayList<Podcast> doInBackground(Void... params) {
