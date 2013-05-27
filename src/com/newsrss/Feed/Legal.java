@@ -36,7 +36,7 @@ public class Legal extends Activity {
         legalDescription = (WebView) findViewById(R.id.legal_description);
 
         legalDescription.getSettings().setJavaScriptEnabled(true);
-        legalDescription.loadUrl("file:///android_res/raw/legal_doc.html");
+        legalDescription.loadUrl("file:///android_res/raw/legal_doc_05_25.html");
         // legalDescription.getSettings().setJavaScriptEnabled(true);
        //String legalDoc = "android.resource://" + getPackageName() + "/raw/"+R.raw.legal;
         //legalDescription.loadData("<html><body>" + legalDoc + "</body></html>", "text/html", "UTF-8");
@@ -51,7 +51,6 @@ public class Legal extends Activity {
                finish();
            }
        } ;
-
         backBtn.setOnClickListener(ocBack);
     }
 }
