@@ -39,7 +39,6 @@ public class SearchParser extends AsyncTask<String, Void, ArrayList<Article>> {
         this.activity = currentActivity;
     }
 
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
