@@ -44,11 +44,10 @@
         <activity android:name="com.newsrss.Feed.DetailsJobs"
                   />
 
-        <activity android:name="com.newsrss.Feed.DetailsSettings"/>
         <activity android:name="com.newsrss.Feed.DetailsFavorites"/>
         <activity android:name="com.newsrss.Feed.Legal"
                   />
-        <activity android:name="com.newsrss.Feed.Contacts"/>
+
         <activity android:name="com.newsrss.Feed.SearchActivity"
                   android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.newsrss.Feed.DetailsSearch"/>
@@ -61,7 +60,7 @@
                    android:value="@string/app_id"/>
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
-                android:value="AIzaSyATUv-SvBGH7B0I2tB89EthCnNWlpLEma4"/>
+                android:value="AIzaSyCHdfGghvsiLqmv6e_jUCnPfBW3FjZ7YYI"/>
 
     </application>
 </manifest>
