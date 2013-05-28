@@ -62,7 +62,7 @@
                 android:id="@+id/settings_rateLayout"
 
 
-                android:visibility="gone">
+                >
             <ImageView style="@style/Settings_LegalRateFeedbackBG"
                        android:id="@+id/settings_rateBG" />
             <ImageView android:id="@+id/settings_arrow"

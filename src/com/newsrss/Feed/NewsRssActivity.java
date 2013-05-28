@@ -474,7 +474,8 @@ public class NewsRssActivity extends shaerToSocial {
         ImageView.OnClickListener ocRate = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(NewsRssActivity.this, "Rate", Toast.LENGTH_LONG).show();
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.newsrss.Feed"));
+                startActivity(myIntent);
             }
         };
 
@@ -750,7 +751,7 @@ public class NewsRssActivity extends shaerToSocial {
 
         artList = LocalDB.get10Searches();
         if(artList.isEmpty() ){
-            Toast toast = Toast.makeText(getApplicationContext(),"Non",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(),"There are currently no saved searches.",Toast.LENGTH_SHORT);
             toast.show();
         }  else {
 
