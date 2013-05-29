@@ -428,12 +428,11 @@ public class DetailsPodcast extends shaerToSocial implements GestureDetector.OnG
 
             @Override
             public boolean onDoubleTap(MotionEvent e) {
-                Toast toast = Toast.makeText(getApplicationContext(),"Double Tap",Toast.LENGTH_SHORT);
-                toast.show();
                 final Dialog dialog = new Dialog(DetailsPodcast.this);
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
                 dialog.setContentView(R.layout.share_panel_bottom);
+                ((TextView)dialog.findViewById(R.id.share_panel_bottom_text)).setText(R.string.share_panel_bottom_podcast_text);
 
                 ImageButton facebokShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_facebook);
                 facebokShareTo.setOnClickListener(new View.OnClickListener() {

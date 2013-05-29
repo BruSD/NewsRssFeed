@@ -34,19 +34,13 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.newsrss.Feed.DetailsArticle"
+        <activity android:name="com.newsrss.Feed.DetailsArticle"/>
 
-                android:launchMode="singleInstance">
-
-                </activity>
-        <activity android:name="com.newsrss.Feed.DetailsPodcast"
-                  />
-        <activity android:name="com.newsrss.Feed.DetailsJobs"
-                  />
+        <activity android:name="com.newsrss.Feed.DetailsPodcast"/>
+        <activity android:name="com.newsrss.Feed.DetailsJobs"/>
 
         <activity android:name="com.newsrss.Feed.DetailsFavorites"/>
-        <activity android:name="com.newsrss.Feed.Legal"
-                  />
+        <activity android:name="com.newsrss.Feed.Legal"/>
 
         <activity android:name="com.newsrss.Feed.SearchActivity"
                   android:windowSoftInputMode="adjustPan" />

@@ -41,7 +41,7 @@
 
     <string name="share_panel_bottom_article_text">Share this article</string>
     <string name="share_panel_bottom_podcast_text">Share this podcast</string>
-
+    <string name="share_panel_bottom_job_text">Share this job</string>
 
     <string name="enter_search_query">Enter Query</string>
     <string name="save_this_search_button">Save this Search</string>

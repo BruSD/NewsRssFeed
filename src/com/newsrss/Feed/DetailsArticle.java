@@ -316,6 +316,7 @@ public class DetailsArticle extends shaerToSocial implements GestureDetector.OnG
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
                 dialog.setContentView(R.layout.share_panel_bottom);
+                ((TextView)dialog.findViewById(R.id.share_panel_bottom_text)).setText(R.string.share_panel_bottom_article_text);
 
                 ImageButton facebokShareTo = (ImageButton)dialog.findViewById(R.id.share_panel_bottom_facebook);
                 facebokShareTo.setOnClickListener(new View.OnClickListener() {
