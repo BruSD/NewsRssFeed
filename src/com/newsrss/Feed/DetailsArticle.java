@@ -1,13 +1,12 @@
 package com.newsrss.Feed;
 
-import android.app.AlertDialog;
+
 import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
-import android.util.Log;
+
 import android.view.*;
 
 import android.os.Bundle;
@@ -26,10 +25,7 @@ import android.view.ViewGroup.LayoutParams;
 
 
 import com.nineoldandroids.view.ViewHelper;
-import org.brickred.socialauth.android.DialogListener;
-import org.brickred.socialauth.android.SocialAuthAdapter;
-import org.brickred.socialauth.android.SocialAuthAdapter.Provider;
-import org.brickred.socialauth.android.SocialAuthError;
+
 
 /**
  * Created with IntelliJ IDEA.
@@ -41,7 +37,7 @@ import org.brickred.socialauth.android.SocialAuthError;
 public class DetailsArticle extends shaerToSocial implements GestureDetector.OnGestureListener  {
     private GestureDetector gd;
 
-    SocialAuthAdapter adapter;
+
 
     Article currentArticle = null;
     Article nextArticle = null;
