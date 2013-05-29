@@ -36,9 +36,8 @@
         </activity>
         <activity android:name="com.newsrss.Feed.DetailsArticle"
 
-                android:launchMode="singleInstance">
+                />
 
-                </activity>
         <activity android:name="com.newsrss.Feed.DetailsPodcast"
                   />
         <activity android:name="com.newsrss.Feed.DetailsJobs"

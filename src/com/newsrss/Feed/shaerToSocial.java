@@ -274,7 +274,8 @@ public class shaerToSocial extends SherlockActivity {
     private class SessionStatusCallback implements Session.StatusCallback {
         @Override
         public void call(Session session, SessionState state, Exception exception) {
-            updateView();
+            if (state != SessionState.CLOSED_LOGIN_FAILED)
+                updateView();
         }
     }
     private void publishFeedDialog() {
